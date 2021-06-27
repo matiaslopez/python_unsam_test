@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>07 gráficos de complejidad - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "07 gr\u00e1ficos de complejidad";
+    var mkdocs_page_input_path = "06_Organizaci\u00f3n_y_Complejidad/07_gr\u00e1ficos_de_complejidad.md";
+    var mkdocs_page_url = "/python_unsam_test/06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">07 gráficos de complejidad</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#contar-la-cantidad-de-operaciones-de-un-algoritmo">Contar la cantidad de operaciones de un algoritmo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-619-contar-comparaciones-en-la-busqueda-binaria">Ejercicio 6.19: Contar comparaciones en la búsqueda binaria</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#graficar-la-cantidad-de-comparaciones-promedio">Gráficar la cantidad de comparaciones promedio</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-620-busqueda-binaria-vs-busqueda-secuencial">Ejercicio 6.20: Búsqueda binaria vs. búsqueda secuencial</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>06 Organización y Complejidad &raquo;</li>
+        
+      
+    
+    <li>07 gráficos de complejidad</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../06_Complejidad/">Anterior (6 Complejidad de algoritmos)</a> | <a href="../08_Cierre/">Próximo (8 Cierre de la clase)</a></p>
+<h1 id="67-graficos-de-complejidad">6.7 Gráficos de complejidad</h1>
+<h2 id="contar-la-cantidad-de-operaciones-de-un-algoritmo">Contar la cantidad de operaciones de un algoritmo</h2>
+<p>La siguiente función realiza una búsqueda secuencial de un elemento en una lista. Devuelve la posición del elemento si lo encuentra y -1 si no lo encuentra.</p>
+<pre><code class="language-python">def busqueda_secuencial(lista, x):
+    '''Si x está en la lista devuelve el índice de su primera aparición, 
+    de lo contrario devuelve -1.
+    '''
+    pos = -1
+    for i,z in enumerate(lista):
+        if z == x:
+            pos = i
+            break
+    return pos
+</code></pre>
+<p>Esta modificación de la función cuenta (y devuelve) además cuántas comparaciones (<code>z == x</code>) hace la función. Observá que devuelve un par de datos. </p>
+<pre><code class="language-python">def busqueda_secuencial_(lista, x):
+    '''Si x está en la lista devuelve el índice de su primera aparición, 
+    de lo contrario devuelve -1. Además devuelve la cantidad de comparaciones
+    que hace la función.
+    '''
+    comps = 0 # inicializo en cero la cantidad de comparaciones
+    pos = -1
+    for i,z in enumerate(lista):
+        comps += 1 # sumo la comparación que estoy por hacer
+        if z == x:
+            pos = i
+            break
+    return pos, comps
+
+</code></pre>
+<p>Si querés acceder a la posición podés usar <code>busqueda_secuencial_(lista, x)[0]</code> y para acceder a la cantidad de comparaciones que hizo <code>busqueda_secuencial_(lista, x)[1]</code>.</p>
+<h3 id="ejercicio-619-contar-comparaciones-en-la-busqueda-binaria">Ejercicio 6.19: Contar comparaciones en la búsqueda binaria</h3>
+<p>Modificá el código de búsqueda binaria (<code>busqueda_binaria(lista, x)</code>) introducido en la <a href="../05_BusqBinaria/#búsqueda-binaria">Sección 6.5</a>, de forma que devuelva (además de la posición del elemento en la lista) la cantidad de comparaciones que realizó el algoritmo para encontrarlo o decidir que no está.</p>
+<h2 id="graficar-la-cantidad-de-comparaciones-promedio">Gráficar la cantidad de comparaciones promedio</h2>
+<p>La siguiente función <code>generar_lista(n, m)</code> devuelve una lista ordenada de <code>n</code> elementos diferentes entre <code>0</code> y <code>m-1</code>, mientras que <code>generar_elemento(m)</code> devuelve un elemento aleatorio en el mismo rango de valores.</p>
+<pre><code class="language-python">import random
+
+def generar_lista(n, m):
+    l = random.sample(range(m), k = n)
+    l.sort()
+    return l
+
+def generar_elemento(m):
+    return random.randint(0, m-1)
+</code></pre>
+<p>Dada una lista ya generada, digamos que un <em>experimento elemental</em> es generar un elemento, buscarlo en la lista y contar la cantidad de comparaciones realizadas. Esta cantidad de operaciones es el <em>resultado</em> del experimento elemental.</p>
+<pre><code class="language-python">m = 10000
+n = 100
+lista = generar_lista(n, m)
+
+# acá comienza el experimento
+x = generar_elemento(m)
+comps = busqueda_secuencial_(lista, x)[1]
+</code></pre>
+<p>Entonces, el siguiente código da la cantidad de comparaciones <em>promedio</em> en <code>k</code> experimentos elementales. Observá que hay muchas variables diferentes dando vueltas: <code>n</code>, <code>m</code> y <code>k</code>.</p>
+<pre><code class="language-python">m = 10000
+n = 100
+k = 1000
+lista = generar_lista(n, m)
+
+def experimento_secuencial_promedio(lista, m, k):
+    comps_tot = 0
+    for i in range(k):
+        x = generar_elemento(m)
+        comps_tot += busqueda_secuencial_(lista,x)[1]
+
+    comps_prom = comps_tot / k
+    return comps_prom
+</code></pre>
+<p>Como las listas tienen <code>n = 100</code> elementos y estoy buscando un número cualquiera entre <code>m</code> números diferentes, es casi seguro que no lo voy a encontrar y que voy a tener que recorrer toda la lista para concluir esto (aunque en algún caso puede ser que esté y lo encuentre antes de recorrerla toda!). Entonces el promedio de comparaciones va a dar cercano al largo <code>n</code> de la lista, quizás un poco menor. Tiene una componente  aleatoria, es un <em>experimento</em> numérico.</p>
+<p>Si decíamos que buscar un elemento era un <em>experimento elemental</em> digamos que repetir <em>k</em> experimentos elementales y calcular el promedio de comparaciones es un <em>experimento de promedios</em>.</p>
+<p>Grafiquemos los resultados de estos <em>experimentos de promedios</em> para diferentes listas de largos <code>n</code> entre 1 y 256. Es decir, estaremos graficando la cantidad de comparaciones que hace en promedio el algoritmo de búsqueda secuencial sobre una lista de largo <code>n</code>, para diferentes valores de <code>n</code>.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+m = 10000
+k = 1000
+
+largos = np.arange(256) + 1 # estos son los largos de listas que voy a usar
+comps_promedio = np.zeros(256) # aca guardo el promedio de comparaciones sobre una lista de largo i, para i entre 1 y 256.
+
+for i, n in enumerate(largos):
+    lista = generar_lista(n, m) # genero lista de largo n
+    comps_promedio[i] = experimento_secuencial_promedio(lista, m, k)
+
+# ahora grafico largos de listas contra operaciones promedio de búsqueda.
+plt.plot(largos,comps_promedio,label = 'Búsqueda Secuencial')
+plt.xlabel(&quot;Largo de la lista&quot;)
+plt.ylabel(&quot;Cantidad de comparaciones&quot;)
+plt.title(&quot;Complejidad de la Búsqueda&quot;)
+plt.legend()
+plt.show()
+</code></pre>
+<p><img alt="Imagen Complejidad Secuencial" src="../compl_sec.png" /></p>
+<p>En la próxima clase estudiaremos en detalle la librería <code>matplotlib</code> que ya empezamos a usar la clase pasada. Por ahora solo agregamos la función <code>plot(x, y)</code> a la que se le pasan dos vectores (o listas) <code>x</code> e <code>y</code> y realiza una gráfico de líneas uniendo los puntos con esas coordenadas. El parámetro <code>label</code> permite ponerle un nombre a la curva que se muestra luego con la función <code>plt.legend()</code>.</p>
+<p>Este gráfico parece medio sonso, pero en el próximo ejercicio va a ir tomando color.</p>
+<h3 id="ejercicio-620-busqueda-binaria-vs-busqueda-secuencial">Ejercicio 6.20: Búsqueda binaria vs. búsqueda secuencial</h3>
+<p>En este Ejercicio vamos a rehacer los gráficos del ejemplo anterior, pero primero cambiando el algoritmo de búsqueda y luego comparando ambos algoritmos.</p>
+<ol>
+<li>Usando <code>experimento_secuencial_promedio(lista, m, k)</code> como base, escribí una función <code>experimento_binario_promedio(lista, m, k)</code> que cuente la cantidad de comparaciones que realiza en promedio (entre <code>k</code> experimentos elementales) la búsqueda binaria sobre la lista pasada como parámetro.</li>
+<li>Graficá los resultados de estos experimentos para listas de largo entre 1 y 256.</li>
+<li>Graficá ambas curvas en una misma figura, nombrando adecuadamente las curvas, los ejes y la figura completa. Jugá con <code>xlim</code> e <code>ylim</code> para visualizar bien las dos curvas, aunque tengas que restringir el rango.</li>
+<li>¿Qué observas en estos gráficos? ¿Qué podés decir sobre la complejidad de cada algoritmo? ¿Son similares?</li>
+</ol>
+<p>El código de este ejercicio guardalo en <code>plot_bbin_vs_bsec.py</code>.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../06_Complejidad/">Anterior (6 Complejidad de algoritmos)</a> | <a href="../08_Cierre/">Próximo (8 Cierre de la clase)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../08_Cierre/" class="btn btn-neutral float-right" title="08 Cierre">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../06_Complejidad/" class="btn btn-neutral" title="06 Complejidad"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../06_Complejidad/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../08_Cierre/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

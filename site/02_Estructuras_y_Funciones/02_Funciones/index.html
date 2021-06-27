@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/02_Estructuras_y_Funciones/02_Funciones/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>02 Funciones - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "02 Funciones";
+    var mkdocs_page_input_path = "02_Estructuras_y_Funciones/02_Funciones.md";
+    var mkdocs_page_url = "/python_unsam_test/02_Estructuras_y_Funciones/02_Funciones/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">02 Funciones</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#funciones-a-medida">Funciones a medida</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funciones-de-la-biblioteca">Funciones de la biblioteca</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errores-y-excepciones">Errores y excepciones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#atrapar-y-administrar-excepciones">Atrapar y administrar excepciones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generar-excepciones">Generar excepciones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-25-definir-una-funcion">Ejercicio 2.5: Definir una función</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-26-transformar-un-script-en-una-funcion">Ejercicio 2.6: Transformar un script en una función</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-27-buscar-precios">Ejercicio 2.7: Buscar precios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-28-administracion-de-errores">Ejercicio 2.8: Administración de errores</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-29-funciones-de-la-biblioteca">Ejercicio 2.9: Funciones de la biblioteca</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-210-ejecucion-desde-la-linea-de-comandos-con-parametros">Ejercicio 2.10: Ejecución desde la línea de comandos con parámetros</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>02 Estructuras y Funciones &raquo;</li>
+        
+      
+    
+    <li>02 Funciones</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Archivos/">Anterior (1 Manejo de archivos)</a> | <a href="../03_TiposDatos/">Próximo (3 Tipos y estructuras de datos)</a></p>
+<h1 id="22-funciones">2.2 Funciones</h1>
+<p>A medida que tus programas se vuelven más largos y complejos, vas a necesitar organizarte. En esta sección vamos a introducir brevemente funciones y módulos de la biblioteca así como también la administración de errores y excepciones.</p>
+<h3 id="funciones-a-medida">Funciones a medida</h3>
+<p>Usá funciones para encapsular código que quieras reutilizar. El siguiente ejemplo muestra una definición de una función:</p>
+<pre><code class="language-python">def sumcount(n):
+    '''
+    Devuelve la suma de los primeros n enteros
+    '''
+    total = 0
+    while n &gt; 0:
+        total += n
+        n -= 1
+    return total
+</code></pre>
+<p>Para llamar a una función:</p>
+<pre><code class="language-python">a = sumcount(100)
+</code></pre>
+<p>Una función es una serie de instrucciones que realiza una tarea y devuelve un resultado. La palabra  <code>return</code> es necesaria para explicitar el valor de retorno de la función.</p>
+<h3 id="funciones-de-la-biblioteca">Funciones de la biblioteca</h3>
+<p>Python trae una gran biblioteca estándar.
+Los módulos de esta biblioteca se cargan usando <code>import</code>.
+Por ejemplo:</p>
+<pre><code class="language-python">import math
+x = math.sqrt(10)
+
+import urllib.request
+u = urllib.request.urlopen('http://www.python.org/')
+data = u.read()
+</code></pre>
+<p>Vamos a estudiar bibliotecas y módulos en detalle más adelante.</p>
+<h3 id="errores-y-excepciones">Errores y excepciones</h3>
+<p>Las funciones informan los errores como excepciones. Dado que una excepción interrumpe la ejecución de una función, la misma puede generar que todo el programa se detenga si no es administrada adecuadamente.</p>
+<p>Probá por ejemplo lo siguiente en tu intérprete:</p>
+<pre><code class="language-python">&gt;&gt;&gt; int('N/A')
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;módulo&gt;
+ValueError: invalid literal for int() with base 10: 'N/A'
+&gt;&gt;&gt;
+</code></pre>
+<p>Para poder entender qué pasó (debuguear), el mensaje describe cuál fue el problema, dónde ocurrió y un poco de la historia (traceback) de los llamados que terminaron en este error.</p>
+<h3 id="atrapar-y-administrar-excepciones">Atrapar y administrar excepciones</h3>
+<p>Las excepciones pueden ser atrapadas y administradas.
+Para atrapar una excepción, se usan los comandos <code>try - except</code>. Podés probar el siguiente fragmento de código pegándolo en un archivo <a href="https://es.wikipedia.org/wiki/Foo">foo.py</a> :</p>
+<pre><code class="language-python">numero_valido=False
+while not numero_valido:
+    try:
+        a = input('Ingresá un número entero: ')
+        n = int(a)
+        numero_valido = True
+    except ValueError:
+        print('No es válido. Intentá de nuevo.')
+print(f'Ingresaste {n}.')
+</code></pre>
+<p>Si en este ejemplo el usuario ingresa por ejemplo una letra, el comando <code>n = int(a)</code> genera una excepción de tipo <code>ValueError</code>: el comando <code>numero_valido = True</code> no se ejecuta, la excepción es atrapada por el <code>except ValueError</code> y el ciclo se repite. Probalo ingresando letras, números con decimales y números enteros. Probá también qué ocurre si querés salir sin ingresar nada generando una excepción presionando las teclas <code>Ctrl+C</code>. Leé el mensaje que describe lo ocurrido:  <code>Ctrl+C</code> genera una excepción de tipo <code>KeyboardInterrupt</code> que no es atrapada.</p>
+<p>Si no especificamos el tipo de excepción que queremos atrapar, vamos a terminar atrapando todas la excepciones. Probá lo mismo que antes pero con este código.</p>
+<pre><code class="language-python">numero_valido=False
+while not numero_valido:
+    try:
+        a = input('Ingresá un número entero: ')
+        n = int(a)
+        numero_valido = True
+    except:
+        print('No es válido. Intentá de nuevo.')
+print(f'Ingresaste {n}.')
+</code></pre>
+<p>Deberías observar una diferencia: al presionar las teclas <code>Ctrl+C</code> la excepción <code>KeyboardInterrupt</code> sí es atrapada y no se termina el ciclo hasta no ingresar un número entero.</p>
+<p>Suele ser difícil saber exactamente qué tipo de errores pueden ocurrir por adelantado. Para bien o para mal, la administración de excepciones suele ir creciendo a medida que un programa va generando errores inesperados (al mejor estilo: "Uh! Me olvidé de que podía pasar esto. Deberíamos preverlo y administrarlo adecuadamente para la próxima").</p>
+<h3 id="generar-excepciones">Generar excepciones</h3>
+<p>Para generar una excepción (también diremos <em>levantar</em> una excepción, porque más cercano al término inglés "raise"), se usa el comando <code>raise</code>. Por ejemplo, si tenemos el siguiente código en el archivo <code>foo.py</code>:</p>
+<pre><code class="language-python">raise RuntimeError('¡Qué moco!')
+</code></pre>
+<p>Al correrlo va a detener la ejecución y permite rastrear la excepción leyendo el mensaje de error que imprime.</p>
+<pre><code class="language-bash">bash $ python3 foo.py
+Traceback (most recent call last):
+  File &quot;foo.py&quot;, line 21, in &lt;módulo&gt;
+    raise RuntimeError(&quot;¡Qué moco!&quot;)
+RuntimeError: ¡Qué moco!
+</code></pre>
+<p>Alternativamente, esa excepción puede ser atrapada por un bloque <code>try-except</code>, pudiendo de esta forma evitar que el programa termine.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<h3 id="ejercicio-25-definir-una-funcion">Ejercicio 2.5: Definir una función</h3>
+<p>Probá primero definir una función simple:</p>
+<pre><code class="language-python">&gt;&gt;&gt; def saludar(nombre):
+        'Saluda a alguien'
+        print('Hola', nombre)
+
+&gt;&gt;&gt; saludar('Guido')
+Hola Guido
+&gt;&gt;&gt; saludar('Paula')
+Hola Paula
+&gt;&gt;&gt;
+</code></pre>
+<p>Si la primera instrucción de una función es una cadena, sirve como documentación de la función. Probalo escribiendo <code>help(saludar)</code> para ver cómo la muestra.</p>
+<h3 id="ejercicio-26-transformar-un-script-en-una-funcion">Ejercicio 2.6: Transformar un script en una función</h3>
+<p>Transformá el programa <code>costo_camion.py</code>  (que escribiste en el <a href="../01_Archivos/#ejercicio-22-lectura-de-un-archivo-de-datos">Ejercicio 2.2</a> de la sección anterior) en una función <code>costo_camion(nombre_archivo)</code>.  Esta función recibe un nombre de archivo como entrada, lee la información sobre los cajones que cargó el camión y devuelve el costo de la carga de frutas como una variable de punto flotante.</p>
+<p>Para usar tu función, cambiá el programa de forma que se parezca a esto:</p>
+<pre><code class="language-python">def costo_camion(nombre_archivo):
+    ...
+    # Tu código
+    ...
+
+costo = costo_camion('../Data/camion.csv')
+print('Costo total:', costo)
+</code></pre>
+<p>Cuando ejecutás tu programa, deberías ver la misma salida impresa que antes. Una vez que lo hayas corrido, podés llamar interactivamente a la función escribiendo esto:</p>
+<pre><code class="language-bash">bash $ python3 -i costo_camion.py
+</code></pre>
+<p>Esto va a ejecutar el código en el programa y dejar abierto el intérprete interactivo.</p>
+<pre><code class="language-python">&gt;&gt;&gt; costo_camion('Data/camion.csv')
+47671.15
+&gt;&gt;&gt;
+</code></pre>
+<p>Es útil para testear y debuguear poder interactuar interactivamente con tu código.</p>
+<h3 id="ejercicio-27-buscar-precios">Ejercicio 2.7: Buscar precios</h3>
+<p>A partir de lo que hiciste en el <a href="../01_Archivos/#ejercicio-23-precio-de-la-naranja">Ejercicio 2.3</a>, escribí una función <code>buscar_precio(fruta)</code> que busque en archivo <code>../Data/precios.csv</code> el precio de determinada fruta (o verdura) y lo imprima en pantalla. Si la fruta no figura en el listado de precios, debe imprimir un mensaje que lo indique.</p>
+<pre><code class="language-python">&gt;&gt;&gt; buscar_precio('Frambuesa')
+El precio de un cajón de Frambuesa es: 34.35
+&gt;&gt;&gt; buscar_precio('Kale')
+Kale no figura en el listado de precios.
+</code></pre>
+<p>Guardá este código en un archivo <code>buscar_precio.py</code> para entregar al final de la clase.</p>
+<h3 id="ejercicio-28-administracion-de-errores">Ejercicio 2.8: Administración de errores</h3>
+<p>Probá correr la siguiente función ingresando tu edad real, una edad escrita con letras (como "ocho") y una edad negativa (-3):</p>
+<pre><code class="language-python">def preguntar_edad(nombre):
+    edad = int(input(f'ingresá tu edad {nombre}: '))
+    if edad&lt;0:
+        raise ValueError('La edad no puede ser negativa.')
+    return edad
+</code></pre>
+<p>Ahora probá este ejemplo que atrapa la excepción generada con <code>raise</code> y continúa la ejecución con la siguiente persona.</p>
+<pre><code class="language-python">for nombre in ['Pedro','Juan','Caballero']:
+    try:
+        edad = preguntar_edad(nombre)
+        print(f'{nombre} tiene {edad} años.')
+    except ValueError:
+        print(f'{nombre} no ingresó una edad válida.')
+</code></pre>
+<p>Vamos a usar estas ideas aplicadas al procesamiento de un archivo CSV. ¿Qué pasa si intentás usar la función <code>costo_camion()</code> con un archivo que tiene datos faltantes?</p>
+<pre><code class="language-python">&gt;&gt;&gt; costo_camion('Data/missing.csv')
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;módulo&gt;
+    File &quot;costo_camion.py&quot;, line 11, in costo_camion
+    ncajones = int(fields[1])
+ValueError: invalid literal for int() with base 10: ''
+&gt;&gt;&gt;
+</code></pre>
+<p>El programa termina con un error. A esta altura tenés que tomar una decisión. Para que el programa funcione podés editar el archivo CSV de entrada de manera de corregirlo (borrando líneas o adecuando la información) o podés modificar el código para que maneje las líneas <em>incorrectas</em> de  alguna manera.</p>
+<p>Modificá el programa <code>costo_camion.py</code> para que atrape la excepción con un bloque <code>try - except</code>, imprima un mensaje de aviso (warning) y continúe procesando el resto del archivo.</p>
+<p>Vamos a profundizar en la administración  de errores en las próximas clases.</p>
+<h3 id="ejercicio-29-funciones-de-la-biblioteca">Ejercicio 2.9: Funciones de la biblioteca</h3>
+<p>Python viene con una gran biblioteca estándar de funciones útiles. En este caso el módulo <code>csv</code> podría venirnos muy bien. Podés usarlo cada vez que tengas que leer archivos CSV. Acá va un ejemplo de cómo funciona.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import csv
+&gt;&gt;&gt; f = open('Data/camion.csv')
+&gt;&gt;&gt; rows = csv.reader(f)
+&gt;&gt;&gt; headers = next(rows)
+&gt;&gt;&gt; headers
+['nombre', 'cajones', 'precio']
+&gt;&gt;&gt; for row in rows:
+        print(row)
+
+['Lima', '100', '32.2']
+['Naranja', '50', '91.1']
+['Caqui', '150', '103.44']
+['Mandarina', '200', '51.23']
+['Durazno', '95', '40.37']
+['Mandarina', '50', '65.1']
+['Naranja', '100', '70.44']
+&gt;&gt;&gt; f.close()
+&gt;&gt;&gt;
+</code></pre>
+<p>Una cosa buena que tiene el módulo <code>csv</code> es que maneja solo una gran variedad de detalles de bajo nivel como el problema de las comillas, o la separación con comas de los datos. En la salida del último ejemplo podés ver que el lector ya sacó las comillas dobles de los nombres de las frutas de la primera columna.</p>
+<p>Modificá tu programa <code>costo_camion.py</code> para que use el módulo <code>csv</code> para leer los archivos CSV y probalo en un par de los ejemplos anteriores.</p>
+<h3 id="ejercicio-210-ejecucion-desde-la-linea-de-comandos-con-parametros">Ejercicio 2.10: Ejecución desde la línea de comandos con parámetros</h3>
+<p>En el programa <code>costo_camion.py</code>, el nombre del archivo de entrada <code>'../Data/camion.csv'</code> fue escrito en el código.</p>
+<pre><code class="language-python"># costo_camion.py
+import csv
+
+def costo_camion(nombre_archivo):
+    ...
+    # Tu código
+    ...
+
+costo = costo_camion('../Data/camion.csv')
+print('Costo total:', costo)
+</code></pre>
+<p>Esto está bien para ejercitar, pero en un programa real probablemente no harías eso ya que querrías una mayor flexibilidad. Una posibilidad es pasarle al programa el nombre del archivo que querés procesar como un parámetro cuando lo llamás desde la línea de comandos.</p>
+<p>Copiá el contenido de <code>costo_camion.py</code> a un nuevo archivo llamado <code>camion_commandline.py</code> que incorpore la lectura de parámetros por línea de comando según la sugerencia del siguiente ejemplo:</p>
+<pre><code class="language-python"># camion_commandline.py
+import csv
+import sys
+
+def costo_camion(nombre_archivo):
+    ...
+    # Tu código
+    ...
+
+if len(sys.argv) == 2:
+    nombre_archivo = sys.argv[1]
+else:
+    nombre_archivo = '../Data/camion.csv'
+
+costo = costo_camion(nombre_archivo)
+print('Costo total:', costo)
+</code></pre>
+<p><code>sys.argv</code> es una lista que contiene los argumentos que le pasamos al script al momento de llamarlo desde la línea de comandos (si es que le pasamos alguno). Por ejemplo, desde una terminal de Unix (en Windows es similar), para correr nuestro programa y que procese el mismo archivo podríamos escribir:</p>
+<pre><code class="language-bash">bash $ python3 camion_commandline.py ../Data/camion.csv
+Costo total: 47671.15
+bash $
+</code></pre>
+<p>O con el archivo <code>missing.csv</code>:</p>
+<pre><code class="language-bash">bash $ python3 camion_commandline.py ../Data/missing.csv
+...
+Costo total: 30381.15
+bash $
+</code></pre>
+<p>Si no le pasamos ningún archivo, va a mostrar el resultado para <code>camion.csv</code> porque lo indicamos con la línea <code>nombre_archivo = '../Data/camion.csv'</code>.</p>
+<p>Guardá tu programa en el archivo <code>camion_commandline.py</code> para entregar al final de la clase.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Archivos/">Anterior (1 Manejo de archivos)</a> | <a href="../03_TiposDatos/">Próximo (3 Tipos y estructuras de datos)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../03_TiposDatos/" class="btn btn-neutral float-right" title="03 TiposDatos">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../01_Archivos/" class="btn btn-neutral" title="01 Archivos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../01_Archivos/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03_TiposDatos/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

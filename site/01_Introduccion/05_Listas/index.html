@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/01_Introduccion/05_Listas/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>05 Listas - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "05 Listas";
+    var mkdocs_page_input_path = "01_Introduccion/05_Listas.md";
+    var mkdocs_page_url = "/python_unsam_test/01_Introduccion/05_Listas/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">05 Listas</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creacion-de-listas">Creación de Listas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operaciones-con-listas">Operaciones con listas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iteradores-de-listas-y-busqueda">Iteradores de listas y búsqueda</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#borrar-elementos">Borrar elementos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ordenar-una-lista">Ordenar una lista</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#listas-y-matematica">Listas y matemática</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-122-extraccion-y-reasignacion-de-elementos">Ejercicio 1.22: Extracción y reasignación de elementos.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-123-ciclos-sobre-listas">Ejercicio 1.23: Ciclos sobre listas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-124-test-de-pertenencia">Ejercicio 1.24: Test de pertenencia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-125-adjuntar-insertar-y-borrar-elementos">Ejercicio 1.25: Adjuntar, insertar y borrar elementos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-126-sorting">Ejercicio 1.26: Sorting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-127-juntar-multiples-cadenas">Ejercicio 1.27: Juntar múltiples cadenas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-128-listas-de-cualquier-cosa">Ejercicio 1.28: Listas de cualquier cosa</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-129-traductor-rustico-al-lenguaje-inclusivo">Ejercicio 1.29: Traductor (rústico) al lenguaje inclusivo</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>01 Introduccion &raquo;</li>
+        
+      
+    
+    <li>05 Listas</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_Strings/">Anterior (4 Cadenas)</a> | <a href="../06_CierreClase/">Próximo (6 Cierre de la clase)</a></p>
+<h1 id="15-listas">1.5 Listas</h1>
+<p>En esta sección estudiaremos listas que es el tipo de datos primitivo de Python para guardar colecciones ordenadas de valores.</p>
+<h3 id="creacion-de-listas">Creación de Listas</h3>
+<p>Usá corchetes para definir una lista:</p>
+<pre><code class="language-python">nombres = [ 'Rosita', 'Manuel', 'Luciana' ]
+nums = [ 39, 38, 42, 65, 111]
+</code></pre>
+<p>A veces las listas son creadas con otros métodos. Por ejemplo, los elementos de una cadena pueden ser separados en una lista usando el método <code>split()</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; line = 'Pera,100,490.10'
+&gt;&gt;&gt; row = line.split(',') #la coma indica el elemento que separa
+&gt;&gt;&gt; row
+['Pera', '100', '490.10']
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="operaciones-con-listas">Operaciones con listas</h3>
+<p>Las listas pueden almacenar elementos de cualquier tipo. Podés agregar nuevos elementos usando <code>append()</code>:</p>
+<pre><code class="language-python">nombres.append('Mauro')     # Lo agrega al final
+</code></pre>
+<p>Usá el símbolo de adición <code>+</code> para concatenar listas:</p>
+<pre><code class="language-python">s = [1, 2, 3]
+t = ['a', 'b']
+s + t           # [1, 2, 3, 'a', 'b']
+</code></pre>
+<p>Las listas se indexan con números enteros, comenzando en 0.</p>
+<pre><code class="language-python">nombres = [ 'Rosita', 'Manuel', 'Luciana' ]
+
+nombres[0]  # 'Rosita'
+nombres[1]  # 'Manuel'
+nombres[2]  # 'Luciana'
+</code></pre>
+<p>Los índices negativos cuentan desde el final.</p>
+<pre><code class="language-python">nombres[-1] # 'Luciana'
+</code></pre>
+<p>Podés cambiar cualquier elemento de una lista.</p>
+<pre><code class="language-python">nombres[1] = 'Juan Manuel'
+nombres                     # [ 'Rosita', 'Juan Manuel', 'Luciana' ]
+</code></pre>
+<p>Y podés insertar elementos en una posición. Acordate que los índices comienzan a contar desde el 0.</p>
+<pre><code class="language-python">nombres.insert(2, 'Iratxe') # Lo inserta en la posición 2. 
+nombres.insert(0, 'Iratxe') # Lo inserta como primer elemento. 
+</code></pre>
+<p>La función <code>len</code> permite obtener la longitud de una lista.</p>
+<pre><code class="language-python">nombres = ['Rosita','Manuel','Luciana']
+len(nombres)  # 3
+</code></pre>
+<p>Test de pertenencia a la lista (<code>in</code>, <code>not in</code>).</p>
+<pre><code class="language-python">'Rosita' in nombres     # True
+'Diego' not in nombres  # True
+</code></pre>
+<p>Se puede replicar una lista (<code>s * n</code>).</p>
+<pre><code class="language-python">s = [1, 2, 3]
+s * 3   # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+</code></pre>
+<h3 id="iteradores-de-listas-y-busqueda">Iteradores de listas y búsqueda</h3>
+<p>Usá el comando  <code>for</code> para iterar sobre los elementos de una lista.</p>
+<pre><code class="language-python">for nombre in nombres:
+    # usá nombre
+    # e.g. print(nombre)
+    ...
+</code></pre>
+<p>Para encontrar rápidamente la posición de un elemento en una lista, usá <code>index()</code>.</p>
+<pre><code class="language-python">nombres = ['Rosita','Manuel','Luciana']
+nombres.index('Luciana')   # 2
+</code></pre>
+<p>Si el elemento está presente en más de una posición, <code>index()</code> te va a devolver el índice de la primera aparición. Si el elemento no está en la lista se va a generar una excepción de tipo <code>ValueError</code>.</p>
+<h3 id="borrar-elementos">Borrar elementos</h3>
+<p>Podés borrar elementos de una lista tanto usando el valor del elemento como su posición:</p>
+<pre><code class="language-python"># Usando el valor
+nombres.remove('Luciana')
+
+# Usando la posición
+del nombres[1]
+</code></pre>
+<p>Al borrar un elemento no se genera un hueco. Los siguientes elementos se moverán para llenar el vacío. Si hubiera más de una aparición de un valor, <code>remove()</code> sólo sacará la primera aparición.</p>
+<h3 id="ordenar-una-lista">Ordenar una lista</h3>
+<p>Las listas pueden ser ordenadas "in-place", es decir, sin usar nuevas variables.</p>
+<pre><code class="language-python">s = [10, 1, 7, 3]
+s.sort()                    # [1, 3, 7, 10]
+
+# Orden inverso
+s = [10, 1, 7, 3]
+s.sort(reverse=True)        # [10, 7, 3, 1]
+
+# Funciona con cualquier tipo de datos que tengan orden
+s = ['foo', 'bar', 'spam']
+s.sort()                    # ['bar', 'foo', 'spam']
+</code></pre>
+<p>Usá <code>sorted()</code> si querés generar una nueva lista ordenada en lugar de ordenar la misma:</p>
+<pre><code class="language-python">t = sorted(s)               # s queda igual, t guarda los valores ordenados
+</code></pre>
+<h3 id="listas-y-matematica">Listas y matemática</h3>
+<p><em>Cuidado: Las listas no fueron diseñadas para realizar operaciones matemáticas.</em></p>
+<pre><code class="language-python">&gt;&gt;&gt; nums = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; nums * 2
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; nums + [10, 11, 12, 13, 14]
+[1, 2, 3, 4, 5, 10, 11, 12, 13, 14]
+</code></pre>
+<p>Específicamente, las listas no representan vectores ni matrices como en MATLAB, Octave, R, etc. Sin embargo, hay paquetes de Python que hacen muy bien ese trabajo (por ejemplo <a href="https://numpy.org">numpy</a>).</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>En este ejercicio, vamos a experimentar con el tipo de dato <em>lista</em> de  Python. En la última sección, trabajaste con cadenas que hacían referencia a cajones de frutas.</p>
+<pre><code class="language-python">&gt;&gt;&gt; frutas = 'Frambuesa,Manzana,Naranja,Mandarina,Banana,Sandía,Pera'
+</code></pre>
+<p>Armá una lista con los nombres de frutas usando el comando <code>split()</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas = frutas.split(',')
+</code></pre>
+<h3 id="ejercicio-122-extraccion-y-reasignacion-de-elementos">Ejercicio 1.22: Extracción y reasignación de elementos.</h3>
+<p>Probá un par de estos comandos para extraer un elemento:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas[0]
+'Frambuesa'
+&gt;&gt;&gt; lista_frutas[1]
+'Manzana'
+&gt;&gt;&gt; lista_frutas[-1]
+'Pera'
+&gt;&gt;&gt; lista_frutas[-2]
+'Sandía'
+&gt;&gt;&gt;
+</code></pre>
+<p>Intentá reasignar un valor:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas[2] = 'Granada'
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Manzana', 'Granada', 'Mandarina', 'Banana', 'Sandía', 'Pera']
+&gt;&gt;&gt;
+</code></pre>
+<p>Hacé unas rebanadas (slices) de la lista:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas[0:3]
+['Frambuesa', 'Manzana', 'Granada']
+&gt;&gt;&gt; lista_frutas[-2:]
+['Sandía', 'Pera']
+&gt;&gt;&gt;
+</code></pre>
+<p>Creá una lista vacía y agregale un elemento.</p>
+<pre><code class="language-python">&gt;&gt;&gt; compra = []
+&gt;&gt;&gt; compra.append('Pera')
+&gt;&gt;&gt; compra
+['Pera']
+</code></pre>
+<p>Podés incluso reasignar una lista a una porción de otra lista. Por ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas[-2:] = compra
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Manzana', 'Granada', 'Mandarina', 'Banana', 'Pera']
+&gt;&gt;&gt;
+</code></pre>
+<p>Cuando hacés esto, la lista del lado izquierdo (<code>lista_frutas</code>) va a cambiar su tamaño para que encaje la lista del lado derecho (<code>compra</code>).
+En el ejemplo de arriba los últimos dos elementos de la <code>lista_frutas</code> fueron reemplazados por un solo elemento en la lista <code>compra</code>.</p>
+<h3 id="ejercicio-123-ciclos-sobre-listas">Ejercicio 1.23: Ciclos sobre listas</h3>
+<p>El ciclo <code>for</code> funciona iterando sobre datos en una secuencia. Antes vimos que podíamos iterar sobre los caracteres de una cadena (las cadenas son secuencias). Ahora veremos que podemos iterar sobre listas también.
+Verificá esto tipeando lo que sigue y viendo qué pasa:</p>
+<pre><code class="language-python">&gt;&gt;&gt; for s in lista_frutas:
+        print('s =', s)
+</code></pre>
+<h3 id="ejercicio-124-test-de-pertenencia">Ejercicio 1.24: Test de pertenencia</h3>
+<p>Usá los operadores <code>in</code> o <code>not in</code> para verificar si <code>'Granada'</code>,<code>'Lima'</code>, y <code>'Limon'</code> pertenecen a la lista de frutas.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # ¿Está 'Granada' IN `lista_frutas`?
+True
+&gt;&gt;&gt; # ¿Está 'Lima' IN `lista_frutas`?
+False
+&gt;&gt;&gt; # ¿Está 'Limon' NOT IN `lista_frutas`?
+True
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-125-adjuntar-insertar-y-borrar-elementos">Ejercicio 1.25: Adjuntar, insertar y borrar elementos</h3>
+<p>Usá el método  <code>append()</code> para agregar <code>'Mango'</code> al final de <code>lista_frutas</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # agregar 'Mango'
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Manzana', 'Granada', 'Mandarina', 'Banana', 'Pera', 'Mango']
+&gt;&gt;&gt;
+</code></pre>
+<p>Usá el método <code>insert()</code> para agregar <code>'Lima'</code> como segundo elemento de la lista.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # Insertar 'Lima' como segundo elemento
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Lima', 'Manzana', 'Granada', 'Mandarina', 'Banana', 'Pera', 'Mango']
+&gt;&gt;&gt;
+</code></pre>
+<p>Usá el método <code>remove()</code> para borrar <code>'Mandarina'</code> de la lista.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # Borrar 'Mandarina'
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Lima', 'Manzana', 'Granada', 'Banana', 'Pera', 'Mango']
+&gt;&gt;&gt;
+</code></pre>
+<p>Agregá una segunda copia de <code>'Banana'</code> al final de la lista.</p>
+<p><em>Observación: es perfectamente válido tener valores duplicados en una lista.</em></p>
+<pre><code class="language-python">&gt;&gt;&gt; # Agregar 'Banana'
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Lima', 'Manzana', 'Granada', 'Banana', 'Pera', 'Mango', 'Banana']
+&gt;&gt;&gt;
+</code></pre>
+<p>Usá el método <code>index()</code> para determinar la posición de la primera aparición de <code>'Banana'</code> en la lista.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # Encontrar la primera aparición de 'Banana'
+&gt;&gt;&gt; lista_frutas
+4
+&gt;&gt;&gt; lista_frutas[4]
+'Banana'
+&gt;&gt;&gt;
+</code></pre>
+<p>Contá la cantidad de apariciones de <code>'Banana'</code> en la lista:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas.count('Banana')
+2
+&gt;&gt;&gt;
+</code></pre>
+<p>Borrá la primera aparición de  <code>'Banana'</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; # Borrar la primer aparición de 'Banana'
+&gt;&gt;&gt; lista_frutas
+['Frambuesa', 'Lima', 'Manzana', 'Granada', 'Pera', 'Mango', 'Banana']
+&gt;&gt;&gt;
+</code></pre>
+<p>Para que sepas, no hay un método que permita encontrar o borrar <em>todas</em> las apariciones de un elemento en un a lista. Más adelante veremos una forma elegante de hacerlo.</p>
+<h3 id="ejercicio-126-sorting">Ejercicio 1.26: Sorting</h3>
+<p>¿Querés ordenar una lista? Usá el método <code>sort()</code>. Probalo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas.sort()
+&gt;&gt;&gt; lista_frutas
+['Banana', 'Frambuesa', 'Granada', 'Lima', 'Mango', 'Manzana', 'Pera']
+&gt;&gt;&gt;
+</code></pre>
+<p>¿Y si ordenamos al revés?</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas.sort(reverse=True)
+&gt;&gt;&gt; lista_frutas
+['Pera', 'Manzana', 'Mango', 'Lima', 'Granada', 'Frambuesa', 'Banana']
+&gt;&gt;&gt;
+</code></pre>
+<p>Observación: acordate de que el método <code>sort()</code> modifica el contenido de la misma lista <em>in-place</em>. Los elementos son reordenados moviéndolos de una posición a otra, pero no se crea una nueva lista.</p>
+<h3 id="ejercicio-127-juntar-multiples-cadenas">Ejercicio 1.27: Juntar múltiples cadenas</h3>
+<p>Si querés juntar las cadenas en una lista, usá el método <code>join()</code> de los strings como sigue (ojo: parece un poco raro al principio).</p>
+<pre><code class="language-python">&gt;&gt;&gt; lista_frutas = ['Banana', 'Mango', 'Frambuesa', 'Pera', 'Granada', 'Manzana', 'Lima']
+&gt;&gt;&gt; a = ','.join(lista_frutas)
+&gt;&gt;&gt; a
+'Banana,Mango,Frambuesa,Pera,Granada,Manzana,Lima'
+&gt;&gt;&gt; b = ':'.join(lista_frutas)
+&gt;&gt;&gt; b
+'Banana:Mango:Frambuesa:Pera:Granada:Manzana:Lima'
+&gt;&gt;&gt; c = ''.join(lista_frutas)
+&gt;&gt;&gt; c
+'BananaMangoFrambuesaPeraGranadaManzanaLima'
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-128-listas-de-cualquier-cosa">Ejercicio 1.28: Listas de cualquier cosa</h3>
+<p>Las listas pueden contener cualquier tipo de objeto, incluyendo otras listas (serían 'listas anidadas').</p>
+<p>Probá esto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; nums = [101, 102, 103]
+&gt;&gt;&gt; items = ['spam', lista_frutas, nums]
+&gt;&gt;&gt; items
+['spam', ['Banana', 'Mango', 'Frambuesa', 'Pera', 'Granada', 'Manzana', 'Lima'], [101, 102, 103]]
+</code></pre>
+<p>Fijate bien el output. <code>items</code> es una lista con tres elementos. El primero es un string, pero los otros dos elementos son listas.</p>
+<p>Podés acceder a los elementos de las listas anidadas usando múltiples operaciones de acceso por índice.</p>
+<pre><code class="language-python">&gt;&gt;&gt; items[0]
+'spam'
+&gt;&gt;&gt; items[0][0]
+'s'
+&gt;&gt;&gt; items[1]
+['Banana', 'Mango', 'Frambuesa', 'Pera', 'Granada', 'Manzana', 'Lima']
+&gt;&gt;&gt; items[1][1]
+'Mango'
+&gt;&gt;&gt; items[1][1][2]
+'n'
+&gt;&gt;&gt; items[2]
+[101, 102, 103]
+&gt;&gt;&gt; items[2][1]
+102
+&gt;&gt;&gt;
+</code></pre>
+<p>A pesar de que es técnicamente posible hacer una estructura de listas muy complicada, como regla general, es mejor mantener las cosas simples. Lo más usual es guardar en las listas muchos elementos del mismo tipo. Por ejemplo, una lista sólo de números o una lista de cadenas. Mezclar diferentes tipos de datos en una misma lista puede volverse conceptualmente difuso, así que mejor lo evitamos.</p>
+<h3 id="ejercicio-129-traductor-rustico-al-lenguaje-inclusivo">Ejercicio 1.29: Traductor (rústico) al lenguaje inclusivo</h3>
+<p>Queremos hacer un traductor que cambie las palabras masculinas de una frase por su versión neutra. Como primera aproximación, completá el siguiente código para reemplazar todas las letras 'o' que figuren en el último o anteúltimo caracter de cada palabra por una 'e'. Por ejemplo 'todos somos programadores' pasaría a ser 'todes somes programadores'. Guardá tu código en el archivo <code>inclusive.py</code></p>
+<pre><code class="language-python">&gt;&gt;&gt; frase = 'todos somos programadores'
+&gt;&gt;&gt; palabras = frase.split()
+&gt;&gt;&gt; for palabra in palabras:
+        if ?
+        ...
+    frase_t = ?
+    print(frase_t)
+'todes somes programadores'
+&gt;&gt;&gt;
+</code></pre>
+<p>Probá tu código con 'Los hermanos sean unidos porque ésa es la ley primera', '¿cómo transmitir a los otros el infinito Aleph?' y 'Todos, tu también'. ¿Qué falla en esta última? (¡no hace falta que lo resuelvas!)</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_Strings/">Anterior (4 Cadenas)</a> | <a href="../06_CierreClase/">Próximo (6 Cierre de la clase)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../06_CierreClase/" class="btn btn-neutral float-right" title="06 CierreClase">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../04_Strings/" class="btn btn-neutral" title="04 Strings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../04_Strings/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../06_CierreClase/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/11_Recursion/02_Recursion/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>02 Recursion - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "02 Recursion";
+    var mkdocs_page_input_path = "11_Recursion/02_Recursion.md";
+    var mkdocs_page_url = "/python_unsam_test/11_Recursion/02_Recursion/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">02 Recursion</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#la-recursion-y-como-puede-ser-que-funcione">La recursión y cómo puede ser que funcione</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#una-funcion-recursiva-matematica">Una función recursiva matemática</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-111">Ejercicio 11.1:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#algoritmos-recursivos-y-algoritmos-iterativos">Algoritmos recursivos y algoritmos iterativos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#un-ejemplo-de-recursion-elegante">Un ejemplo de recursión elegante</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#un-ejemplo-de-recursion-poco-eficiente">Un ejemplo de recursión poco eficiente</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>11 Recursion &raquo;</li>
+        
+      
+    
+    <li>02 Recursion</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Introduccion/">Anterior (1 Introducción)</a> | <a href="../03_Diseno_Recursivo/">Próximo (3 Diseño de algoritmos recursivos)</a></p>
+<h1 id="112-intro-a-la-recursion">11.2 Intro a la Recursión</h1>
+<p>Para esta sección y las dos siguientes hay un <a href="https://youtu.be/C0o-KuY-BNs">video</a> donde introducimos el tema de recursión y vemos algunos ejemplos.</p>
+<h2 id="la-recursion-y-como-puede-ser-que-funcione">La recursión y cómo puede ser que funcione</h2>
+<p>Estamos acostumbrados a escribir funciones que llaman a otras funciones.
+Pero lo cierto es que nada impide que en Python (y en muchos otros
+lenguajes) una función se llame a sí misma. Y lo más interesante es que
+esta propiedad, que se llama <em>recursión</em>, permite en muchos casos
+encontrar soluciones muy elegantes para determinados problemas.</p>
+<p>En materias de matemática se estudian los razonamientos por inducción para
+probar propiedades de números enteros y la recursión no es más que una
+generalización de la inducción a más estructuras: las listas, las cadenas
+de caracteres, las funciones, etc.</p>
+<p><img alt="Una imagen recursiva: la publicidad de Cacao Droste." src="../cartel.png" /></p>
+<p>A continuación estudiaremos diversas situaciones en las cuales aparece la
+recursión, veremos cómo es que esto puede funcionar, algunas situaciones en
+las que es conveniente utilizarla y otras situaciones en las que no.</p>
+<h3 id="una-funcion-recursiva-matematica">Una función recursiva matemática</h3>
+<p>Es muy común tener definiciones inductivas de operaciones. Un caso paradigmático es la del factorial. Recordemos que el factorial de un número entero positivo n es el producto de todos los números entre 1 y n. La definición usual, inductiva, es la siguiente:</p>
+<pre><code>1! = 1 
+n! = n * (n-1)! si n&gt;1
+</code></pre>
+<p>Este tipo de definición se traduce naturalmente en una función en Python:</p>
+<pre><code class="language-python">def factorial(n):
+    &quot;&quot;&quot;Precondición: n entero positivo
+       Devuelve: n!&quot;&quot;&quot;
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+</code></pre>
+<p>Ésta es la ejecución del factorial para <code>n = 1</code> y para <code>n = 3</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; factorial(1)
+1
+&gt;&gt;&gt; factorial(3)
+6
+</code></pre>
+<p>El sentido de la instrucción
+<code>n * factorial(n - 1)</code> es exactamente el mismo que el de la
+definición inductiva: para calcular el factorial de <code>n</code> se debe multiplicar
+<code>n</code> por el factorial de <code>n-1</code>.</p>
+<p>Dos piezas fundamentales para garantizar el funcionamiento de este programa
+son:</p>
+<ul>
+<li>Que se defina un <em>caso base</em> (en este caso la indicación <em>no recursiva</em> de cómo calcular <code>factorial(1)</code>).</li>
+<li>Que el argumento de la función respete la precondición de que <code>n</code> debe ser un entero mayor o igual que 1.</li>
+</ul>
+<p>No es increíble que esto pueda funcionar adecuadamente en un lenguaje
+de programación?</p>
+<h3 id="ejercicio-111">Ejercicio 11.1:</h3>
+<p>Para poder analizar qué sucede a cada paso de la ejecución de la función,
+utilizaremos una versión más detallada del mismo código, en la que el resultado
+de cada paso se asigna a una variable.</p>
+<pre><code class="language-python">def factorial(n):
+    if n == 1:
+        r = 1
+        return r
+
+    f = factorial(n-1)
+    r = n * f
+    return r
+</code></pre>
+<p>Esta porción de código funciona exactamente igual que la anterior, pero nos
+permite ponerles nombres a los resultados intermedios de cada operación
+para poder estudiar qué sucede a cada paso. Analizá con tu debugger la ejecución de <code>factorial(3)</code>.</p>
+<h2 id="algoritmos-recursivos-y-algoritmos-iterativos">Algoritmos recursivos y algoritmos iterativos</h2>
+<p>Llamaremos <em>algoritmos recursivos</em> a aquellos que realizan llamadas
+recursivas para llegar al resultado, y <em>algoritmos iterativos</em> a
+aquellos que llegan a un resultado a través de una iteración mediante un
+ciclo definido o indefinido.</p>
+<p>Todo algoritmo recursivo puede expresarse como iterativo y viceversa.  Sin
+embargo, según las condiciones del problema a resolver podrá ser preferible
+utilizar la solución recursiva o la iterativa.</p>
+<p>Una posible implementación iterativa de la función <code>factorial</code>
+vista anteriormente sería:</p>
+<pre><code class="language-python">def factorial(n):
+    &quot;&quot;&quot;Precondición: n entero positivo
+       Devuelve: n!&quot;&quot;&quot;
+    fact = 1
+    for num in range(n, 1, -1):
+        fact *= num
+    return fact
+</code></pre>
+<p>Se puede ver que en este caso no es necesario incluir un caso base, ya que
+el mismo ciclo incluye una condición de corte, pero que sí es necesario
+incluir un acumulador, que en el caso recursivo no era necesario.</p>
+<p>Por otro lado, si hiciéramos el seguimiento de esta función, como se hizo
+para la versión recursiva, veríamos que la pila de ejecución siempre tiene un
+único marco, en el cual se van modificando los valores de <code>num</code> y
+<code>fact</code>.</p>
+<p>Es por esto que, en general, las versiones recursivas de los algoritmos
+utilizan más memoria (ya que la pila de ejecución se guarda en
+memoria) pero suelen ser más elegantes.</p>
+<h3 id="un-ejemplo-de-recursion-elegante">Un ejemplo de recursión elegante</h3>
+<p>Consideremos ahora otro problema que puede ser resuelto de forma elegante
+mediante un algoritmo recursivo.</p>
+<p>La función <code>potencia(b, n)</code> que vimos cuando hablamos de invariantes en la <a href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/#invariantes-de-ciclo">Sección 7.5</a>,
+realiza <code>n</code> iteraciones para poder obtener el valor de <code>b^n</code>.</p>
+<p>Sin embargo, es posible optimizarla teniendo en cuenta los siguientes hechos:</p>
+<pre><code>b^n = b^(n/2) * b^(n/2)                si n es par, y
+b^n = b^((n-1)/2) * b^((n-1)/2) * b    si n es impar.
+</code></pre>
+<p>Estas ecuaciones nos permiten diseñar un algoritmo muchísimo más eficiente. Esta situación guarda cierta analogía con el problema de la búsqueda en una lista ordenada. La idea es, en un paso, reducir <em>el tamaño</em> del problema a la mitad.</p>
+<p>Antes de programar cualquier función recursiva es necesario decidir cuál
+será el <em>caso base</em> y cuál el <em>paso recursivo</em>.  Para esta función,
+tomaremos <code>n=0</code> como el caso base (devolveremos <code>1</code>). El paso
+recursivo tendrá dos partes, correspondientes a los dos posibles grupos de
+valores de <code>n</code>.</p>
+<pre><code class="language-python">def potencia(b,n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0
+       Devuelve: b^n.&quot;&quot;&quot;
+
+    if n &lt;= 0:
+        # caso base
+        return 1
+
+    if n % 2 == 0:
+        # caso n par
+        p = potencia(b, n // 2)
+        return p * p
+    else:
+        # caso n impar
+        p = potencia(b, (n - 1) // 2)
+        return p * p * b
+</code></pre>
+<p>El uso de la variable <code>p</code> en este caso no es optativo, ya que
+es una de las ventajas principales de esta implementación: se aprovecha el
+resultado calculado en lugar de tener que calcularlo dos veces. Vemos que
+este código funciona correctamente:</p>
+<pre><code class="language-python">&gt;&gt;&gt; potencia(2, 10)
+1024
+&gt;&gt;&gt; potencia(3, 3)
+27
+&gt;&gt;&gt; potencia(5, 0)
+1
+</code></pre>
+<p>El orden de las llamadas, haciendo un seguimiento simplificado de la
+función será:</p>
+<pre><code>potencia(2, 10)
+  potencia(2, 5)
+    potencia(2, 2)
+      potencia(2, 1)
+        potencia(2, 0)
+          return 1
+        return 1 * 1 * 2
+      return 2 * 2
+    return 4 * 4 * 2
+  return 32 * 32
+return 1024
+</code></pre>
+<p>Se puede ver, entonces, que para calcular <code>2^10</code> se realizaron 5 llamadas a
+<code>potencia</code>, mientras que en la implementación más sencilla se
+realizaban 10 iteraciones. Y esta optimización será cada vez más importante
+a medida que aumenta <code>n</code>: por ejemplo para <code>n = 100</code> se
+realizarán 8 llamadas recursivas, y para <code>n = 1000</code> 11 llamadas.</p>
+<p>Es posible transformar este algoritmo recursivo en un algoritmo iterativo. Para ello es necesario <em>simular</em> la pila de llamadas a funciones mediante una pila que almacene los valores que sean necesarios.  En este caso, lo que apilaremos será si el valor de <code>n</code> es par o no.</p>
+<pre><code class="language-python">def potencia(b, n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0
+       Devuelve: b^n.&quot;&quot;&quot;
+
+    pila = []
+    while n &gt; 0:
+        if n % 2 == 0:
+            pila.append(True)
+            n //= 2
+        else:
+            pila.append(False)
+            n = (n - 1) // 2
+
+    p = 1
+    while pila:
+        es_par = pila.pop()
+        if es_par:
+            p *= p
+        else:
+            p *= p * b
+
+    return p
+</code></pre>
+<p>Como se puede ver, este código es mucho más complejo que la versión recursiva.
+Esto se debe a que utilizando recursión el uso de la pila de llamadas a
+funciones oculta el proceso de apilado y desapilado y permite concentrarse
+en la parte importante del algoritmo.</p>
+<h3 id="un-ejemplo-de-recursion-poco-eficiente">Un ejemplo de recursión poco eficiente</h3>
+<p>Del ejemplo anterior se podría deducir que siempre es mejor utilizar algoritmos
+recursivos; sin embargo --como dijimos antes-- cada situación merece ser analizada por separado.</p>
+<p>Un ejemplo clásico en el cual la recursión tiene un resultado muy poco
+eficiente es el de los números de Fibonacci. La sucesión de Fibonacci está
+definida por la siguiente relación:</p>
+<pre><code>F(0) = 0
+F(1) = 1
+F(n) = F(n - 1) + F(n - 2)  si n &gt; 1
+</code></pre>
+<p>Los primeros números de esta sucesión son: <code>0</code>, <code>1</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>5</code>, <code>8</code>,
+<code>13</code>, <code>21</code>, <code>34</code>, <code>55</code>. La sucesión tiene numerosas aplicaciones en computación y matemática y también aparece en configuraciones biológicas, como en las flores de girasoles, en la configuración de los ananás o las piñas de las coníferas, en la reproducción de conejos, etc. La siguiente imagen muestra su uso para aproximar una espiral áurea:</p>
+<p><img alt="Espiral a partir de la sucesión de Fibonacci" src="./280px-Fibonacci_spiral_34.bmp" /></p>
+<p>Dada la definición recursiva de la sucesión, puede resultar muy tentador
+escribir una función que calcule en valor de <code>fib(n)</code> de la siguiente
+forma:</p>
+<pre><code class="language-python">def fib(n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0.
+       Devuelve: el número de Fibonacci número n.&quot;&quot;&quot;
+    if n == 0:
+        res = 0
+    elif n == 1:
+        res = 1
+    else:
+        res = fib(n - 1) + fib(n - 2)
+    return res
+</code></pre>
+<p>Si bien esta implementación es muy sencilla y elegante, también es extremadamente poco eficiente: para calcular <code>fib(n - 1)</code> es necesario calcular
+<code>fib(n - 2)</code>, que luego volverá a ser calculado para obtener el valor
+<code>fib(n)</code>.</p>
+<p>Por ejemplo, una simple llamada a <code>fib(5)</code>, generaría
+recursivamente todas las llamadas ilustradas en el siguiente gráfico. Puede verse que muchas de estas llamadas están repetidas, generando un
+total de 15 llamadas a la función <code>fib</code>, sólo para devolver el
+valor <code>F(5)</code>.</p>
+<p><img alt="Árbol de llamadas para fib(5)" src="../fib5.jpg" /></p>
+<p>En este caso, será mucho más conveniente utilizar una versión iterativa,
+que vaya almacenando los valores de las dos variables anteriores a medida
+que los va calculando.</p>
+<pre><code class="language-python">def fib(n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0.
+       Devuelve: el número de Fibonacci número n.&quot;&quot;&quot;
+    if n == 0 or n == 1:
+        return n
+    ant2 = 0
+    ant1 = 1
+    for i in range(2, n + 1):
+        fibn = ant1 + ant2
+        ant2 = ant1
+        ant1 = fibn
+    return fibn
+</code></pre>
+<p>Vemos que el caso base es el mismo para ambos algoritmos, pero que en el
+caso iterativo se calcula el número de Fibonacci de forma incremental, de
+modo que para obtener el valor de <code>fib(n)</code> se harán <code>n-1</code>
+iteraciones.</p>
+<p><em>En resumen</em>: vimos que un algoritmo recursivo <strong>no</strong> es necesariamente mejor que uno iterativo, ni viceversa. En cada situación es conveniente analizar cuál algoritmo provee una solución más clara y eficiente. </p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Introduccion/">Anterior (1 Introducción)</a> | <a href="../03_Diseno_Recursivo/">Próximo (3 Diseño de algoritmos recursivos)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../03_Diseno_Recursivo/" class="btn btn-neutral float-right" title="03 Diseno Recursivo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../01_Introduccion/" class="btn btn-neutral" title="01 Introduccion"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../01_Introduccion/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03_Diseno_Recursivo/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

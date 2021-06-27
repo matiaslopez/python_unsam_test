@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>07 Matplotlib - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "07 Matplotlib";
+    var mkdocs_page_input_path = "07_Plt_Especificacion_y_Documentacion/07_Matplotlib.md";
+    var mkdocs_page_url = "/python_unsam_test/07_Plt_Especificacion_y_Documentacion/07_Matplotlib/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">07 Matplotlib</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pyplot">pyplot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#un-plot-simple">Un plot simple</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#el-ploteo-estandar">El ploteo estándar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#un-grafico-basico">Un gráfico básico</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#detalles-de-un-plot-simple">Detalles de un plot simple</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#como-cambiar-los-colores-y-ancho-de-los-trazos">Cómo cambiar los colores y ancho de los trazos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limites-de-los-ejes">Límites de los ejes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#marcas-en-los-ejes">Marcas en los ejes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#texto-de-las-marcas-en-los-ejes">Texto de las marcas en los ejes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#movamos-el-contorno">Movamos el contorno</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pongamosle-un-titulo">Pongámosle un título</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#algunos-puntos-interesantes">Algunos puntos interesantes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#el-diablo-esta-en-los-detalles">El diablo está en los detalles</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#figuras-subplots-ejes-y-marcas-ticks">Figuras, subplots, ejes y marcas (ticks)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#figuras">Figuras</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subplots">Subplots</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejes">Ejes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-79-subplots-fuera-de-una-grilla">Ejercicio 7.9: Subplots fuera de una grilla</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-710-caminatas-al-azar">Ejercicio 7.10: Caminatas al azar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#optativos">Optativos:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-711-graficos-de-barras">Ejercicio 7.11: Gráficos de barras</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-712-coordenadas-polares">Ejercicio 7.12: Coordenadas polares</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-713-setear-el-color-de-un-scatter-plot">Ejercicio 7.13: Setear el color de un scatter plot</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>07 Plt Especificacion y Documentacion &raquo;</li>
+        
+      
+    
+    <li>07 Matplotlib</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../06_Estilo/">Anterior (6 Estilos de codeo)</a> | <a href="../08_Cierre/">Próximo (8 Cierre de la clase)</a></p>
+<h1 id="77-la-biblioteca-matplotlib">7.7 La biblioteca matplotlib</h1>
+<p>Matplotlib es probablemente la biblioteca de Python más usada para crear gráficos en 2D, también llamados plots. Provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados. En esta sección vamos a ver los usos  más comunes de matplotlib. En <a href="https://youtu.be/c7fR1KkvKFQ">este video</a> encontrarán una introducción breve a esta sección.</p>
+<h2 id="pyplot">pyplot</h2>
+<p><em>pyplot</em> proporciona una interfase a la biblioteca de matplotlib. Pyplot está diseñada siguiendo el estilo de Matlab y la mayoría de los comandos para graficar en pyplot tienen análogos en Matlab con argumentos similares. Explicaremos las instrucciones más importantes con ejemplos interactivos. </p>
+<pre><code class="language-python">from matplotlib import pyplot as plt
+</code></pre>
+<h2 id="un-plot-simple">Un plot simple</h2>
+<p>Para empezar, vamos a plotear las funciones <em>seno</em> y <em>coseno</em> en el mismo gráfico. Partiendo de la configuración básica, vamos a ir cambiando el gráfico paso por paso para que quede como queremos.</p>
+<p>Primero hay que obtener los datos para graficar:</p>
+<pre><code class="language-python">import numpy as np
+
+X = np.linspace(-np.pi, np.pi, 256)
+C, S = np.cos(X), np.sin(X)
+</code></pre>
+<p>Ahora tenemos un array de numpy con 256 valores que van desde -π a +π (incluído). C tiene los valores del coseno (256 valores) y S tiene los valores del seno (256 valores).</p>
+<h3 id="el-ploteo-estandar">El ploteo estándar</h3>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_1_001.png" /></p>
+<p>En Matplotlib los gráficos tienen una configuración por omisión. Cambiándolas podés configurar muchas propiedades del gráfico. Podés cambiar el tamaño de la figura, los DPI (viene de dots per inch, puntos por pulgada, y determina la resolución), el tamaño, color y estilo del trazo, las propiedades de los ejes y el cuadriculado, los textos y sus propiedades, etc. </p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+X = np.linspace(-np.pi, np.pi, 256)
+C, S = np.cos(X), np.sin(X)
+
+plt.plot(X, C)
+plt.plot(X, S)
+
+plt.show()
+</code></pre>
+<h3 id="un-grafico-basico">Un gráfico básico</h3>
+<p>En el siguiente script, hemos explicitado y comentado todas las propiedades de una figura que influyen en la apariencia de un gráfico.</p>
+<p>Cada propiedad se configuró a un valor típico y cercano al valor por omisión. Podés modificarlos y jugar con ellos para ver sus efectos sobre el gráfico. Sobre propiedades y estilos de las líneas hablaremos luego.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Crea una figura nueva, de 8x6 pulgadas, con 80 puntos por pulgada
+plt.figure(figsize=(8, 6), dpi=80)
+
+# Crea un nuevo subplot, en una grilla de 1x1
+plt.subplot(1, 1, 1)
+
+X = np.linspace(-np.pi, np.pi, 256)
+C, S = np.cos(X), np.sin(X)
+
+# Plotea el coseno con una línea azul contínua de ancho 1 (en pixeles)
+plt.plot(X, C, color=&quot;blue&quot;, linewidth=1.0, linestyle=&quot;-&quot;)
+
+# Plotea el seno con una línea verde contínua de ancho 1 (en pixeles)
+plt.plot(X, S, color=&quot;green&quot;, linewidth=1.0, linestyle=&quot;-&quot;)
+
+# Rango del eje x
+plt.xlim(-4.0, 4.0)
+
+# Ponemos marcas (ticks) en el eje x
+plt.xticks(np.linspace(-4, 4, 9))
+
+# Rango del eje y
+plt.ylim(-1.0, 1.0)
+
+# Ponemos marcas (ticks) en el eje y
+plt.yticks(np.linspace(-1, 1, 5))
+
+# Podemos grabar el gráfico (con 72 dpi)
+# plt.savefig(&quot;ejercicio_2.png)&quot;, dpi=72)
+
+# Mostramos el resultado en pantalla
+plt.show()
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_2_001.png" /></p>
+<p>Los gráficos que genera matplotlib son muy flexibles, te dejamos <a href="https://github.com/matplotlib/cheatsheets/blob/master/cheatsheets.pdf">un machete</a> resumiendo las variaciones más usuales.</p>
+<p>A continuación presentamos detalles técnicos de esta biblioteca tan útil. No hace falta que te los aprendas (igual te los vas a olvidar), ni que pruebes todas las combinaciones. Podés volver a esta página o a la <a href="https://matplotlib.org/">documentación</a> cuando lo necesites. Iguál mirá los ejercicios al final de esta sección, te pediremos que entregues el segundo.</p>
+<h2 id="detalles-de-un-plot-simple">Detalles de un plot simple</h2>
+<h3 id="como-cambiar-los-colores-y-ancho-de-los-trazos">Cómo cambiar los colores y ancho de los trazos</h3>
+<p>Ahora vamos a modificar el gráfico para que quede un poco mejor. Primero, queremos trazar el coseno en azul y el seno en rojo, y ambos con una línea algo más gruesa. Además, vamos a cambiar un poco el tamaño de la figura para hacerla apaisada. Corré el siguiente código y compará el resultado con la figura anterior.</p>
+<pre><code class="language-python">...
+plt.figure(figsize=(10, 6), dpi=80)
+plt.plot(X, C, color=&quot;blue&quot;, linewidth=2.5, linestyle=&quot;-&quot;)
+plt.plot(X, S, color=&quot;red&quot;,  linewidth=2.5, linestyle=&quot;-&quot;)
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_3_001.png" /></p>
+<h3 id="limites-de-los-ejes">Límites de los ejes</h3>
+<p>El rango de valores de los ejes es un poco angosto y necesitamos más espacio alrededor para ver claramente todos los puntos. </p>
+<pre><code class="language-python">...
+plt.xlim(X.min() * 1.1, X.max() * 1.1)
+plt.ylim(C.min() * 1.1, C.max() * 1.1)
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_4_001.png" /></p>
+<h3 id="marcas-en-los-ejes">Marcas en los ejes</h3>
+<p>Así como están, las marcas sobre los ejes no son lo más útil. Sería bueno destacar los valores interesantes para seno y coseno (+/-π,+/-π/2). Cambiémoslos para mostrar únicamente esos valores.</p>
+<pre><code class="language-python">...
+plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi])
+plt.yticks([-1, 0, +1])
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_5_001.png" /></p>
+<h3 id="texto-de-las-marcas-en-los-ejes">Texto de las marcas en los ejes</h3>
+<p>Las marcas en los ejes ahora están donde los queremos, pero el texto no es muy explícito. Aunque podemos darnos cuenta que 3.142 es π sería mejor dejarlo explícito.</p>
+<p>Al definir un valor para las marcas en los ejes podemos proveer un texto en la segunda lista de argumentos para usar como etiqueta. Fijate que vamos a usar <a href="https://es.wikipedia.org/wiki/LaTeX"><em>LaTeX</em></a> para hacer que los símbolos tengan mejor pinta (otro de los geniales inventos de Donald Knuth, el mismo acuñó el término <em>análisis de algoritmos</em>).</p>
+<pre><code class="language-python">...
+plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],
+          [r'$-\pi$', r'$-\pi/2$', r'$0$', r'$+\pi/2$', r'$+\pi$'])
+
+plt.yticks([-1, 0, +1],
+          [r'$-1$', r'$0$', r'$+1$'])
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_6_001.png" /></p>
+<h3 id="movamos-el-contorno">Movamos el contorno</h3>
+<p>El contorno es el conjunto de líneas que delimitan el área de graficación y que unen todas las marcas en los ejes. Podemos ubicarlas en cualquier posición y, hasta ahora, han estado en el extremo de cada eje. Cambiemos eso, así las ubicamos en el centro. Como hay cuatro (arriba, abajo, izquierda y derecha) vamos a esconder dos de ellas dándoles color <code>none</code> y vamos a mover la de abajo y la de la izquierda a la posición 0 del espacio de coordenadas. </p>
+<pre><code class="language-python">...
+ax = plt.gca()  # gca es 'get current axis' ó 'tomar eje actual'
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+ax.xaxis.set_ticks_position('bottom')
+ax.spines['bottom'].set_position(('data',0))
+ax.yaxis.set_ticks_position('left')
+ax.spines['left'].set_position(('data',0))
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_7_001.png" /></p>
+<h3 id="pongamosle-un-titulo">Pongámosle un título</h3>
+<p>Pongámosle nombres a los trazos al gráfico en la esquina superior izquierda. Para esto alcanza con agregar a la instrucción <code>plot</code> la palabra clave <code>label</code> y ese texto será usado para el recuadro con los nombres. </p>
+<pre><code class="language-python">...
+plt.plot(X, C, color=&quot;blue&quot;, linewidth=2.5, linestyle=&quot;-&quot;, label=&quot;coseno&quot;)
+plt.plot(X, S, color=&quot;red&quot;,  linewidth=2.5, linestyle=&quot;-&quot;, label=&quot;seno&quot;)
+
+plt.legend(loc='upper left')
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_8_001.png" /></p>
+<h3 id="algunos-puntos-interesantes">Algunos puntos interesantes</h3>
+<p>Vamos a marcar algunos puntos interesantes usando el comando <code>annotate</code>. Elegimos el valor 2π/3 y queremos marcar tanto el seno como el coseno. Vamos a dibujar una marca en la curva y una línea recta punteada. Además, vamos a usar <code>annotate</code> para mostrar texto y una flecha para destacar el valor de las funciones. </p>
+<pre><code class="language-python">...
+
+t = 2 * np.pi / 3
+plt.plot([t, t], [0, np.cos(t)], color='blue', linewidth=2.5, linestyle=&quot;--&quot;)
+plt.scatter([t, ], [np.cos(t), ], 50, color='blue')
+
+plt.annotate(r'$cos(\frac{2\pi}{3})=-\frac{1}{2}$',
+             xy=(t, np.cos(t)), xycoords='data',
+             xytext=(-90, -50), textcoords='offset points', fontsize=16,
+             arrowprops=dict(arrowstyle=&quot;-&gt;&quot;, connectionstyle=&quot;arc3,rad=.2&quot;))
+
+plt.plot([t, t],[0, np.sin(t)], color='red', linewidth=2.5, linestyle=&quot;--&quot;)
+plt.scatter([t, ],[np.sin(t), ], 50, color='red')
+
+plt.annotate(r'$sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$',
+             xy=(t, np.sin(t)), xycoords='data',
+             xytext=(+10, +30), textcoords='offset points', fontsize=16,
+             arrowprops=dict(arrowstyle=&quot;-&gt;&quot;, connectionstyle=&quot;arc3,rad=.2&quot;))
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_9_001.png" /></p>
+<h3 id="el-diablo-esta-en-los-detalles">El diablo está en los detalles</h3>
+<p>Notá (vas a tener que mirar muy de cerca) que los ejes tapan los trazos de las funciones seno y coseno, y éstas tapan los valores escritos sobre los ejes. Si esto fuera una publicación quedaría feo.</p>
+<p>Podemos hacer más grandes las marcas y los textos y ajustar sus propiedades de modo que tengan sean semi-transparentes. Esto nos permitirá ver un poco mejor los datos y los textos. </p>
+<pre><code class="language-python">...
+for label in ax.get_xticklabels() + ax.get_yticklabels():
+    label.set_fontsize(16)
+    label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65))
+...
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_exercise_10_001.png" /></p>
+<h2 id="figuras-subplots-ejes-y-marcas-ticks">Figuras, subplots, ejes y marcas (ticks)</h2>
+<p>En matplotlib el término "figura" se refiere a toda la ventana que conforma la interfase al usuarie. Dentro de esta ventana o figura pueden existir diversos subplots.</p>
+<p>Hasta acá dibujamos gráficos y creamos sus ejes de forma implícita. Esto es bueno para obtener ploteos rápidos. Pero podemos controlar mejor la apariencia de la figura que generamos si definimos todo en forma explícita. Podemos definir la figura, los subplots y los ejes.</p>
+<p>Mientras que <em>subplot</em> ubica a sus plots en posiciones espaciadas regularmente (una grilla) uno puede ubicar los <em>ejes</em> libremente en la figura. Ambas cosas pueden ser útiles, depende de qué estés buscando.</p>
+<p>Aunque trabajamos con figuras y subplots sin llamarlos explicitamente, es bueno saber que al invocar <code>plot()</code> matplotlib llama a <code>gca()</code> (get current axes) para obtener acceso a los ejes, y <code>gca()</code> a su vez llama a <code>gcf()</code> (get current figure) para obtener acceso a la figura. Si no existe tal figura, llama a <code>figure()</code> para crearla o más estrictamente hablando, para crear un un único subplot (el número 1 en una grilla de 1x1). Aunque no pidamos explícitamente crear una figura, ésta es creada cuando la necesitamos. Veamos un poco los detalles.</p>
+<h3 id="figuras">Figuras</h3>
+<p>Una "figura" es la ventana en la interfase al usuarie que lleva como título "Figura #". Las figuras se enumeran comenzando en 1. Varios parámetros  determinan la pinta que tiene una figura: </p>
+<table>
+<thead>
+<tr>
+<th>Argumento</th>
+<th>Por Omisión</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>1</td>
+<td>número de figura</td>
+</tr>
+<tr>
+<td>figsize</td>
+<td>figure.figsize</td>
+<td>tamaño de figura en pulgadas (ancho, alto)</td>
+</tr>
+<tr>
+<td>dpi</td>
+<td>figure.dpi</td>
+<td>resolución en puntos por pulgada</td>
+</tr>
+<tr>
+<td>facecolor</td>
+<td>figure.facecolor</td>
+<td>color del fondo</td>
+</tr>
+<tr>
+<td>edgecolor</td>
+<td>figure.edgecolor</td>
+<td>color del borde rodeando el fondo</td>
+</tr>
+<tr>
+<td>frameon</td>
+<td>True</td>
+<td>dibujar un recuadro para la figura ?</td>
+</tr>
+</tbody>
+</table>
+<p>Si estás trabajando en una interfaz gráfica podés cerrar una figura clickeando en la <code>X</code> de la ventana. Tambien podés cerrar una ventana desde tu programa llamando al método close(). Dependiendo del parámetro que le pases va a cerrar la figura con que estás trabajando (sin argumentos), una figura específica (como argumento le pasás el número de figura) o todas las figuras (el argumento es "all"). </p>
+<pre><code class="language-python">plt.close(1)     # Cierra la figura 1
+</code></pre>
+<p>A pesar de que en casi todo el mundo usamos el sistema métrico, increíblemente el imperialismo llega al punto que no hay un modo directo de especificar distancias o tamaños en centímetros en matplotlib. Podemos usar una función auxiliar como ésta para convertir una distancia de <em>cm</em> a <em>pulgadas</em>:</p>
+<pre><code class="language-python">def cm2inch(value):
+    return value/2.54
+
+fig = plt.figure(figsize=(cm2inch(12.8), cm2inch(9.6)))
+</code></pre>
+<h3 id="subplots">Subplots</h3>
+<p>Podés disponer tus plots en una grilla de intervalos regulares si usás <code>subplots</code>. Sólo tenés que especificar el número de filas, el de columnas y finalmente el número de subplot para activar el subplot correspondiente.</p>
+<p>Ejemplo:</p>
+<p><img alt="COPETE" src="../sphx_glr_plot_subplot-horizontal_001.png" /></p>
+<p>Ejemplo:</p>
+<p><img alt="COPETE" src="../sphx_glr_plot_subplot-vertical_001.png" /></p>
+<p>Ejemplo:</p>
+<p><img alt="COPETE" src="../sphx_glr_plot_subplot-grid_001.png" /></p>
+<h3 id="ejes">Ejes</h3>
+<p>Podés usar los ejes para ubicar los plots en cualquier lugar de la figura. Si queremos poner un pequeño gráfico como inserto en uno más grande, lo podemos hacer moviendo sus ejes.</p>
+<p>Ejemplo:</p>
+<p><img alt="COPETE" src="../sphx_glr_plot_axes_001.png" /></p>
+<p>Ejemplo:</p>
+<p><img alt="COPETE" src="../sphx_glr_plot_axes-2_001.png" /></p>
+<h2 id="ejercicios">Ejercicios:</h2>
+<p>Solo te pedimos que entregues el segundo ejercicio, los otros son optativos.</p>
+<h3 id="ejercicio-79-subplots-fuera-de-una-grilla">Ejercicio 7.9: Subplots fuera de una grilla</h3>
+<p>Modificá el siguiente código para reproducir el gráfico que se muestra. Prestá atención a cómo se numeran los subplots. </p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+fig = plt.figure()
+plt.subplot(2, 1, 1) # define la figura de arriba
+plt.plot([0,1,2],[0,1,0]) # dibuja la curva
+plt.xticks([]), plt.yticks([]) # saca las marcas
+
+plt.subplot(2, 2, 3) # define la primera de abajo, que sería la tercera si fuera una grilla regular de 2x2
+plt.plot([0,1],[0,1])
+plt.xticks([]), plt.yticks([])
+
+plt.subplot(2, 2, 4) # define la segunda de abajo, que sería la cuarta figura si fuera una grilla regular de 2x2
+plt.plot([0,1],[1,0])
+plt.xticks([]), plt.yticks([])
+
+plt.show()
+</code></pre>
+<p><img alt="COPETE" src="../ex_subplots.png" /></p>
+<h3 id="ejercicio-710-caminatas-al-azar">Ejercicio 7.10: Caminatas al azar</h3>
+<p>Una <a href="https://es.wikipedia.org/wiki/Camino_aleatorio">caminata al azar</a> o <em>random walk</em> es una formalización matemática de la trayectoria que resulta de hacer sucesivos pasos aleatorios. Por ejemplo, la ruta trazada por una molécula mientras viaja por un líquido o un gas, el camino que sigue un animal en su búsqueda de comida, el precio de una acción fluctuante y la situación financiera de un jugador pueden tratarse, bajo ciertas hipótesis, como una caminata aleatoria.</p>
+<p>El siguiente código genera una caminata al azar de <code>N</code> pasos de largo y la grafica.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def randomwalk(largo):
+    pasos=np.random.randint (-1,2,largo)    
+    return pasos.cumsum()
+
+N = 100000
+
+plt.plot(randomwalk(N))
+plt.show()
+</code></pre>
+<p>En este ejercicio te pedimos:</p>
+<ol>
+<li>Modificá el código anterior para ponerles nombres a los ejes ("tiempo" y distancia al origen") y al gráfico. </li>
+<li>Graficá 12 trayectorias en la misma figura, con diferentes colores.</li>
+<li>Usá la estructura de subplots sugerida en el <a href="./#ejercicio-79-subplots-fuera-de-una-grilla">Ejercicio 7.9</a> para graficar tres pubplots en una figura:<ul>
+<li>Arriba, grande, 12 trayectorias aleatorias como en el inciso anterior</li>
+<li>Abajo a la izquierda la trayectoria que más se aleja del origen.</li>
+<li>Abajo a la derecha la trayectoria que menos se aleja del origen.</li>
+</ul>
+</li>
+</ol>
+<p>Ojo, cuando decimos la que más o menos se aleja, nos referimos a <em>en algún momento</em>, no necesariamente a la que termina más cerca o más lejos.</p>
+<p>Guardá tu solución del inciso 3 en el archivo <code>random_walk.py</code>. Debería verse aproximadamente como este plot:</p>
+<p><img alt="RW" src="../RW.png" /></p>
+<h2 id="optativos">Optativos:</h2>
+<p>Los siguientes ejercicios profundizan en algunos estilos particulares y son optativos. Si querés ver las soluciones exactas a algunos de estos ejercicios y otros problemas más, podés consultar <a href="https://scipy-lectures.org/intro/matplotlib/index.html#other-types-of-plots-examples-and-exercises">acá</a>.</p>
+<h3 id="ejercicio-711-graficos-de-barras">Ejercicio 7.11: Gráficos de barras</h3>
+<p>Modificá el siguiente código para generar un gráfico similar al que se muestra: tenés que agregar etiquetas para las barras rojas cuidando la alineación del texto.</p>
+<pre><code class="language-python">n = 12 
+X = np.arange(n)
+Y1 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+Y2 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+plt.bar(X, +Y1, facecolor='#9999ff', edgecolor='white')
+plt.bar(X, -Y2, facecolor='#ff9999', edgecolor='white')
+for x, y in zip(X, Y1):
+    plt.text(x + 0.4, y + 0.05, '%.2f' % y, ha='right', va='bottom')
+plt.ylim(-1.25, +1.25)
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_bar_001.png" /></p>
+<h3 id="ejercicio-712-coordenadas-polares">Ejercicio 7.12: Coordenadas polares</h3>
+<p>A partir de este código, generá un gráfico como el siguiente.</p>
+<pre><code class="language-python">plt.axes([0, 0, 1, 1])
+
+N = 20
+theta = np.arange(0., 2 * np.pi, 2 * np.pi / N)
+radii = 10 * np.random.rand(N)
+width = np.pi / 4 * np.random.rand(N)
+bars = plt.bar(theta, radii, width=width, bottom=0.0)
+
+for r, bar in zip(radii, bars):
+    bar.set_facecolor(plt.cm.jet(r / 10.))
+    bar.set_alpha(0.5)
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_polar_001.png" /></p>
+<p><em>Pista</em>: sólo necesitás modifcar los ejes en la primera línea. Fijate que hay un parámetro <code>polar</code> que tiene por omisión valor <code>False</code>.</p>
+<h3 id="ejercicio-713-setear-el-color-de-un-scatter-plot">Ejercicio 7.13: Setear el color de un scatter plot</h3>
+<p>Modificá el código que sigue para generar un gráfico similar al que se muestra, prestando atención a los límites, el tamaño de las marcas, el color, y la transparencia de los trazos.</p>
+<pre><code class="language-python">n = 1024
+X = np.random.normal(0,1,n)
+Y = np.random.normal(0,1,n)
+plt.scatter(X,Y)
+</code></pre>
+<p><img alt="COPETE" src="../sphx_glr_plot_scatter_001.png" /></p>
+<p><em>Pista</em>: El color depende del ángulo que forma el vector (X,Y) con los ejes. Hay diversas formas de calcularlo.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../06_Estilo/">Anterior (6 Estilos de codeo)</a> | <a href="../08_Cierre/">Próximo (8 Cierre de la clase)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../08_Cierre/" class="btn btn-neutral float-right" title="08 Cierre">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../06_Estilo/" class="btn btn-neutral" title="06 Estilo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../06_Estilo/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../08_Cierre/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

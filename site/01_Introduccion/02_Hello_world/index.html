@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/01_Introduccion/02_Hello_world/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>02 Hello world - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "02 Hello world";
+    var mkdocs_page_input_path = "01_Introduccion/02_Hello_world.md";
+    var mkdocs_page_url = "/python_unsam_test/01_Introduccion/02_Hello_world/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">02 Hello world</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ejecutando-python">Ejecutando Python</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modo-interactivo">Modo interactivo</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#crear-programas">Crear programas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejecutar-programas">Ejecutar programas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#un-ejemplo-de-programa">Un ejemplo de programa</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comandos">Comandos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comentarios">Comentarios</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tipos">Tipos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python-distingue-mayusculas-y-minusculas">Python distingue mayúsculas y minúsculas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ciclos">Ciclos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#indentacion">Indentación</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#indentando-adecuadamente">Indentando adecuadamente</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#condicionales">Condicionales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#imprimir-en-pantalla">Imprimir en pantalla</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ingreso-de-valores-por-teclado">Ingreso de valores por teclado</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#el-comando-pass">El comando pass</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-14-debuguear">Ejercicio 1.4: Debuguear</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-15-la-pelota-que-rebota">Ejercicio 1.5: La pelota que rebota</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-16-saludos">Ejercicio 1.6: Saludos</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>01 Introduccion &raquo;</li>
+        
+      
+    
+    <li>02 Hello world</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Python/">Anterior (1 Python)</a> | <a href="../03_Numeros/">Próximo (3 Números)</a></p>
+<h1 id="12-un-primer-programa">1.2 Un primer programa</h1>
+<p>En esta sección vas a crear tu primer programa en Python, ejecutarlo y debuguearlo.</p>
+<h3 id="ejecutando-python">Ejecutando Python</h3>
+<p>Los programas en Python siempre son ejecutados en un intérprete de Python.</p>
+<p>El intérprete es una aplicación que funciona en la consola y se ejecuta desde la terminal.</p>
+<pre><code class="language-bash">python3
+Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre>
+<p>Les programadores no suelen tener problemas en usar el intérprete de esta forma, aunque no es la más cómoda para principiantes. Más adelante vamos a proponerles usar entornos de desarrollo más sofisticados, pero por el momento quedémosnos con la incomodidad que nos va a enseñar cosas útiles.</p>
+<h3 id="modo-interactivo">Modo interactivo</h3>
+<p>Cuando ejecutás Python, entrás al modo <em>interactivo</em> en el que podés experimentar.</p>
+<p>Si escribís un comando, se va a ejecutar inmediatamente. No hay ningún ciclo de edición-compilación-ejecución-debug en Python, como hay en otros lenguajes.</p>
+<pre><code class="language-python">&gt;&gt;&gt; print('hello world')
+hello world
+&gt;&gt;&gt; 37*42
+1554
+&gt;&gt;&gt; for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4
+&gt;&gt;&gt;
+</code></pre>
+<p>Esta forma de escribir código (en una consola del lenguaje) que se evalúa inmediatamente e imprime el resultado, se denomina <em>bucle de Lectura-Evaluación-Impresión</em> (REPL por las siglas en inglés de «Read-Eval-Print-Loop»). Asegurate de poder interactuar con el intérprete antes de seguir.</p>
+<p>Veamos en mayor detalle cómo funciona este REPL:</p>
+<ul>
+<li><code>&gt;&gt;&gt;</code> es el símbolo del intérprete para comenzar un nuevo comando.</li>
+<li><code>...</code> es el símbolo del intérprete para continuar con un comando comenzado antes. Dejá una línea en blanco para terminar lo que ya ingresaste.</li>
+</ul>
+<p>El símbolo <code>...</code> puede mostrarse o no dependiendo de tu entorno. En este curso lo mostraremos como líneas en blanco para facilitar el copy-paste de fragmentos de código (del que ya dijimos, ¡no hay que abusar!).</p>
+<p>Antes vimos que el guión bajo <code>_</code> guarda el último resultado.</p>
+<pre><code class="language-python">&gt;&gt;&gt; 37 * 42
+1554
+&gt;&gt;&gt; _ * 2
+3108
+&gt;&gt;&gt; _ + 50
+3158
+&gt;&gt;&gt;
+</code></pre>
+<p><em>Esto solo es válido en el modo interactivo que estamos viendo. No uses el guión bajo en un programa.</em></p>
+<h3 id="crear-programas">Crear programas</h3>
+<p>Los programas se guardan en archivos <code>.py</code>.</p>
+<pre><code class="language-python"># hello.py
+print('hello world')
+</code></pre>
+<p>Podés crear estos archivos con tu editor de texto favorito. Más adelante vamos a proponerles usar el <code>spyder</code> que es un entorno de desarrollo integrado (IDE por «Integrated Development Environment», entorno de desarrollo integrado) que permite tener en la pantalla un editor y un intérprete al mismo tiempo, entre otras cosas. Pero por ahora usemos el block de notas, el gedit o tu editor favorito para seguir estos ejemplos.</p>
+<h3 id="ejecutar-programas">Ejecutar programas</h3>
+<p>Para ejecutar un programa, correlo en la terminal con el comando  <code>python</code> seguido del nombre del archivo a ejecutar. Por ejemplo, en una línea de comandos Unix (por ejemplo Ubuntu):</p>
+<pre><code class="language-bash">bash % python hello.py
+hello world
+bash %
+</code></pre>
+<p>O en una terminal de Windows:</p>
+<pre><code>C:\SomeFolder&gt;hello.py
+hello world
+
+C:\SomeFolder&gt;c:\python36\python hello.py
+hello world
+</code></pre>
+<p>Obervación: En Windows puede ser necesario especificar el camino (path) completo al intérprete de Python como en <code>c:\python36\python</code>.
+Sin embargo, si Python está instalado del modo usual, podría alcanzar con que tipées el nombre del programa como en <code>hello.py</code>.</p>
+<p>Tené en cuenta que con estos comandos estás corriendo el código de Python desde la línea de comandos de tu sistema operativo. El código se ejecuta, Python termina y el control vuelve a la terminal, saliendo de Python. Si necesitás ejecutarlo y seguir dentro del intérprete de Python podés usar <code>python -i hello.py</code>.</p>
+<p>Si estás dentro del intérprete de Python y querés salir y volver a la línea de comandos, podés hacerlo mediante el comando <code>exit()</code>.</p>
+<h3 id="un-ejemplo-de-programa">Un ejemplo de programa</h3>
+<p>Resolvamos el siguiente problema:</p>
+<blockquote>
+<p>Una mañana ponés un billete en la vereda al lado del obelisco porteño. A partir de ahí, cada día vas y duplicás la cantidad de billetes, apilándolos prolijamente. ¿Cuánto tiempo pasa antes de que la pila de billetes sea más alta que el obelisco?</p>
+</blockquote>
+<p>Acá va una solución:</p>
+<pre><code class="language-python"># obelisco.py
+grosor_billete = 0.11 * 0.001  # grosor de un billete en metros
+altura_obelisco = 67.5         # altura en metros
+num_billetes = 1
+dia = 1
+
+while num_billetes * grosor_billete &lt;= altura_obelisco:
+    print(dia, num_billetes, num_billetes * grosor_billete)
+    dia = dia + 1
+    num_billetes = num_billetes * 2
+
+print('Cantidad de días', dia)
+print('Cantidad de billetes', num_billetes)
+print('Altura final', num_billetes * grosor_billete)
+</code></pre>
+<p>Cuando lo ejecutás, la salida será la siguiente:</p>
+<pre><code class="language-bash">bash % python3 obelisco.py
+1 1 0.00011
+2 2 0.00022
+3 4 0.00044
+4 8 0.00088
+5 16 0.00176
+6 32 0.00352
+...
+19 262144 28.83584
+20 524288 57.67168
+Cantidad de días 21
+Cantidad de billetes 1048576
+Altura final 115.34336
+</code></pre>
+<p>A continuación vamos a usar este primer programa como ejemplo para aprender algunas cosas fundamentales sobre Python.</p>
+<h3 id="comandos">Comandos</h3>
+<p>Un programa de Python es una secuencia de comandos:</p>
+<pre><code class="language-python">a = 3 + 4
+b = a * 2
+print(b)
+</code></pre>
+<p>Cada comando se termina con una nueva línea. Los comandos son ejecutados uno luego del otro hasta que el intérprete llega al final del archivo.</p>
+<h3 id="comentarios">Comentarios</h3>
+<p>Los comentarios son texto que no será ejecutado.</p>
+<pre><code class="language-python">a = 3 + 4
+# Esto es un comentario
+b = a * 2
+print(b)
+</code></pre>
+<p>Los comentarios comienzan con <code>#</code> y siguen hasta el final de la línea.</p>
+<h3 id="variables">Variables</h3>
+<p>Una variable es un nombre para un valor. Estos nombres pueden estar formados por letras (minúsculas y mayúsculas) de la a a la z. También pueden incluir el guión bajo, y se pueden usar números, salvo como primer caracter.</p>
+<pre><code class="language-python">altura = 442 # válido
+_altura = 442 # válido
+altura2 = 442 # válido
+2altura = 442 # inválido
+</code></pre>
+<h3 id="tipos">Tipos</h3>
+<p>El tipo de las variables no debe ser declarado como en otros lenguajes. El tipo es asociado con el valor del lado derecho.</p>
+<pre><code class="language-python">altura = 442           # Entero
+altura = 442.0         # Punto flotante
+altura = 'Muy, muy alto' # Cadena de caracteres
+</code></pre>
+<p>Decimos que Python tiene tipado dinámico. El tipo percibido por el intérprete puede cambiar a lo largo de la ejecución dependiendo del valor asignado a la variable.</p>
+<h3 id="python-distingue-mayusculas-y-minusculas">Python distingue mayúsculas y minúsculas</h3>
+<p>Mayúsculas y minúsculas son diferentes para Python. Por ejemplo, todas las siguientes variables son diferentes.</p>
+<pre><code class="language-python">nombre = 'David'
+Nombre = 'Diego'
+NOMBRE = 'Rosita'
+</code></pre>
+<p>Los comandos de Python siempre se escriben con minúsculas.</p>
+<pre><code class="language-python">while x &lt; 0:   # OK
+WHILE x &lt; 0:   # ERROR
+</code></pre>
+<h3 id="ciclos">Ciclos</h3>
+<p>El comando <code>while</code> ejecuta un ciclo o <em>loop</em>.</p>
+<pre><code class="language-python">while num_billetes * grosor_billete &lt;= altura_obelisco:
+    print(dia, num_billetes, num_billetes * grosor_billete)
+    dia = dia + 1
+    num_billetes = num_billetes * 2
+
+print('Cantidad de días', dia)
+</code></pre>
+<p>Los comandos indentados debajo del <code>while</code> se van a a ejecutar mientras que la expresión luego del  <code>while</code> sea verdadera (<code>True</code>).</p>
+<h3 id="indentacion">Indentación</h3>
+<p>La indentación se usa para marcar grupos de comandos que van juntos.
+Considerá el ejemplo anterior:</p>
+<pre><code class="language-python">while num_billetes * grosor_billete &lt;= altura_obelisco:
+    print(dia, num_billetes, num_billetes * grosor_billete)
+    dia = dia + 1
+    num_billetes = num_billetes * 2
+
+print('Cantidad de días', dia)
+</code></pre>
+<p>La indentación agrupa los comandos siguientes como las operaciones a repetir:</p>
+<pre><code class="language-python">    print(dia, num_billetes, num_billetes * grosor_billete)
+    dia = dia + 1
+    num_billetes = num_billetes * 2
+</code></pre>
+<p>Como el comando  <code>print()</code> del final no está indentado, no pertenece al ciclo. La línea en blanco que dejamos entre ambos solo está para facilitar la lectura y no afecta la ejecución.</p>
+<h3 id="indentando-adecuadamente">Indentando adecuadamente</h3>
+<p>Algunas recomendaciones sobre cómo indentar:</p>
+<ul>
+<li>Usá espacios y no el tabulador.</li>
+<li>Usá 4 espacios por cada nivel.</li>
+<li>Usá un editor de textos que entienda que estás escribiendo en Python.</li>
+</ul>
+<p>El único requisito del intérprete de Python es que la indentación dentro de un mismo bloque sea consistente. Por ejemplo, esto es un error:</p>
+<pre><code class="language-python">while num_billetes * grosor_billete &lt;= altura_obelisco:
+    print(dia, num_billetes, num_billetes * grosor_billete)
+        dia = dia + 1 # ERROR
+    num_billetes = num_billetes * 2
+</code></pre>
+<h3 id="condicionales">Condicionales</h3>
+<p>El comando <code>if</code> es usado para ejecutar un condicional:</p>
+<pre><code class="language-python">if a &gt; b:
+    print('Gana a')
+else:
+    print('Gana b')
+</code></pre>
+<p>Podés verificar condiciones mutuamente excluyentes agregando condiciones extras con <code>elif</code>.</p>
+<pre><code class="language-python">if a &gt; b:
+    print('Gana a')
+elif a == b:
+    print('Empate!')
+else:
+    print('Gana b')
+</code></pre>
+<p>El comando <code>elif</code> viene de <em>else, if</em> y puede traducirse como "si no se da la condición del <em>if</em> anterior, verificá si se da la siguiente".</p>
+<h3 id="imprimir-en-pantalla">Imprimir en pantalla</h3>
+<p>La función  <code>print</code> imprime una línea de texto con el valor pasado como parámetro.</p>
+<pre><code class="language-python">print('Hello world!') # Imprime 'Hello world!'
+</code></pre>
+<p>Podés imprimir variables. El texto impreso en ese caso será el valor de la variable y no su nombre.</p>
+<pre><code class="language-python">x = 100
+print(x) # imprime el texto '100'
+</code></pre>
+<p>Si le pasás más de un valor al <code>print</code> los separa con espacios.</p>
+<pre><code class="language-python">nombre = 'Juana'
+print('Mi nombre es', nombre) # Imprime el texto 'Mi nombre es Juana'
+</code></pre>
+<p><code>print()</code> siempre termina la línea impresa pasando a la siguiente.</p>
+<pre><code class="language-python">print('Hola')
+print('Mi nombre es', 'Juana')
+</code></pre>
+<p>Esto imprime:</p>
+<pre><code class="language-code">Hola
+Mi nombre es Juana
+</code></pre>
+<p>El salto de línea entre ambos comandos puede ser suprimido:</p>
+<pre><code class="language-python">print('Hola', end=' ')
+print('Mi nombre es', 'Juana')
+</code></pre>
+<p>Este código va a imprimir:</p>
+<pre><code class="language-code">Hola Mi nombre es Juana
+</code></pre>
+<h3 id="ingreso-de-valores-por-teclado">Ingreso de valores por teclado</h3>
+<p>Para leer un valor ingresado por el usuario, usá la función <code>input()</code>:</p>
+<pre><code class="language-python">nombre = input('Ingresá tu nombre:')
+print('Tu nombre es', nombre)
+</code></pre>
+<p><code>input</code> imprime el texto que le pases como parámetro y espera una respuesta. Es útil para programas pequeños, para hacer ejercicios o para debuguear un código. Casi no se lo usa en programas reales.</p>
+<h3 id="el-comando-pass">El comando pass</h3>
+<p>A veces es conveniente especificar un bloque de código que no haga nada. El comando <code>pass</code> se usa para eso.</p>
+<pre><code class="language-python">if a &gt; b:
+    pass
+else:
+    print('No ganó a')
+</code></pre>
+<p>Este comando no hace nada. Sirve para guardar el lugar para un comando que querramos agregar luego.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<h3 id="ejercicio-14-debuguear">Ejercicio 1.4: Debuguear</h3>
+<p>El siguiente fragmento de código está relacionado con el problema del obelisco. Tiene un bug, es decir, un error.</p>
+<pre><code class="language-python"># obelisco.py
+
+grosor_billete = 0.11 * 0.001 # 0.11 mm en metros
+altura_obelisco = 67.5         # altura en metros
+num_billetes = 1
+dia = 1
+
+while num_billetes * grosor_billete &lt;= altura_obelisco:
+    print(dia, num_billetes, num_billetes * grosor_billete)
+    dia = dias + 1
+    num_billetes = num_billetes * 2
+
+print('Cantidad de días', dia)
+print('Cantidad de billetes', num_billetes)
+print('Altura final', num_billetes * grosor_billete)
+</code></pre>
+<p>Copiá y pegá el código que aparece arriba en un nuevo archivo llamado <code>obelisco.py</code>. Cuando ejecutes el código vas a obtener el siguiente  mensaje de error que hace que el programa se detenga:</p>
+<pre><code class="language-code">Traceback (most recent call last):
+  File &quot;obelisco.py&quot;, line 10, in &lt;module&gt;
+    dia = dias + 1
+NameError: name 'dias' is not defined
+</code></pre>
+<p>Aprender a leer y entender los mensajes de error es una parte fundamental de programar en Python. Si tu programa <em>crashea</em> (se rompe, da error) la última línea del mensaje de error indica el motivo. Un poco más arriba vas a ver un fragmento de código, un nombre de archivo y un número de línea que identifican el problema.</p>
+<ul>
+<li>¿En qué linea está el error?</li>
+<li>¿Cuál es el error?</li>
+<li>Repará el error.</li>
+<li>Ejecutá el programa exitosamente.</li>
+</ul>
+<h3 id="ejercicio-15-la-pelota-que-rebota">Ejercicio 1.5: La pelota que rebota</h3>
+<p>Este es el primer conjunto de ejercicios en el que vas a tener que crear un archivo de Python y correrlo. A partir de aca, vamos a asumir que estás trabajando en el subdirectorio <code>ejercicios_python/</code>. Para ayudarte a organizar los archivos de diferentes clases y a ubicar el lugar correcto ya creamos algunos subdirectorios y un par de archivos en el directorio correpondiente a esta clase. Buscá en tu terminal el archivo <code>ejercicios_python/Clase01/rebotes.py</code> (cambiando de directorio como vimos recién). Lo vamos a usar en este ejercicio. </p>
+<p>Una pelota de goma es arrojada desde una altura de 100 metros y cada vez que toca el piso salta 3/5 de la altura desde la que cayó. Escribí un programa <code>rebotes.py</code> que imprima una tabla mostrando las alturas que alcanza en cada uno de sus primeros diez rebotes.</p>
+<p>Tu programa debería generar una tabla que se parezca a esta:</p>
+<pre><code class="language-code">1 60.0
+2 36.0
+3 21.599999999999998
+4 12.959999999999999
+5 7.775999999999999
+6 4.6655999999999995
+7 2.7993599999999996
+8 1.6796159999999998
+9 1.0077695999999998
+10 0.6046617599999998
+</code></pre>
+<p><em>Nota: Podés limpiar un toque la salida si usás la función round() de la que miraste el help hace un rato. Tratá de usarla para redondear a cuatro dígitos.</em></p>
+<pre><code class="language-code">1 60.0
+2 36.0
+3 21.6
+4 12.96
+5 7.776
+6 4.6656
+7 2.7994
+8 1.6796
+9 1.0078
+10 0.6047
+</code></pre>
+<h3 id="ejercicio-16-saludos">Ejercicio 1.6: Saludos</h3>
+<p>Escribí un programa llamado <code>saludo.py</code> que pregunte el nombre de le usuarie, imprima un saludo (por ejemplo, "Hola, Juana") y termine.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Python/">Anterior (1 Python)</a> | <a href="../03_Numeros/">Próximo (3 Números)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../03_Numeros/" class="btn btn-neutral float-right" title="03 Numeros">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../01_Python/" class="btn btn-neutral" title="01 Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../01_Python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03_Numeros/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/04_Listas_y_Listas/03_Comprension_Listas/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>03 Comprension Listas - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "03 Comprension Listas";
+    var mkdocs_page_input_path = "04_Listas_y_Listas/03_Comprension_Listas.md";
+    var mkdocs_page_url = "/python_unsam_test/04_Listas_y_Listas/03_Comprension_Listas/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">03 Comprension Listas</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#crear-listas-nuevas">Crear listas nuevas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#filtros">Filtros</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#casos-de-uso">Casos de uso</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sintaxis-general">Sintaxis general</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#digresion-historica">Digresión histórica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-47-comprension-de-listas">Ejercicio 4.7: Comprensión de listas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-48-reduccion-de-secuencias">Ejercicio 4.8: Reducción de secuencias</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-49-consultas-de-datos">Ejercicio 4.9: Consultas de datos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-410-extraccion-de-datos">Ejercicio 4.10: Extracción de datos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-411-extraer-datos-de-un-archivo-csv">Ejercicio 4.11: Extraer datos de un archivo CSV</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comentario">Comentario</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>04 Listas y Listas &raquo;</li>
+        
+      
+    
+    <li>03 Comprension Listas</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_IteradoresLista/">Anterior (2 Listas y búsqueda lineal)</a> | <a href="../04_Objetos/">Próximo (4 Objetos)</a></p>
+<h1 id="43-comprension-de-listas">4.3 Comprensión de listas</h1>
+<p>Una tarea que realizamos una y otra vez es procesar los elementos de una lista. En esta sección introducimos la definición de listas por comprensión que es una herramienta potente para hacer exactamente eso.</p>
+<h3 id="crear-listas-nuevas">Crear listas nuevas</h3>
+<p>La comprensión de listas crea un una nueva lista aplicando una operación a cada elemento de una secuencia.</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; b = [2*x for x in a]
+&gt;&gt;&gt; b
+[2, 4, 6, 8, 10]
+&gt;&gt;&gt;
+</code></pre>
+<p>Otro ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; nombres = ['Edmundo', 'Juana']
+&gt;&gt;&gt; a = [nombre.lower() for nombre in nombres]
+&gt;&gt;&gt; a
+['edmundo', 'juana']
+&gt;&gt;&gt;
+</code></pre>
+<p>La sintaxis general es : <code>[&lt;expresión&gt; for &lt;variable&gt; in &lt;secuencia&gt;]</code>.</p>
+<h3 id="filtros">Filtros</h3>
+<p>La comprensión de listas se puede usar para filtrar.</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, -5, 4, 2, -2, 10]
+&gt;&gt;&gt; b = [2*x for x in a if x &gt; 0]
+&gt;&gt;&gt; b
+[2, 8, 4, 20]
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="casos-de-uso">Casos de uso</h3>
+<p>La comprensión de listas es enormemente útil. Por ejemplo, podés recolectar los valores de un campo específico de un diccionario:</p>
+<pre><code class="language-python">frutas = [s['nombre'] for s in camion]
+</code></pre>
+<p>O podés hacer consultas (<em>queries</em>) como si las secuencias fueran bases de datos.</p>
+<pre><code class="language-python">a = [s for s in camion if s['precio'] &gt; 100 and s['cajones'] &gt; 50]
+</code></pre>
+<p>También podés combinar la comprensión de listas con reducciones de secuencias:</p>
+<pre><code class="language-python">costo = sum([s['cajones']*s['precio'] for s in camion])
+</code></pre>
+<h3 id="sintaxis-general">Sintaxis general</h3>
+<pre><code class="language-code">[&lt;expresión&gt; for &lt;variable&gt; in &lt;secuencia&gt; if &lt;condición&gt;]
+</code></pre>
+<p>Lo que significa</p>
+<pre><code class="language-python">resultado = []
+for variable in secuencia:
+    if condición:
+        resultado.append(expresión)
+</code></pre>
+<h3 id="digresion-historica">Digresión histórica</h3>
+<p>La comprensión de listas viene de la matemática (definición de conjuntos por comprensión).</p>
+<pre><code class="language-code">a = [x * x for x in s if x &gt; 0] # Python
+
+a = {x^2 | x ∈ s, x &gt; 0}        # Matemática
+</code></pre>
+<p>La mayoría de los programadores no suelen pensar en el costado matemático de esta herramienta. Podemos verla simplemente como una abreviación copada para definir listas.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Corré tu programa <code>informe.py</code> de forma de tener los datos sobre cajones cargados en tu intérprete en modo interactivo. </p>
+<p>Luego, tratá de escribir los comandos adecuados para realizar las operaciones descriptas abajo. Estas operaciones son reducciones, transformaciones y consultas sobre la carga del camión.</p>
+<h3 id="ejercicio-47-comprension-de-listas">Ejercicio 4.7: Comprensión de listas</h3>
+<p>Probá un par de comprensión de listas para familiarizarte con la sintaxis.</p>
+<pre><code class="language-python">&gt;&gt;&gt; nums = [1,2,3,4]
+&gt;&gt;&gt; cuadrados = [x * x for x in nums]
+&gt;&gt;&gt; cuadrados
+[1, 4, 9, 16]
+&gt;&gt;&gt; dobles = [2 * x for x in nums if x &gt; 2]
+&gt;&gt;&gt; dobles
+[6, 8]
+&gt;&gt;&gt;
+</code></pre>
+<p>Observá que estás creando nuevas listas con los datos adecuadamente transformados o filtrados.</p>
+<h3 id="ejercicio-48-reduccion-de-secuencias">Ejercicio 4.8: Reducción de secuencias</h3>
+<p>Calculá el costo total de la carga del camión en un solo comando.</p>
+<pre><code class="language-python">&gt;&gt;&gt; camion = leer_camion('../Data/camion.csv')
+&gt;&gt;&gt; costo = sum([s['cajones'] * s['precio'] for s in camion])
+&gt;&gt;&gt; costo
+47671.15
+&gt;&gt;&gt;
+</code></pre>
+<p>Luego, leyendo la variable <code>precios</code>, calculá también el valor en el mercado de la carga del camión usando una sola línea de código.</p>
+<pre><code class="language-python">&gt;&gt;&gt; precios = leer_precios('../Data/precios.csv')
+&gt;&gt;&gt; valor = sum([s['cajones'] * precios[s['nombre']] for s in camion])
+&gt;&gt;&gt; valor
+62986.1
+&gt;&gt;&gt;
+</code></pre>
+<p>Ambos son ejemplos de aplicación-reducción. La comprensión de listas está aplicando una operación a lo largo de la lista. </p>
+<pre><code class="language-python">&gt;&gt;&gt; [s['cajones'] * s['precio'] for s in camion]
+[3220.0000000000005, 4555.0, 15516.0, 10246.0, 3835.1499999999996, 3254.9999999999995, 7044.0]
+&gt;&gt;&gt;
+</code></pre>
+<p>La función <code>sum()</code> luego realiza una reducción del resultado</p>
+<pre><code class="language-python">&gt;&gt;&gt; sum(_)
+47671.15
+&gt;&gt;&gt;
+</code></pre>
+<p>Con este conocimiento algunos ya empiezan su startup de big-data.</p>
+<h3 id="ejercicio-49-consultas-de-datos">Ejercicio 4.9: Consultas de datos</h3>
+<p>Probá los siguientes ejemplos de consultas (queries) de datos.</p>
+<p>Primero, generá una lista con la info de todas las frutas que tienen más de 100 cajones en el camión.</p>
+<pre><code class="language-python">&gt;&gt;&gt; mas100 = [s for s in camion if s['cajones'] &gt; 100]
+&gt;&gt;&gt; mas100
+[{'cajones': 150, 'nombre': 'Caqui', 'precio': 103.44},
+ {'cajones': 200, 'nombre': 'Mandarina', 'precio': 51.23}]
+&gt;&gt;&gt;
+</code></pre>
+<p>Ahora, una con la info sobre cajones de Mandarina y Naranja.</p>
+<pre><code class="language-python">&gt;&gt;&gt; myn = [s for s in camion if s['nombre'] in {'Mandarina','Naranja'}]
+&gt;&gt;&gt; myn
+[{'cajones': 50, 'nombre': 'Naranja', 'precio': 91.1},
+ {'cajones': 200, 'nombre': 'Mandarina', 'precio': 51.23},
+ {'cajones': 50, 'nombre': 'Mandarina', 'precio': 65.1},
+ {'cajones': 100, 'nombre': 'Naranja', 'precio': 70.44}]
+&gt;&gt;&gt;
+</code></pre>
+<p>O una con la info de las frutas que costaron más de $10000.</p>
+<pre><code class="language-python">&gt;&gt;&gt; costo10k = [s for s in camion if s['cajones'] * s['precio'] &gt; 10000]
+&gt;&gt;&gt; costo10k
+[{'cajones': 150, 'nombre': 'Caqui', 'precio': 103.44},
+ {'cajones': 200, 'nombre': 'Mandarina', 'precio': 51.23}]
+ &gt;&gt;&gt;
+</code></pre>
+<p>Esta forma de escribir resulta análoga a las consultas a una base de datos con 
+SQL.</p>
+<h3 id="ejercicio-410-extraccion-de-datos">Ejercicio 4.10: Extracción de datos</h3>
+<p>Usando un comprensión de listas, construí una lista de tuplas <code>(nombre, cajones)</code> que indiquen la cantidad de cajones de cada fruta tomando los datos de <code>camion</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; nombre_cajones =[(s['nombre'], s['cajones']) for s in camion]
+&gt;&gt;&gt; nombre_cajones
+[('Lima', 100), ('Naranja', 50), ('Caqui', 150), ('Mandarina', 200), ('Durazno', 95), ('Mandarina', 50), ('Naranja', 100)]
+&gt;&gt;&gt;
+</code></pre>
+<p>Si cambiás los corchetes  (<code>[</code>,<code>]</code>) por llaves (<code>{</code>, <code>}</code>), obtenés algo que se conoce como comprensión de conjuntos. Vas a obtener valores únicos.</p>
+<p>Por ejemplo, si quisieras un listado de las frutas en el camión pordías usar:</p>
+<pre><code class="language-python">&gt;&gt;&gt; nombres = {s['nombre'] for s in camion}
+&gt;&gt;&gt; nombres
+{'Caqui', 'Durazno', 'Lima', 'Mandarina', 'Naranja'}
+&gt;&gt;&gt;
+</code></pre>
+<p>Si especificás pares <code>clave:valor</code>, podés construir un diccionario. Por ejemplo, si queremos un diccionario con el total de cada fruta en el camión podemos comenzar con</p>
+<pre><code class="language-python">&gt;&gt;&gt; stock = {nombre: 0 for nombre in nombres}
+&gt;&gt;&gt; stock
+{'Caqui': 0, 'Durazno': 0, 'Lima': 0, 'Mandarina': 0, 'Naranja': 0}
+&gt;&gt;&gt;
+</code></pre>
+<p>que es una comprensión de diccionario. Y seguir sumando los cajones:</p>
+<pre><code class="language-python">&gt;&gt;&gt; for s in camion:
+        stock[s['nombre']] += s['cajones']
+
+&gt;&gt;&gt; stock
+{'Caqui': 150, 'Durazno': 95, 'Lima': 100, 'Mandarina': 250, 'Naranja': 150}
+&gt;&gt;&gt;
+</code></pre>
+<p>Otro ejemplo útil podría ser generar un diccionario de precios de venta de aquellos productos que están efectivamente cargados en el camión:</p>
+<pre><code class="language-python">&gt;&gt;&gt; camion_precios = {nombre: precios[nombre] for nombre in nombres}
+&gt;&gt;&gt; camion_precios
+{'Caqui': 105.46, 'Durazno': 73.48, 'Lima': 40.22, 'Mandarina': 80.89, 'Naranja': 106.28}
+ &gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-411-extraer-datos-de-un-archivo-csv">Ejercicio 4.11: Extraer datos de un archivo CSV</h3>
+<p>Saber usar combinaciones de comprensión de listas, diccionarios y conjuntos resulta útil para procesar datos en diferentes contextos. Aunque puede volverse medio críptico si no estás habituade. Acá te mostramos un ejemplo de cómo extraer columnas seleccionadas de un archivo CSV que tiene esas características. No es dificil cuando lo entendés, pero está muy concentrado todo.</p>
+<p>Primero, leamos el encabezado (header) del archivo CSV:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import csv
+&gt;&gt;&gt; f = open('../Data/fecha_camion.csv')
+&gt;&gt;&gt; rows = csv.reader(f)
+&gt;&gt;&gt; headers = next(rows)
+&gt;&gt;&gt; headers
+['nombre', 'fecha', 'hora', 'cajones', 'precio']
+&gt;&gt;&gt;
+</code></pre>
+<p>Luego, definamos una lista que tenga las columnas que nos importan:</p>
+<pre><code class="language-python">&gt;&gt;&gt; select = ['nombre', 'cajones', 'precio']
+&gt;&gt;&gt;
+</code></pre>
+<p>Ubiquemos los índices de esas columnas en el CSV:</p>
+<pre><code class="language-python">&gt;&gt;&gt; indices = [headers.index(ncolumna) for ncolumna in select]
+&gt;&gt;&gt; indices
+[0, 3, 4]
+&gt;&gt;&gt;
+</code></pre>
+<p>Y finalmente leamos los datos y armemos un diccionario usando comprensión de diccionarios:</p>
+<pre><code class="language-python">&gt;&gt;&gt; row = next(rows)
+&gt;&gt;&gt; record = {ncolumna: row[index] for ncolumna, index in zip(select, indices)}   # comprensión de diccionario
+&gt;&gt;&gt; record
+{'precio': '32.20', 'nombre': 'Lima', 'cajones': '100'}
+&gt;&gt;&gt;
+</code></pre>
+<p>No es trivial este comando. El comando es sintácticamente muy compacto, pero es conceptualmente (un poco) complejo. Cuando te sientas cómode con esta lectura de una línea del archivo (si no pasa, tranca, podemos seguir sin esto), leé el resto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; camion = [{ ncolumna: row[index] for ncolumna, index in zip(select, indices)} for row in rows]
+&gt;&gt;&gt; camion
+[{'cajones': '50', 'nombre': 'Naranja', 'precio': '91.1'},
+ {'cajones': '150', 'nombre': 'Caqui', 'precio': '103.44'},
+ {'cajones': '200', 'nombre': 'Mandarina', 'precio': '51.23'},
+ {'cajones': '95', 'nombre': 'Durazno', 'precio': '40.37'},
+ {'cajones': '50', 'nombre': 'Mandarina', 'precio': '65.1'},
+ {'cajones': '100', 'nombre': 'Naranja', 'precio': '70.44'}]
+&gt;&gt;&gt;
+</code></pre>
+<p>¡Por las barbas de mi abuelo! Acabamos de reducir casi toda la función <code>leer_camion()</code> a un solo comando.</p>
+<h3 id="comentario">Comentario</h3>
+<p>La comprensión de listas se usa frecuentemente en Python. Es una forma eficiente de transformar, filtrar o juntar datos. Tiene una sintaxis potente pero tratá de no pasarte con su uso: mantené cada comando tan simple como sea posible. Está perfecto descomponer un solo comando complejo en muchos pasos. Concretamente: compartir el último ejemplo con personas desprevenidas puede no ser lo ideal.  </p>
+<p>Dicho esto, saber manipular datos rápidamente es una habilidad increíblemente útil. Hay numerosas situaciones donde puede que tengas que resolver algún tipo de problema excepcional (en el sentido de raro o único) para importar, extraer o exportar datos. La comprensión de listas te puede ahorrar muchísimo tiempo en esas tareas.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_IteradoresLista/">Anterior (2 Listas y búsqueda lineal)</a> | <a href="../04_Objetos/">Próximo (4 Objetos)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../04_Objetos/" class="btn btn-neutral float-right" title="04 Objetos">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../02_IteradoresLista/" class="btn btn-neutral" title="02 IteradoresLista"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../02_IteradoresLista/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../04_Objetos/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

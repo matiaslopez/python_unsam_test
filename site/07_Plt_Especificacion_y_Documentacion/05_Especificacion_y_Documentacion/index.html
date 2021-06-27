@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>05 Especificacion y Documentacion - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "05 Especificacion y Documentacion";
+    var mkdocs_page_input_path = "07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion.md";
+    var mkdocs_page_url = "/python_unsam_test/07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">05 Especificacion y Documentacion</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#documentacion">Documentación</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#comentarios-vs-documentacion">Comentarios vs documentación</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#por-que-documentamos">¿Por qué documentamos?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#codigo-autodocumentado">Código autodocumentado</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#un-error-comun-la-sobredocumentacion">Un error común: la sobredocumentación</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contratos">Contratos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#precondiciones">Precondiciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#poscondiciones">Poscondiciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#el-que-no-el-como">El qué, no el cómo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aseveraciones">Aseveraciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejemplos">Ejemplos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-76-sumas">Ejercicio 7.6: Sumas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#invariantes-de-ciclo">Invariantes de ciclo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-77-invariante-en-sumas">Ejercicio 7.7: Invariante en sumas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parametros-mutables-e-inmutables">Parámetros mutables e inmutables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#repaso">Repaso</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resumen">Resumen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-78-funciones-y-documentacion">Ejercicio 7.8: Funciones y documentación</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/06_Teledeteccion/">06 Teledeteccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../09_Clases_y_Objetos/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>07 Plt Especificacion y Documentacion &raquo;</li>
+        
+      
+    
+    <li>05 Especificacion y Documentacion</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_Flexibilidad/">Anterior (4 Cuestiones de diseño)</a> | <a href="../06_Estilo/">Próximo (6 Estilos de codeo)</a></p>
+<h1 id="75-contratos-especificacion-y-documentacion">7.5 Contratos: Especificación y Documentación</h1>
+<p>En esta unidad formalizamos algunos temas que ya mencionamos brevemente en las clases anteriores sobre la especificación y documentación de funciones. Dejamos <a href="https://youtu.be/cKVP5-Z4_RE">este video</a> con una introducción breve a esta sección y la siguiente.</p>
+<p>Trabajaremos informalmente con conceptos formales. Por ejemplo, trataremos de responder en algunos casos concretos: ¿qué condiciones debe cumplir una función al comenzar? ¿Qué condiciones se mantinen durante su ejecución? ¿Qué debemos garantizar cuando se termina de ejecutar? Y veremos algunas técnicas para tener en cuenta estas condiciones.</p>
+<h2 id="documentacion">Documentación</h2>
+<p>Comenzamos formalizando un poco más algunos conceptos relacionados con la documentación, cuál es su objetivo y las distintas formas de documentar.</p>
+<h3 id="comentarios-vs-documentacion">Comentarios vs documentación</h3>
+<p>En Python tenemos dos convenciones diferentes para documentar nuestro código:
+la <em>documentación</em> propiamente dicha (lo que ponemos entre <code>'</code> o
+<code>'''</code> al principio de cada función o módulo se llama <em>docstring</em>), y los <em>comentarios</em> (<code>#</code>). En la mayoría de los lenguajes de programación hay convenciones similares. ¿Por qué tenemos dos formas diferentes de documentar?</p>
+<p>La <em>documentación</em> tiene como objetivo explicar <em>qué</em> hace el código.
+La documentación está dirigida a cualquier persona que desee utilizar la
+función o módulo, para que pueda entender cómo usarla sin necesidad de leer el
+código fuente. Esto es útil incluso cuando quien implementó la función es la
+misma persona que la va a utilizar, ya que permite separar responsabilidades.</p>
+<p>Los <em>comentarios</em> tienen como objetivo explicar <em>cómo</em> funciona el
+código, y <em>por qué</em> se decidió implementarlo de esa manera. Los comentarios
+están dirigidos a quien esté leyendo el código fuente.</p>
+<p>Podemos ver la diferencia entre la documentación y los comentarios en la
+función <code>elegir_codigo</code>:</p>
+<pre><code class="language-python">def elegir_codigo():
+    '''Devuelve un codigo de 4 digitos elegido al azar'''
+    digitos = ('0','1','2','3','4','5','6','7','8','9')
+    codigo = &quot;&quot;
+    for i in range(4):
+        candidato = random.choice(digitos)
+        # Debemos asegurarnos de no repetir digitos
+        while candidato in codigo:
+            candidato = random.choice(digitos)
+        codigo = codigo + candidato
+    return codigo
+</code></pre>
+<h3 id="por-que-documentamos">¿Por qué documentamos?</h3>
+<p>Muchas veces se plantea el siguiente interrogante: ¿Para qué repetir con
+palabras lo que ya está estipulado en el código? La documentación es algo que
+muy a menudo se deja <em>para después</em> por resultar tedioso y quizás aburrido en
+el momento de escribir el código. Pero en ese <em>después</em>, está el <em>yo</em> del futuro, u otre del futuro que quiere volver a usar el código y que agradecerá esas líneas que le evitarán varios dolores de cabeza.</p>
+<p>Es muy frecuente que durante el desarrollo de un proyecto el código evolucione
+con el tiempo. Si nos olvidamos de actualizar la documentación para reflejar
+los cambios, entonces tendremos documentación de mala calidad, ya que posiblemente esté incompleta e incluso incorrecta.</p>
+<p>Una buena documentación es componente esencial de cualquier proyecto exitoso (NumPy, matplotlib, etc. tienen buena documentación). Esto en parte se debe a que el código fuente transmite en detalle las operaciones individuales que componen un algoritmo o programa, pero no suele transmitir en forma transparente cosas como la <em>intención</em> del programa, el <em>diseño</em> de alto nivel, las <em>razones</em> por las que se decidió utilizar un algoritmo u otro, etc. También se pueden incluir ejemplos para <a href="https://numpy.org/doc/stable/reference/generated/numpy.resize.html">clarificar su uso</a>.</p>
+<h3 id="codigo-autodocumentado">Código autodocumentado</h3>
+<p>En teoría, si nuestro código pudiera transmitir en forma eficiente todos esos
+conceptos, la documentación sería menos necesaria. De hecho, existe una técnica de programación llamada <em>código autodocumentado</em>, en la que la idea principal es elegir los nombres de funciones y variables de forma tal que la
+documentación sea menos indispensable.</p>
+<p>Tomemos como ejemplo el siguiente código:</p>
+<pre><code class="language-python">a = 9.81
+b = 5
+c = 0.5 * a * b**2
+</code></pre>
+<p>Leyendo esas tres líneas de código podemos razonar cuál será el valor final de
+las variables <code>a</code>, <code>b</code> y <code>c</code>, pero no hay nada que nos indique qué representan
+esas variables, o cuál es la intención del código. Una opción para mejorarlo sería utilizar comentarios para aclarar la intención:</p>
+<pre><code class="language-python">a = 9.81   # Valor de la constante G (aceleración gravitacional), en m/s²
+b = 5      # Tiempo en segundos
+c = 0.5 * a * b**2  # Desplazamiento (en metros)
+</code></pre>
+<p>Otra opción, según la técnica de código autodocumentado, es simplemente asignar
+nombres descriptivos a las variables:</p>
+<pre><code class="language-python">aceleracion_gravitacional = 9.81
+tiempo_segundos = 5
+desplazamiento_metros = 0.5 * aceleracion_gravitacional * tiempo_segundos ** 2
+</code></pre>
+<p>De esta manera logramos que la intención del código esté más clara, y que
+se reduzca la necesidad de comentarios y documentación para comprenderlo.</p>
+<p>La técnica de código autodocumentado presenta varias limitaciones. Entre ellas:</p>
+<ul>
+<li>Elegir buenos nombres es una tarea difícil, que requiere tener en cuenta cosas como: qué tan descriptivo es el nombre (cuanto más, mejor), la longitud del identificador (no debe ser excesivamente largo), el alcance del identificador (cuánto más grande, más descriptivo debe ser el nombre), y convenciones (<code>i</code> para índices, <code>c</code> para caracteres, etc).</li>
+<li>La documentación de todas formas termina siendo necesaria, ya que por muy bien que elijamos los nombres, muchas veces la única forma de explicar la intención del código y todos sus detalles es en lenguaje coloquial.</li>
+<li>En ciertos contextos sigue siendo deseable, o imprescindible, que quien quiera utilizar nuestra función o módulo pueda entender su funcionamiento sin necesidad de leer el código fuente.</li>
+</ul>
+<h3 id="un-error-comun-la-sobredocumentacion">Un error común: la sobredocumentación</h3>
+<p>Si bien la ausencia de documentación suele ser perjudicial, el otro extremo
+también lo es: la <em>sobredocumentación</em>. Después de todo, en la vida
+diaria no necesitamos carteles que nos recuerden cosas como "esta es la
+puerta", "este es el picaporte" y "empujar hacia abajo para abrir". De
+la misma manera, podríamos decir que el siguiente código peca de ser sobredocumentado:</p>
+<pre><code class="language-python">def buscar_elemento(lista_de_numeros, numero):
+    '''Esta función devuelve el índice (contando desde 0) en el que se
+       encuentra el número `numero` en la lista `lista_de_numeros`.
+       Si el elemento no está en la lista devuelve -1.
+    '''
+    # Recorremos todos los índices de la lista, desde 0 (inclusive) hasta N
+    # (no inclusive)
+    for indice in range(len(lista_de_numeros)):
+        # Si el elemento en la posicion `indice` es el buscado
+        if lista_de_numeros[indice] == numero:
+            # Devolvemos el índice en el que está el elemento
+            return indice
+    # No lo encontramos, devolvemos -1
+    return -1
+</code></pre>
+<p>Algunas cosas que podemos mejorar:</p>
+<ul>
+<li>En la firma de la función los nombres <code>buscar_elemento</code>, <code>lista_de_numeros</code> y <code>numero</code> se pueden simplificar a <code>indice</code>, <code>secuencia</code> y <code>elemento</code>. Cambiamos <code>lista_de_numeros</code> por <code>lista</code>, ya que la función puede recibir secuencias de cualquier tipo, con elementos de cualquier tipo, y no hay ninguna razón para limitar a que sea una lista de números.</li>
+<li>Las variable interna <code>indice</code> también se puede simplificar: por convención podemos usar <code>i</code>.</li>
+<li>"Esta función" es redundante: cuando alguien lea la documentación ya va a saber que se trata de una función.</li>
+<li>"contando desde 0" es redundante: en Python siempre contamos desde 0.</li>
+<li>Los comentarios son excesivos: la función es suficientemente simple y cualquier persona que sepa programación básica podrá entender el algoritmo.</li>
+</ul>
+<p>Corrigiendo todos estos detalles resulta:</p>
+<pre><code class="language-python">def indice(lista, elemento):
+    '''Devuelve el índice en el que se encuentra el `elemento` en la `lista`,
+       o -1 si no está.
+    '''
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return -1
+</code></pre>
+<h2 id="contratos">Contratos</h2>
+<p>Cuando hablamos de <strong>contratos</strong> o <em>programación por contratos</em>, nos referimos a una forma de estipular tanto lo que nuestro código asume sobre los parámetros, como lo que devuelve. En los contratos se establecen compromisos que garantizan que si se cumplen los requisitos estipulados, la función devolverá cierto resultado. Es bueno que el contrato de una función esté incluido en su documentación.</p>
+<p>Algunos ejemplos de cosas que deben ser estipuladas como parte del contrato son: cómo deben ser los parámetros recibidos, qué va a ser lo que se devuelve, y si la función provoca algún efecto secundario (como por ejemplo modificar alguno de los parámetros recibidos).</p>
+<p>Las condiciones que se deben cumplir al momento de ejecutar el código o función se llaman <em>precondiciones</em>. Si se cumplen las precondiciones, el código se ejecutará de manera que al finalizar su ejecución el estado final de las variables y de valor de retorno, estarán caracterizados en una <em>poscondición</em>.</p>
+<h3 id="precondiciones">Precondiciones</h3>
+<p>La precondición de una función debe cumplirse antes de ejecutarla para que se comporte correctamente: cómo deben ser los parámetros que recibe, cómo debe ser el estado global, etc. Si no se cumplen, no hay garantías del funcionamiento del código (podría colgarse, o dar error, o peor aún dar resultados erróneos).</p>
+<p>Por ejemplo, en una función que realiza la división entre dos números, la precondición debe decir que ambos parámetros deben ser números, y que el divisor debe ser distinto de 0.</p>
+<p>Si incluimos las precondiciones como parte de la documentación, en el cuerpo de la función podremos asumir que son ciertas, y no será necesario escribir código para lidiar con los casos en los que no se cumplan.</p>
+<h3 id="poscondiciones">Poscondiciones</h3>
+<p>La poscondición caracterizará cómo será el valor de retorno y cómo se modificarán las variables de entrada (en caso de que corresponda) al finalizar la ejecución siempre asumiendo que se cumplió la precondición al inicio.</p>
+<p>En el ejemplo anterior, la función división nos garantiza que si se satisface la precondición, la función devolverá un número y éste será el cociente solicitado.</p>
+<h3 id="el-que-no-el-como">El qué, no el cómo</h3>
+<p>Notar que al especificar un problema con pre y poscondición estamos definiendo qué es lo que debe suceder. En ningún momento decimos cómo es que esto sucede. Para una misma especificación podemos definir varias funciones que cumplan el contrato, y cada una puede resolverlo a su manera.</p>
+<p>Por ejemplo, volviendo a los ejemplos que trabajamos antes, mirá la documentación del <code>csv.reader</code>. Deberías nota que la precondición dice que el primer parámetro debe ser un interable y no un archivo específicamente.</p>
+<h3 id="aseveraciones">Aseveraciones</h3>
+<p>Retomamos acá el concepto de aseveración que introdujimos en la <a href="../../04_Listas_y_Listas/01_Debugger/#aseveraciones-assert">Sección 4.1</a>. Tanto las precondiciones como las poscondiciones pueden pensarse como <em>aseveraciones</em> (en inglés <em>assertions</em>). Es decir, afirmaciones realizadas en un momento particular de la ejecución sobre el estado computacional. Si una aseveración llegara a ser falsa, se levanta una excepción interrumpiendo la normal ejecución del programa.</p>
+<p>En algunos casos puede ser útil incorporar estas afirmaciones desde el código, y para eso podemos utilizar la instrucción <code>assert</code>. Esta instrucción recibe una condición a verificar (o sea, una expresión booleana). Si la condición es <code>True</code>, la instrucción no hace nada; en caso contrario se produce un error.</p>
+<pre><code class="language-python">&gt;&gt;&gt; assert True
+&gt;&gt;&gt; assert False
+(Traceback (most recent call last):
+  File '&lt;stdin&gt;', line 1, in &lt;module&gt;
+AssertionError^)
+</code></pre>
+<p>Opcionalmente, la instrucción <code>assert</code> puede recibir un mensaje de error que se mostrará en caso de que la condición no se cumpla.</p>
+<pre><code class="language-python">&gt;&gt;&gt; x = 0
+&gt;&gt;&gt; assert x != 0, 'El divisor no puede ser 0'
+(^Traceback (most recent call last):
+  File '&lt;stdin&gt;', line 1, in &lt;module&gt;
+AssertionError: El divisor no puede ser 0)
+</code></pre>
+<p><strong>Atención:</strong>
+Es importante tener en cuenta que <code>assert</code> está pensado para ser usado en la etapa de desarrollo. Un programa terminado nunca debería dejar de funcionar por este tipo de errores.</p>
+<h3 id="ejemplos">Ejemplos</h3>
+<p>Usando los ejemplos anteriores, la función <code>division</code> nos quedaría de la siguiente forma:</p>
+<pre><code class="language-python">def division(dividendo, divisor):
+    '''Cálculo de la división
+
+    Pre: Recibe dos números, divisor debe ser distinto de 0.
+    Pos: Devuelve un número real, con el cociente de ambos.
+    '''
+    assert divisor != 0, 'El divisor no puede ser 0'
+    return dividendo / divisor
+</code></pre>
+<p>o directamente</p>
+<pre><code class="language-python">def division(dividendo, divisor):
+    '''Cálculo de la división
+
+    Pre: Recibe dos números, divisor debe ser distinto de 0.
+    Pos: Devuelve un número real, con el cociente de ambos.
+    '''
+    return dividendo / divisor
+</code></pre>
+<p>Es interesante discutir un poco en detalle este ejemplo. La función <em>asume</em> que el divisor es no nulo. Esto tiene sentido, ya que no podemos dividir por cero. Podríamos atrapar el error y, si nos pasan un divisor nulo, devolver por ejemplo <em>cero</em>. De esta forma evitamos que se termine el programa. Pero ¿tiene sentido esto? ¿Nos ahorra un problema o nos genera un nuevo problema? No es una buena práctica atrapar errores que no sabemos manejar. Que <code>1/0</code> devuelva cero en principio <strong>no es correcto</strong>. Como ya mencionamos en la <a href="../02_Excepciones/#buenas-prácticas-al-administrar-excepciones">Sección 7.2</a>, es mejor que los errores generen excepciones ruidosamente y no atraparlas si no sabemos exactamente cómo manejarlas.</p>
+<p>Veamos otro ejemplo, tal vez más interesante. Consideremos una función <code>sumar_enteros(desde, hasta)</code> que implementa la sumatoria <em>sum_i=desde^hasta i</em>.</p>
+<p><img alt="sumar_enteros(desde, hasta) = \sum_{i=desde}^{hasta} i
+" src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Csum_%7Bi%3Ddesde%7D%5E%7Bhasta%7D+i%0A" /></p>
+<p>En este caso, analizando los parámetros que recibirá la función, podemos definir la precondición para indicar lo que éstos deberán cumplir.</p>
+<p>La función <code>sumar_enteros</code> tomará un valor <code>desde</code> y un valor <code>hasta</code>.
+Es decir que recibe dos parámetros.</p>
+<pre><code class="language-python">def sumar_enteros(desde, hasta):
+</code></pre>
+<p>Tanto <code>desde</code> como <code>hasta</code> deben ser números enteros, y dependiendo de la implementación a realizar o de los requisitos con los que nos enfrentamos al escribir la precondición puede ser necesario exigir que <code>hasta</code> sea mayor o igual a <code>desde</code>.</p>
+<p>La declaración de la función, incluyendo documentación, precondición y poscondición queda de la siguiente manera.</p>
+<pre><code class="language-python">def sumar_enteros(desde, hasta):
+    '''Calcula la sumatoria de los números entre desde y hasta.
+       Si hasta &lt; desde, entonces devuelve cero.
+
+    Pre: desde y hasta son números enteros
+    Pos: Se devuelve el valor de sumar todos los números del intervalo
+        [desde, hasta]. Si el intervalo es vacío se devuelve 0
+    '''
+</code></pre>
+<p>Prestá atención a que tanto la pre como la pos no dicen cómo hace la función para resolver el problema, sino que caracterizan el resultado. La implementación (o código) serán el cómo. En este caso puede ser con un ciclo que emule los pasos de dichas sumas, podría utilizarse una fórmula cerrada que calcule el valor sin utilizar un ciclo, entre otras opciones. Lo importante es ver que a fines de la especificación, esto no importa.</p>
+<p>En definitiva, la estipulación de pre y poscondiciones dentro de la documentación de las funciones es una forma de definir claramente el comportamiento del código. Son, en efecto, un <em>contrato</em> entre el código invocante (o usuarie) y el código invocado (o función).</p>
+<h3 id="ejercicio-76-sumas">Ejercicio 7.6: Sumas</h3>
+<p>En este ejercicio vas a realizar dos implementaciones correspondientes a la función <code>sumar_enteros</code> definida recién. </p>
+<ol>
+<li>En la primera implementación te pedimos que uses un ciclo.</li>
+<li>En la segunda te pedimos que lo hagas sin ciclos: implementá la función de manera que trabaje en tiempo constante (es decir, usando una cantidad de operaciones que no depende de las entradas a la función.</li>
+</ol>
+<p><em>Ayuda: Estas sumas se pueden escribir como diferencia de dos <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_triangular">números triangulares</a>.</em></p>
+<h2 id="invariantes-de-ciclo">Invariantes de ciclo</h2>
+<p>Los invariantes se refieren a estados o condiciones que no cambian dentro de un contexto o porción de código. Hay invariantes de ciclo, que son los que veremos a continuación, e invariantes de estado, que se verán más adelante.</p>
+<p>Un invariante de ciclo es una aseveración que debe ser verdadera al comienzo de cada iteración del ciclo y al salir del mismo.</p>
+<p>Por ejemplo, si el problema es ir desde el punto A al punto B, la precondición dice que tenemos que estar parados en A y la poscondición que al terminar estaremos parados en B. En este caso las siguientes aseveraciones son invariantes: "estamos en algún punto entre A y B", "estamos en el punto más cercano a B que estuvimos hasta ahora". Son aseveraciones que podría tener nuestro código (y dependen exclusivamente de cómo lo programamos).</p>
+<p>Pensar en términos de invariantes de ciclo nos ayuda a reflexionar y comprender mejor qué es lo que debe realizar nuestro código y nos ayuda a desarrollarlo.</p>
+<p>Por ejemplo, para la función <code>maximo</code>, que busca el valor más grande de una lista desordenada, podemos enunciar:
+- precondición: la lista contiene elementos que tienen una relación de orden (son comparables con &lt;)
+- poscondición: se devolverá el elemento máximo de la lista, si es que tiene elementos, y si no se devolverá None.</p>
+<pre><code class="language-python">def maximo(lista):
+    'Devuelve el elemento máximo de la lista o None si está vacía.'
+    if not lista:
+        return None
+    max_elem = lista[0]
+    for elemento in lista:
+        if elemento &gt; max_elem:
+            max_elem = elemento
+    return max_elem
+</code></pre>
+<p>En este caso, el invariante del ciclo es que <code>max_elem</code> contiene el valor máximo de la porción de lista que ya fue analizada.</p>
+<p>Los invariantes son de gran importancia al momento de demostrar formalmente que un algoritmo funciona, pero aún cuando no hagamos una demostración formal resulta útil tener los invariantes a la vista, ya que de esta forma es más fácil entender cómo funciona un algoritmo y encontrar posibles errores.</p>
+<p>Los invariantes, además, son útiles a la hora de determinar las condiciones iniciales de un algoritmo, ya que también deben cumplirse para ese caso. Por ejemplo, consideremos el algoritmo para obtener la potencia <code>n</code> de un número.</p>
+<pre><code class="language-python">def potencia(base, exp):
+    'Calcula la potencia exp del número base, con exp entero mayor que 0.'
+    resultado = 1
+    for i in range(exp):
+        resultado *= base
+    return resultado
+</code></pre>
+<p>En este caso, el invariante del ciclo es que la variable <code>resultado</code> contiene el valor de la potencia correspondiente al índice <code>i</code> de la iteración. Teniendo en cuenta esta condición, es fácil ver que <code>resultado</code> debe comenzar el ciclo con un valor de 1, ya que ese es el valor correspondiente a  <code>base ** 0</code>.</p>
+<p>De la misma manera, si la operación que se quiere realizar es sumar todos los
+elementos de una lista, el invariante será que una variable <code>suma</code> contenga la suma de todos los elementos ya recorridos. Antes de empezar a recorrer la lista, según lo expresado en este invariante, esta <code>suma</code> debe ser 0 ya que no recorrió ningún elemento.</p>
+<pre><code class="language-python">def suma(lista):
+    'Devuelve la suma de todos los elementos de la lista.'
+    suma = 0
+    for elemento in lista:
+        suma += elemento
+    return suma
+</code></pre>
+<p>En resumen, el concepto de invariante de ciclo es una herramienta que nos permite comprender (explicitar) mejor cómo funciona un algoritmo. Resulta fundamental en la teoría de algoritmos, donde es necesario para <em>demostrar</em> que:
+- un algoritmo es correcto, es decir que realiza la tarea descripta por la pre y poscondición.
+- un algoritmo termina (y no se cuelga).</p>
+<h3 id="ejercicio-77-invariante-en-sumas">Ejercicio 7.7: Invariante en sumas</h3>
+<p>En el <a href="./#ejercicio-76-sumas">Ejercicio 7.6</a>, escribiste una función <code>sumar_enteros(desde, hasta)</code> que utiliza un ciclo. ¿Cuál es el invariante de este ciclo?</p>
+<h2 id="parametros-mutables-e-inmutables">Parámetros mutables e inmutables</h2>
+<p>Las funciones reciben parámetros que pueden ser mutables o inmutables.</p>
+<p>Si dentro del cuerpo de la función se modifica uno de estos parámetros para que <em>referencie</em> a otro valor, este cambio no se verá reflejado fuera de la función. Si, en cambio, se modifica el <em>contenido</em> de alguno de los parámetros mutables, este cambio <em>sí</em> se verá reflejado fuera de la función.</p>
+<p>A continuación vemos un ejemplo en el cual se asigna la variable recibida a un nuevo valor. Esa asignación sólo tiene efecto dentro de la función.</p>
+<pre><code class="language-python">&gt;&gt;&gt; def no_cambia_lista(lista):
+...     lista = [0, 1, 2, 3]
+...     print('Dentro de la funcion lista =', lista)
+...
+&gt;&gt;&gt; lista = [10, 20, 30, 40]
+&gt;&gt;&gt; no_cambia_lista(lista)
+Dentro de la funcion lista = [0, 1, 2, 3]
+&gt;&gt;&gt; lista
+[10, 20, 30, 40]
+</code></pre>
+<p>A continuación un ejemplo en el cual se modifica la variable recibida. En este caso, los cambios realizados tienen efecto tanto dentro como fuera de la función.</p>
+<pre><code class="language-python">&gt;&gt;&gt; def cambia_lista(lista):
+...     for i in range(len(lista)):
+...         lista[i] = lista[i] ** 3
+...
+&gt;&gt;&gt; lista = [1, 2, 3, 4]
+&gt;&gt;&gt; cambia_lista(lista)
+&gt;&gt;&gt; lista
+[1, 8, 27, 64]
+</code></pre>
+<p><strong>Atención:</strong> Salvo que sea explícitamente aclarado, una función no debe modificar los valores de sus parámetros. En el caso en que por una decisión de diseño o especificación se modifiquen los parámetros mutables recibidos, esto debe estar claramente documentado como parte de las poscondiciones.</p>
+<h2 id="repaso">Repaso</h2>
+<p>Dejamos un par de videos. En el <a href="https://youtu.be/k-QC8WAmWr0">primer video</a> discutimos brevemente la importancia de establecer contratos y explicamos cómo estos y los invariantes pueden ayudarnos a <em>demostrar matemáticamente</em> que una función hace lo que creemos que hace. En el <a href="https://youtu.be/uRgd9y0QNpM">segundo video</a> damos algunos ejemplos de invariantes de ciclos discutidos paso a paso y hablamos de pre- y post-condiciones.</p>
+<h2 id="resumen">Resumen</h2>
+<ul>
+<li>El <strong>contrato</strong> de una función especifica qué condiciones se deben cumplir para que la función pueda ser invocada (<strong>precondición</strong>), y qué condiciones se garantiza que serán válidas cuando la función termine su ejecución (<strong>poscondición</strong>).</li>
+<li>La <strong>documentación</strong> tiene como objetivo explicar <em>qué</em> hace el código, y está dirigida a quien desee utilizar la función o módulo.</li>
+<li>Es una buena práctica incluir el contrato en la documentación.</li>
+<li>Si una función modifica un valor mutable que recibe por parámetro, eso debe estar explícitamente aclarado en su documentación.</li>
+<li>Los <strong>comentarios</strong> tienen como objetivo explicar <em>cómo</em> funciona el código y <em>por qué</em> se decidió implementarlo de esa manera, y están dirigidos a quien esté leyendo el código fuente.</li>
+<li>Los <strong>invariantes de ciclo</strong> son las condiciones que deben cumplirse al comienzo de cada iteración de un ciclo.</li>
+</ul>
+<h2 id="ejercicios">Ejercicios</h2>
+<h3 id="ejercicio-78-funciones-y-documentacion">Ejercicio 7.8: Funciones y documentación</h3>
+<p>Para cada una de las siguientes funciones:
+* Pensá cuál es el contrato de la función.
+* Agregale la documentación adecuada.
+* Comentá el código si te parece que aporta.
+* Detectá si hay invariantes de ciclo y comentalo al final de la función</p>
+<p>Guardá estos códigos con tus modificaciones en el archivo <code>documentacion.py</code>.</p>
+<pre><code class="language-python">def valor_absoluto(n):
+    if n &gt;= 0:
+        return n
+    else:
+        return -n
+</code></pre>
+<pre><code class="language-python">def suma_pares(l):
+    res = 0
+    for e in l:
+        if e % 2 ==0:
+            res += e
+        else:
+            res += 0
+
+    return res
+</code></pre>
+<pre><code class="language-python">def veces(a, b):
+    res = 0
+    nb = b
+    while nb != 0:
+        #print(nb * a + res)
+        res += a
+        nb -= 1
+    return res
+</code></pre>
+<pre><code class="language-python">def collatz(n):
+    res = 1
+
+    while n!=1:
+        if n % 2 == 0:
+            n = n//2
+        else:
+            n = 3 * n + 1
+        res += 1
+
+    return res
+</code></pre>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_Flexibilidad/">Anterior (4 Cuestiones de diseño)</a> | <a href="../06_Estilo/">Próximo (6 Estilos de codeo)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../06_Estilo/" class="btn btn-neutral float-right" title="06 Estilo">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../04_Flexibilidad/" class="btn btn-neutral" title="04 Flexibilidad"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../04_Flexibilidad/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../06_Estilo/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
