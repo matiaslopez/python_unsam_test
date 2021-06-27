@@ -1,0 +1,25 @@
+site_name: Programación en Python
+site_url: https://example.com/
+
+version: 2
+
+mkdocs:
+  configuration: mkdocs.yml
+
+# Optionally set the version of Python and requirements required to build your docs
+python:
+   version: 3.7
+   install:
+   - requirements: docs/requirements.txt
+
+
+formats:
+  - epub
+  - pdf
+
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
