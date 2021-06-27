@@ -1,5 +1,5 @@
 site_name: Programación en Python
-site_url: https://example.com/
+site_url: https://matiaslopez.github.io/python_unsam_test/
 
 version: 2
 
@@ -17,9 +17,9 @@ formats:
   - epub
   - pdf
 
-theme:
-    name: readthedocs
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - rust
+# theme:
+#     name: readthedocs
+#     highlightjs: true
+#     hljs_languages:
+#         - yaml
+#         - rust

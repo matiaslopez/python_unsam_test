@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/09_Clases_y_Objetos/06_Teledeteccion/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>06 Teledeteccion - Programación en Python</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "06 Teledeteccion";
+    var mkdocs_page_input_path = "09_Clases_y_Objetos/06_Teledeteccion.md";
+    var mkdocs_page_url = "/python_unsam_test/09_Clases_y_Objetos/06_Teledeteccion/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Programación en Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">01 Introduccion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/01_Python/">01 Python</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/02_Hello_world/">02 Hello world</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/03_Numeros/">03 Numeros</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/04_Strings/">04 Strings</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/05_Listas/">05 Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../01_Introduccion/06_CierreClase/">06 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">02 Estructuras y Funciones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/01_Archivos/">01 Archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/02_Funciones/">02 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/03_TiposDatos/">03 TiposDatos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/04_Contenedores/">04 Contenedores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../02_Estructuras_y_Funciones/05_CierreClase/">05 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">03 Datos</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/01_Bugs/">01 Bugs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/02_Secuencias/">02 Secuencias</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/03_Contadores/">03 Contadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/04_IDE/">04 IDE</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/05_Formato/">05 Formato</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/06_Arboles1/">06 Arboles1</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../03_Datos/07_CierreClase/">07 CierreClase</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">04 Listas y Listas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/01_Debugger/">01 Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/02_IteradoresLista/">02 IteradoresLista</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/03_Comprension_Listas/">03 Comprension Listas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/04_Objetos/">04 Objetos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/05_Arboles2_LC/">05 Arboles2 LC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../04_Listas_y_Listas/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">05 Random Plt Dbg</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/01_Random/">01 Random</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/">02 NumPy Arrays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/03_Figuritas/">03 Figuritas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/04_Arboles3_plt/">04 Arboles3 plt</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../05_Random_Plt_Dbg/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">06 Organización y Complejidad</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/">02 Scripts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/">03 Funciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/">04 Modulos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/">05 BusqBinaria</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/">06 Complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/">07 gráficos de complejidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">07 Plt Especificacion y Documentacion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/">01 Repaso</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/">02 Excepciones</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">03 Modulo principal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">04 Flexibilidad</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/">05 Especificacion y Documentacion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/">06 Estilo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/">07 Matplotlib</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/">08 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">08 Fechas Carpetas y Pandas</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/">02 Fechas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">03 Archivos y Directorios</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/">04 Ordenando archivos</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/">05 Pandas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/">06 Series Temporales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">09 Clases y Objetos</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../02_Clases/">02 Clases</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../03_Herencia/">03 Herencia</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../04_M%C3%A9todos_Especiales/">04 Métodos Especiales</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../05_Pilas_Colas/">05 Pilas Colas</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">06 Teledeteccion</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicio-914-optativo-de-teledeteccion">Ejercicio 9.14: Optativo de teledetección</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-915-ver-una-banda">Ejercicio 9.15: Ver una banda</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-916-histogramas">Ejercicio 9.16: Histogramas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-917-mascaras-binarias">Ejercicio 9.17: Máscaras binarias</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-918-clasificacion-manual">Ejercicio 9.18: Clasificación manual</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-919-clasificacion-automatica">Ejercicio 9.19: Clasificación automática</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sugerencia-codigo-para-colorbars">Sugerencia: Código para colorbars</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">10 Generadores e Iteradores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/01_Intro/">01 Intro</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/02_protocolo_Iteracion/">02 protocolo Iteracion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/03_iteracion_a_medida/">03 iteracion a medida</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/04_Producers_consumers/">04 Producers consumers</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/05_Mas_generadores/">05 Mas generadores</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/06_PredadorPresa/">06 PredadorPresa</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../10_Generadores_e_Iteradores/07_Cierre/">07 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">11 Recursion</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/02_Recursion/">02 Recursion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/03_Diseno_Recursivo/">03 Diseno Recursivo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_EjerciciosRec/">05 EjerciciosRec</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/05_Regresion_Lineal/">05 Regresion Lineal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../11_Recursion/06_Cierre/">06 Cierre</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">12 Ordenamiento</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/00_Resumen/">00 Resumen</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/01_Introduccion/">01 Introduccion</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/02_Ordenamiento_sencillo/">02 Ordenamiento sencillo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/03_Divide_and_Conquer/">03 Divide and Conquer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/04_introduccion_al_AA/">04 introduccion al AA</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../12_Ordenamiento/05_Cierre/">05 Cierre</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Programación en Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>09 Clases y Objetos &raquo;</li>
+        
+      
+    
+    <li>06 Teledeteccion</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_Pilas_Colas/">Anterior (5 Objetos, pilas y colas)</a> | <a href="../07_Cierre/">Próximo (7 Cierre de la clase)</a></p>
+<h1 id="96-teledeteccion">9.6 Teledetección</h1>
+<p>En este <a href="https://youtu.be/oQ0ce5qhJp0">video</a> introducimos el tema de esta sección.</p>
+<p>En este ejercicio vamos a trabajar con una imagen satelital obtenida por sensores a bordo del satélite Landsat8. Es un ejercicio optativo para entregar. Si querés, hacelo y guardalo en el archivo <code>NDVI.py</code>.</p>
+<h3 id="ejercicio-914-optativo-de-teledeteccion">Ejercicio 9.14: Optativo de teledetección</h3>
+<p><strong>Autora: <a href="https://github.com/marielaraj/">Mariela Rajngewerc</a></strong></p>
+<p>La imagen original fue bajada de la página del <a href="https://earthexplorer.usgs.gov/">earthexplorer</a>. En esa página se pueden bajar imágenes con distinto nivel de pre-procesamiento. Para este ejercicio bajamos una imagen de nivel de procesamiento 2, esto quiere decir que los valores de los pixeles representan la reflectancia en superficie en distintas longitudes de onda. <a href="https://www.usgs.gov/media/files/landsat-8-collection-1-land-surface-reflectance-code-product-guide">Acá</a> pueden encontrar el manual de estas imagenes donde les detallan la descripción tanto de los nombres de lor archivos como de los preprocesamiento que tienen realizados.</p>
+<p>Para este ejercicio hemos realizado un clip de cada una de las bandas originales de la imagen y ya multiplicamos a cada una de las bandas por el factor de escala indicado en el manual (0,0001).</p>
+<p>Las longitudes de onda y la resoluciones de cada banda de la imágen se describen a continuación:</p>
+<table>
+<thead>
+<tr>
+<th>Banda</th>
+<th>Longitud de onda (nanómetros)</th>
+<th>Resolución espacial (metros)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banda 1 - Aerosoles</td>
+<td>430 - 450</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 2 - Azul</td>
+<td>450 - 510</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 3 - Verde</td>
+<td>530 - 590</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 4 - Rojo</td>
+<td>640 - 670</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 5 - Infrarrojo cercano</td>
+<td>850 - 880</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 6 - Infrarrojo medio 1</td>
+<td>1570 - 1650</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 7 - Infrarrojo medio 2</td>
+<td>2110 - 2290</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>Si desean abrir los datos de la imagen original en Python deberán bajar algunas librerías específicas para la manipulación de datos satelitales, por ejemplo: <strong>gdal</strong>. <a href="https://www.github.com/marielaraj/pycon_tallerimgssat">Acá</a> hay un tutorial de los primeros pasos.</p>
+<p>En la carpeta <a href="https://drive.google.com/file/d/1uoigo5s2xgWfbBQdUcJfOdhfYMNjZ8Ku/view?usp=sharing">clip</a> encontrarán los datos que vamos a usar en los ejercicios. Cada banda del clip se encuentra en formato .npy</p>
+<h2 id="ejercicios">Ejercicios:</h2>
+<h3 id="ejercicio-915-ver-una-banda">Ejercicio 9.15: Ver una banda</h3>
+<p>a) Usá <a href="https://numpy.org/doc/stable/reference/generated/numpy.load.html">numpy</a> para levantar cada una de las bandas y <code>plt.imshow(banda)</code> para verla.
+¿Se ve correctamente? Podés ajustar el rango de visualización de colores usando los parámetros <code>vmin</code> y <code>vmax</code>.</p>
+<p><em>Sugerencia</em>: Con <code>plt.hist(banda.flatten(),bins = 100)</code> vas a ver un histograma de los valores en la matriz <code>banda</code>. Podés usarlo para guiarte en la búsqueda del rango que tiene sentido usar como vmin y vmax.</p>
+<p>b) Probá usando percentiles para fijar el rango. Algo como</p>
+<pre><code class="language-python">vmin = np.percentile(data.flatten(), q)
+vmax = np.percentile(data.flatten(), 100-q)
+</code></pre>
+<p>c) Escribí una función <code>crear_img_png(carpeta, banda)</code> que, dada una carpeta y un número de banda, muestre la imagen de dicha banda y la guarde en formato .png. Asegurate de incorporar un <code>colorbar</code> al lado de la imágen.</p>
+<p>Tené en cuenta lo que hiciste en los puntos anteriores para que se vea adecuadamente.</p>
+<h3 id="ejercicio-916-histogramas">Ejercicio 9.16: Histogramas</h3>
+<p>Escribí ahora otra función, llamada <code>crear_hist_png(carpeta, banda, bins)</code> que, dada una carpeta, un número de banda y una cantidad de bins, muestre el histograma (con la cantidad de bins seleccionados) de los valores de dicha banda y la guarde en formato .png.</p>
+<h3 id="ejercicio-917-mascaras-binarias">Ejercicio 9.17: Máscaras binarias</h3>
+<p>a) Usá las funciones <code>crear_img_png</code> y <code>crear_hist_png</code> que hiciste en los puntos anteriores para generar las imágenes e histogramas de cada banda.</p>
+<p>b) ¿Qué banda o bandas parecieran tener histogramas bimodales, mostrando diferentes tipos de pixels? Elegí una de esas bandas y, observando el histograma, seleccioná un umbral que te permita distinguir los dos tipos de píxels. Por ejemplo, podés crear una matriz del mismo tamaño de la banda donde a cada píxel le corresponda un 1 o un 0, 1 si está por arriba del umbral y 0 si no.</p>
+<p>Graficá la imágen binaria así obtenida. ¿A qué corresponden los dos tipos de píxeles que pudiste distinguir tan fácilmente?</p>
+<h3 id="ejercicio-918-clasificacion-manual">Ejercicio 9.18: Clasificación manual</h3>
+<p>En este ejercicio vamos a trabajar con un índice: el Índice de Vegetación de Diferencia Normalizada, también conocido como <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada">NDVI</a> por sus siglas en inglés. Este índice, basado en la intensidad de la radiación de dos bandas  del espectro electromagnético que interactúan particularmente con la vegetación, aporta información sobre la cantidad, estado y desarrollo de la misma.</p>
+<p>Para calcular el NDVI se utilizan las bandas espectrales Roja e Infrarroja y el cálculo se hace mediante la siguiente fórmula:</p>
+<p><code>(INFRARROJO_CERCANO - ROJO) / (INFRARROJO_CERCANO + ROJO)</code></p>
+<p>a) Calcular el NDVI en una nueva matriz.</p>
+<p>b) Categorizá los valores obtenidos en cada píxel de acuerdo a clases que nos sean más útiles y fáciles de interpretar. La tabla a continuación muestra una propuesta de categorías que podés considerar:</p>
+<table>
+<thead>
+<tr>
+<th>Valor de NDVI</th>
+<th>Nombre de la clase</th>
+<th>Identificador de Clase</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0</td>
+<td>No vegetada</td>
+<td>0</td>
+<td>black</td>
+</tr>
+<tr>
+<td>entre 0 y 0.1</td>
+<td>Área desnuda</td>
+<td>1</td>
+<td>y</td>
+</tr>
+<tr>
+<td>entre 0.1 y 0.25</td>
+<td>Vegetación baja</td>
+<td>2</td>
+<td>yellowgreen</td>
+</tr>
+<tr>
+<td>entre 0.25 y 0.4</td>
+<td>Vegetación moderada</td>
+<td>3</td>
+<td>g</td>
+</tr>
+<tr>
+<td>&gt;0.4</td>
+<td>Vegetación densa</td>
+<td>4</td>
+<td>darkgreen</td>
+</tr>
+</tbody>
+</table>
+<p>Creá un <code>np.array</code> que le asigne a cada píxel el número dado por el <em>identificador de categoría</em> correspondiente según la tabla. Llamá <em>clases_ndvi</em> a la matriz así obtenida.</p>
+<p>c) Generá un gráfico con <code>matplotlib</code> mostrando las clases obtenidas.</p>
+<p>d) Crear un colorMap para lograr asignarle a cada clase el color sugerido en la tabla. Para esto podés usar la función ListedColormap incluída en <code>matplotlib.colors</code> y crear un colorMap (cmap).</p>
+<p>e) Ponele una leyenda que indique el nombre de cada clase con el color asignado, para eso te sugerimos usar la función <code>Patch</code> que se encuentra en <code>matplotlib.patches</code>. Para que puedas orientarte, te mostramos a continuación un ejemplo de resultado esperado:</p>
+<p><img alt="" src="../img.png" /></p>
+<p>Si llegaste hasta acá, no te olvides de guardar tu trabajo en el archivo <code>NDVI.py</code> y entregarlo. A continuación, un ejercicio que usa herramientas un poco más avanzadas de aprendizaje automático.</p>
+<h3 id="ejercicio-919-clasificacion-automatica">Ejercicio 9.19: Clasificación automática</h3>
+<p>En el ejercicio anterior definimos a mano los umbrales que distinguen las clases. Es posible hacer esto de forma automática. Para eso se usan técnicas de clustering. El siguiente código muestra un ejemplo con un clasificador muy sencillo: <code>kmeans</code>. Este clasificador está ya implementado en la biblioteca <a href="https://scikit-learn.org/stable/">sklearn</a> que es una biblioteca dedicada al aprendizaje automático en python (probablemente la más usada para esto).</p>
+<pre><code class="language-python"># filtro datos ruidosos o que puedan traer problemas.
+# el NDVI debe estar entre -1 y 1.
+ndvi[ndvi &gt; 1] = 1
+ndvi[ndvi &lt; -1] = -1
+
+#importo el clasificador y defino una instancia para clasificar con dos etiquetas
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters = 2)
+
+#le saco la estructura bidimensional a la matriz NDVI y la llamo datos
+datos = ndvi.reshape(-1,1) #datos es un vector con un dato de NDVI por pixel.
+
+#entreno o ajusto el el clasificador con los datos (demora!)
+kmeans.fit(datos) #ajusta el modelo
+#usa el modelo ajustado para poner etiquetas
+etiquetas = kmeans.predict(ndvi.reshape(-1,1))
+
+#visualizo los resultados recuperando la estructura bidimensional de la matriz
+plt.imshow(etiquetas.reshape(ndvi.shape))
+</code></pre>
+<p>Probá ajustando el número de clusters (<code>n_clusters = 5</code>, por ejemplo) y corriendo nuevamente el modelo. Ponele colores diferentes a las diferentes clases obtenidas.</p>
+<p>Si tarda mucho podés trabajar con un pedazo de la imágen. Por ejemplo si hacés <code>ndvi_clip = ndvi[1000:2000,2000:3000]</code> te quedás con un cuadradito que es un octavo de la imagen original y podés usarlo para probar cosas rápido. Si te convencen los resultados podés correr tu algoritmo sobre la imágen completa.</p>
+<h3 id="sugerencia-codigo-para-colorbars">Sugerencia: Código para colorbars</h3>
+<p>Revisar este código para el cmap:</p>
+<pre><code class="language-python">from matplotlib import colors
+# Creo colores
+cmap = colors.ListedColormap(['black', 'y',
+                              'yellowgreen', 'green', 'darkgreen'])
+# Defino los limites de cada color
+limites = [0, 1, 2, 3, 4]
+norm = colors.BoundaryNorm(limites, cmap.N)
+# Genero el grafico con colores
+plt.imshow(clases_ndvi, cmap=cmap, norm=norm)
+</code></pre>
+<p>Y éste para las leyendas:</p>
+<pre><code class="language-python">import matplotlib.patches as mpatches
+# Genero leyenda y grafico con leyenda
+texts = ['Sin vegetacion', 'Area desnuda', 'Vegetacion baja',
+         'Vegetacion moderada', 'Vegetacion densa']
+patches = [mpatches.Patch(color=cmap(i), label=&quot;{:s}&quot;.format(texts[i]) ) for i in range(len(texts))]
+plt.legend(handles=patches, bbox_to_anchor=(0.2,1.3), loc='center', ncol=1 )
+plt.imshow(clases_ndvi, cmap=cmap, norm=norm)
+plt.show()
+</code></pre>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_Pilas_Colas/">Anterior (5 Objetos, pilas y colas)</a> | <a href="../07_Cierre/">Próximo (7 Cierre de la clase)</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../07_Cierre/" class="btn btn-neutral float-right" title="07 Cierre">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../05_Pilas_Colas/" class="btn btn-neutral" title="05 Pilas Colas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../05_Pilas_Colas/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../07_Cierre/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
