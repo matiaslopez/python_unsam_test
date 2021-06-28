@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 Modulo principal - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#73-el-modulo-principal" class="nav-link">7.3 El módulo principal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Excepciones/">Anterior (2 Control de errores)</a> | <a href="../04_Flexibilidad/">Próximo (4 Cuestiones de diseño)</a></p>
+<h1 id="73-el-modulo-principal">7.3 El módulo principal</h1>
+<p>En esta sección introducimos el concepto de <strong>módulo principal</strong>. Dejamos <a href="https://youtu.be/TsWym9qYs4M">este video</a> con una introducción breve a esta sección y la siguiente.</p>
+<h3 id="funcion-principal">Función principal</h3>
+<p>En muchos lenguajes de programación existe el concepto de método o función <em>principal</em>. </p>
+<pre><code class="language-c">// c / c++
+int main(int argc, char *argv[]) {
+    ...
+}
+</code></pre>
+<pre><code class="language-java">// java
+class myprog {
+    public static void main(String args[]) {
+        ...
+    }
+}
+</code></pre>
+<p>Se refiere a la primera función que es ejecutada cuando corremos un programa.</p>
+<h3 id="modulo-principal-en-python">Módulo principal en Python</h3>
+<p>Python no tiene una función o método principal. En su lugar existe un <em>módulo principal</em> y éste será el archivo con código fuente que se ejecuta primero.</p>
+<pre><code class="language-bash">bash % python3 prog.py
+...
+</code></pre>
+<p>El archivo que le pases al intérprete al invocarlo será el módulo principal. No importa cómo lo llames.</p>
+<h3 id="chequear-__main__">Chequear <code>__main__</code></h3>
+<p>Es una práctica estándar usar la siguiente convención en módulos que son ejecutados como scripts principales: </p>
+<pre><code class="language-python"># prog.py
+...
+if __name__ == '__main__':
+    # Soy el programa principal ...
+    comandos
+    ...
+</code></pre>
+<p>Los comandos dentro del <code>if</code> constituyen el <em>programa principal</em></p>
+<h3 id="modulo-principal-vs-modulo-importado">Módulo principal vs. módulo importado</h3>
+<p>Cualquier archivo .py puede ejecutarse ya sea como el programa principal o como un módulo importado:  </p>
+<pre><code class="language-bash">bash % python3 prog.py # Corriendo como principal
+</code></pre>
+<pre><code class="language-python">import prog   # Corriendo como módulo importado
+</code></pre>
+<p>La variable <code>__name__</code> es el nombre del módulo. Sin embargo, esta variable  <code>__name__</code> valdrá <code>__main__</code> si ese módulo está siendo ejecutado como el script principal. </p>
+<p>Normalmente deseamos que los comandos que son parte del comportamiento del script en modo <em>principal</em> sólo se ejecuten si efectivamente el script es el módulo principal. No queremos que esos comandos se ejecuten si el módulo fue importado.</p>
+<p>Por lo tanto es común escribir una condición <code>if</code> que decida cómo se va a portar el código cuando éste puede ser usado de ambas maneras.  </p>
+<pre><code class="language-python">if __name__ == '__main__':
+    # Esto no se ejecuta en un módulo importado ...
+</code></pre>
+<h3 id="modelo-de-programa">Modelo de programa</h3>
+<p>Éste es un modelo usual para escribir un programa en Python:</p>
+<pre><code class="language-python"># prog.py
+# Comandos import (bibliotecas o módulos)
+import modules
+
+# Funciones
+def spam():
+    ...
+
+def blah():
+    ...
+
+# Función principal
+def main():
+    ...
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+<h3 id="herramientas-para-la-consola">Herramientas para la consola</h3>
+<p>Python se usa muy frecuentemente para correr herramientas desde la línea de comandos. En clase vimos algún ejemplo:</p>
+<pre><code class="language-bash">bash % python3 informe.py camion.csv precios.csv
+</code></pre>
+<p>Esto permite que los scripts sean ejecutados desde la terminal para correr ciertos procesos automáticos, ejecutar tareas en segundo plano, etc.</p>
+<h3 id="argumentos-en-la-linea-de-comandos">Argumentos en la línea de comandos</h3>
+<p>Python interpreta una línea de comandos como una lista de cadenas de texto.</p>
+<pre><code class="language-bash">bash % python3 informe.py camion.csv precios.csv
+</code></pre>
+<p>Como el script <code>informe.py</code> no está preparado para leer parámetros, no los va a usar. Igual, podés acceder a esta lista de cadenas usando <code>sys.argv</code>. Por ejemplo, si usas el parámetro <code>-i</code> para invocar a python de modo que el intérprete interactivo no termine luego de llamar a <code>informe.py</code> con los parámetros anteriores</p>
+<pre><code class="language-bash">bash % python3 -i informe.py camion.csv precios.csv
+</code></pre>
+<p>luego podrás ver el contenido de esta lista:</p>
+<pre><code class="language-python"># Llamado como recién, sys.argv contiene
+import sys
+sys.argv # ['informe.py, 'camion.csv', 'precios.csv']
+</code></pre>
+<p>Ahora vamos a hacer que los tenga en cuenta. El siguiente es un ejemplo de script simple para procesar los argumentos recibidos al invocarlo desde la terminal. Te permite usar tu script para generar el informe con archivos de diferentes camiones o precios, pasados como parámetros por la línea de comandos:</p>
+<pre><code class="language-python">import sys
+
+if len(sys.argv) != 3:
+    raise SystemExit(f'Uso adecuado: {sys.argv[0]} ' 'archivo_camion archivo_precios')
+camion = sys.argv[1]
+precios = sys.argv[2]
+...
+</code></pre>
+<p>Para ir un poco más allá, podés mirar el módulo <a href="https://docs.python.org/3/library/argparse.html#module-argparse">argparse</a> de Python permite escribir interfaces para programas que corren por linea de comandos de una manera amigables y profesional.</p>
+<h3 id="standard-io">Standard I/O</h3>
+<p>Los archivos de entrada y salida estándard (Standard Input / Output (stdio)) son archivos que se portan como archivos normales, pero están definidos por el sistema operativo.</p>
+<pre><code class="language-python">sys.stdout
+sys.stderr
+sys.stdin
+</code></pre>
+<p>Por omisión, la salida impresa es dirigida a <code>sys.stdout</code> (usualmente la pantalla), la entrada se lee de <code>sys.stdin</code> (usualmente el teclado), y la recapitulación de errores es dirigida a <code>sys.stderr</code> (usualmente, la pantalla otra vez).</p>
+<p>Las entradas y salidas de <em>stdio</em> pueden estar ligadas al teclado, a la pantalla, a una impresora, a diferentes archivos o incluir cosas más extrañas como pipes, etc.</p>
+<pre><code class="language-bash">bash % python3 prog.py &gt; resultados.txt
+# o si no
+bash % cmd1 | python3 prog.py | cmd2
+</code></pre>
+<p>Esta sintaxis se llama "piping" o redireccionamiento y significa: ejecutar cmd1, enviar su salida como entrada a prog.py invocado desde la terminal, y la salida de éste será la entrada para cmd2.</p>
+<h3 id="terminacion-del-programa">Terminación del programa</h3>
+<p>La terminación y salida del programa se administran a través de excepciones.</p>
+<pre><code class="language-python">raise SystemExit
+raise SystemExit(codigo_salida)
+raise SystemExit('Mensaje informativo')
+</code></pre>
+<p>O, alternativamente:</p>
+<pre><code class="language-python">import sys
+sys.exit(codigo_salida)
+</code></pre>
+<p>Es estándar que un codigo de salida de <code>0</code> indica que no hubo problemas y otro valor, que los hubo. </p>
+<h3 id="el-comando">El comando <code>#!</code></h3>
+<p>Bajo Unix (Linux es un Unix) una línea que comienza con <code>#!</code> ejecutará un script en el intérprete Python. Por ejemplo, si agregás la siguiente línea al comienzo de tu script podés ejecutar directamente el script (sin invocar manualmente a Python en la misma línea).</p>
+<pre><code class="language-python">#!/usr/bin/env python3
+# prog.py
+...
+</code></pre>
+<p>Para porder ser ejecutado, el archivo <code>prog.py</code> requiere permiso de ejecución asignado. Podés asignarle este permiso así: </p>
+<pre><code class="language-bash">bash % chmod +x prog.py
+# Ahora lo podés ejecutar
+bash % ./prog.py
+... salida ...
+</code></pre>
+<p><em>Observación: Al iniciar un script Python en Windows, se lee la línea que comienza con <code>#!</code> dentro del script para saber qué versión del intérprete invocar.</em></p>
+<h3 id="modelo-de-script-con-parametros">Modelo de script con parámetros</h3>
+<p>Para terminar, éste es un modelo usual de programa en Python que se ejecuta invocado desde la terminal.</p>
+<pre><code class="language-python">#!/usr/bin/env python3
+# prog.py
+
+# Import (bibliotecas)
+import modules
+
+# Funciones
+def spam():
+    ...
+
+def blah():
+    ...
+
+# Funcion principal
+def main(parametros):
+    # Analizar la línea de comandos, 
+    # usando la variable parámetros en lugar 
+    # de sys.argv, donde corresponda
+    ...
+
+if __name__ == '__main__':
+    import sys
+    main(sys.argv)
+</code></pre>
+<p><em>Observación: Este modelo es flexible en el sentido que te permite escribir programas que podés llamar desde la terminal pasándole parámetros o ejecutar directamente dentro de un intérprete usando <code>import</code> y llamando a su función <code>main</code> como veremos en los siguientes ejercicios.</em></p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Recordá trabajar siempre con las últimas versiones de tus archivos.</p>
+<h3 id="ejercicio-72-funcion-main">Ejercicio 7.2: Función <code>main()</code></h3>
+<p>Usando estas ideas, agregá a tu programa <code>informe.py</code> una función <code>main()</code> que tome una lista de parámetros en la línea de comandos y produzca la misma salida que antes.</p>
+<pre><code class="language-bash">bash % python3 informe.py ../Data/camion.csv ../Data/precios.csv
+</code></pre>
+<p>También deberías poder ejecutarlo del siguiente modo dentro del intérprete interactivo de Python:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.main(['informe.py', '../Data/camion.csv', '../Data/precios.csv'])
+
+    Nombre    Cajones     Precio     Cambio
+ ---------- ---------- ---------- ----------
+      Lima        100      $32.2       8.02
+   Naranja         50      $91.1      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+ Mandarina         50      $65.1      15.79
+   Naranja        100     $70.44      35.84
+
+&gt;&gt;&gt;
+</code></pre>
+<p>Análogamente, modificá el archivo <code>costo_camion.py</code> para que incluya una función similar <code>main()</code> que te permita hacer esto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import costo_camion
+&gt;&gt;&gt; costo_camion.main(['costo_camion.py', '../Data/camion.csv'])
+Total cost: 47671.15
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-73-hacer-un-script">Ejercicio 7.3: Hacer un script</h3>
+<p>Finalmente, modificá tus programas <code>informe.py</code> y <code>costo_camion.py</code> para que puedan ser ejecutados como scripts desde la línea de comandos:</p>
+<pre><code class="language-bash">bash $ python3 informe.py ../Data/camion.csv ../Data/precios.csv
+    Nombre    Cajones     Precio     Cambio
+ ---------- ---------- ---------- ----------
+      Lima        100      $32.2       8.02
+   Naranja         50      $91.1      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+ Mandarina         50      $65.1      15.79
+   Naranja        100     $70.44      35.84
+
+bash $ python3 costo_camion.py Data/camion.csv
+Costo total: 47671.15
+</code></pre>
+<p><em>Aclaración:</em>  En el ejercicio anterior ya agregaste una función <code>main()</code> a tu código. En este simplemente deberías verificar si <code>__name__ == '__main__'</code> y llamar a esa función para que se ejecute automáticamente cuando llames a tu programa desde la línea de comandos. </p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Excepciones/">Anterior (2 Control de errores)</a> | <a href="../04_Flexibilidad/">Próximo (4 Cuestiones de diseño)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

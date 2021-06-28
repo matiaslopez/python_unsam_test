@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/11_Recursion/03_Diseno_Recursivo/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 Diseno Recursivo - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#113-diseno-de-algoritmos-recursivos" class="nav-link">11.3 Diseño de algoritmos recursivos</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#limitaciones" class="nav-link">Limitaciones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resumen" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Recursion/">Anterior (2 Intro a la Recursión)</a> | <a href="../05_EjerciciosRec/">Próximo (4 Práctica de Recursión)</a></p>
+<h1 id="113-diseno-de-algoritmos-recursivos">11.3 Diseño de algoritmos recursivos</h1>
+<p>Hasta el momento vimos que hay muchas funciones matemáticas que se definen
+o que pueden desarrollarse de forma recursiva, pero puede aplicarse recursividad a muchos problemas que no sean explicitamente recursivos. Diseñar un algoritmo recursivo es un proceso sistematizable.</p>
+<p>En general, en el proceso para plantear un algoritmo recursivo, necesitamos
+resolver estos tres problemas:</p>
+<ol>
+<li><strong>Caso base:</strong> Necesitamos definir uno o más casos base de acuerdo a
+nuestro problema. Como regla general tratamos de pensar como caso base a
+las condiciones sobre las cuales es más fácil resolver nuestro problema.
+Por ejemplo, si estuviéramos trabajando sobre listas o cadenas probablemente
+sepamos la respuesta a nuestro problema en el caso de una secuencia vacía;
+si estuviéramos trabajando sobre conjuntos de elementos probablemente la
+respuesta sea evidente para los conjuntos de un solo elemento.</li>
+<li><strong>Caso recursivo</strong> o caso general: Este es el caso que va a efectuar
+la llamada recursiva. La idea de este caso es reducir el problema a un
+problema más sencillo, del cual se hará cargo la llamada recursiva, y luego
+poder ensamblar la solución al problema original. Ampliaremos esto más adelante.</li>
+<li><strong>Convergencia:</strong> Necesitamos que la reducción que se haga en el caso
+recursivo converja hacia los casos base, de modo que la recursión alguna
+vez termine. Esto es, si dijimos que el caso base se resolvía cuando teníamos
+una lista vacía, las operaciones del caso recursivo tienen que reducir
+reiteradamente la lista hasta que la misma quede vacía.</li>
+</ol>
+<p>Si podemos hacer estas tres cosas, tendremos un algoritmo recursivo para
+nuestro problema.</p>
+<h3 id="un-primer-diseno-recursivo">Un primer diseño recursivo</h3>
+<p>Supongamos que queremos programar una función <code>sumar(lista)</code> que
+determine en forma recursiva la suma de una secuencia <code>lista</code> de
+números.</p>
+<p>Como caso base debemos elegir un caso sencillo de verificar. El caso más
+sencillo de verificar es uno en el que ni siquiera necesitamos
+computar algo: Si la lista está vacía es evidente que la suma da cero.</p>
+<p>Nuestro caso base será algo así como:</p>
+<pre><code class="language-python">    if len(lista) == 0:
+        return 0
+</code></pre>
+<p>Queremos diseñar un paso recursivo que realice <em>una reducción</em> de manera que dada cualquier lista, la aplicación sucesiva de la reducción seleccionada converja al caso base. Hay muchas maneras de reducir una lista
+para lograr esto; para este caso vamos a proponer una muy sencilla: sacar el primer elemento. Si cada llamada recursiva saca el primer elemento, tarde o temprano covergeremos a una lista vacía.</p>
+<p>Nuestra llamada recursiva podría ser algo así como:</p>
+<pre><code class="language-python">sumar(lista[1:])
+</code></pre>
+<p>Lo más complejo ahora es pensar el caso general.</p>
+<p>Dijimos que íbamos a retirar un elemento de la lista por vez y hacer una
+llamada recursiva. Olvidémonos por un momento de la recursividad e imaginemos
+que <em>ya</em> tenemos una función <code>sumar2</code> que sabe sumar los elementos de una
+<code>lista</code> y que lo hace bien.  Intentemos resolver el problema inverso: si
+agregamos un elemento <code>x</code> al principio de la lista (obteniendo <code>[x] + lista</code>),
+¿podemos calcular la suma de la nueva lista?  ¿Podemos resolver el problema más
+grande con la solución al problema más pequeño? La solución es sencilla: La
+suma de la lista ampliada será <code>x</code> más la suma de la lista original (que podemos calcular como <code>sumar2(lista)</code>).</p>
+<p>Es decir, la solución al problema este que planteamos sería así:</p>
+<pre><code class="language-python">def sumar(lista):
+   &quot;&quot;&quot;Precondición: len(lista) &gt;= 1.
+      Devuelve: La suma de los elementos en la lista.&quot;&quot;&quot;
+   return lista[0] + sumar2(lista[1:])
+</code></pre>
+<p>Podemos ver que si tuviéramos implementada <code>sumar2</code> entonces
+<code>sumar</code> funcionaría bien. Volvamos ahora a recursividad: Si sabemos
+resolver el caso general en función a la solución del caso simplificado de la
+llamada recursiva, si existen casos base que corten la recursión y si además
+la recursión converge hacia los casos base tenemos resuelto el problema
+completo. La función que asumimos que funcionaba <em>es la misma</em> que
+acabamos de implementar.</p>
+<p>Cuando diseñamos una función recursiva tenemos que dar este <em>salto de fé</em>:
+asumir que la función del paso recursivo ya funciona; nosotros lo que vamos a implementar es una función que logra concatenar el resultado del subproblema y ensamblarlo con nuestro problema mayor. Si hacemos esto bien entonces todo funciona.</p>
+<p>Finalmente nuestra primera función recursiva quedaría:</p>
+<pre><code class="language-python">def sumar(lista):
+   &quot;&quot;&quot;Devuelve la suma de los elementos en la lista.&quot;&quot;&quot;
+   res = 0
+   if len(lista) != 0:
+       res = lista[0] + sumar(lista[1:])
+   return res
+</code></pre>
+<h3 id="recursion-de-cola">Recursión de cola</h3>
+<p>Dentro de los problemas recursivos no siempre es inmediato establecer cómo
+se va a propagar la información entre las llamadas recursivas. Es decir, cómo va a interactuar la solución de el o los subproblemas en la solución del problema general.</p>
+<p>En todos los ejemplos presentados hasta el momento la información del resultado
+se propagó desde las hojas del árbol de llamadas (los casos base) hacia las
+funciones invocantes (mediante la instrucción <code>return</code>). Por ejemplo, para
+resolver el resultado de Fibonacci <code>F(5)</code> se utilizan únicamente los resultados
+computados por <code>F(4)</code> y <code>F(3)</code>, y no se recibe ningún dato adicional de la función invocante (más allá del parámetro <code>n=5</code>).
+Esto no siempre es así, en algunos problemas sí se hace necesario propagar
+información "hacia abajo". Y en otros casos, si bien no es necesario,
+puede tener ventajas adicionales.</p>
+<p>Por ejemplo, podríamos reescribir la función <code>sumar()</code> de esta forma:</p>
+<pre><code class="language-python">def sumar(lista, suma = 0):
+    &quot;&quot;&quot;Devuelve la suma de los elementos en la lista.&quot;&quot;&quot;
+    res = suma
+    if len(lista) != 0:
+        res = sumar(lista[1:], lista[0] + suma)
+    return res
+</code></pre>
+<p>Puede observarse que en esta implementación en vez de <em>esperar</em> a que se
+resuelva el cómputo de la parte recursiva para ensamblar la solución e ir
+resolviendo los cálculos parciales desde el final de la lista hacia el
+principio, le <em>pasamos</em> la solución parcial a la llamada recursiva.
+Finalmente el caso base devuelve la suma de los cálculos que se realizaron
+de principio a final y cada llamada recursiva devuelve este resultado.</p>
+<p>No profundizaremos más en el tema, pero la particularidad de que lo último
+que se realice en el caso general sea la llamada recursiva (sin realizar
+ninguna operación adicional sobre el resultado de esta llamada) se conoce como
+<em>recursividad de cola</em>. La recursividad de cola es de interés porque
+implica muy poco esfuerzo reescribir una versión iterativa y no recursiva
+del algoritmo. Esto es inmediato: como lo último que se hace es la llamada
+recursiva entonces no hace falta seguir <em>recordando</em> el contexto de la
+llamada anterior cuando se hace la siguiente, entonces no es necesario utilizar
+la pila de ejecución. El código anterior puede reescribirse como</p>
+<pre><code class="language-python">def sumar(lista):
+    &quot;&quot;&quot;Devuelve la suma de los elementos en la lista.&quot;&quot;&quot;
+    suma = 0
+    while lista:
+        lista, suma = lista[1:], lista[0] + suma
+    return suma
+</code></pre>
+<p>tan solo reemplazando la recursión por un bucle y actualizando las
+variables según los parámetros de la llamada recursiva.</p>
+<h3 id="modificacion-de-la-firma">Modificación de la firma</h3>
+<p>La <em>firma</em> de una función es su nombre, más los
+parámetros que recibe, más los valores que devuelve. Para invocar una función
+cualquiera, es suficiente con saber cómo es su firma, y no es necesario saber
+cómo es la implementación interna. Ahora bien, si cambiamos la lista
+de parámetros o el tipo de dato del valor de retorno de la función, estamos
+cambiando su firma, y eso nos obliga a cambiar cualquier lugar del código
+que contenga alguna llamada a la función.</p>
+<p>En el ejemplo de <code>sumar</code> implementada con recursividad de cola nos
+vimos obligados a modificar la firma de la función agregando el parámetro
+<code>suma</code> que no formaba parte del problema inicial. Pudimos hacerlo
+elegantemente utilizando un valor por omisión (<code>suma=0</code>), pero la firma de
+todos modos quedó confusa.</p>
+<p>Hay casos en los que no podemos salvar un cambio en la firma.  Por ejemplo,
+supongamos que queremos diseñar una función recursiva que calcule el promedio
+de una secuencia de números.</p>
+<p>Como ya sabemos diseñar funciones recursivas, intuimos que el caso base será
+cuando la lista tenga un solo elemento y que la reduciremos sacando de a un elemento por
+vez. El cuerpo de nuestra función será algo así:</p>
+<pre><code class="language-python">def promediar(lista):
+    if len(lista) == 1:
+        res = lista[0]
+    else:
+        res = promediar(lista[1:]) ???
+    return res
+</code></pre>
+<p>Ahora bien, con esto no alcanza para resolver el problema.</p>
+<p>Para calcular un promedio necesitamos tanto calcular la suma como contar
+la cantidad de elementos. Entonces, una implementación recursiva va a estar computando dos valores cuando el resultado del problema es evidentemente uno solo. Si bien puede elaborarse una solución similar a la que ya ensayamos con <code>sumar</code> complicaría innecesariamente el código. Es preferible modificar la firma
+de la función.</p>
+<p>Implementemos el problema resolviendo primero la llamada recursiva (en una
+función diferente que llamaremos <code>promediar_aux()</code>) y luego ensamblando:</p>
+<pre><code class="language-python">def promediar_aux(lista):
+    suma = lista[0]
+    cantidad = 1    
+    if len(lista) &gt; 1:
+        suma_resto, cantidad_resto = promediar_aux(lista[1:])
+        suma += suma_resto
+        cantidad += cantidad_resto
+    return suma, cantidad
+</code></pre>
+<p>Puede verse que esta función cumple con las reglas de diseño de recursividad
+que describimos antes. Con lo que no cumple esta función es con la firma
+natural de la función <code>promediar()</code> que queríamos diseñar, ya que <code>promediar_aux()</code> devuelve dos cosas y no una.</p>
+<p>Esto no invalida nuestra solución, pero la misma está incompleta. Lo que
+debemos hacer es implementar una función <em>wrapper</em> (envoltorio) que lo
+que haga es operar como <em>cara visible</em> para le usuarie de la función que
+hace realmente el trabajo. A esta función sí la vamos a llamar <code>promediar</code>, ya
+que va a cumplir con la firma deseada:</p>
+<pre><code class="language-python">def promediar(lista):
+    &quot;&quot;&quot;Devuelve el promedio de los elementos de una lista de números.&quot;&quot;&quot;
+
+    def promediar_aux(lista):
+        suma = lista[0]
+        cantidad = 1    
+        if len(lista) &gt; 1:
+            suma_resto, cantidad_resto = promediar_aux(lista[1:])
+            suma += suma_resto
+            cantidad += cantidad_resto
+        return suma, cantidad
+
+    suma, cantidad = promediar_aux(lista)
+    return suma / cantidad
+</code></pre>
+<p>Notar que si bien la función visible <code>promediar</code> no es recursiva, sí lo
+es la función <code>promediar_aux</code> que es la que realiza el trabajo, por
+lo que el conjunto se considera recursivo. Observá que estamos definiendo la función <code>promediar_aux</code> <strong>dentro</strong> de la función <code>promediar</code> de manera que no resulte visible desde afuera (no la podés llamar desde afuera: así como hay <em>variables locales</em>, ésta es una <em>función local</em>).</p>
+<p>Además de para adaptar la firma de la función recursiva, las funciones wrapper
+se suelen utilizar para simplificar el código de las funciones recursivas. Por
+ejemplo, si quisiéramos hacer validaciones de los parámetros, no
+querríamos que las mismas se reiteraran en cada iteración recursiva porque
+consumirían recursos innecesarios. Entonces las podemos resolver en la función
+wrapper, antes de empezar la recursión.</p>
+<p>Por ejemplo, hace un rato implementamos la potencia en forma recursiva con la restricción <code>n &gt;= 0</code>. Pero dado que <code>b^n = (1/b)^(-n)</code> podemos aprovechar el código implementado para
+resolver para cualquier <code>n</code> entero. Podríamos modificar el código de <code>potencia()</code> para incluir este caso, pero se reiteraría la comprobación en cada nivel de la recursión. Para este caso resulta más sencillo construir una función wrapper e incluir ahí todo lo que consideremos necesario.
+Habiendo renombrado la función original como <code>_potencia</code>, nuestro wrapper sería:</p>
+<pre><code class="language-python">def potencia(b, n):
+    &quot;&quot;&quot;Precondición: n es entero
+       Devuelve: b^n.&quot;&quot;&quot;
+    if n &lt; 0:
+        b = 1 / b
+        n = -n
+    return _potencia(b, n)
+</code></pre>
+<h2 id="limitaciones">Limitaciones</h2>
+<p>Si creamos una función sin <em>caso base</em>, obtendremos el equivalente
+recursivo de un bucle infinito. </p>
+<p>Éste es un bucle infinito y corre para siempre.</p>
+<pre><code class="language-python">i = 0
+while i &lt; 10:
+    suma = suma + i
+</code></pre>
+<p>El bucle recursivo infinito, sin embargo, termina agotando la memoria. Esto se debe a que cada llamada recursiva agrega un elemento a la pila de llamadas a funciones y la memoria de nuestras computadoras no es infinita.</p>
+<p>En particular, en Python, para evitar que la memoria se termine, la pila de
+ejecución de funciones tiene un límite. Es decir, que si se ejecuta un
+código como el que sigue:</p>
+<pre><code class="language-python">def inutil(n):
+    return inutil(n - 1)
+</code></pre>
+<p>Se obtendrá un resultado como el siguiente:</p>
+<pre><code class="language-python">&gt;&gt;&gt; inutil(1)
+  File &quot;&lt;stdin&gt;&quot;, line 2, in inutil
+  File &quot;&lt;stdin&gt;&quot;, line 2, in inutil
+  (...)
+  File &quot;&lt;stdin&gt;&quot;, line 2, in inutil
+RecursionError: maximum recursion depth exceeded
+</code></pre>
+<p>El límite por omisión es de 1000 llamadas recursivas. Es posible modificar
+el tamaño máximo de la pila de recursión mediante la instrucción
+<code>sys.setrecursionlimit(n)</code>.  Sin embargo, si se está alcanzando
+este límite suele ser una buena idea pensar si realmente el algoritmo
+recursivo es el que mejor resuelve el problema.</p>
+<h3 id="sabias-que">Sabías que</h3>
+<p>Existen algunos lenguajes <em>funcionales</em>, como Haskell, ML, o Scheme, en
+los cuales la recursión es la única forma de realizar un ciclo.  Es
+decir, no existen construcciones <code>while</code> ni <code>for</code>.</p>
+<p>Estos lenguajes cuentan con optimización de recursión de cola,
+una optimización para que cuando se identifique que la recursión es de cola,
+no se apile el estado de la función innecesariamente, evitando el consumo adicional de memoria mencionado anteriormente.</p>
+<p>La ejecución de todas las funciones con recursión de cola vistas en esta
+unidad podría ser optimizada por el compilador o intérprete del lenguaje.</p>
+<h2 id="resumen">Resumen</h2>
+<ul>
+<li>A medida que se realizan llamadas a funciones, el estado de cada
+función se almacena en la <em>pila de ejecución</em>.</li>
+<li>Esto permite que sea posible que una función se llame a sí misma,
+pero que las variables dentro de la función tomen distintos valores.</li>
+<li>La <em>recursión</em> es el proceso en el cual una función se invoca a
+sí misma.  Este proceso permite crear un nuevo tipo de ciclos.</li>
+<li>Siempre que se escribe una función recursiva es importante considerar
+el <em>caso base</em> (el que detendrá la recursión) y el <em>caso
+recursivo</em> (el que realizará la llamada recursiva).  Una función recursiva
+sin caso base es equivalente a un bucle infinito.</li>
+<li>Una función no es mejor ni peor por ser recursiva.  En cada situación
+a resolver puede ser conveniente utilizar una solución recursiva o una
+iterativa.  Para elegir una o la otra será necesario analizar las
+características de elegancia y eficiencia.</li>
+<li>Al diseñar funciones recursivas muchas veces puede ser útil
+implementar una función <em>wrapper</em>, por ejemplo para adaptar
+la firma de la función, validar parámetros, inicializar datos o manejar excepciones.</li>
+</ul>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Recursion/">Anterior (2 Intro a la Recursión)</a> | <a href="../05_EjerciciosRec/">Próximo (4 Práctica de Recursión)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

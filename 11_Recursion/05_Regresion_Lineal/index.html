@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/11_Recursion/05_Regresion_Lineal/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>05 Regresion Lineal - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#115-regresion-lineal" class="nav-link">11.5 Regresión lineal</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#regresion-lineal-simple" class="nav-link">Regresión lineal simple</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#parte-optativa" class="nav-link">Parte optativa:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#regresion-lineal-multiple" class="nav-link">Regresión Lineal Múltiple</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_EjerciciosRec/">Anterior (4 Práctica de Recursión)</a> | <a href="../06_Cierre/">Próximo (6 Cierre de la clase de Recursión y Regresión)</a></p>
+<h1 id="115-regresion-lineal">11.5 Regresión lineal</h1>
+<p>En esta sección vamos a trabajar con <strong>regresión lineal</strong>, tema que introducimos en <a href="https://youtu.be/8tKruBXMDZY">este video</a>. No es una clase con todos los fundamentos del tema, sino un acercamiento práctico a las técnicas y sus formas de uso en Python. Para un desarrollo más profundo te recomendamos por ejemplo las notas de <a href="http://cs229.stanford.edu/notes2020spring/cs229-notes1.pdf">Andrew Ng</a>.</p>
+<p><img alt="Gauss" src="../gauss.jpg" /></p>
+<h2 id="regresion-lineal-simple">Regresión lineal simple</h2>
+<p>Supongamos que queremos modelar la relación entre dos variables reales mediante un modelo lineal. Y que vamos a ajustar los parámetros de ese modelos a partir de ciertos valores conocidos (mediciones, digamos). Es decir que vamos a estar pensando que las variables tienen una relación lineal, <code>Y = a*X + b</code>, donde <code>X</code> es la variable <em>explicativa</em> (sus componentes se denominan <em>independientes</em> o <em>regresores</em>), e <code>Y</code> es la variable <em>a explicar</em> (también denominada <em>dependiente</em> o <em>regresando</em>).</p>
+<p>A partir de un conjunto de datos de tipo <code>(x_i, y_i)</code>, planteamos el modelo <code>Y = a*X + b</code>.</p>
+<p>En general el modelo no va a ser exacto, es decir, no se va a complir que <code>y_i = a*x_i + b</code> para los valores <code>(x_i, y_i)</code> (salvo que estén, justamente, todos los valores sobre una línea recta). En general, decíamos, vamos a tener que <code>y_i = a*x_i + b + r_i</code> donde, los valores <code>r_i</code>, llamados <em>residuos</em>, representan las diferencias entre los valores de la recta en cada valor de <code>x</code> que tenemos y los valores de <code>y</code> asociados.</p>
+<p>El problema de regresión lineal consiste en elegir los parámetros <code>a, b</code> de la recta (es decir, su pendiente y ordenada al origen), de manera que la recta sea la que <em>mejor se adapte</em> a los datos disponibles.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([55.0, 38, 68, 70, 53, 46, 11, 16, 20, 4])
+y = np.array([153.0, 98, 214, 220, 167, 145, 41, 63, 65, 25])
+g = plt.scatter(x = x, y = y)
+plt.title('scatterplot de los datos')
+plt.show()
+
+</code></pre>
+<p><img alt="ej0_scatter" src="../ej0_scatter.png" /></p>
+<p>¿Qué quiere decir <em>mejor</em>? Vamos a considerar el criterio de cuadrados mínimos.</p>
+<h3 id="criterio-de-cuadrados-minimos">Criterio de cuadrados mínimos</h3>
+<p>Vamos a elegir como mejor recta a la que minimice los residuos. Más precisamente, vamos a elegir la recta de manera tal que la suma de los cuadrados de los residuos sea mínima.</p>
+<p><img alt="ej0_posiblesrectas" src="../ej0_posiblesrectas.png" /></p>
+<p>Analíticamente, buscamos <code>a, b</code> tales que minimicen la siguiente suma de cuadrados:</p>
+<!--- ![\Sigma_{i=1}^n (a*x_i + b - y_i)^2](https://render.githubusercontent.com/render/math?math=\Sigma_{i=1}^n%20(a%20\cdot%20x_i%20%2B%20b%20-%20y_i)^2)
+--->
+
+<p><img src="./eq_suma_de_cuadrados.png" width="30%"/></p>
+<p>Usar cuadrados mínimos tiene múltiples motivaciones que no podemos detallar adecuadamente acá. Solo mencionaremos dos hechos importantes relacionados con su frecuente elección:</p>
+<ul>
+<li>Por un lado, minimizar el error cuadrático medio puede resolverse derivando la fórmula del error. Los que sepan algo de análisis matemático, recordarán que la derivada nos permite encontrar mínimos y que la derivada de una función cuadrática es una función lineal. Por lo tanto, encontrar la recta que mejor ajusta los datos se reduce a buscar el cero de una derivada que en el fondo se reduce a resolver un sistema lineal, algo que sabemos hacer muy bien y muy rápido. Si en lugar de minimizar la suma de los cuadrados de los residuos planteáramos, por ejemplo, minimizar la suma de los valores absolutos de los residuos no podríamos encontrar la recta que mejor ajusta tan fácilmente.</li>
+<li>Otro argumento muy fuerte, de naturaleza estadística en este caso, es que si uno considera que los residuos son por ejemplo errores de medición y que tienen una distribución normal (una gaussiana), entonces puede mostrarse que la recta que da el método de los cuadrados mínimos es <em>la recta de máxima verosimilitud</em>.</li>
+</ul>
+<p>Estas cosas se explican muy bien en <a href="http://cs229.stanford.edu/notes2020spring/cs229-notes1.pdf">el apunte de Andrew Ng</a> que citamos antes.</p>
+<p>Recordá que en la <a href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/#fórmulas-matemáticas">Sección 5.2</a> vimos que calcular el promedio de estos errores cuadráticos es muy sencillo en numpy. También podés usar la función <code>mean_squared_error</code> del módulo <code>sklearn.metrics</code> que trae muchas métricas muy útiles.</p>
+<h3 id="ejemplo-el-modelo-de-cuadrados-minimos">Ejemplo: el modelo de cuadrados mínimos</h3>
+<p>Para los datos que graficamos antes, ésta es <em>la mejor recta</em>, es decir, la que minimiza la suma de los cuadrados de los residuos. Vamos a decir que esta recta es <strong>el ajuste lineal de los datos</strong>.</p>
+<p><img alt="ej0_ajuste" src="../ej0_ajuste.png" /></p>
+<p>¿Cómo se encuentran estos coeficientes?</p>
+<h3 id="ajuste-del-modelo-de-cuadrados-minimos">Ajuste del modelo de cuadrados mínimos</h3>
+<p>Como buscamos el mínimo de la expresión </p>
+<!--- ![\Sigma_{i=1}^n (a*x_i + b - y_i)^2](https://render.githubusercontent.com/render/math?math=\Sigma_{i=1}^n%20(a%20\cdot%20x_i%20%2B%20b%20-%20y_i)^2)
+--->
+<p><img src="./eq_suma_de_cuadrados.png" width="20%"/>
+ podemos derivar respecto de los parámetros <code>a, b</code> e igualar a cero para despejarlos. No es una cuenta díficil. El único cero que va a tener la derivada se corresponde con un mínimo (porque la recta se puede ajustar <em>tan mal como uno quiera</em>). De esta manera se obtienen las siguientes fórmulas para el ajuste:</p>
+<pre><code class="language-python">def ajuste_lineal_simple(x,y):
+    a = sum(((x - x.mean())*(y-y.mean()))) / sum(((x-x.mean())**2))
+    b = y.mean() - a*x.mean()
+    return a, b
+</code></pre>
+<h3 id="ejemplo-datos-sinteticos">Ejemplo: datos sintéticos</h3>
+<p>Veamos un ejemplo generado con datos sintéticos. Generamos 50 datos para la variable <code>x</code>, y determinamos a la variable <code>y</code> con una relación lineal más un error normal.</p>
+<pre><code class="language-python">import numpy as np
+
+N = 50
+minx = 0
+maxx = 500
+x = np.random.uniform(minx, maxx, N)
+r = np.random.normal(0, 25, N) # residuos simulados
+y = 1.3*x + r
+
+g = plt.scatter(x = x, y = y)
+plt.title('gráfico de dispersión de los datos')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+</code></pre>
+<p><img alt="ejsint_scatter" src="../ejsint_scatter.png" /></p>
+<p>Ahora ajustamos con las fórmulas que vimos antes:</p>
+<pre><code class="language-python">a, b = ajuste_lineal_simple(x, y)
+
+grilla_x = np.linspace(start = minx, stop = maxx, num = 1000)
+grilla_y = grilla_x*a + b
+
+g = plt.scatter(x = x, y = y)
+plt.title('y ajuste lineal')
+plt.plot(grilla_x, grilla_y, c = 'green')
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.show()
+</code></pre>
+<p><img alt="ejsint_ajuste" src="../ejsint_ajuste.png" /></p>
+<h3 id="ejercicio-1114-precio_alquiler-superficie">Ejercicio 11.14: precio_alquiler ~ superficie</h3>
+<p>Consideramos datos de precios (en miles de pesos) de alquiler mensual de departamentos en el barrio de Caballito, CABA, y sus superficies (en metros cuadrados). Queremos modelar el precio de alquiler a partir de la superficie para este barrio. A veces este modelo se nota con <em>precio_alquiler ~ superficie</em>.</p>
+<ul>
+<li>Usando la función que definimos antes, ajustá los datos con una recta.</li>
+<li>Graficá los datos junto con la recta del ajuste.</li>
+</ul>
+<pre><code class="language-python">superficie = np.array([150.0, 120.0, 170.0, 80.0])
+alquiler = np.array([35.0, 29.6, 37.4, 21.0])
+</code></pre>
+<p>Una forma de cuantificar cuán bien ajusta la recta es considerar el promedio de los errores cuadráticos, llamado <em>error cuadrático medio</em>.</p>
+<pre><code class="language-python">errores = alquiler - (a*superficie + b)
+print(errores)
+print(&quot;ECM:&quot;, (errores**2).mean())
+</code></pre>
+<ul>
+<li>Calculá el error cuadrático medio del ajuste que hiciste recién.</li>
+</ul>
+<p>Guardá tu código en el archivo <code>alquiler.py</code> para entregar.</p>
+<h3 id="ejemplo-relacion-cuadratica">Ejemplo: relación cuadrática</h3>
+<p>Veamos qué pasa si los datos guardan en realidad una relación cuadrática. Generemos aletoriamente variables independientes y dependientes con este tipo de relación.</p>
+<pre><code class="language-python">np.random.seed(3141) # semilla para fijar la aleatoriedad
+N=50
+indep_vars = np.random.uniform(size = N, low = 0, high = 10)
+r = np.random.normal(size = N, loc = 0.0, scale = 8.0) # residuos
+dep_vars = 2 + 3*indep_vars + 2*indep_vars**2 + r # relación cuadrática
+</code></pre>
+<p>Grafiquemos los datos obtenidos y, por comodidad, llamémoslos <code>x</code> e <code>y</code>.</p>
+<pre><code class="language-python">x = indep_vars
+y = dep_vars
+plt.scatter(x,y)
+plt.title('scatterplot de los datos')
+plt.show()
+</code></pre>
+<p><img alt="ejcuad_scatter" src="../ejcuad_scatter.png" /></p>
+<p>Y ajustemos un modelo lineal (notado: <em>y ~ x</em>) a estos datos.</p>
+<pre><code class="language-python">a, b = ajuste_lineal_simple(x, y)
+
+grilla_x = np.linspace(start = 0, stop = 10, num = 1000)
+grilla_y = grilla_x*a + b
+g = plt.scatter(x = x , y = y)
+plt.title('ajuste lineal')
+plt.plot(grilla_x, grilla_y, c = 'green')
+plt.show()
+</code></pre>
+<p><img alt="ejcuad_ajustelineal" src="../ejcuad_ajustelineal.png" /></p>
+<p>Veamos cuánto vale el error cuadrático medio.</p>
+<pre><code class="language-pyhon">errores = y - (x*a + b)
+print(&quot;ECM&quot;, (errores**2).mean())
+</code></pre>
+<h2 id="parte-optativa">Parte optativa:</h2>
+<p>Ahora vamos a profundizar en algunos conceptos y a ver maneras alternativas de hacer las cosas. Lo que sigue es optativo.</p>
+<h3 id="ejemplo-precomputo-de-atributos-adecuados">Ejemplo: precómputo de atributos adecuados</h3>
+<p>Es natural pensar que aproximar una parábola con un modelo lineal no es lo más sensato. Un modelo alternativo es usar como variable explicativa <code>x^2</code> en vez de <code>x</code>. El cómputo de <code>xc = x^2</code> se realiza en un paso previo de forma que el modelo sigue siendo lineal (ahora lineal en <code>x^2</code>). Esto significa que el formalismo matemático para encontrar los coeficientes del nuevo modelo es el mismo que antes.</p>
+<pre><code class="language-python">xc = x**2
+ap, bp = ajuste_lineal_simple(xc, y)
+grilla_y_p = (grilla_x**2)*ap + bp
+plt.scatter(x,y)
+plt.plot(grilla_x, grilla_y, c = 'green')
+plt.plot(grilla_x, grilla_y_p, c = 'red')
+plt.title('ajuste lineal con x^2')
+plt.show()
+</code></pre>
+<p><img alt="ejcuad_ajusteconx2" src="../ejcuad_ajusteconx2.png" /></p>
+<p>Y si queremos cuantificar el error en este modelo:</p>
+<pre><code class="language-pyhon">yhat = (x**2)*ap + bp       # valores estimados
+residuos = y - yhat         # diferencia entre el valor original y el estimado
+ecm = (residuos**2).mean()  # error cuadrático medio
+print(&quot;ECM:&quot;, ecm)
+</code></pre>
+<p>Al usar <code>x^2</code> en lugar de <code>x</code> mejora sustancialmente la bondad de ajuste del modelo (notado: <em>y ~ x^2</em>). Veremos próximamente que podemos usar ambas <code>x</code> y <code>x^2</code> como variables explicativas y obtener un ajuste aún mejor de los datos.</p>
+<p><strong>Raíz del error cuadrático medio</strong>: Una alternativa al error cuadrático medio es su raíz cuadrada, conocida como <em>root mean squared error</em> (RMSE). La ventaja de esta medida de la bondad de ajuste de un modelo a los datos radica en que ésta se expresa en las misma unidades que la variable a explicar, y, mientras que el ECM (MSE) se expresa en <em>unidades al cuadrado</em>. Siendo la raíz una función monótona, minimizar una métrica o la otra es equivalente.</p>
+<h3 id="scikit-learn">Scikit-Learn</h3>
+<p>La biblioteca <a href="https://scikit-learn.org/stable/">scikit-learn</a> tiene herramientas muy útiles para el análisis de datos y el desarrollo de modelos de aprendizaje automático, aunque se mantiene relativamente alejada de la inferencia estadística. En particular, para regresión lineal tiene el módulo <code>linear_model</code>, y en el siguiente ejemplo mostramos cómo puede usarse. Para les que estén habituades al lenguaje R, quizás les conviene usar la biblioteca <a href="https://www.statsmodels.org/stable/regression.html">stastmodels</a> que tiene un funcionamiento más cercano.</p>
+<p>Al igual que el modelo de clustering que usamos en el <a href="../../09_Clases_y_Objetos/06_Teledeteccion/#ejercicio-919-clasificación-automática">Ejercicio 9.19</a> de teledetección, el objeto de tipo <code>LinearRegression</code> de <code>sklearn.liearmodel</code> también tiene un método <code>fit()</code> que permite ajustar el modelo a los datos y otro <code>predict()</code> que permite usar el modelo ajustado con nuevos datos.</p>
+<p>Acá rehacemos el primer ejemplo que dimos (<a href="./#ejemplo-el-modelo-de-cuadrados-mínimos">Sección 11.5</a>), usando pandas y el módulo <code>linear_model</code>.</p>
+<pre><code class="language-python">import pandas as pd
+from sklearn import linear_model
+
+x = np.array([55.0, 38, 68, 70, 53, 46, 11, 16, 20, 4]) # mismos datos x, y
+y = np.array([153.0, 98, 214, 220, 167, 145, 41, 63, 65, 25])
+datosxy = pd.DataFrame({'x': x, 'y': y}) # paso los datos a un dataframe
+
+ajus = linear_model.LinearRegression() # llamo al modelo de regresión lineal
+ajus.fit(datosxy[['x']], datosxy['y']) # ajusto el modelo
+
+grilla_x = np.linspace(start = 0, stop = 70, num = 1000)
+grilla_y = ajus.predict(grilla_x.reshape(-1,1))
+
+datosxy.plot.scatter('x','y')
+plt.title('ajuste lineal usando sklearn')
+plt.plot(grilla_x, grilla_y, c = 'green')
+plt.show()
+</code></pre>
+<p><img alt="ejsk1_ajuste" src="../ejsk1_ajuste.png" /></p>
+<p>Usamos el método <code>fit()</code> para ajustar el modelo y el método <code>predict()</code> para obtener los valores de <code>y</code> de la recta. Fijate que al método <code>fit</code> le pasamos el Dataframe <code>datosxy[['x']]</code> y no la serie <code>datosxy['x']</code> ya que el método está preparado para trabajar con regresiones múltiples (es decir, tenés muchos regresores).</p>
+<h2 id="regresion-lineal-multiple">Regresión Lineal Múltiple</h2>
+<p>La regresión lineal múltiple tiene un planteo similar, pero con más variables explicativas. El modelo es el siguiente.</p>
+<!---
+![y = \b_0 + \sum_{j=1}^k \b_j x_j](https://render.githubusercontent.com/render/math?math=y%20=%20\b_0%20%2B%20\sum_{j=1}^k%20\b_j%20x_j)
+--->
+<p><img src="./eq_reg_lin_multiple.png" width="30%"/></p>
+<h3 id="ejemplo-superficie-y-antiguedad">Ejemplo: superficie y antigüedad</h3>
+<p>Trabajamos nuevamente con los departamentos, ahora también conociendo su antigüedad, y la tomamos como otra variable explicativa. Ajustaremos un modelo que tenga en cuenta ambas variables, y lo notaremos: <em>precio_alquiler ~ superficie + antigüedad</em></p>
+<pre><code class="language-python">superficie = np.array([150.0, 120.0, 170.0, 80.0])
+alquiler = np.array([35.0, 29.6, 37.4, 21.0])
+antigüedad = [50.0, 5.0, 25.0, 70.0]
+
+data_deptos = pd.DataFrame({'alquiler': alquiler, 'superficie': superficie, 'antigüedad': antigüedad})
+
+X = pd.concat([data_deptos.superficie,data_deptos.antigüedad], axis = 1)
+
+ajuste_deptos = linear_model.LinearRegression()
+ajuste_deptos.fit(X,data_deptos.alquiler)
+
+errores = data_deptos.alquiler - (ajuste_deptos.predict(X))
+print(errores)
+print(&quot;ECM:&quot;, (errores**2).mean()) # error cuadrático medio
+</code></pre>
+<p>Usando los atributos <code>intercept_</code> y <code>coef_</code> de <code>ajuste_deptos</code> escribí a mano la fórmula de la regresión múltiple obtenida y respondé las siguientes preguntas respecto al modelo obtenido:
+- A mayor superficie, ¿aumenta o disminuye el precio?
+- A mayor antigüedad, ¿aumenta o disminuye el precio?
+- ¿Cuánto vale la ordenada al origen del modelo?</p>
+<h3 id="ejercicio-1115-peso-especifico">Ejercicio 11.15: Peso específico</h3>
+<p>Queremos estimar el peso específico de un metal (es decir, peso divido volumen, en unidades de g/cm³). Para esto, disponemos de barras de dicho metal, con base de 1cm² y largos diversos, y de una balanza que tiene pequeños errores de medición (desconocidos). Vamos a estimar el peso específico <em>R</em> del metal de la siguiente manera:</p>
+<p>Sabemos que el volumen de una barra de largo <code>m</code> es <code>m</code>cm³, por lo que su peso debería ser <code>R*m</code>. Queremos estimar <code>R</code>. Utilizando la balanza, tendremos los pesos aproximados de distintas barras, con ciertos errores de medición. Si ajustamos un modelo lineal a los datos de volumen y peso aproximado vamos a tener una buena aproximación para <code>R</code> (la pendiente de la recta).</p>
+<p>Los datos de longitudes y pesos se encuentran en el archivo <a href="" title="https://raw.githubusercontent.com/python-unsam/Programacion_en_Python_UNSAM/master/Notas/11_Recursion/longitudes_y_pesos.csv">disponible acá</a>.</p>
+<ul>
+<li>Cargá los datos directamente con el enlace usando el siguiente código.</li>
+</ul>
+<pre><code class="language-python">import requests
+import io
+
+enlace = 'https://raw.githubusercontent.com/python-unsam/Programacion_en_Python_UNSAM/master/Notas/11_Recursion/longitudes_y_pesos.csv'
+r = requests.get(enlace).content
+data_lyp = pd.read_csv(io.StringIO(r.decode('utf-8')))
+</code></pre>
+<ul>
+<li>
+<p>Hacé una regresión lineal simple con <code>sklearn</code>, con variable explicativa <code>longitud</code> y variable explicada <code>peso</code> (<em>peso ~ longitud</em>).</p>
+</li>
+<li>
+<p>Estimá el peso específico del metal mirando el coeficiente obtenido.</p>
+</li>
+<li>
+<p>Graficá los datos junto con la recta del ajuste, y calculá el error cuadrático medio.</p>
+</li>
+<li>
+<p>Guardá el código en un archivo <code>peso_especifico.py</code>.</p>
+</li>
+</ul>
+<p><em>Cuidado:</em> por cómo planteamos el problema, estamos ajustando una recta con ordenada al origen igual a cero. Para esto tendrás que usar el parámetro <code>fit_intercept = False</code> en la declaración de tu modelo.</p>
+<h3 id="ejercicio-1116-modelo-cuadratico">Ejercicio 11.16: Modelo cuadrático</h3>
+<p>Volvamos ahora al ejemplo cuadrático de antes. La relación entre <code>x</code> (<code>indep_vars</code>) e <code>y</code> (<code>dep_vars</code>) estaba dada por <code>y = 2 + 3*x + 2*x**2 + r</code>. Ya tratamos de ajustar regresiones simples tipo <code>y = a*x + b</code> y <code>y = a*x^2 + b</code>. Ajustemos ahora una regresión lineal múltiple, usando como regresores a <code>x</code> y a <code>x^2</code>. </p>
+<p>Nos gustaría no generar datos aleatorios nuevamente sino usar los anteriores, ya generados, para poder comparar (los errores cuadráticos medios de) los tres modelos.</p>
+<pre><code class="language-python">x = indep_vars
+xc = x**2
+y = dep_vars
+</code></pre>
+<p>Para preparar los datos a usar como regresores (en este caso múltiple serán <code>x</code> y <code>x^2</code>) podés usar:</p>
+<pre><code class="language-python">X = np.concatenate((x.reshape(-1,1),xc.reshape(-1,1)),axis=1)
+</code></pre>
+<p>Si te fijás, el array <code>X</code> tiene un shape de <code>(50, 2)</code>. Esto se corresponde a cincuenta datos con dos atributos.</p>
+<ul>
+<li>Usá un objeto <code>lm = linear_model.LinearRegression()</code> para comparar los ajustes obtenidos usando <code>x</code> como única variable regresora, <code>xc</code> (los cuadrados) como única variable regresora, o ambas en un modelo múltiple (notado: <em>y ~ x + x^2</em>). Imprimí para cada uno de los tres modelos, el error cuadrático medio y los coeficientes (ordenada al orígen y coeficientes de los regresores) obtenidos. ¿Qué modelo ajusta mejor? ¿Cuál da coeficientes más similares a los originales? ¿Qué pasaría si usáramos un modelo de grado tres o cuatro?</li>
+<li>Graficá los datos originales y los tres ajustes en un solo gráfico indicando adecuadamente los nombres de los modelos.</li>
+</ul>
+<h3 id="navaja-de-ockham">Navaja de Ockham</h3>
+<p>Al agregar covariables (regresores) a un modelo, el ajuste tiende a mejorar. Si ajusto un modelo con variables <code>x1, x2, x3</code> para explicar una variable <code>y</code> no puedo obtener un peor ajuste que si lo ajusto usando solo las variables <code>x1</code> y <code>x2</code> ya que todo modelo con las dos variables es un caso particular del modelo con las tres (simplemente hay que poner el coeficiente de la tercera variable igual a cero). Por eso, en general, al agregar variables a un modelo, su error cuadrático disminuye. Sin embargo un modelo con mejor ajuste no es <em>necesariamente</em> mejor. </p>
+<p>El principio metodológico conocido como la <a href="https://es.wikipedia.org/wiki/Navaja_de_Ockham">navaja de Ockham</a> nos indica que de un conjunto de variables explicativas debe seleccionarse la combinación más reducida y simple posible. </p>
+<p>Esto ayuda a evitar fenómenos como el <strong>sobreajuste</strong> que causa <a href="https://twitter.com/electricfuture5/status/1309688641157906433">problemas muy serios y a veces graciosos</a>.</p>
+<h3 id="ejercicio-1117-modelos-polinomiales-para-una-relacion-cuadratica">Ejercicio 11.17: Modelos polinomiales para una relación cuadrática</h3>
+<p>Vimos en el <a href="./#ejercicio-1116-modelo-cuadrático">Ejercicio 11.16</a> que los datos de ese ejercicio se ajustan mejor con una regresión múltiple (usando <code>x</code> y <code>x^2</code>) que una regresión simple (basada un una sola variable). Te proponemos ahora que te fijes qué ocurre si seguimos aumentando el grado de las potencias de <code>x</code> que admitimos en la regresión múltiple (es decir, usar <code>x</code>, <code>x^2</code>,..., etc. hasta <code>x^n</code>). ¿Sigue bajando el error cuadrático medio? ¿Pueden considerarse <em>mejores</em> los modelos obtenidos?</p>
+<p>Para <code>n</code> entre 1 y 8 realizá un ajuste con un polinomio de grado <code>n</code> (que tiene <code>n+1</code> parámetros, por la ordenada al orígen) e imprimí una salida como esta:</p>
+<pre><code>-------------------------
+Grado del polinomio: 1
+Cantidad de parámetros: 2
+ECM: 201.194
+------------------------
+Grado del polinomio: 2
+Cantidad de parámetros: 3
+ECM: 36.325
+...
+...
+</code></pre>
+<p>Te recomendamos usar la siguiente función <code>pot()</code> para generar las primeras potencias de <code>x</code>:</p>
+<pre><code class="language-python">def pot(x,n):
+    X=x.reshape(-1,1)
+    for i in range(n-1):
+        X=np.concatenate((X,(x**(i+2)).reshape(-1,1)),axis=1)
+    return X
+</code></pre>
+<h3 id="ejercicio-1118-seleccion-de-modelos">Ejercicio 11.18: selección de modelos</h3>
+<p>El <a href="https://es.wikipedia.org/wiki/Criterio_de_informaci%C3%B3n_de_Akaike">criterio de información de Akaike</a> es una medida de la calidad relativa de un modelo estadístico, para un conjunto dado de datos. Como tal, el AIC proporciona un medio para la comparación de modelos. AIC maneja un trade-off entre la bondad de ajuste del modelo y la complejidad del mismo (medido en cantidad de parámetros). </p>
+<p><img alt="AIC" src="../AIC.png" /></p>
+<p>En el caso de la regresión lineal múltiple, puede computarse con la siguiente función:</p>
+<pre><code class="language-python">def AIC(k, ecm, num_params):
+    '''Calcula el AIC de una regresión lineal múltiple de 'num_params' parámetros, ajustada sobre una muestra de 'k' elementos, y que da lugar a un error cuadrático medio 'ecm'.'''
+    aic = k * np.log(ecm) + 2 * num_params
+    return aic
+</code></pre>
+<p>Agregá al código del ejercicio anterior el cómputo del AIC para cada modelo. </p>
+<pre><code>-------------------------
+Grado del polinomio: 1
+Cantidad de parámetros: 2
+ECM: 201.194
+AIC: 269.213
+------------------------
+Grado del polinomio: 2
+Cantidad de parámetros: 3
+ECM: 36.325
+AIC: 185.626
+...
+...
+</code></pre>
+<p>Cuando complejizamos el modelo mejorando el error cuadrático medio, pero sin disminuir el AIC, es probable que el modelo se esté <a href="https://es.wikipedia.org/wiki/Sobreajuste">sobreajustando</a> a los datos de entrenamiento.</p>
+<p>Si seleccionamos el modelo ya no por su bondad de ajuste (ECM) sino buscando el mínimo AIC ¿Qué modelo queda seleccionado? Respodé esta pregunta usando el comando <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmin.html"><code>np.argmin()</code></a> para encontrar el grado del polinomio que minimiza el AIC y comentá adecuadamente tu código. Guardalo en el archivo <code>selección_modelos.py</code> para entregar.</p>
+<h3 id="ejercicio-1119-datos-para-la-evaluacion">Ejercicio 11.19: Datos para la evaluación</h3>
+<p>Otra alternativa para comparar modelos es evaluarlos en un conjunto de datos diferente al que usamos para entrenarlos. La próxima clase vamos a ver que <code>sklearn</code> tiene funciones que permiten partir automáticamente los datos en conjuntos de <em>entrenamiento</em> y <em>evalaución</em>. Por ahora supongamos que nos dan los siguientes datos frescos:</p>
+<pre><code class="language-python">N=50
+#genero datos para evaluar 
+x_test = np.random.uniform(size = N, low = 0, high = 10) 
+r_test = np.random.normal(size = N, loc = 0.0, scale = 8.0) # residuos
+y_test = 2 + 3*x_test + 2*x_test**2 + r_test # misma relación cuadrática
+</code></pre>
+<p>Evaluá los modelos que armaste antes usando el ECM sobre estos datos frescos. ¿Qué modelo da un mejor ajuste?</p>
+<p>Estas técnicas de selección de modelos usando datos de entrenamiento y evaluación separados o usando el criterio de información de Akaike tratan de evitar usar modelos que se sobreajusten a los datos de entrenamiento. Este fenómeno, conocido como <em>overfitting</em>, puede causar problemas muy serios.</p>
+<h3 id="ejercicio-1120-altura-y-diametro-de-arboles">Ejercicio 11.20: Altura y diámetro de árboles.</h3>
+<p>Queremos comparar las formas de las siguientes especies de árboles en los parques de Buenos Aires:</p>
+<ul>
+<li>Jacarandá,</li>
+<li>Palo borracho rosado,</li>
+<li>Eucalipto, y</li>
+<li>Ceibo.</li>
+</ul>
+<p>Vamos a trabajar nuevamente con el archivo de arbolado porteño en parques que tenés en el archivo '../Data/arbolado-en-espacios-verdes.csv'.</p>
+<ul>
+<li>
+<p>Cargá los datos en un DataFrame <code>data_arbolado_parques</code>.</p>
+</li>
+<li>
+<p>Para cada especie, seleccioná los datos correspondientes, realizá un ajuste lineal (sin ordenada al orígen) de la altura dependiendo del diámetro a la altura del pecho. Realizá un scatterplot de los datos de la especie junto con la recta de regresión lineal. </p>
+</li>
+<li>
+<p>Realizá un gráfico comparando los cuatro modelos obtenidos.</p>
+</li>
+<li>
+<p>Guardá el código de este ejercicio en un archivo <code>ajuste_arboles.py</code>.</p>
+</li>
+</ul>
+<p><em>Observación</em>: Como podés ver en los scatterplots, para árboles más anchos hay mayor variabilidad de alturas que para árboles angostos. Esto implica que el modelo va a ser más sensible a datos de árboles anchos que a datos de árboles angostos. Esta caraceterística se llama <em>heterocedasticidad</em> y muchas veces es un problema para usar regresiones lineales. Por ejemplo, no es posible aplicar directamente tests de hipótesis a los resultados obtenidos. </p>
+<p>Para explicarlo con un ejemplo: imaginá que tenemos tres pares de datos (<em>DAP</em> y <em>altura</em> para un árbol angosto, para un árbol mediano y para un árbol muy ancho) y supongamos que hay una relación lineal <em>real</em> que es la que estamos buscando estimar a partir de los datos. La altura del arbol angosto va a variar unos pocos centímetros respecto a este modelo ideal mientras que la altura del árbol ancho puede variar muchos metros. Esto hace que el <em>residuo</em> del árbol grueso respecto al modelo ideal sea mucho mayor que el residuo del árbol angosto y, por lo tanto, que su infuencia en los coeficientes estimados sea mayor también (recordemos que estamos minimizando la suma de estos residuos al cuadrado). Esto viola una de las hipótesis de la regresión lineal (la <em>homocedasticidad</em>) que dice que todos los residuos tienen la <em>misma</em> distribución.</p>
+<p>En este caso contamos con una gran cantidad de datos y podemos aplicar de todas formas la regresión en el marco de un análisis exploratorio de los datos.</p>
+<h3 id="ejercicio-1121-graficos-de-ajuste-lineal-con-seaborn">Ejercicio 11.21: Gráficos de ajuste lineal con Seaborn</h3>
+<ul>
+<li>Seleccioná los datos correspondientes a las especies: Jacarandá, Palo borracho rosado, Eucalipto y Ceibo, todas en un mismo DataFrame, usando el siguiente filtro.</li>
+</ul>
+<p><code>Python
+ filtro = data_arbolado_parques['nombre_com'].isin(esp_selec)</code></p>
+<ul>
+<li>
+<p>Explorá el comando de seaborn <code>sns.regplot()</code>, que ajusta el modelo lineal y lo grafica sin pasar por scikit learn. El parámetro <code>order</code> te permite hacer ajustes polinomiales. El <code>ci</code> se refiere al intervalo de confianza a sombrear.</p>
+</li>
+<li>
+<p>Para facilitar la comparación que hiciste en el ejercicio anterior, graficá todos los ajustes juntos usando:</p>
+</li>
+</ul>
+<p><code>python
+ g = sns.FacetGrid(datos_selec_p, col = 'nombre_com')
+ g.map(sns.regplot, 'diametro', 'altura_tot')</code></p>
+<p><em>Observación</em>: Nos quedaron afuera de esta clase temas importantes como sobreajuste (<em>Overfitting</em>), partición de los datos en conjuntos de entrenamiento y evaluación, validación cruzada, presencia de datos atípicos (outliers), tests de hipótesis, selección de modelos... No era nuestra idea dar estos contenidos sino mostrar un acercamiento práctico desde Python al problema de la regresión lineal.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_EjerciciosRec/">Anterior (4 Práctica de Recursión)</a> | <a href="../06_Cierre/">Próximo (6 Cierre de la clase de Recursión y Regresión)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

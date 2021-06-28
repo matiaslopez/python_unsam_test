@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>04 Flexibilidad - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#74-cuestiones-de-diseno" class="nav-link">7.4 Cuestiones de diseño</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicio" class="nav-link">Ejercicio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../03_Modulo_principal/">Anterior (3 El módulo principal)</a> | <a href="../05_Especificacion_y_Documentacion/">Próximo (5 Contratos: Especificación y Documentación)</a></p>
+<h1 id="74-cuestiones-de-diseno">7.4 Cuestiones de diseño</h1>
+<p>En esta breve sección, volvemos a discutir algunas decisiones de diseño que tomamos antes.</p>
+<h3 id="archivos-versus-iterables">Archivos versus iterables</h3>
+<p>Compará estos dos programas que resultan en la misma salida.</p>
+<pre><code class="language-python"># Necesita el nombre de un archivo
+def read_data(nombre_archivo):
+    records = []
+    with open(nombre_archivo) as f:
+        for line in f:
+            ...
+            records.append(r)
+    return records
+
+d = read_data('file.csv')
+</code></pre>
+<pre><code class="language-python"># Necesita líneas de texto
+def read_data(lines):
+    records = []
+    for line in lines:
+        ...
+        records.append(r)
+    return records
+
+with open('file.csv') as f:
+    d = read_data(f)
+</code></pre>
+<ul>
+<li>¿Cuál de las funciones <code>read_data()</code> preferís y por qué?</li>
+<li>¿Cuál de las funciones permite mayor flexibilidad?</li>
+</ul>
+<h3 id="una-idea-profunda-duck-typing-identificacion-de-patos">Una idea profunda: "Duck Typing" (Identificación de patos)</h3>
+<p><a href="https://en.wikipedia.org/wiki/Duck_typing">Duck Typing</a> del inglés o en español <a href="https://es.wikipedia.org/wiki/Duck_typing">"Test del pato"</a> es un concepto usado en programación para determinar si un objeto puede ser usado para un propósito en particular. Se trata de una aplicación particular del <a href="https://en.wikipedia.org/wiki/Duck_test">test del pato</a> que puede resumirse así:</p>
+<blockquote>
+<p>Si algo se parece a un pato, nada como un pato, y hace el mismo ruido que un pato, entonces probablemente se trate de un pato.</p>
+</blockquote>
+<p>Mientras que la primera versión de <code>read_data()</code> requiere específicamente líneas de un archivo de texto, la segunda versión funciona con <em>cualquier</em> iterable. </p>
+<pre><code class="language-python">def read_data(lines):
+    records = []
+    for line in lines:
+        ...
+        records.append(r)
+    return records
+</code></pre>
+<p>Esto implica que la podemos usar con otro tipo de <em>líneas</em>, no necesariamente archivos. Veamos algunos ejemplos.</p>
+<pre><code class="language-python"># Un archivo .csv
+lines = open('data.csv')
+data = read_data(lines)
+
+# Un archivo zipeado 
+lines = gzip.open('data.csv.gz','rt')
+data = read_data(lines)
+
+# La entrada estándar (Standard Input), por teclado
+lines = sys.stdin
+data = read_data(lines)
+
+# Una lista de cadenas
+lines = ['Quinoto,50,91.1','Naranja,75,123.45', ... ]
+data = read_data(lines)
+</code></pre>
+<p>Esto nos lleva nuevamente a la identificación de patos: es suficiente con saber que grazna como pato, camina como pato y vuela como pato para saber que podés usarlo como pato. Volveremos a esta idea al hablar de diseño de objetos, dentro de un par de clases. En este caso en particular, todos nuestros "patos" ...</p>
+<pre><code class="language-python">lines = open('data.csv')
+lines = gzip.open('data.csv.gz','rt')
+lines = sys.stdin
+lines = ['Quinoto,50,91.1','Naranja,75,123.45', ... ]
+</code></pre>
+<p>son iterables de texto, por lo tanto los usaremos como "patos" en la función <code>read_data()</code>.</p>
+<p>Si el concepto te resulta oscuro, tal vez <a href="https://youtu.be/pxzLSMqU_7U">esta explicación</a> te ayude. La flexibilidad que este diseño permite es considerable. <em>Pregunta: ¿Debemos favorecer u oponernos a esta flexibilidad?</em> </p>
+<h3 id="buenas-practicas-en-el-diseno-de-bibliotecas">Buenas prácticas en el diseño de bibliotecas</h3>
+<p>Las bibliotecas de código suelen ser más útiles si son flexibles. No restrinjas las opciones innecesariamente. Con mayor flexibilidad suele venir asociada una mayor potencia.</p>
+<h2 id="ejercicio">Ejercicio</h2>
+<h3 id="ejercicio-74-de-archivos-a-objetos-cual-archivos">Ejercicio 7.4: De archivos a "objetos cual archivos"</h3>
+<pre><code class="language-python">&gt;&gt;&gt; import fileparse
+&gt;&gt;&gt; camion = fileparse.parse_csv('../Data/camion.csv', types=[str,int,float])
+&gt;&gt;&gt;
+</code></pre>
+<p>Actualmente la función solicita el nombre de un archivo, pero podés hacer el código más flexible. Modificá la función de modo que funcione con cualquier objeto o iterable que se comporte como un archivo. Por ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import fileparse
+&gt;&gt;&gt; import gzip
+&gt;&gt;&gt; with gzip.open('../Data/camion.csv.gz', 'rt') as file:
+...      camion = fileparse.parse_csv(file, types=[str,int,float])
+...
+&gt;&gt;&gt; lines = ['nombre,cajones,precio', 'Lima,100,34.23', 'Naranja,50,91.1', 'Mburucuya,75,45.1']
+&gt;&gt;&gt; camion = fileparse.parse_csv(lines, types=[str,int,float])
+&gt;&gt;&gt;
+</code></pre>
+<p>Atención: Si lo hacés con delicadeza, los cambios a hacer en tu código son realmente mínimos. Fijate en la documentación de la función <code>csv.reader</code> (por ejemplo con <code>help(csv.reader)</code>) que lo que le pasás debe ser un objeto iterable, pero no necesariamente un archivo.</p>
+<p>Una vez que hayas incorporado esta modificación, ¿qué pasa si le pasás un nombre de archivo como antes?</p>
+<pre><code class="language-python">&gt;&gt;&gt; camion = fileparse.parse_csv('../Data/camion.csv', types=[str,int,float])
+&gt;&gt;&gt; camion
+... mirá la salida (debería ser un lío) ...
+&gt;&gt;&gt;
+</code></pre>
+<p>Sí, hay que tener cuidado.</p>
+<h3 id="ejercicio-75-arreglemos-las-funciones-existentes">Ejercicio 7.5: Arreglemos las funciones existentes</h3>
+<p>Arreglá las funciones <code>leer_camion()</code> y <code>leer_precios()</code> en el archivo <code>informe.py</code> de modo que funcionen con la nueva versión de <code>parse_csv()</code>. Con una pequeña modificación es suficiente. Después de esto tus programas <code>informe.py</code> y <code>costo_camion.py</code> deberían funcionar tan bien como antes. </p>
+<p>Por ahora dejamos estos archivos y pasamos a otras discusiones. Dejá estos archivos listos para entregar al final de la clase. </p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../03_Modulo_principal/">Anterior (3 El módulo principal)</a> | <a href="../05_Especificacion_y_Documentacion/">Próximo (5 Contratos: Especificación y Documentación)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

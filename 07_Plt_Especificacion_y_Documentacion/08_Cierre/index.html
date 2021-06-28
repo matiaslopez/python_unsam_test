@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/07_Plt_Especificacion_y_Documentacion/08_Cierre/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>08 Cierre - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#78-cierre-de-la-clase" class="nav-link">7.8 Cierre de la clase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../07_Matplotlib/">Anterior (7 La biblioteca matplotlib)</a></p>
+<h1 id="78-cierre-de-la-clase">7.8 Cierre de la clase</h1>
+<p>En esta clase vimos cómo se hace una administración eficiente de errores, cómo atrapar excepciones, cómo lanzarlas, y cuándo conviene hacer o no hacer estas cosas.</p>
+<p>Vimos que un archivo <code>.py</code> correctamente escrito puede usarse como un módulo, como un programa en sí mismo, o como ambas cosas dependiendo del caso, y mostramos que aunque uno esté escribiendo una pequeña función para solucionar un pequeño problema, es bueno pensar en grande y no imponer restricciones innecesarias.</p>
+<p>Aprendimos a documentar y comentar de manera útil, y mostramos el paradigma de contratos. Además vimos algo sobre estilo código estándard.</p>
+<p>También estudiamos diversos estilos de gráficos, como obtener un vistazo rápido de los datos y como ajustar cada elemento para obtener un gráfico que pueda ser publicado.</p>
+<p>Para cerrar esta clase te pedimos dos cosas:
+* Que recopiles las soluciones de los siguientes ejercicios:</p>
+<ol>
+<li>El archivo <code>fileparse.py</code> del <a href="../04_Flexibilidad/#ejercicio-74-de-archivos-a-objetos-cual-archivos">Ejercicio 7.4</a>.</li>
+<li>El archivo <code>informe.py</code> del <a href="../04_Flexibilidad/#ejercicio-75-arreglemos-las-funciones-existentes">Ejercicio 7.5</a>.</li>
+<li>El archivo <code>documentacion.py</code> del <a href="../05_Especificacion_y_Documentacion/#ejercicio-78-funciones-y-documentación">Ejercicio 7.8</a>.</li>
+<li>
+<p>El archivo <code>random_walk.py</code> del <a href="../07_Matplotlib/#ejercicio-710-caminatas-al-azar">Ejercicio 7.10</a>.</p>
+</li>
+<li>
+<p>Que completes <a href="https://docs.google.com/forms/d/1LmeHVZqiEznUUD7FjhTbi6eRQFzvb8Er4dOF3mOy9oo">este formulario</a> usando como identificación tu dirección de mail.  Al terminar vas a obtener un link para enviarnos tus ejercicios y podrás participar de la revisión de pares.</p>
+</li>
+</ol>
+<p>¡Gracias! </p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../07_Matplotlib/">Anterior (7 La biblioteca matplotlib)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

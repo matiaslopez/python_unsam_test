@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/09_Clases_y_Objetos/03_Herencia/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 Herencia - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#93-herencia" class="nav-link">9.3 Herencia</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Clases/">Anterior (2 Clases)</a> | <a href="../04_M%C3%A9todos_Especiales/">Próximo (4 Métodos especiales)</a></p>
+<h1 id="93-herencia">9.3 Herencia</h1>
+<p>Esta sección tiene <a href="https://youtu.be/n7CxhdOmHb8">un video</a> donde introducimos el tema de herencia.</p>
+<p>La herencia entre clases es una herramienta muy usada para escribir programas extensibles. Exploraremos esta idea a continuación.</p>
+<h3 id="introduccion">Introducción</h3>
+<p>Se usa herencia para crear objetos más especializados a partir de objetos existentes.</p>
+<pre><code class="language-python">class Padre:
+    ...
+
+class Hijo(Padre):
+    ...
+</code></pre>
+<p>Se dice que <code>Hijo</code> es una clase derivada o subclase. La clase <code>Padre</code> es conocida como la clase base, o superclase. La expresión <code>class Hijo(Padre):</code> significa que estamos creando una clase llamada <code>Hijo</code> que es derivada de la clase <code>Padre</code>. </p>
+<h3 id="extensiones">Extensiones</h3>
+<p>Al usar herencia podés tomar una clase existente y ...</p>
+<ul>
+<li>Agregarle métodos</li>
+<li>Redifinir métodos existentes</li>
+<li>Agregar nuevos atributos</li>
+</ul>
+<p>Podés verlo como una forma de <strong>extender</strong> de tu codigo existente. Darle nuevos comportamientos, abarcar un abanico más amplio de posibilidades ó aumentar su compatibilidad. </p>
+<h3 id="ejemplo">Ejemplo</h3>
+<p>Suponé que partís de la siguiente clase:</p>
+<pre><code class="language-python">class Lote:
+    def __init__(self, nombre, cajones, precio):
+        self.nombre = nombre
+        self.cajones = cajones
+        self.precio = precio
+
+    def costo(self):
+        return self.cajones * self.precio
+
+    def vender(self, ncajones):
+        self.cajones -= ncajones
+</code></pre>
+<p>Podés modificar lo que necesites mediante herencia.</p>
+<h3 id="agregar-un-metodo-nuevo">Agregar un método nuevo</h3>
+<pre><code class="language-python">class MiLote(Lote):
+    def rematar(self):
+        self.vender(self.cajones)
+</code></pre>
+<p>Se puede usar así:</p>
+<pre><code class="language-python">&gt;&gt;&gt; c = MiLote('Pera', 100, 490.1)
+&gt;&gt;&gt; c.vender(25)
+&gt;&gt;&gt; c.cajones
+75
+&gt;&gt;&gt; c.rematar()
+&gt;&gt;&gt; c.cajones
+0
+&gt;&gt;&gt;
+</code></pre>
+<p>Esta clase heredó los atributos y métodos de <code>Lote</code> y la extendío con un nuevo método (<code>rematar()</code>).</p>
+<h3 id="redefinir-un-metodo-existente">Redefinir un método existente</h3>
+<pre><code class="language-python">class MiLote(Lote):
+    def costo(self):
+        return 1.25 * self.cajones * self.precio
+</code></pre>
+<p>Un ejemplo de uso:</p>
+<pre><code class="language-python">&gt;&gt;&gt; c = MiLote('Pera', 100, 490.1)
+&gt;&gt;&gt; c.costo()
+61262.5
+&gt;&gt;&gt;
+</code></pre>
+<p>El método nuevo simplemente reemplaza al definido en la clase base. Los demás métodos y atributos no son afectados. ¿No es buenísimo?</p>
+<h3 id="utilizar-un-metodo-prevalente">Utilizar un método prevalente</h3>
+<p>Hay veces en que una clase extiende el método de la superclase a la que pertenece, pero necesita ejecutar el método original como parte de la redefinición del método nuevo. Para referirte a la superclase, usá <code>super()</code>:</p>
+<pre><code class="language-python">class Lote:
+    ...
+    def costo(self):
+        return self.cajones * self.precio
+    ...
+
+class MiLote(Lote):
+    def costo(self):
+        # Fijate cómo usamos `super`
+        costo_orig = super().costo()
+        return 1.25 * costo_orig
+</code></pre>
+<p>Usá <code>super()</code> para llamar al método de la clase base (del la cual ésta es heredera).</p>
+<h3 id="el-metodo-__init__-y-herencia">El método <code>__init__</code> y herencia.</h3>
+<p>Al crear cada instancia se ejecuta <code>__init__</code>. Ahí reside el código importante para la creación de una instancia nueva. Si redefinís <code>__init__</code> siempre incluí un llamado al método <code>__init__</code> de la clase base para inicializarla también.</p>
+<pre><code class="language-python">class Lote:
+    def __init__(self, nombre, cajones, precio):
+        self.nombre = nombre
+        self.cajones = cajones
+        self.precio = precio
+    ...
+
+
+class MiLote(Lote):
+    def __init__(self, nombre, cajones, precio, factor):
+        # Fijate como es el llamado a `super().__init__()`
+        super().__init__(nombre, cajones, precio)
+        self.factor = factor
+
+    def costo(self):
+        return self.factor * super().costo()
+</code></pre>
+<p>Es necesario llamar al método <code>__init__()</code> en la clase base. Es una forma de ejecutar la versión previa del método que estamos redefiniendo, como mostramos recién.</p>
+<h3 id="usos-de-herencia">Usos de herencia</h3>
+<p>Uno de los usos de definir una clase como heredera de otra es organizar jerárquicamente objetos que están relacionados.</p>
+<p>Un ejemplo: Las figuras geométricas pueden tener ciertos métodos y atributos que luego son refinados en casos concretos como círculos o rectángulos.</p>
+<pre><code class="language-python">class FiguraGeom:
+    ...
+
+class Circulo(FiguraGeom):
+    ...
+
+class Rectangulo(FiguraGeom):
+    ...
+</code></pre>
+<p>Imaginate por ejemplo su uso en una jerarquía lógica, o taxonómica, en la que las clases tienen una relación natural tal que hace intuitivo derivar una de otra. </p>
+<p>Una aplicación más común, y tal vez más práctica, consiste en escribir código que es reutilizable y/o extensible. Podríamos definir una clase base para una interfaz de transferencia de datos y permitir que cada fabricante de equipo de adquisición de datos implemente los detalles de comunicación con cada interfaz en particular.</p>
+<pre><code class="language-python">class Procesador_de_datos(TCPHandler):
+    def procesar_pedido(self):
+        ...
+        # Procesamiento de datos
+</code></pre>
+<p>La clase base contiene código de administración no específico. Cada clase hereda ese código y modifica las partes necesarias.</p>
+<h3 id="relacion-isinstance">Relación "isinstance"</h3>
+<p>La herencia establece una relación de clases.</p>
+<pre><code class="language-python">class FiguraGeom:
+    ...
+
+class Circulo(FiguraGeom):
+</code></pre>
+<p>Preguntamos si un objeto es una instancia de cierta clase:</p>
+<pre><code class="language-python">&gt;&gt;&gt; f = Circulo(4.0)
+&gt;&gt;&gt; isinstance(f, FiguraGeom)
+True
+&gt;&gt;&gt;
+</code></pre>
+<p><em>Importante: Idealmente, todo código que funcione con instancias de una clase base debería también funcionar con instancias de las clases derivadas de ella.</em></p>
+<h3 id="la-clase-base-object">La clase base <code>object</code></h3>
+<p>Si una clase no tiene superclase, a veces se escribe  <code>object</code> como clase base.</p>
+<pre><code class="language-python">class Figura_geom(object):
+    ...
+</code></pre>
+<p><code>object</code> es la superclase de todo objeto en Python.</p>
+<h3 id="herencia-multiple">Herencia múltiple.</h3>
+<p>Podés heredar de varias clases simultáneamente si los especificás en la definición de clase.</p>
+<pre><code class="language-python">class Madre:
+    ...
+
+class Padre:
+    ...
+
+class Hijo(Madre, Padre):
+    ...
+</code></pre>
+<p>La clase <code>Hijo</code> hereda características de ambos padres. Algunos detalles son un poco delicados y no vamos a usar esa forma de heredar clases en este curso, aunque vas a encontrar un poco más de información en la próxima sección.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>El concepto de herencia es especialmente útil cuando estás escribiendo código que va a ser extendido o adaptado, ya sea en bibliotecas o grandes sistemas configurables, pero también en pequeños paquetes de procesamiento de datos que pueden adquirir datos de diversas fuentes. Como ya dijimos antes, uno puede escribir las relaciones y comportamientos fundamentales y dejar los detalles de implementación de cada interfaz para cuando sean necesarios.</p>
+<p>Para verlo mejor volvamos a la función <code>imprimir_informe()</code> del <a href="../06_Organización_y_Complejidad/02_Scripts.md#ejercicio-64-estructurar-un-programa-como-una-colección-de-funciones">Ejercicio 6.4</a>, que figura en el programa <code>informe.py</code>. Tenía más o menos este aspecto:</p>
+<pre><code class="language-python">def imprimir_informe(data_informe):
+    '''
+    Imprime una tabla prolija desde una lista de tuplas con (nombre, cajones, precio, cambio) 
+    '''
+    headers = ('Nombre','Cajones','Precio','Cambio')
+    print('%10s %10s %10s %10s' % headers)
+    print(('-'*10 + ' ')*len(headers))
+    for row in data_informe:
+        print('%10s %10d %10.2f %10.2f' % row)
+</code></pre>
+<p>Al ejecutar tu programa <code>informe</code> la salida es algo parecido a esto: </p>
+<pre><code class="language-python">&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv')
+    Nombre    Cajones     Precio     Cambio
+ ---------- ---------- ---------- ----------
+      Lima        100      $32.2       8.02
+   Naranja         50      $91.1      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+ Mandarina         50      $65.1      15.79
+   Naranja        100     $70.44      35.84
+</code></pre>
+<p>A continuación vamos a trabajar con herencias relacionadas con este código.</p>
+<h3 id="ejercicio-95-un-problema-de-extensibilidad">Ejercicio 9.5: Un problema de extensibilidad</h3>
+<p>Imaginá que necesitás que la función <code>imprimir_informe()</code> pueda exportar el informe en una variedad de formatos: texto plano, HTML, CSV ó XML. Podrías escribir una función enorme que resuelva todos los casos, pero resultaría en código repetido, y difícil de mantener. Esta es una oportunidad perfecta para usar herencia de objetos.</p>
+<p>Vamos a enfocarnos en los pasos necesarios para crear una tabla. </p>
+<p>Al principio de la tabla tenemos los encabezados de las columnas. Después de eso, los datos de la tabla ordenados en una fila por ítem. Pongamos cada uno de esos pasos en una clase distinta. Creá un archivo llamado <code>formato_tabla.py</code> y definí la siguiente clase:</p>
+<pre><code class="language-python"># formato_tabla.py
+
+class FormatoTabla:
+    def encabezado(self, headers):
+        '''
+        Crea el encabezado de la tabla.
+        '''
+        raise NotImplementedError()
+
+    def fila(self, rowdata):
+        '''
+        Crea una única fila de datos de la tabla.
+        '''
+        raise NotImplementedError()
+</code></pre>
+<p>Por ahora la clase no hace nada, pero sirve como una especie de especificación de diseño para otras clases que vamos a definir. Una clase como ésta es a menudo llamada "clase base abstracta".</p>
+<p>Ahora es necesario modificar la función <code>imprimir_informe()</code> para que acepte como fuente de datos un objeto <code>FormatoTabla</code> e invoque los métodos de este objeto para producir la tabla de salida. Algo así:</p>
+<pre><code class="language-python"># informe.py
+import formato_tabla
+
+...
+
+def imprimir_informe(data_informe, formateador):
+    '''
+    Imprime una tabla prolija desde una lista de tuplas
+    con (nombre, cajones, precio, diferencia) 
+    '''
+    formateador.encabezado(['Nombre', 'Cantidad', 'Precio', 'Cambio'])
+    for nombre, cajones, precio, cambio in data_informe:
+        rowdata = [ nombre, str(cajones), f'{precio:0.2f}', f'{cambio:0.2f}' ]
+        formateador.fila(rowdata)
+</code></pre>
+<p>Como agregaste un argumento a <code>imprimir_informe()</code>, hay que modificar también <code>informe_camion()</code>. Cambialo para que cree un objeto <code>formateador</code> de este modo:</p>
+<pre><code class="language-python"># informe.py
+
+import formato_tabla
+
+...
+
+def informe_camion(archivo_camion, archivo_precios):
+    '''
+    Crea un informe a partir de un archivo de camión
+    y otro de precios de venta.
+    '''
+    # Leer archivos con datos
+    camion = leer_camion(archivo_camion)
+    precios = leer_precios(archivo_precios)
+
+    # Crear los datos para el informe
+    data_informe = hacer_informe(camion, precios)
+
+    # Imprimir el informe
+    formateador = formato_tabla.FormatoTabla()
+    imprimir_informe(data_informe, formateador)
+</code></pre>
+<p>Ejecutá este código:</p>
+<pre><code class="language-python">&gt;&gt;&gt; ================================ RESTART ================================
+&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv')
+... crashes ...
+</code></pre>
+<p>Debería dar inmediatamente una excepción de tipo <code>NotImplementedError</code>. No es nada maravilloso, pero es exactamente lo que esperábamos que sucediera, ¿no?   Sigamos...</p>
+<h3 id="ejercicio-96-usemos-herencia-para-cambiar-la-salida">Ejercicio 9.6: Usemos herencia para cambiar la salida</h3>
+<p>La clase FormatoTabla que definiste en la primera parte es sólo la base de un sistema extensible. Éste es el momento de extenderla. Definí una clase <code>FormatoTablaTXT</code> como sigue:</p>
+<pre><code class="language-python"># formato_tabla.py
+
+...
+
+class FormatoTablaTXT(FormatoTabla):
+    '''
+    Generar una tabla en formato TXT
+    '''
+    def encabezado(self, headers):
+        for h in headers:
+            print(f'{h:&gt;10s}', end=' ')
+        print()
+        print(('-'*10 + ' ')*len(headers))
+
+    def fila(self, data_fila):
+        for d in data_fila:
+            print(f'{d:&gt;10s}', end=' ')
+        print()
+</code></pre>
+<p>Modificá la función <code>informe_camion()</code> y probala: </p>
+<pre><code class="language-python"># informe.py
+
+...
+
+def informe_camion(archivo_camion, archivo_precios):
+    '''
+    Crea un informe por camion a partir de archivos camion y precio.
+    '''
+    # Leer archivos con datos
+    camion = leer_camion(archivo_camion)
+    precios = leer_precios(archivo_precios)
+
+    # Obtener los datos para un informe
+    data_informe = hacer_informe(camion, precios)
+
+    # Imprimir
+    formateador = formato_tabla.FormatoTablaTXT()
+    imprimir_informe(data_informe, formateador)
+</code></pre>
+<p>Este código debería dar la misma salida que antes:</p>
+<pre><code class="language-python">&gt;&gt;&gt; ========================REINICIAR INTERPRETE========================
+&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv')
+    Nombre   Cantidad     Precio     Cambio 
+---------- ---------- ---------- ---------- 
+      Lima        100      32.20       8.02 
+   Naranja         50      91.10      15.18 
+     Caqui        150     103.44       2.02 
+ Mandarina        200      51.23      29.66 
+   Durazno         95      40.37      33.11 
+ Mandarina         50      65.10      15.79 
+   Naranja        100      70.44      35.84    
+&gt;&gt;&gt;
+</code></pre>
+<p>Ahora probemos otras variantes. Definí, para empezar, una nueva clase llamada <code>FormatoTablaCSV</code> que genere la salida en formato CSV:</p>
+<pre><code class="language-python"># formato_tabla.py
+...
+class FormatoTablaCSV(FormatoTabla):
+    '''
+    Generar una tabla en formato CSV
+    '''
+    def encabezado(self, headers):
+        print(','.join(headers))
+
+    def fila(self, data_fila):
+        print(','.join(data_fila))
+</code></pre>
+<p>Modificá tu programa <code>informe.py</code> de este modo:</p>
+<pre><code class="language-python">def informe_camion(archivo_camion, archivo_precios):
+    '''
+    Crea un informe por camion a partir de archivos camion y precio.
+    '''
+    # Leer archivos con datos
+    camion = leer_camion(archivo_camion)
+    precios = leer_precios(archivo_precios)
+
+    # Obtener los datos para un informe
+    data_informe = hacer_informe(camion, precios)
+
+    # Imprimir
+    formateador = formato_tabla.FormatoTablaCSV()
+    imprimir_informe(data_informe, formateador)
+</code></pre>
+<p>Ahora la salida debería tener este aspecto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; ========================REINICIAR INTERPRETE========================
+&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv')
+Nombre,Cantidad,Precio,Cambio
+Lima,100,32.20,8.02
+Naranja,50,91.10,15.18
+Caqui,150,103.44,2.02
+Mandarina,200,51.23,29.66
+Durazno,95,40.37,33.11
+Mandarina,50,65.10,15.79
+Naranja,100,70.44,35.84
+</code></pre>
+<p>Usando las mismas ideas creá la clase <code>FormatoTablaHTML</code> que produzca un tabla de la siguiente forma:</p>
+<pre><code>&lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Cajones&lt;/th&gt;&lt;th&gt;Precio&lt;/th&gt;&lt;th&gt;Cambio&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Lima&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;32.20&lt;/td&gt;&lt;td&gt;8.02&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Naranja&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;91.10&lt;/td&gt;&lt;td&gt;15.18&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Caqui&lt;/td&gt;&lt;td&gt;150&lt;/td&gt;&lt;td&gt;103.44&lt;/td&gt;&lt;td&gt;2.02&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Mandarina&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;51.23&lt;/td&gt;&lt;td&gt;29.66&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Durazno&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;td&gt;40.37&lt;/td&gt;&lt;td&gt;33.11&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Mandarina&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;65.10&lt;/td&gt;&lt;td&gt;15.79&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Naranja&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;70.44&lt;/td&gt;&lt;td&gt;35.84&lt;/td&gt;&lt;/tr&gt;
+</code></pre>
+<p>Para testear tu código, modificá el programa principal de modo que use un objeto de la clase <code>FormatoTablaHTML</code> en lugar de uno de la clase <code>FormatoTablaCSV</code> para darle formato a la tabla de salida. Fijate lo fácil que es cambiar el comportamiento de un programa cuando tenés objetos que son compatibles entre sí.</p>
+<h3 id="ejercicio-97-polimorfismo-en-accion">Ejercicio 9.7: Polimorfismo en acción</h3>
+<p>Una de las grandes ventajas de la programación orientada a objetos es que podés cambiar un objeto por otro compatible y tu programa va a funcionar sin necesidad de adaptar el código que usa esos objetos.</p>
+<p>Si escribiste un programa diseñado para usar un objeto de la clase <code>FormatoTabla</code>, va a funcionar sin importar <em>qué</em> objeto de esa clase uses. A este comportamiento particular se lo llama polimorfismo. Está relacionado con la capacidad de usar la misma interfaz con diferentes objetos de la misma clase, haciendo que el programa como un todo se porte distinto.</p>
+<p>Ahora bien, un potencial problema es cómo diseñar tu programa de manera que el usuarie final pueda elegir el formato. Usar los nombres de las clases de formateadores no resultaría cómodo. Una solución posible es considerar un condicional:</p>
+<pre><code class="language-python">def informe_camion(archivo_camion, archivo_precios, fmt = 'txt'):
+    '''
+    Crea un informe con la carga de un camión
+    a partir de archivos camion y precio.
+    El formato predeterminado de la salida es txt
+    Alternativas: csv o html
+    '''
+    # Leer archivos con datos
+    camion = leer_camion(archivo_camion)
+    precios = leer_precios(archivo_precios)
+
+    # Obtener los datos para un informe
+    data_informe = hacer_informe(camion, precios)
+
+    # Elige formato
+    if fmt == 'txt':
+        formateador = formato_tabla.FormatoTablaTXT()
+    elif fmt == 'csv':
+        formateador = formato_tabla.FormatoTablaCSV()
+    elif fmt == 'html':
+        formateador = formato_tabla.FormatoTablaHTML()
+    else:
+        raise RuntimeError(f'Unknown format {fmt}')
+    imprimir_informe(data_informe, formateador)
+</code></pre>
+<p>En este código, el usuarie especifica un nombre simplificado como <code>txt</code> o
+<code>csv</code> para elegir el formato. Pero bancá. ¿Es una buena idea poner un gran bloque <code>if</code> en la función <code>informe_camion()</code>? ¿O quizás sería mejor ponerla directamente en una función de propósito general en otro lado?</p>
+<p>En el archivo <code>formato_tabla.py</code>, agregá la función <code>crear_formateador(nombre)</code> que permita crear un objeto formateador dado un tipo de salida como <code>txt</code>, <code>csv</code>, o <code>html</code>.  Modificá <code>informe_camion()</code> para que se vea así:</p>
+<pre><code class="language-python">def informe_camion(archivo_camion, archivo_precios, fmt = 'txt'):
+    '''
+    Crea un informe con la carga de un camión
+    a partir de archivos camion y precio.
+    El formato predeterminado de la salida es .txt
+    Alternativas: .csv o .html
+    '''
+    # Lee archivos de datos
+    camion = leer_camion(archivo_camion)
+    precios = leer_precios(archivo_precios)
+
+    # Crea la data del informe
+    data_informe = hacer_informe(camion, precios)
+
+    # Imprime el informe
+    formateador = formato_tabla.crear_formateador(fmt)
+    imprimir_informe(data_informe, formateador)
+</code></pre>
+<p>Acordate de testear todas las ramas posibles del código para asegurarte de que está funcionando. Llamalo y pedile crear salidas en todos los formatos (podés ver el HTML con tu browser).</p>
+<h3 id="ejercicio-98-volvamos-a-armar-todo">Ejercicio 9.8: Volvamos a armar todo</h3>
+<p>Modificá tu programa <code>informe.py</code> de modo que la función <code>informe_camion()</code> acepte un parámetro opcional que especifique el formato de salida deseado. Por ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv', fmt = 'txt')
+    Nombre    Cajones     Precio     Cambio 
+---------- ---------- ---------- ---------- 
+      Lima        100      32.20       8.02 
+   Naranja         50      91.10      15.18 
+     Caqui        150     103.44       2.02 
+ Mandarina        200      51.23      29.66 
+   Durazno         95      40.37      33.11 
+ Mandarina         50      65.10      15.79 
+   Naranja        100      70.44      35.84
+&gt;&gt;&gt;
+</code></pre>
+<p>Modificá el programa principal y usá <code>sys.argv()</code> para poder definir un formato particular directamente desde la línea de comandos. En el siguiente ejemplo se ve un caso de uso. Idealmente, ese parámetro debería ser opcional y, si no se lo pasás, debería andar como antes.</p>
+<pre><code class="language-bash">bash $ python3 informe.py ../Data/camion.csv ../Data/precios.csv csv
+Nombre,Cajones,Precio,Cambio
+Lima,100,32.20,8.02
+Naranja,50,91.10,15.18
+Caqui,150,103.44,2.02
+Mandarina,200,51.23,29.66
+Durazno,95,40.37,33.11
+Mandarina,50,65.10,15.79
+Naranja,100,70.44,35.84
+
+</code></pre>
+<p>Esta versión de <code>informe.py</code> preparala para entregarla.</p>
+<h3 id="discusion">Discusión</h3>
+<p>El caso que vimos es un ejemplo de uno de los usos más comunes de herencia en programación orientada a objetos: escribir programas extensibles. Un sistema puede definir una interfaz mediante una superclase base, y pedirte que escribas tus propias implementaciones derivadas de esa clase. Si escribís los métodos específicos para tu caso particular podés adaptar la función de un sistema general para resolver tu problema. </p>
+<p>Otro concepto, un poco más interesante, es el de crear tus propias abstracciones. En los ejercicios de esta parte definimos <em>nuestra propia clase</em> para crear variaciones en el formato de un informe.
+Tal vez estés pensando "¡Debería usar una biblioteca para crear formatos ya escrita por otre!". Bueno, no. Está bueno que puedas <em>tanto</em> crear tu propia clase <em>como</em> usar una biblioteca ya escrita. El hecho de usar tu propia clase te da flexibilidad.</p>
+<p>Siempre que tu programa adhiera a la interfaz de objetos definida por tu clase, podés cambiar la implementación interna en los objetos que escribas para que funcionen del modo que elijas. Podés escribir todo el código vos o usar bibliotecas ya escritas, no importa. Cuando encuentres algo mejor, cambiás tu implementación para que llame al nuevo código. Si la interfaz que hiciste está bien escrita, no vas a necesitar modificar el programa que usa las diferentes implementaciones. Simplemente funcionan si cumplen los contratos de la interfaz. Es algo muy útil y es uno de los motivos por los que usar herencia puede resolverte los problemas de extensibilidad y diversidad a futuro.</p>
+<p>Dicho esto, es cierto que diseñar un programa en el paradigma orientado a objetos puede resultar algo muy difícil. Si vas a encarar proyectos grandes con esta herramienta, consultá libros sobre patrones de diseño en POO. De todos modos, haber entendido lo que acabamos de hacer te permite llegar bastante lejos.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Clases/">Anterior (2 Clases)</a> | <a href="../04_M%C3%A9todos_Especiales/">Próximo (4 Métodos especiales)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/11_Recursion/02_Recursion/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>02 Recursion - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#112-intro-a-la-recursion" class="nav-link">11.2 Intro a la Recursión</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#la-recursion-y-como-puede-ser-que-funcione" class="nav-link">La recursión y cómo puede ser que funcione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#algoritmos-recursivos-y-algoritmos-iterativos" class="nav-link">Algoritmos recursivos y algoritmos iterativos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Introduccion/">Anterior (1 Introducción)</a> | <a href="../03_Diseno_Recursivo/">Próximo (3 Diseño de algoritmos recursivos)</a></p>
+<h1 id="112-intro-a-la-recursion">11.2 Intro a la Recursión</h1>
+<p>Para esta sección y las dos siguientes hay un <a href="https://youtu.be/C0o-KuY-BNs">video</a> donde introducimos el tema de recursión y vemos algunos ejemplos.</p>
+<h2 id="la-recursion-y-como-puede-ser-que-funcione">La recursión y cómo puede ser que funcione</h2>
+<p>Estamos acostumbrados a escribir funciones que llaman a otras funciones.
+Pero lo cierto es que nada impide que en Python (y en muchos otros
+lenguajes) una función se llame a sí misma. Y lo más interesante es que
+esta propiedad, que se llama <em>recursión</em>, permite en muchos casos
+encontrar soluciones muy elegantes para determinados problemas.</p>
+<p>En materias de matemática se estudian los razonamientos por inducción para
+probar propiedades de números enteros y la recursión no es más que una
+generalización de la inducción a más estructuras: las listas, las cadenas
+de caracteres, las funciones, etc.</p>
+<p><img alt="Una imagen recursiva: la publicidad de Cacao Droste." src="../cartel.png" /></p>
+<p>A continuación estudiaremos diversas situaciones en las cuales aparece la
+recursión, veremos cómo es que esto puede funcionar, algunas situaciones en
+las que es conveniente utilizarla y otras situaciones en las que no.</p>
+<h3 id="una-funcion-recursiva-matematica">Una función recursiva matemática</h3>
+<p>Es muy común tener definiciones inductivas de operaciones. Un caso paradigmático es la del factorial. Recordemos que el factorial de un número entero positivo n es el producto de todos los números entre 1 y n. La definición usual, inductiva, es la siguiente:</p>
+<pre><code>1! = 1 
+n! = n * (n-1)! si n&gt;1
+</code></pre>
+<p>Este tipo de definición se traduce naturalmente en una función en Python:</p>
+<pre><code class="language-python">def factorial(n):
+    &quot;&quot;&quot;Precondición: n entero positivo
+       Devuelve: n!&quot;&quot;&quot;
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+</code></pre>
+<p>Ésta es la ejecución del factorial para <code>n = 1</code> y para <code>n = 3</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; factorial(1)
+1
+&gt;&gt;&gt; factorial(3)
+6
+</code></pre>
+<p>El sentido de la instrucción
+<code>n * factorial(n - 1)</code> es exactamente el mismo que el de la
+definición inductiva: para calcular el factorial de <code>n</code> se debe multiplicar
+<code>n</code> por el factorial de <code>n-1</code>.</p>
+<p>Dos piezas fundamentales para garantizar el funcionamiento de este programa
+son:</p>
+<ul>
+<li>Que se defina un <em>caso base</em> (en este caso la indicación <em>no recursiva</em> de cómo calcular <code>factorial(1)</code>).</li>
+<li>Que el argumento de la función respete la precondición de que <code>n</code> debe ser un entero mayor o igual que 1.</li>
+</ul>
+<p>No es increíble que esto pueda funcionar adecuadamente en un lenguaje
+de programación?</p>
+<h3 id="ejercicio-111">Ejercicio 11.1:</h3>
+<p>Para poder analizar qué sucede a cada paso de la ejecución de la función,
+utilizaremos una versión más detallada del mismo código, en la que el resultado
+de cada paso se asigna a una variable.</p>
+<pre><code class="language-python">def factorial(n):
+    if n == 1:
+        r = 1
+        return r
+
+    f = factorial(n-1)
+    r = n * f
+    return r
+</code></pre>
+<p>Esta porción de código funciona exactamente igual que la anterior, pero nos
+permite ponerles nombres a los resultados intermedios de cada operación
+para poder estudiar qué sucede a cada paso. Analizá con tu debugger la ejecución de <code>factorial(3)</code>.</p>
+<h2 id="algoritmos-recursivos-y-algoritmos-iterativos">Algoritmos recursivos y algoritmos iterativos</h2>
+<p>Llamaremos <em>algoritmos recursivos</em> a aquellos que realizan llamadas
+recursivas para llegar al resultado, y <em>algoritmos iterativos</em> a
+aquellos que llegan a un resultado a través de una iteración mediante un
+ciclo definido o indefinido.</p>
+<p>Todo algoritmo recursivo puede expresarse como iterativo y viceversa.  Sin
+embargo, según las condiciones del problema a resolver podrá ser preferible
+utilizar la solución recursiva o la iterativa.</p>
+<p>Una posible implementación iterativa de la función <code>factorial</code>
+vista anteriormente sería:</p>
+<pre><code class="language-python">def factorial(n):
+    &quot;&quot;&quot;Precondición: n entero positivo
+       Devuelve: n!&quot;&quot;&quot;
+    fact = 1
+    for num in range(n, 1, -1):
+        fact *= num
+    return fact
+</code></pre>
+<p>Se puede ver que en este caso no es necesario incluir un caso base, ya que
+el mismo ciclo incluye una condición de corte, pero que sí es necesario
+incluir un acumulador, que en el caso recursivo no era necesario.</p>
+<p>Por otro lado, si hiciéramos el seguimiento de esta función, como se hizo
+para la versión recursiva, veríamos que la pila de ejecución siempre tiene un
+único marco, en el cual se van modificando los valores de <code>num</code> y
+<code>fact</code>.</p>
+<p>Es por esto que, en general, las versiones recursivas de los algoritmos
+utilizan más memoria (ya que la pila de ejecución se guarda en
+memoria) pero suelen ser más elegantes.</p>
+<h3 id="un-ejemplo-de-recursion-elegante">Un ejemplo de recursión elegante</h3>
+<p>Consideremos ahora otro problema que puede ser resuelto de forma elegante
+mediante un algoritmo recursivo.</p>
+<p>La función <code>potencia(b, n)</code> que vimos cuando hablamos de invariantes en la <a href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/#invariantes-de-ciclo">Sección 7.5</a>,
+realiza <code>n</code> iteraciones para poder obtener el valor de <code>b^n</code>.</p>
+<p>Sin embargo, es posible optimizarla teniendo en cuenta los siguientes hechos:</p>
+<pre><code>b^n = b^(n/2) * b^(n/2)                si n es par, y
+b^n = b^((n-1)/2) * b^((n-1)/2) * b    si n es impar.
+</code></pre>
+<p>Estas ecuaciones nos permiten diseñar un algoritmo muchísimo más eficiente. Esta situación guarda cierta analogía con el problema de la búsqueda en una lista ordenada. La idea es, en un paso, reducir <em>el tamaño</em> del problema a la mitad.</p>
+<p>Antes de programar cualquier función recursiva es necesario decidir cuál
+será el <em>caso base</em> y cuál el <em>paso recursivo</em>.  Para esta función,
+tomaremos <code>n=0</code> como el caso base (devolveremos <code>1</code>). El paso
+recursivo tendrá dos partes, correspondientes a los dos posibles grupos de
+valores de <code>n</code>.</p>
+<pre><code class="language-python">def potencia(b,n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0
+       Devuelve: b^n.&quot;&quot;&quot;
+
+    if n &lt;= 0:
+        # caso base
+        return 1
+
+    if n % 2 == 0:
+        # caso n par
+        p = potencia(b, n // 2)
+        return p * p
+    else:
+        # caso n impar
+        p = potencia(b, (n - 1) // 2)
+        return p * p * b
+</code></pre>
+<p>El uso de la variable <code>p</code> en este caso no es optativo, ya que
+es una de las ventajas principales de esta implementación: se aprovecha el
+resultado calculado en lugar de tener que calcularlo dos veces. Vemos que
+este código funciona correctamente:</p>
+<pre><code class="language-python">&gt;&gt;&gt; potencia(2, 10)
+1024
+&gt;&gt;&gt; potencia(3, 3)
+27
+&gt;&gt;&gt; potencia(5, 0)
+1
+</code></pre>
+<p>El orden de las llamadas, haciendo un seguimiento simplificado de la
+función será:</p>
+<pre><code>potencia(2, 10)
+  potencia(2, 5)
+    potencia(2, 2)
+      potencia(2, 1)
+        potencia(2, 0)
+          return 1
+        return 1 * 1 * 2
+      return 2 * 2
+    return 4 * 4 * 2
+  return 32 * 32
+return 1024
+</code></pre>
+<p>Se puede ver, entonces, que para calcular <code>2^10</code> se realizaron 5 llamadas a
+<code>potencia</code>, mientras que en la implementación más sencilla se
+realizaban 10 iteraciones. Y esta optimización será cada vez más importante
+a medida que aumenta <code>n</code>: por ejemplo para <code>n = 100</code> se
+realizarán 8 llamadas recursivas, y para <code>n = 1000</code> 11 llamadas.</p>
+<p>Es posible transformar este algoritmo recursivo en un algoritmo iterativo. Para ello es necesario <em>simular</em> la pila de llamadas a funciones mediante una pila que almacene los valores que sean necesarios.  En este caso, lo que apilaremos será si el valor de <code>n</code> es par o no.</p>
+<pre><code class="language-python">def potencia(b, n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0
+       Devuelve: b^n.&quot;&quot;&quot;
+
+    pila = []
+    while n &gt; 0:
+        if n % 2 == 0:
+            pila.append(True)
+            n //= 2
+        else:
+            pila.append(False)
+            n = (n - 1) // 2
+
+    p = 1
+    while pila:
+        es_par = pila.pop()
+        if es_par:
+            p *= p
+        else:
+            p *= p * b
+
+    return p
+</code></pre>
+<p>Como se puede ver, este código es mucho más complejo que la versión recursiva.
+Esto se debe a que utilizando recursión el uso de la pila de llamadas a
+funciones oculta el proceso de apilado y desapilado y permite concentrarse
+en la parte importante del algoritmo.</p>
+<h3 id="un-ejemplo-de-recursion-poco-eficiente">Un ejemplo de recursión poco eficiente</h3>
+<p>Del ejemplo anterior se podría deducir que siempre es mejor utilizar algoritmos
+recursivos; sin embargo --como dijimos antes-- cada situación merece ser analizada por separado.</p>
+<p>Un ejemplo clásico en el cual la recursión tiene un resultado muy poco
+eficiente es el de los números de Fibonacci. La sucesión de Fibonacci está
+definida por la siguiente relación:</p>
+<pre><code>F(0) = 0
+F(1) = 1
+F(n) = F(n - 1) + F(n - 2)  si n &gt; 1
+</code></pre>
+<p>Los primeros números de esta sucesión son: <code>0</code>, <code>1</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>5</code>, <code>8</code>,
+<code>13</code>, <code>21</code>, <code>34</code>, <code>55</code>. La sucesión tiene numerosas aplicaciones en computación y matemática y también aparece en configuraciones biológicas, como en las flores de girasoles, en la configuración de los ananás o las piñas de las coníferas, en la reproducción de conejos, etc. La siguiente imagen muestra su uso para aproximar una espiral áurea:</p>
+<p><img alt="Espiral a partir de la sucesión de Fibonacci" src="./280px-Fibonacci_spiral_34.bmp" /></p>
+<p>Dada la definición recursiva de la sucesión, puede resultar muy tentador
+escribir una función que calcule en valor de <code>fib(n)</code> de la siguiente
+forma:</p>
+<pre><code class="language-python">def fib(n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0.
+       Devuelve: el número de Fibonacci número n.&quot;&quot;&quot;
+    if n == 0:
+        res = 0
+    elif n == 1:
+        res = 1
+    else:
+        res = fib(n - 1) + fib(n - 2)
+    return res
+</code></pre>
+<p>Si bien esta implementación es muy sencilla y elegante, también es extremadamente poco eficiente: para calcular <code>fib(n - 1)</code> es necesario calcular
+<code>fib(n - 2)</code>, que luego volverá a ser calculado para obtener el valor
+<code>fib(n)</code>.</p>
+<p>Por ejemplo, una simple llamada a <code>fib(5)</code>, generaría
+recursivamente todas las llamadas ilustradas en el siguiente gráfico. Puede verse que muchas de estas llamadas están repetidas, generando un
+total de 15 llamadas a la función <code>fib</code>, sólo para devolver el
+valor <code>F(5)</code>.</p>
+<p><img alt="Árbol de llamadas para fib(5)" src="../fib5.jpg" /></p>
+<p>En este caso, será mucho más conveniente utilizar una versión iterativa,
+que vaya almacenando los valores de las dos variables anteriores a medida
+que los va calculando.</p>
+<pre><code class="language-python">def fib(n):
+    &quot;&quot;&quot;Precondición: n &gt;= 0.
+       Devuelve: el número de Fibonacci número n.&quot;&quot;&quot;
+    if n == 0 or n == 1:
+        return n
+    ant2 = 0
+    ant1 = 1
+    for i in range(2, n + 1):
+        fibn = ant1 + ant2
+        ant2 = ant1
+        ant1 = fibn
+    return fibn
+</code></pre>
+<p>Vemos que el caso base es el mismo para ambos algoritmos, pero que en el
+caso iterativo se calcula el número de Fibonacci de forma incremental, de
+modo que para obtener el valor de <code>fib(n)</code> se harán <code>n-1</code>
+iteraciones.</p>
+<p><em>En resumen</em>: vimos que un algoritmo recursivo <strong>no</strong> es necesariamente mejor que uno iterativo, ni viceversa. En cada situación es conveniente analizar cuál algoritmo provee una solución más clara y eficiente. </p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Introduccion/">Anterior (1 Introducción)</a> | <a href="../03_Diseno_Recursivo/">Próximo (3 Diseño de algoritmos recursivos)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

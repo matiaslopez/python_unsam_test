@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/08_Fechas_Carpetas_y_Pandas/02_Fechas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>02 Fechas - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#82-manejo-de-fechas-y-horas" class="nav-link">8.2 Manejo de fechas y horas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#el-modulo-datetime" class="nav-link">El módulo datetime</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#la-clase-datetimedate" class="nav-link">La clase datetime.date</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#la-clase-datetimetime" class="nav-link">La clase datetime.time</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#la-clase-datetimedatetime" class="nav-link">La clase datetime.datetime</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#la-clase-datetimetimedelta" class="nav-link">La clase datetime.timedelta</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#formato-para-fechas-y-horas" class="nav-link">Formato para fechas y horas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Intro/">Anterior (1 Introducción)</a> | <a href="../03_Archivos_y_Directorios/">Próximo (3 Manejo de archivos y carpetas)</a></p>
+<h1 id="82-manejo-de-fechas-y-horas">8.2 Manejo de fechas y horas</h1>
+<p>Esta sección tiene un breve <a href="https://youtu.be/exTngw8oOp0">video introductorio</a> sobre el módulo <code>datetime</code>.</p>
+<h2 id="el-modulo-datetime">El módulo datetime</h2>
+<p>A continuación introducimos el módulo <code>datetime</code> que permite trabajar con fechas y horas. Este módulo define un nuevo tipo de objeto: <code>datetime</code> (sí, con el mismo nombre del módulo), que permite representar un instante temporal (fecha y hora). También  define objetos de tipo <code>date</code>  para representar sólo una fecha y de tipo <code>time</code> para guardar y trabajar con horarios. Finalmente, en esta breve introducción al módulo <code>datetime</code> mencionamos el tipo <code>timedelta</code> que se usa para representar diferencias entre instantes de tiempos, es decir, duraciones y trabajar con ellas.</p>
+<h3 id="ejemplo-obtener-fecha-y-hora-actuales">Ejemplo: Obtener fecha y hora actuales</h3>
+<pre><code class="language-python">&gt;&gt;&gt; import datetime
+
+&gt;&gt;&gt; fecha_hora = datetime.datetime.now()
+&gt;&gt;&gt; print(fecha_hora)
+2020-09-24 10:03:18.636670
+</code></pre>
+<p>Lo que hicimos fue importar el módulo <strong>datetime</strong> y usar el método <code>now()</code> de la clase <code>datetime</code> del módulo (con el mismo nombre) para crear el objeto <code>fecha_hora</code> que va a contener la fecha y la hora actuales.</p>
+<h3 id="ejemplo-obtener-fecha-actual">Ejemplo: Obtener fecha actual</h3>
+<p>Análogamente, podemos obtener solo la fecha:</p>
+<pre><code class="language-python">&gt;&gt;&gt; fecha = datetime.date.today()
+&gt;&gt;&gt; print(fecha)
+2020-09-24
+</code></pre>
+<p>Acá usamos el método <code>today()</code> de la clase <code>date</code> para obtener la fecha actual.</p>
+<p><strong>¿Qué hay dentro del módulo datetime?</strong></p>
+<p>En Python podemos usar la función <code>dir()</code> para obtener una lista de todos los atributos de un módulo.</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(dir(datetime))
+['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__',
+ '__loader__', '__name__', '__package__', '__spec__', '_divide_and_round',
+ 'date', 'datetime', 'datetime_CAPI', 'time', 'timedelta', 'timezone', 'tzinfo']
+</code></pre>
+<p>Nos vamos a concentrar en lo más usado de <code>datetime</code>:</p>
+<ul>
+<li>date</li>
+<li>time</li>
+<li>datetime</li>
+<li>timedelta</li>
+</ul>
+<h2 id="la-clase-datetimedate">La clase datetime.date</h2>
+<p>Podés generar objetos de tipo fecha con la clase <code>date</code>. Un objeto de esta clase representa una fecha (año, mes, día).</p>
+<h3 id="ejemplo-un-objeto-para-representar-una-fecha">Ejemplo: Un objeto para representar una fecha</h3>
+<pre><code class="language-python">&gt;&gt;&gt; d = datetime.date(2019, 4, 13)
+&gt;&gt;&gt; print(d)
+2019-04-13
+</code></pre>
+<p>El comando <code>date()</code> de este ejemplo construye un objeto de tipo <code>date</code>. Este <em>constructor</em> toma tres argumentos: año, mes y día.</p>
+<p>La variable <code>d</code> es un objeto de tipo <code>date</code> (es decir, representa una fecha).</p>
+<p>También podríamos importar directamente la clase <code>date</code> del módulo <code>datetime</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import date
+&gt;&gt;&gt;
+&gt;&gt;&gt; d = date(2019, 4, 13)
+&gt;&gt;&gt; print(d)
+2019-04-13
+</code></pre>
+<h3 id="ejemplo-obtener-la-fecha-a-partir-de-un-timestamp">Ejemplo: Obtener la fecha a partir de un timestamp</h3>
+<p>En los sistemas operativos derivados de Unix (Mac OS X, Linux, etc.) se toma como medida de tiempo el número de segundos transcurridos desde el primero de enero de 1970 a las 0 horas UTC hasta el momento a representar. Se lo conoce como Unix timestamp. Podés convertir un timestamp a fecha usando el método <code>fromtimestamp()</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import date
+&gt;&gt;&gt;
+&gt;&gt;&gt; timestamp = date.fromtimestamp(1326244364)
+&gt;&gt;&gt; print('Fecha =', timestamp)
+Fecha = 2012-01-10
+</code></pre>
+<p>Esto es importante porque las fechas de modificación de los archivos usan timestamps por ejemplo.</p>
+<h3 id="ejemplo-obtener-el-ano-el-mes-y-el-dia-por-separado">Ejemplo: Obtener el año, el mes y el día por separado.</h3>
+<p>Así podés obtener el año, el mes, el día y el día de la semana:</p>
+<pre><code class="language-python">from datetime import date
+
+hoy = date.today()
+
+print('Año actual:', hoy.year)
+print('Mes actual:', hoy.month)
+print('Día actual:', hoy.day)
+print('Día de la semana:', hoy.weekday()) # va de 0 a 6 empezando en lunes
+</code></pre>
+<h2 id="la-clase-datetimetime">La clase datetime.time</h2>
+<p>Un objeto de la clase <code>time</code> representa la hora local (de como este configurada tu computadora). No nos vamos a meter en esta clase con los <a href="https://es.wikipedia.org/wiki/Huso_horario">husos horarios</a> (conocido también como timezones), pero si vas a usar datos provistos por otres, es importante que sepas si está expresado en tu hora local, en la hora local de otro lugar o en <a href="https://es.wikipedia.org/wiki/Tiempo_universal_coordinado">UTC</a>.</p>
+<h3 id="ejemplo-representar-la-hora-con-un-objeto-time">Ejemplo: Representar la hora con un objeto <code>time</code></h3>
+<p>La clase  <code>time</code> se usa para representar horarios. A continuación damos algunos ejemplos de constructores de esta clase (un constructor es una forma de construir un objeto de una clase dada, una forma de inicializarlo, digamos).</p>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import time
+&gt;&gt;&gt;
+&gt;&gt;&gt; a = time()       # time(hour = 0, minute = 0, second = 0)
+&gt;&gt;&gt; print('a =', a)
+a = 00:00:00
+
+&gt;&gt;&gt; b = time(11, 34, 56)
+&gt;&gt;&gt; print('b =', b)
+b = 11:34:56
+
+&gt;&gt;&gt; c = time(hour = 11, minute = 34, second = 56)
+&gt;&gt;&gt; print('c =', c)
+c = 11:34:56
+
+&gt;&gt;&gt; d = time(11, 34, 56, 234566)  # time(hour, minute, second, microsecond)
+&gt;&gt;&gt; print('d =', d)
+d = 11:34:56.234566
+</code></pre>
+<h3 id="ejemplo-obtener-horas-minutos-segundos-y-micro-segundos">Ejemplo: Obtener horas, minutos, segundos y micro-segundos</h3>
+<p>Una vez que creaste un objeto <code>time</code>, podés extraer sus atributos así:</p>
+<pre><code class="language-python">from datetime import time
+
+a = time(11, 34, 56)
+
+print('hour =', a.hour)
+print('minute =', a.minute)
+print('second =', a.second)
+print('microsecond =', a.microsecond)
+</code></pre>
+<p>Como no le pasaste ningún valor para el argumento <code>microsecond</code>, éste va a tomar el valor predeterminado, que es <code>0</code>.</p>
+<h2 id="la-clase-datetimedatetime">La clase datetime.datetime</h2>
+<p>Como ya mencionamos, el módulo <code>datetime</code> tiene una clase con su mismo nombre que permite almacenar información de fecha y hora en un solo objeto.</p>
+<h3 id="ejemplo-objeto-datetime">Ejemplo: Objeto datetime</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; # datetime(year, month, day)
+&gt;&gt;&gt; a = datetime(2020, 4, 21)
+&gt;&gt;&gt; print(a)
+2020-04-21 00:00:00
+
+&gt;&gt;&gt; # datetime(year, month, day, hour, minute, second, microsecond)
+&gt;&gt;&gt; b = datetime(2021, 4, 21, 6, 53, 31, 342260)
+&gt;&gt;&gt; print(b)
+2021-04-21 06:53:31.342260
+</code></pre>
+<p>Los primeros tres argumentos, <code>year</code>, <code>month</code> y <code>day</code> del constructor <code>datetime()</code> son obligatorios. Los otros tienen a 0 como valor por omisión.</p>
+<h3 id="ejemplo-obtener-ano-mes-dia-hora-minutos-timestamp-de-un-datetime">Ejemplo: Obtener año, mes, día, hora, minutos, timestamp de un datetime</h3>
+<p>El siguiente código genera un objeto <code>datetime</code> con valores pasados por parámetro y luego imprime la información.</p>
+<p>En particular, muestra cómo convertir una fecha a timestamp. En general los timestamps son enteros y no tienen en cuenta las décimas de segundos.</p>
+<pre><code class="language-python">from datetime import datetime
+
+a = datetime(2021, 4, 21, 6, 53, 31, 342260)
+print('año =', a.year)
+print('mes =', a.month)
+print('día =', a.day)
+print('hora =', a.hour)
+print('minuto =', a.minute)
+print('timestamp =', a.timestamp())
+</code></pre>
+<h2 id="la-clase-datetimetimedelta">La clase datetime.timedelta</h2>
+<p>Un objeto <code>timedelta</code> representa una duración, es decir, la diferencia entre dos instantes de tiempo.</p>
+<h3 id="ejemplo-diferencia-entre-fechas-y-horarios">Ejemplo: Diferencia entre fechas y horarios</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import datetime, date
+
+&gt;&gt;&gt; t1 = date(year = 2021, month = 4, day = 21)
+&gt;&gt;&gt; t2 = date(year = 2020, month = 8, day = 23)
+&gt;&gt;&gt; t3 = t1 - t2
+&gt;&gt;&gt; print(t3)
+241 days, 0:00:00
+
+&gt;&gt;&gt; t4 = datetime(year = 2020, month = 7, day = 12, hour = 7, minute = 9, second = 33)
+&gt;&gt;&gt; t5 = datetime(year = 2021, month = 6, day = 10, hour = 5, minute = 55, second = 13)
+&gt;&gt;&gt; t6 = t4 - t5
+&gt;&gt;&gt; print(t6)
+-333 days, 1:14:20
+
+&gt;&gt;&gt; print('tipo de t3 =', type(t3))
+tipo de t3 = &lt;class 'datetime.timedelta'&gt;
+
+&gt;&gt;&gt; print('tipo de t6 =', type(t6))
+tipo de t6 = &lt;class 'datetime.timedelta'&gt;
+</code></pre>
+<p>Observá que <code>t3</code> y <code>t6</code> son de tipo <code>&lt;class 'datetime.timedelta'&gt;</code>.</p>
+<h3 id="ejemplo-diferencia-entre-objetos-timedelta">Ejemplo: Diferencia entre objetos timedelta</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import timedelta
+
+&gt;&gt;&gt; t1 = timedelta(weeks = 1, days = 2, hours = 1, seconds = 33)
+&gt;&gt;&gt; t2 = timedelta(days = 6, hours = 11, minutes = 4, seconds = 54)
+&gt;&gt;&gt; t3 = t1 - t2
+
+&gt;&gt;&gt; print('t3 =', t3)
+2 days, 13:55:39
+</code></pre>
+<p><code>t3</code> también es de tipo <code>&lt;class 'datetime.timedelta'&gt;</code>.</p>
+<h3 id="ejemplo-imprimir-objetos-timedelta-negativos">Ejemplo: Imprimir objetos timedelta negativos</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import timedelta
+
+&gt;&gt;&gt; t1 = timedelta(seconds = 21)
+&gt;&gt;&gt; t2 = timedelta(seconds = 55)
+&gt;&gt;&gt; t3 = t1 - t2
+
+&gt;&gt;&gt; print(t3)
+-1 day, 23:59:26
+
+&gt;&gt;&gt; print(abs(t3))
+0:00:34
+</code></pre>
+<h3 id="ejemplo-duracion-en-segundos">Ejemplo: Duración en segundos</h3>
+<p>Podés obtener el tiempo medido en segundos usando el método <code>total_seconds()</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import timedelta
+
+&gt;&gt;&gt; t = timedelta(days = 1, hours = 2, seconds = 30, microseconds = 100000)
+&gt;&gt;&gt; print('segundos totales =', t.total_seconds())
+segundos totales = 93630.1
+</code></pre>
+<p>También podés sumar fechas y horarios usando el operador <code>+</code>. También podés multiplicar o dividir un objeto <code>timedelta</code> por números enteros o floats.</p>
+<h2 id="formato-para-fechas-y-horas">Formato para fechas y horas</h2>
+<p>Hay diversas formas de representar el tiempo, que varían según el lugar, la organización, etc. Por ejemplo, en Argentina solemos usar <code>dd/mm/yyyy</code>, mientras que en las culturas anglosajonas  es más común usar <code>mm/dd/yyyy</code>.</p>
+<p>En Python tenemos los métodos <code>strftime()</code> y <code>strptime()</code> para manejar esto.</p>
+<h3 id="python-strftime-convertir-un-objeto-datetime-a-string">Python strftime() - convertir un objeto datetime a string</h3>
+<p>El método <code>strftime()</code> está definido en las clases <code>date</code>, <code>datetime</code> y <code>time</code>. Este método crea una cadena con formato a partir estos objetos.</p>
+<h3 id="ejemplo-formato-de-fecha-usando-strftime">Ejemplo: Formato de fecha usando strftime()</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; now = datetime.now()
+
+&gt;&gt;&gt; t = now.strftime('%H:%M:%S')
+&gt;&gt;&gt; print('hora:', t)
+hora: 14:40:06
+
+&gt;&gt;&gt; s1 = now.strftime('%m/%d/%Y, %H:%M:%S')
+&gt;&gt;&gt; # en formato mm/dd/YY H:M:S
+&gt;&gt;&gt; print('s1:', s1)
+s1: 09/24/2020, 14:40:06
+
+
+&gt;&gt;&gt; s2 = now.strftime('%d/%m/%Y, %H:%M:%S')
+&gt;&gt;&gt; # en formato dd/mm/YY H:M:S
+&gt;&gt;&gt; print('s2:', s2)
+s2: 24/09/2020, 14:40:06
+
+</code></pre>
+<p>Acá, <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</code> etc. son códigos de formato. El método <code>strftime()</code>toma uno o más códigos de formato y devuelve la cadena con formato basado en esos códigos.</p>
+<p>En el programa de arriba, <code>t</code>, <code>s1</code> y <code>s2</code> son cadenas. Y los códigos de formato son:</p>
+<ul>
+<li><code>%Y</code> - año [0001,..., 2018, 2019,..., 9999]</li>
+<li><code>%m</code> - mes [01, 02, ..., 11, 12]</li>
+<li><code>%d</code> - día [01, 02, ..., 30, 31]</li>
+<li><code>%H</code> - hora [00, 01, ..., 22, 23</li>
+<li><code>%M</code> - minuto [00, 01, ..., 58, 59]</li>
+<li><code>%S</code> - segundo [00, 01, ..., 58, 59]</li>
+</ul>
+<p>Para aprender más sobre <code>strftime()</code> visitá <a href="https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior">la documentación</a>.</p>
+<h3 id="python-strptime-convertir-una-cadena-a-un-objeto-datetime">Python strptime() - convertir una cadena a un objeto datetime</h3>
+<p>El método <code>strptime()</code> crea un objeto <code>datetime</code> a partir de una cadena.</p>
+<h3 id="ejemplo-strptime">Ejemplo: strptime()</h3>
+<pre><code class="language-python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; cadena_con_fecha= '21 September, 2021'
+&gt;&gt;&gt; print('date_string =', cadena_con_fecha)
+date_string = 21 September, 2021
+
+&gt;&gt;&gt; date_object = datetime.strptime(cadena_con_fecha, '%d %B, %Y')
+&gt;&gt;&gt; print('date_object =', date_object)
+date_object = 2021-09-21 00:00:00
+</code></pre>
+<p>El método <code>strptime()</code> toma dos argumentos:</p>
+<ul>
+<li>una cadena que representa una fecha y hora</li>
+<li>un código de formato correspondiente al primer argumento</li>
+</ul>
+<p>Los códigos de formato <code>%d</code>, <code>%B</code>, <code>%Y</code> significan  <code>day</code>, <code>month</code> (full name) y <code>year</code> respectivamente.</p>
+<p>Visitá <a href="https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior">la documentación</a> para más detalles.</p>
+<h2 id="ejercicios">Ejercicios:</h2>
+<h3 id="ejercicio-81-segundos-vividos">Ejercicio 8.1: Segundos vividos</h3>
+<p>Escribí una función a la que le pasás tu fecha de nacimiento como cadena en formato 'dd/mm/AAAA' (día, mes, año con 2, 2 y 4 dígitos, separados con barras normales) y te devuelve la cantidad de segundos que viviste (asumiendo que naciste a las 00:00hs de tu fecha de nacimiento).</p>
+<p>Guardá este código en el archivo <code>vida.py</code>.</p>
+<h3 id="ejercicio-82-cuanto-falta">Ejercicio 8.2: Cuánto falta</h3>
+<p>Un conocido canal Argentino tiene por costumbre anunciar la cantidad de días que faltan para la próxima primavera.</p>
+<p><img alt="Figura" src="../cronica.jpg" /></p>
+<p>Escribí un programa que asista a los técnicos del canal indicándoles, al correr el programa el número que deben poner en la placa.</p>
+<h3 id="ejercicio-83-fecha-de-reincorporacion">Ejercicio 8.3: Fecha de reincorporación</h3>
+<p>Si tenés una licencia por xaternidad que empieza el 26 de septiembre de 2020 y dura 200 días, ¿qué día te reincorporás al trabajo?</p>
+<h3 id="ejercicio-84-dias-habiles">Ejercicio 8.4: Días hábiles</h3>
+<p>Escribí una función <code>dias_habiles(inicio, fin, feriados)</code> que calcule los días hábiles entre dos fechas dadas. La función debe tener como argumentos el día inicial, el día final, y una lista con las fechas correspondientes a los feriados que haya en ese lapso, y debe devolver una lista con las fechas de días hábiles del período, incluyendo la fecha inicial y la fecha final indicadas. Las fechas de entrada y salida deben manejarse en formato de texto.</p>
+<p>Consideramos día hábil a un día que no es feriado ni sábado ni domingo.</p>
+<p>Probala entre el 20 de septiembre de 2020  y el 10 de octubre del mismo año, sabiendo que no hubo feriados en el medio.
+Probala entre ese día y fin del 2020 considerando los siguientes feriados de Argentina:</p>
+<p><code>feriados = ['12/10/2020', '23/11/2020', '7/12/2020', '8/12/2020', '25/12/2020']</code></p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Intro/">Anterior (1 Introducción)</a> | <a href="../03_Archivos_y_Directorios/">Próximo (3 Manejo de archivos y carpetas)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

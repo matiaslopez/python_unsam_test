@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/06_Organizacion_y_Complejidad/04_Modulos/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>04 Modulos - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#64-modulos" class="nav-link">6.4 Módulos</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../03_Funciones/">Anterior (3 Funciones)</a> | <a href="../05_BusqBinaria/">Próximo (5 Búsqueda binaria)</a></p>
+<h1 id="64-modulos">6.4 Módulos</h1>
+<p>En esta sección vamos a introducir conceptos que nos permiten crear módulos y trabajar con programas cuyas partes están repartidas en múltiples archivos. </p>
+<h3 id="modulos-y-la-instruccion-import">Módulos y la instrucción <code>import</code></h3>
+<p>Todos los archivos con código Python son módulos.</p>
+<pre><code class="language-python"># foo.py
+def grok(a):
+    ...
+def spam(b):
+    ...
+</code></pre>
+<p>El comando <code>import</code> carga un módulo y lo <em>ejecuta</em>. </p>
+<pre><code class="language-python"># programa.py
+import foo
+
+a = foo.grok(2)
+b = foo.spam('Hola')
+...
+</code></pre>
+<h3 id="namespaces">Namespaces</h3>
+<p>Se puede decir que un módulo es una colección de valores asignados a nombres. A ésto se lo llama un <em>namespace</em> (espacio de nombres). Es el contexto en el cual esos nombres existen: todas las variables globales y las funciones definidas en un módulo <em>pertenecen</em> a ese módulo. Una vez importado, el nombre del módulo se usa como un prefijo al nombrar esas variables y funciones. Por eso se llama un namespace.</p>
+<pre><code class="language-python">import foo
+
+a = foo.grok(2)
+b = foo.spam('Hello')
+...
+</code></pre>
+<p>El nombre del módulo es el nombre del archivo que lo contiene.</p>
+<h3 id="definiciones-globales">Definiciones globales</h3>
+<p>El espacio de nombres contiene todo aquello definido con visibilidad <em>global</em>.
+Supongamos dos módulos diferentes que definen cada uno una variable <code>x</code>:</p>
+<pre><code class="language-python"># foo.py
+x = 42
+def grok(a):
+    ...
+</code></pre>
+<pre><code class="language-python"># bar.py
+x = 37
+def spam(a):
+    ...
+</code></pre>
+<p>Entonces hay dos definiciones de <code>x</code> y cada una refiere a una variable diferente. Una de ellas es <code>foo.x</code> y la otra es <code>bar.x</code>. De este modo, diferentes módulos tienen la libertad de definir variables con el mismo nombre sin que existan ambigüedades ni conflictos.</p>
+<p><strong>Los módulos están aislados uno de otro.</strong></p>
+<h3 id="modulos-como-entornos">Módulos como entornos</h3>
+<p>Los módulos crean un entorno que contiene a todo el código definido ahí.</p>
+<pre><code class="language-python"># foo.py
+x = 42
+
+def grok(a):
+    print(x)
+</code></pre>
+<p>Incluso las variables <em>globales</em> son visibles sólo dentro del módulo en que fueron definidas (el mismo archivo).
+Cada módulo es un pequeño universo.</p>
+<h3 id="ejecucion-de-modulos">Ejecución de módulos</h3>
+<p>Cuando importás un módulo se ejecutan <em>todas</em> las instrucciones en ese módulo, una tras otra, hasta llegar al final del archivo. 
+El <em>namespace</em> del módulo está poblado por todas las funciones y variables globales cuya definición siga vigente al terminar de ejecutar el módulo. 
+Si existen comandos que se ejecutan en el <em>namespace</em> global del módulo y hacen tareas como crear archivos, imprimir mensajes, etc., se van a ejecutar al importar el módulo.</p>
+<h3 id="el-comando-import-as">El comando <code>import as</code></h3>
+<p>En el momento de importar un módulo, podés cambiar el nombre que le asignás dentro del contexto en que lo importás. </p>
+<pre><code class="language-python">import math as m
+def rectangular(r, theta):
+    x = r * m.cos(theta)
+    y = r * m.sin(theta)
+    return x, y
+</code></pre>
+<p>Funciona del mismo modo que un <code>import</code> común salvo que, para quien lo importa, el nombre del módulo cambia.</p>
+<h3 id="from-modulo-import-nombre"><code>from</code> módulo <code>import</code> nombre</h3>
+<p>Este comando toma ciertos nombres selectos de un módulo, y los hace accesibles localmente.</p>
+<pre><code class="language-python">from math import sin, cos
+
+def rectangular(r, theta):
+    x = r * cos(theta)
+    y = r * sin(theta)
+    return x, y
+</code></pre>
+<p>Esta forma de importar te permite usar partes de un módulo sin necesidad de especificar la pertenencia a un módulo como prefijo. Es útil para nombres (funciones o variables) que se usan mucho.</p>
+<p>Si usás <code>from math import *</code> vas a importar <em>todas</em> las funciones y constantes del módulo <code>math</code> como si estuvieran definidas localmente. No es coveniente hacer esto ya que se pierden las ventajas que da trabajar con namespaces.</p>
+<h3 id="notas-sobre-import">Notas sobre <code>import</code></h3>
+<p>Estas distintas formas de usar <code>import</code> <em>no modifican</em> el funcionamiento de un módulo.</p>
+<pre><code class="language-python">import math
+# vs
+import math as m
+# vs
+from math import cos, sin
+...
+</code></pre>
+<p>Más específicamente, <code>import</code> siempre ejecuta el módulo completo, y los módulos siguen siendo pequeños entornos aislados.
+El comando <code>import módulo as</code> sólo cambia el nombre local del módulo.
+El comando <code>from math import cos, sin</code>, aunque sólo hace accesibles las funciones <code>sin</code> y <code>cos</code>, de todos modos carga todo el módulo y lo ejecuta. La única diferencia es que copia los nombres de las funciones <code>sin</code> y <code>cos</code> al namespace local.</p>
+<h3 id="carga-de-modulos">Carga de módulos</h3>
+<p>Cada módulo es cargado y ejecutado sólo <em>una</em> vez.</p>
+<p><em>Observación: Repetir la instrucción <code>import</code> sólo devuelve una referencia al módulo ya cargado.</em></p>
+<p>La variable <code>sys.modules</code> es un diccionario de los módulos cargados. </p>
+<pre><code class="language-python">&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.modules.keys()
+['copy_reg', '__main__', 'site', '__builtin__', 'encodings', 'encodings.encodings', 'posixpath', ...]
+&gt;&gt;&gt;
+</code></pre>
+<p><strong>Precaución:</strong>
+Si cambiás el código de un módulo y lo volvés a cargar sucede algo que suele causar confusión hasta que lo entendés: 
+Dado que existe la lista de módulos cargados <code>sys.modules</code>, un pedido de cargar un módulo por segunda vez siempre devolverá el módulo ya cargado, aún si el módulo fue modificado, si se trata de una versión nueva de ese módulo y si el archivo en disco ha sido modificado. Es posible usar <code>reload(módulo)</code> pero sólo en ciertos casos. El método que asegura que el módulo se vuelva a cargar es cerrar y volver a abrir el intérprete de Python. </p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Para estos ejercicios que involucran módulos, es de suma importancia que te asegures de que estás ejecutando Python en el directorio adecuado.</p>
+<h3 id="ejercicio-610-importar-modulos">Ejercicio 6.10: Importar módulos</h3>
+<p>En el <a href="../06_Organización_y_Complejidad/03_Funciones.md#ejercicio-66-parsear-un-archivo-csv">Ejercicio 6.6</a> creamos una función llamada <code>parse_csv()</code> para parsear el contenido de archivos de datos en formato CSV. Ahora vamos a ver cómo usar esa función en otros programas. </p>
+<p>Empezá por copiarte los archivos <code>rebotes.py</code>, <code>hipoteca.py</code> y <code>fileparse.py</code> a la carpeta de ejercicios de esta clase. Los vamos a importar.</p>
+<p>Con el directorio de trabajo adecuado (puede que tengas que reiniciar tu intérprete para que tome efecto un cambio), intentá importar los programas que escribiste antes. Con sólo importarlos deberías ver su salida exactamente como cuando los terminaste de escribir.</p>
+<p>Repetimos: al importar un módulo ejecutás su código.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import rebotes
+#... mirá la salida ...
+&gt;&gt;&gt; import hipoteca
+#... mirá la salida ...
+&gt;&gt;&gt; import informe_funciones
+#... mirá la salida ...
+&gt;&gt;&gt;
+</code></pre>
+<p>Si nada de esto funciona, es probable que estés ejecutando Python desde la carpeta equivocada.</p>
+<p>Ahora probá importar tu módulo <code>fileparse</code> y pedile <code>help</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import fileparse
+&gt;&gt;&gt; help(fileparse)
+... mirá la salida ...
+&gt;&gt;&gt; dir(fileparse)
+... mirá la salida ...
+&gt;&gt;&gt;
+</code></pre>
+<p>Intentá usar el módulo para leer datos de un archivo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; camion = fileparse.parse_csv('../Data/camion.csv', select = ['nombre', 'cajones', 'precio'], types = [str, int, float])
+&gt;&gt;&gt; camion
+... mirá la salida ...
+&gt;&gt;&gt; lista_precios = fileparse.parse_csv('../Data/precios.csv', types = [str, float], has_headers = False)
+&gt;&gt;&gt; lista_precios
+... mirá la salida ...
+&gt;&gt;&gt; precios = dict(lista_precios)
+&gt;&gt;&gt; precios
+... fijate la salida ...
+&gt;&gt;&gt; precios['Naranja']
+106.28
+&gt;&gt;&gt;
+</code></pre>
+<p>Importá sólo la función para evitar escribir el nombre del módulo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; from fileparse import parse_csv
+&gt;&gt;&gt; camion = parse_csv('../Data/camion.csv', select = ['nombre', 'cajones', 'precio'], types = [str, int, float])
+&gt;&gt;&gt; camion
+... fijate la salida ...
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-611-usemos-tu-modulo">Ejercicio 6.11: Usemos tu módulo</h3>
+<p>En el <a href="../06_Organización_y_Complejidad/02_Scripts.md#ejercicio-64-estructurar-un-programa-como-una-colección-de-funciones">Ejercicio 6.4</a>
+escribiste un programa <code>informe_funciones.py</code> que produce un informe como éste:</p>
+<pre><code>    Nombre    Cajones     Precio     Cambio
+---------- ---------- ---------- ----------
+      Lima        100     $32.20       8.02
+   Naranja         50     $91.10      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+ Mandarina         50     $65.10      15.79
+   Naranja        100     $70.44      35.84
+</code></pre>
+<p>Retomá ese programa (si lo perdiste, te dejamos una versión para que la leas y la puedas usar) y modificalo de modo que todo el procesamiento de archivos de entrada de datos se haga usando funciones del módulo <code>fileparse</code>. Para lograr éso, importá <code>fileparse</code> como un módulo y cambiá las funciones <code>leer_camion()</code> y <code>leer_precios()</code> para que usen la función <code>parse_csv()</code> .</p>
+<p>Guiate por el ejemplo interactivo que dimos un poco más arriba.
+Al final, deberías obtener exactamente el mismo resultado que al principio.</p>
+<h3 id="ejercicio-612-un-poco-mas-alla">Ejercicio 6.12: Un poco más allá</h3>
+<p>En <a href="../../02_Estructuras_y_Funciones/02_Funciones/#ejercicio-26-transformar-un-script-en-una-función">Ejercicio 2.6</a> escribiste el programa <code>costo_camion.py</code> que lee, mediante una función llamada <code>costo_camion()</code> los datos de un camión y calcula su costo.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import costo_camion
+&gt;&gt;&gt; costo_camion.costo_camion('../Data/camion.csv')
+47671.15
+&gt;&gt;&gt;
+</code></pre>
+<p>Modificá el archivo <code>costo_camion.py</code> para que use la función <code>informe_funciones.leer_camion()</code> del programa <code>informe_funciones.py</code>.</p>
+<h3 id="comentario">Comentario</h3>
+<p>Al terminar este ejercicio tenés tres programas.
+<code>fileparse.py</code> contiene una función para parsear datos de archivos CSV en general, <code>parse_csv()</code>. Por otra parte, <code>informe_funciones.py</code> que produce un bello informe, y que contiene las funciones <code>leer_camion()</code> y <code>leer_precios()</code>. Finalmente, <code>costo_camion.py</code> calcula el costo de un camión, pero usando la función <code>leer_camion()</code> que fue escrita para el programa que genera el informe.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../03_Funciones/">Anterior (3 Funciones)</a> | <a href="../05_BusqBinaria/">Próximo (5 Búsqueda binaria)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

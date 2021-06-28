@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/02_Estructuras_y_Funciones/03_TiposDatos/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 TiposDatos - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#23-tipos-y-estructuras-de-datos" class="nav-link">2.3 Tipos y estructuras de datos</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Funciones/">Anterior (2 Funciones)</a> | <a href="../04_Contenedores/">Próximo (4 Contenedores)</a></p>
+<h1 id="23-tipos-y-estructuras-de-datos">2.3 Tipos y estructuras de datos</h1>
+<p>Esta sección introduce dos estructuras de datos elementales: las tuplas y los diccionarios.</p>
+<h3 id="tipos-de-datos-primitivos">Tipos de datos primitivos</h3>
+<p>Python tiene pocos tipos primitivos de datos.</p>
+<ul>
+<li>Números enteros</li>
+<li>Números de punto flotante</li>
+<li>Cadenas de texto</li>
+</ul>
+<p>Algo ya sabemos sobre estos tipos de datos por el capítulo anterior.</p>
+<h3 id="tipo-none">Tipo None</h3>
+<pre><code class="language-python">email_address = None
+</code></pre>
+<p><code>None</code> suele utilizarse como un comodín para reservar el lugar para un valor opcional o faltante. En los condicionales, evalúa como <code>False</code>.</p>
+<pre><code class="language-python">if email_address:
+    send_email(email_address, msg)
+</code></pre>
+<h3 id="estructuras-de-datos">Estructuras de datos</h3>
+<p>Los programas reales tienen datos más complejos que los que podemos almacenar en los tipos primitivos. Por ejemplo, información sobre un pedido de frutas:</p>
+<pre><code class="language-code">100 cajones de Manzanas a $490.10 cada uno
+</code></pre>
+<p>Podemos ver esto como un "objeto" con tres partes:</p>
+<ul>
+<li>Nombre del símbolo ("Manzanas", una cadena)</li>
+<li>Número o cantidad (100, un entero)</li>
+<li>Precio (490.10, un flotante)</li>
+</ul>
+<h3 id="tuplas">Tuplas</h3>
+<p>Una tupla es una colección con valores agrupados juntos.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-python">s = ('Manzanas', 100, 490.1)
+</code></pre>
+<p>Las tuplas suelen usarse para representar registros o estructuras <em>simples</em>.
+Típicamente, una tupla representa un solo <em>objeto</em> con múltiples partes. Una analogía posible es la siguiente: <em>Una tupla es como una fila de una base de datos</em>.</p>
+<p>Los contenidos de una tupla están ordenados (como en una lista).</p>
+<pre><code class="language-python">s = ('Manzana', 100, 490.1)
+nombre = s[0]                   # 'Manzana'
+cantidad = s[1]                 # 100
+precio = s[2]                    # 490.1
+</code></pre>
+<p>El contenido de las tuplas no puede ser modificado.</p>
+<pre><code class="language-python">&gt;&gt;&gt; s[1] = 75
+TypeError: object does not support item assignment
+</code></pre>
+<p>Podés, sin embargo, hacer una nueva tupla basada en el contenido de otra, que no es lo mismo que modificar el contenido.</p>
+<pre><code class="language-python">s = (s[0], 75, s[2])
+</code></pre>
+<h4 id="empaquetar-tuplas">Empaquetar tuplas</h4>
+<p>Las tuplas suelen usarse para empaquetar información relacionada en una sola <em>entidad</em>.</p>
+<pre><code class="language-python">s = ('Manzanas', 100, 490.1)
+</code></pre>
+<p>Una tupla puede ser pasada de un lugar a otro de un programa como un solo objeto.</p>
+<h4 id="desempaquetar-tuplas">Desempaquetar tuplas</h4>
+<p>Para usar una tupla en otro lado, debemos desempaquetar su contenido en diferentes variables.</p>
+<pre><code class="language-python">fruta, cajones, precio = s
+print('Costo:', cajones * precio)
+</code></pre>
+<p>El número de variables a la izquierda debe ser consistente con la estructura de la tupla.</p>
+<pre><code class="language-python">nombre, cajones = s     # ERROR
+Traceback (most recent call last):
+...
+ValueError: too many values to unpack
+</code></pre>
+<h3 id="tuplas-vs-listas">Tuplas vs. Listas</h3>
+<p>Las tuplas parecieran ser listas de solo-lectura. Sin embargo, las tuplas suelen usarse para un solo ítem que consiste de múltiples partes mientras que las listas suelen usarse para una colección de diferentes elementos, típicamente del mismo tipo.</p>
+<pre><code class="language-python">record = ('Manzanas', 100, 490.1)                # Una tupla representando un registro dentro de un pedido de frutas
+
+symbols = [ 'Manzanas', 'Peras', 'Mandarinas' ]  # Una lista representando tres frutas diferentes.
+</code></pre>
+<h3 id="diccionarios">Diccionarios</h3>
+<p>Un diccionario es una función que manda <em>claves</em> en <em>valores</em>. Las claves sirven como índices para acceder a los valores.</p>
+<pre><code class="language-python">s = {
+    'fruta': 'Manzana',
+    'cajones': 100,
+    'precio': 490.1
+}
+</code></pre>
+<h4 id="operaciones-usuales">Operaciones usuales</h4>
+<p>Para obtener el valor almacenado en un diccionario usamos las claves.</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(s['fruta'], s['cajones'])
+Manzanas 100
+&gt;&gt;&gt; s['precio']
+490.10
+&gt;&gt;&gt;
+</code></pre>
+<p>Para agregar o modificar valores, simplemente asignamos usando la clave.</p>
+<pre><code class="language-python">&gt;&gt;&gt; s['cajones'] = 75
+&gt;&gt;&gt; s['fecha'] = '6/8/2020'
+&gt;&gt;&gt;
+</code></pre>
+<p>para borrar un valor, usamos el comando <code>del</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; del s['fecha']
+&gt;&gt;&gt;
+</code></pre>
+<h4 id="por-que-diccionarios">¿Por qué diccionarios?</h4>
+<p>Los diccionarios son útiles cuando hay <em>muchos</em> valores diferentes y esos valores pueden ser modificados o manipulados. Dado que el acceso a los elementos se hace por <em>clave</em>, no es necesario recordar una posición para cierto dato, lo que muchas veces cumple un objetivo fundamental: hacer que el código sea más legible (y con esto menos propenso a errores).</p>
+<pre><code class="language-python">s['precio'] # diccionario
+# vs
+s[2] # lista
+</code></pre>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Anteriormente escribiste un programa que leía el archivo
+<code>camion.csv</code> usando el módulo <code>csv</code> para leer el archivo fila por fila.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import csv
+&gt;&gt;&gt; f = open('../Data/camion.csv')
+&gt;&gt;&gt; filas = csv.reader(f)
+&gt;&gt;&gt; next(filas)
+['nombre', 'cajones', 'precio']
+&gt;&gt;&gt; fila = next(filas)
+&gt;&gt;&gt; fila
+['Lima', '100', '32.2']
+&gt;&gt;&gt;
+</code></pre>
+<p>A veces, además de leerlo, queremos hacer otras cosas con el archivo CSV, como por ejemplo usar los datos que contiene para hacer un cálculo. Lamentablemente una fila de datos en crudo no es suficiente para operar aritméticamente. Vamos a querer interpretar los elementos de la fila de datos de alguna manera particular, convirtiéndolos a otro tipo de datos que resulte más adecuado para trabajar. Es frecuente además de convertir los elementos de las filas, transformar las filas enteras en tuplas o diccionarios.</p>
+<h3 id="ejercicio-211-tuplas">Ejercicio 2.11: Tuplas</h3>
+<p>En el intérprete interactivo, creá la siguiente tupla que representa la fila de antes, pero con las columnas numéricas pasadas a formatos adecuados:</p>
+<pre><code class="language-python">&gt;&gt;&gt; t = (fila[0], int(fila[1]), float(fila[2]))
+&gt;&gt;&gt; t
+('Lima', 100, 32.2)
+&gt;&gt;&gt;
+</code></pre>
+<p>A partir de esta tupla, ahora podés calcular el costo total multiplicando cajones por precio:</p>
+<pre><code class="language-python">&gt;&gt;&gt; cost = t[1] * t[2]
+&gt;&gt;&gt; cost
+3220.0000000000005
+&gt;&gt;&gt;
+</code></pre>
+<p>¿Qué pasó? ¿Qué hace ese 5 al final?</p>
+<p>Este error no es un problema de Python, sino de la forma en la que la máquina representa los números de punto flotante. Así como en base 10 no podemos escribir un tercio de manera exacta, en base 2 escribir un quinto requiere infinitos dígitos. Al usar una representación finita (una cantidad acotada de dígitos) la máquina redondea los números. La aritmética de punto flotante no es exacta.</p>
+<p>Esto pasa en todos los lenguajes de programación que usan punto flotante, pero en muchos casos estos pequeños errores quedan ocultos al imprimir. Por ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; print(f'{cost:0.2f}')
+3220.00
+&gt;&gt;&gt;
+</code></pre>
+<p>Las tuplas son de sólo lectura. Verificalo tratando de cambiar el número de cajones a 75.</p>
+<pre><code class="language-python">&gt;&gt;&gt; t[1] = 75
+Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: 'tuple' object does not support item assignment
+&gt;&gt;&gt;
+</code></pre>
+<p>Aunque no podés cambiar al tupla, sí podés reemplazar la tupla por una nueva.</p>
+<pre><code class="language-python">&gt;&gt;&gt; t = (t[0], 75, t[2])
+&gt;&gt;&gt; t
+('Lima', 75, 32.2)
+&gt;&gt;&gt;
+</code></pre>
+<p>Siempre que reasignes una variable como recién lo hiciste con <code>t</code>, el valor anterior de la variable se pierde. Aunque la asignación de arriba pueda parecer como que estás modificando la tupla, en realidad estás creando una nueva tupla y tirando la vieja.</p>
+<p>Las tuplas muchas veces se usan para empaquetar y desempaquetar valores dentro de variables. Probá esto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; nombre, cajones, precio = t
+&gt;&gt;&gt; nombre
+'Lima'
+&gt;&gt;&gt; cajones
+75
+&gt;&gt;&gt; precio
+32.2
+&gt;&gt;&gt;
+</code></pre>
+<p>Tomá las variables de arriba y empaquetalas en una tupla.</p>
+<pre><code class="language-python">&gt;&gt;&gt; t = (nombre, 2*cajones, precio)
+&gt;&gt;&gt; t
+('Lima', 150, 32.2)
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-212-diccionarios-como-estructuras-de-datos">Ejercicio 2.12: Diccionarios como estructuras de datos</h3>
+<p>Una alternativa a la tupla es un diccionario.</p>
+<pre><code class="language-python">&gt;&gt;&gt; d = {
+        'nombre' : fila[0],
+        'cajones' : int(fila[1]),
+        'precio'  : float(fila[2])
+    }
+&gt;&gt;&gt; d
+{'nombre': 'Lima', 'cajones': 100, 'precio': 32.2 }
+&gt;&gt;&gt;
+</code></pre>
+<p>Calculá el costo total de este lote:</p>
+<pre><code class="language-python">&gt;&gt;&gt; cost = d['cajones'] * d['precio']
+&gt;&gt;&gt; cost
+3220.0000000000005
+&gt;&gt;&gt;
+</code></pre>
+<p>Compará este ejemplo con el mismo cálculo hecho con tuplas más arriba. Cambiá el número de cajones a 75.</p>
+<pre><code class="language-python">&gt;&gt;&gt; d['cajones'] = 75
+&gt;&gt;&gt; d
+{'nombre': 'Lima', 'cajones': 75, 'precio': 32.2 }
+&gt;&gt;&gt;
+</code></pre>
+<p>A diferencia de las tuplas, los diccionarios se pueden modificar libremente. Agregá algunos atributos:</p>
+<pre><code class="language-python">&gt;&gt;&gt; d['fecha'] = (14, 8, 2020)
+&gt;&gt;&gt; d['cuenta'] = 12345
+&gt;&gt;&gt; d
+{'nombre': 'Lima', 'cajones': 75, 'precio':32.2, 'fecha': (14, 8, 2020), 'cuenta': 12345}
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-213-mas-operaciones-con-diccionarios">Ejercicio 2.13: Más operaciones con diccionarios</h3>
+<p>Si usás el comando <code>for</code> para iterar sobre el diccionario, obtenés las claves:</p>
+<pre><code class="language-python">&gt;&gt;&gt; for k in d:
+        print('k =', k)
+
+k = nombre
+k = cajones
+k = precio
+k = fecha
+k = cuenta
+&gt;&gt;&gt;
+</code></pre>
+<p>Probá esta variante:</p>
+<pre><code class="language-python">&gt;&gt;&gt; for k in d:
+        print(k, '=', d[k])
+
+nombre = 'Lima'
+cajones = 75
+precio = 32.2
+fecha = (14, 8, 2020)
+cuenta = 12345
+&gt;&gt;&gt;
+</code></pre>
+<p>Una manera más elegante de trabajar con claves y valores simultáneamente es usar el método <code>items()</code>. Esto te devuelve una lista de tuplas de la forma <code>(clave,valor)</code> sobre la que podés iterar.</p>
+<pre><code class="language-python">&gt;&gt;&gt; items = d.items()
+&gt;&gt;&gt; items
+dict_items([('nombre', 'Lima'), ('cajones', 75), ('precio', 32.2), ('fecha', (14, 8, 2020))])
+&gt;&gt;&gt; for k, v in d.items():
+        print(k, '=', v)
+
+nombre = Lima
+cajones = 75
+precio = 32.2
+fecha = (14, 8, 2020)
+&gt;&gt;&gt;
+</code></pre>
+<p>Si pasás un diccionario a una lista, obtenés sus claves.</p>
+<pre><code class="language-python">&gt;&gt;&gt; list(d)
+['nombre', 'cajones', 'precio', 'fecha', 'cuenta']
+&gt;&gt;&gt;
+</code></pre>
+<p>También podés obtener todas las claves del diccionario usando el método <code>keys()</code>:</p>
+<pre><code class="language-python">&gt;&gt;&gt; claves = d.keys()
+&gt;&gt;&gt; claves
+dict_keys(['nombre', 'cajones', 'precio', 'fecha', 'cuenta'])
+&gt;&gt;&gt;
+</code></pre>
+<p>Si tenés tuplas como en <code>items</code> podés crear un diccionario usando la función <code>dict()</code>. Probá esto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; nuevos_items = [('nombre', 'Manzanas'), ('cajones', 100), ('precio', 490.1), ('fecha', (13, 8, 2020))]
+&gt;&gt;&gt; nuevos_items
+[('nombre', 'Manzanas'), ('cajones', 100), ('precio', 490.1), ('fecha', (13, 8, 2020))]
+&gt;&gt;&gt; d = dict(nuevos_items)
+&gt;&gt;&gt; d
+{'nombre': 'Manzanas', 'cajones': 100, 'precio': 490.1, 'fecha': (13, 8, 2020)}
+</code></pre>
+<h3 id="ejercicio-214-diccionario-geringoso">Ejercicio 2.14: Diccionario geringoso.</h3>
+<p>Construí una función que, a partir de una lista de palabras, devuelva un diccionario geringoso. Las claves del diccionario deben ser las palabras de la lista y los valores deben ser sus traducciones al geringoso (como en el <a href="../../01_Introduccion/04_Strings/#ejercicio-118-geringoso-rústico">Ejercicio 1.18</a>). 
+Probá tu función para la lista <code>['banana', 'manzana', 'mandarina']</code>.
+Guardá este ejercicio en un archivo <code>diccionario_geringoso.py</code> para entregar al final de la clase.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Funciones/">Anterior (2 Funciones)</a> | <a href="../04_Contenedores/">Próximo (4 Contenedores)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

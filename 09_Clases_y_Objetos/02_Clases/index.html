@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/09_Clases_y_Objetos/02_Clases/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>02 Clases - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#92-clases" class="nav-link">9.2 Clases</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Intro/">Anterior (1 Introducción)</a> | <a href="../03_Herencia/">Próximo (3 Herencia)</a></p>
+<h1 id="92-clases">9.2 Clases</h1>
+<p>Esta sección tiene un <a href="https://youtu.be/h7X8rrW8JLo">video</a> donde introducimos las clases, damos algunos ejemplos y también introducimos el tema de la <a href="../04_M%C3%A9todos_Especiales/#94-métodos-especiales">Sección 9.4</a>. En este video, y en el que veremos más adelante sobre herencia, usamos el código de <a href="../clase9_clases_metesp.py">este archivo</a>.</p>
+<p>La programación orientada a objetos requiere un pequeño pero importante cambio en la forma de pensar la programación tradicional. Dejá decantar los conceptos nuevos mientras leés esta sección.</p>
+<p>En esta sección veremos el concepto de clase, cómo crear nuevos tipos de objetos, su utilidad, y las ventajas de esa forma de organizar los programas.</p>
+<h3 id="programacion-orientada-a-objetos-poo">Programación orientada a objetos (POO)</h3>
+<p>La programación orientada a objetos es una forma de organizar el código. Así como un algoritmo suele estar asociado a una estructura de datos particular, la programación orientada a objetos "empaqueta" los datos junto con los métodos usados para tratarlos. </p>
+<p>Cada uno de esos <em>objetos</em> consiste en </p>
+<ul>
+<li>Datos (atributos de los objetos).</li>
+<li>Comportamiento (métodos de los objetos: son funciones que actúan sobre los atributos del objeto).</li>
+</ul>
+<p>Ya usaste objetos durante el curso infinidad de veces. Por ejemplo, al manipular una lista.</p>
+<pre><code class="language-python">&gt;&gt;&gt; nums = [1, 2, 3]
+&gt;&gt;&gt; nums.append(4)      # Esto es un método de la lista
+&gt;&gt;&gt; nums.insert(1,10)   # Otro método
+&gt;&gt;&gt; nums
+[1, 10, 2, 3, 4]        # Estos son los datos modificados por los métodos
+&gt;&gt;&gt;
+</code></pre>
+<p>Miremos un poco más en detalle este fragmento de código. Sabemos que <code>nums</code> es una variable de tipo lista. Equivalentemente, podemos decir que <code>nums</code> es una <em>instancia</em> de la clase <em>list</em>. Cada variable de tipo lista es una instancia de la misma clase.
+Al hablar de 'instancia' nos referimos a un 'objeto': un objeto es una instancia de una clase.</p>
+<p>Un objeto de tipo lista tiene atributos (datos) y métodos.
+Los métodos, como <code>append()</code> o <code>insert()</code>, se definen cuando se define la clase, pero se usan para manipular los datos de un objeto concreto (<code>nums</code> en este caso).</p>
+<h3 id="la-instruccion-class">La instrucción <code>class</code></h3>
+<p>Para definir un tipo nuevo de objeto, usá la instrucción <code>class</code>.</p>
+<pre><code class="language-python">class Jugador:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.salud = 100
+
+    def mover(self, dx, dy):
+        self.x += dx
+        self.y += dy
+
+    def lastimar(self, pts):
+        self.salud -= pts
+</code></pre>
+<p>Un objeto de tipo <code>Jugador</code> tiene como atributos <code>x</code>, <code>y</code> y <code>salud</code>. Sus métodos son <code>mover()</code> y <code>lastimar()</code>.</p>
+<p>Puede decirse que una clase es la definición formal de las relaciones entre los datos y los métodos que los manipulan. Un objeto es una instancia particular de la clase a la cual pertenece, con datos propios pero los mismos métodos que los demás objetos de esa clase. Este concepto te va a quedar más claro cuando lo veas funcionar y lo uses.</p>
+<h3 id="instancias">Instancias</h3>
+<p>Los programas manipulan instancias individuales de las clases. Cada instancia es un objeto, y es en cada objeto que uno puede manipular los datos y llamar a sus métodos. </p>
+<p>Podés crear un objeto mediante un llamado a la clase como si fuera una función.</p>
+<pre><code class="language-python">&gt;&gt;&gt; a = Jugador(2, 3)    # Clase Jugador definida antes
+&gt;&gt;&gt; b = Jugador(10, 20)
+&gt;&gt;&gt;
+</code></pre>
+<p><code>a</code> y <code>b</code> son instancias de <code>Jugador</code> definida más arriba. Es decir, a y b son objetos de la clase <code>Jugador</code>.</p>
+<p><em>Importante: La instrucción <code>class</code> es solamente la definición de una clase, no </em><em>hace</em><em> nada por sí misma. Es similar a la definición de una función.</em></p>
+<h3 id="datos-de-una-instancia">Datos de una instancia</h3>
+<p>Cada instancia tiene sus propios datos locales. 
+Acá pedimos ver el atributo <code>x</code> de cada instancia:</p>
+<pre><code class="language-python">&gt;&gt;&gt; a.x
+2
+&gt;&gt;&gt; b.x
+10
+</code></pre>
+<p>Estos datos locales se inicializan, para cada instancia, durante la ejecución del método <code>__init__()</code> de la clase.</p>
+<pre><code class="language-python">class Jugador:
+    def __init__(self, x, y):
+        # Todo dato guardado en `self` es propio de esa instancia
+        self.x = x
+        self.y = y
+        self.salud = 100
+</code></pre>
+<p>No hay restricciones en la cantidad o el tipo de atributos que puede tener una clase.</p>
+<h3 id="metodos-de-una-instancia">Métodos de una instancia.</h3>
+<p>Los métodos de una instancia son los métodos y las funciones que actúan sobre los datos almacenados en esa instancia. </p>
+<pre><code class="language-python">class Jugador:
+    ...
+    # `mover` es un método
+    def mover(self, dx, dy):
+        self.x += dx
+        self.y += dy
+</code></pre>
+<p>Siempre se recibe la instancia misma como primer argumento:
+"self" significa "mismo" como en "mi mismo" ó "en sí misma". Es como decir "yo".</p>
+<pre><code class="language-python">&gt;&gt;&gt; a.mover(1, 2)
+
+# `self` refiere a `a`
+# `dx` refiere a `1`
+# `dy` refiere a `2`
+def mover(self, dx, dy):
+    ...
+</code></pre>
+<p>Por convención siempre llamamos <code>self</code> a la instancia actual, y ésta es siempre pasada como primer argumento a todos los métodos. En realidad el nombre real de la variable no importa, pero es una convención en Python llamar al primer argumento <code>self</code>. </p>
+<p>Podríamos usar <code>mismo</code>, por ejemplo, en lugar de <code>self</code> y todo va a funcionar igual, pero no respeta las convenciones de la comunidad:</p>
+<pre><code class="language-python">class Jugador:
+    ...
+    # `mover` es un método
+    def mover(mismo, dx, dy):
+        mismo.x += dx
+        mismo.y += dy
+</code></pre>
+<h3 id="visibilidad-en-clases-scoping">Visibilidad en clases (Scoping)</h3>
+<p>Las clases no definen ni limitan (como los módulos) un entorno de visibilidad.</p>
+<pre><code class="language-python">class Jugador:
+    ...
+    def mover(self, dx, dy):
+        self.x += dx
+        self.y += dy
+
+    def izquierda(self, dist):
+        mover(-dist, 0)      # NO! Refiere a una función global `mover`.
+        self.mover(-dist, 0) # Sí. Llama al método `mover` definido antes.
+</code></pre>
+<p>Si necesitás referirte a un dato o un método de una clase tenés que hacer una referencia explícita (agregando el <code>self</code>), sino te estás refiriendo a 
+otra cosa como en el ejemplo anterior.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Vamos a comenzar esta serie de ejercicios modificando código que escribiste antes del parcial. En particular retomaremos el código del <a href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/#ejercicio-75-arreglemos-las-funciones-existentes">Ejercicio 7.5</a>. Te dejamos <a href="../ejs.zip">acá</a> una versión funcionando que podés mirar y/o usar. Tiene cosas interesantes, aunque tengas la tuya funcionando si querés pegale una mirada. </p>
+<h3 id="ejercicio-91-objetos-como-estructura-de-datos">Ejercicio 9.1: Objetos como estructura de datos.</h3>
+<p>Durante las primeras clases trabajamos con datos en forma de tuplas y diccionarios. Un lote con cajones de frutas, por ejemplo, estaba representado por una tupla, como ésta:</p>
+<pre><code class="language-python">s = ('Pera', 100, 490.10)
+</code></pre>
+<p>o por un diccionario, de esta otra forma:</p>
+<pre><code class="language-python">s = { 'nombre'  : 'Pera',
+      'cajones' : 100,
+      'precio'  : 490.10
+}
+</code></pre>
+<p>Incluso escribiste funciones para manipular datos almacenados de ese modo:</p>
+<pre><code class="language-python">def costo(registro):
+    return registro['cajones'] * registro['precio']
+</code></pre>
+<p>Otra forma de representar los datos con los que estás trabajando es definir una clase. Creá un archivo llamado <code>lote.py</code> y adentro definí una clase llamada <code>Lote</code> que represente un lote de cajones de una misma fruta. Definila de modo que cada instancia de la clase <code>Lote</code> (es decir, cada objeto lote) tenga los atributos <code>nombre</code>, <code>cajones</code>, y <code>precio</code>. Éste es un ejemplo del comportamiento buscado:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import lote
+&gt;&gt;&gt; a = lote.Lote('Pera', 100, 490.10)
+&gt;&gt;&gt; a.nombre
+'Pera'
+&gt;&gt;&gt; a.cajones
+100
+&gt;&gt;&gt; a.precio
+490.1
+&gt;&gt;&gt;
+</code></pre>
+<p>Vamos a crear más objetos de tipo <code>Lote</code> para manipularlos. Por ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; b = lote.Lote('Manzana', 50, 122.34)
+&gt;&gt;&gt; c = lote.Lote('Naranja', 75, 91.75)
+&gt;&gt;&gt; b.cajones * b.precio
+6117.0
+&gt;&gt;&gt; c.cajones * c.precio
+6881.25
+&gt;&gt;&gt; lotes = [a, b, c]
+&gt;&gt;&gt; lotes
+[&lt;lote.Lote object at 0x37d0b0&gt;, &lt;lote.Lote object at 0x37d110&gt;, &lt;lote.Lote object at 0x37d050&gt;]
+&gt;&gt;&gt; for c in lotes:
+     print(f'{c.nombre:&gt;10s} {c.cajones:&gt;10d} {c.precio:&gt;10.2f}')
+
+... mirá el resultado ...
+&gt;&gt;&gt;
+</code></pre>
+<p>Fijate que la clase <code>Lote</code> funciona como una "fábrica" para crear objetos que son instancias de esa clase. Vos la llamás como si fuera una función y te crea una nueva instancia de sí misma. Más aún, cada instancia es única y tiene sus propios datos que son independientes de las demás instancias de la misma clase.</p>
+<p>Una instancia definida por una clase puede tener cierta similitud con un diccionario, pero usa una sintaxis algo diferente. Por ejemplo, en lugar de escribir <code>c['nombre']</code> ó <code>c['precio']</code> en objetos escribís <code>c.nombre</code> o <code>c.precio</code>.</p>
+<h3 id="ejercicio-92-agrega-algunos-metodos">Ejercicio 9.2: Agregá algunos métodos</h3>
+<p>Al definir una clase podés agregar funciones a los objetos que definís. Las funciones específicas de objetos se llaman <em>métodos</em> y operan sobre los datos guardados en cada instancia.</p>
+<p>Agregá los métodos <code>costo()</code> y <code>vender()</code> a tu objeto <code>Lote</code>. Deberían dar este comportamiento:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import lote
+&gt;&gt;&gt; s = lote.Lote('Pera', 100, 490.10)
+&gt;&gt;&gt; s.costo()
+49010.0
+&gt;&gt;&gt; s.cajones
+100
+&gt;&gt;&gt; s.vender(25)
+&gt;&gt;&gt; s.cajones
+75
+&gt;&gt;&gt; s.costo()
+36757.5
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-93-lista-de-instancias">Ejercicio 9.3: Lista de instancias</h3>
+<p>Seguí estos pasos para crear una lista de las instancias de <code>Lote</code> (una lista de objetos <code>Lote</code>) a partir de una lista de diccionarios. Luego calculá el precio total de todas esas instancias.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import fileparse
+&gt;&gt;&gt; with open('../Data/camion.csv') as lineas:
+...     camion_dicts = fileparse.parse_csv(lineas, select = ['nombre', 'cajones', 'precio'], types = [str, int, float])
+...
+&gt;&gt;&gt; camion = [ lote.Lote(d['nombre'], d['cajones'], d['precio']) for d in camion_dicts]
+&gt;&gt;&gt; camion
+[&lt;lote.Lote object at 0x10c9e2128&gt;, &lt;lote.Lote object at 0x10c9e2048&gt;, &lt;lote.Lote object at 0x10c9e2080&gt;,
+ &lt;lote.Lote object at 0x10c9e25f8&gt;, &lt;lote.Lote object at 0x10c9e2630&gt;, &lt;lote.Lote object at 0x10ca6f748&gt;,
+ &lt;lote.Lote object at 0x10ca6f7b8&gt;]
+&gt;&gt;&gt; sum([c.costo() for c in camion])
+47671.15
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="ejercicio-94-usa-tu-clase">Ejercicio 9.4: Usá tu clase</h3>
+<p>Modificá la función <code>leer_camion()</code> en el programa <code>informe.py</code> de modo que lea un archivo con el contenido de un camion y devuelva una lista de instancias de <code>Lote</code> como mostramos recién en el <a href="./#ejercicio-93-lista-de-instancias">Ejercicio 9.3</a>.</p>
+<p>Cuando hayas hecho esto, cambiá un poco el código en <code>informe.py</code> y en  <code>costo_camion.py</code> de modo que funcionen con objetos <code>Lote</code> (instancias de la clase <code>Lote</code>) en lugar de diccionarios.</p>
+<p>Ayuda: No deberían ser cambios importantes. Las referencias a diccionarios ahora tienen que hacer referencia a objetos (<code>c['cajones']</code> cambia a <code>c.cajones</code>).</p>
+<p>Hecho esto, deberías poder ejecutar tus funciones como antes:</p>
+<pre><code class="language-python">&gt;&gt;&gt; import costo_camion
+&gt;&gt;&gt; costo_camion.costo_camion('../Data/camion.csv')
+47671.15
+&gt;&gt;&gt; import informe
+&gt;&gt;&gt; informe.informe_camion('../Data/camion.csv', '../Data/precios.csv')
+   Nombre    Cajones     Precio     Cambio
+ ---------- ---------- ---------- ----------
+      Lima        100      $32.2       8.02
+   Naranja         50      $91.1      15.18
+     Caqui        150    $103.44       2.02
+ Mandarina        200     $51.23      29.66
+   Durazno         95     $40.37      33.11
+ Mandarina         50      $65.1      15.79
+   Naranja        100     $70.44      35.84
+</code></pre>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../01_Intro/">Anterior (1 Introducción)</a> | <a href="../03_Herencia/">Próximo (3 Herencia)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

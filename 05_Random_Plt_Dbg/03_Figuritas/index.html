@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/05_Random_Plt_Dbg/03_Figuritas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 Figuritas - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#53-el-album-de-figuritas" class="nav-link">5.3 El album de Figuritas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#las-figuritas-del-mundial" class="nav-link">Las figuritas del mundial</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ejercicios-con-figus-sueltas" class="nav-link">Ejercicios con figus sueltas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ejercicios-con-paquetes" class="nav-link">Ejercicios con paquetes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ejercicios-un-toque-mas-estadisticos" class="nav-link">Ejercicios un toque más estadísticos:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_NumPy_Arrays/">Anterior (2 NumPy)</a> | <a href="../04_Arboles3_plt/">Próximo (4 Gráficos del Arbolado porteño)</a></p>
+<h1 id="53-el-album-de-figuritas">5.3 El album de Figuritas</h1>
+<h2 id="las-figuritas-del-mundial">Las figuritas del mundial</h2>
+<p>Esta es una adaptación de una actividad que diseñaron nuestres colegas de Exactas-Programa y amablemente nos dejaron usar aquí. </p>
+<p>El objetivo de esta actividad es hacer un programa en Python que responda la pregunta: <strong>¿Cuántas figuritas hay que comprar para completar el álbum del Mundial?</strong> Guardá todo lo que hagas en un archivo <code>figuritas.py</code>, te lo vamos a pedir al finalizar la clase.</p>
+<p><img alt="Album de Figuritas" src="../completo.jpg" /></p>
+<p>Esta pregunta es noticia cada cuatro años:
+- <a href="https://www.pagina12.com.ar/diario/contratapa/13-250187-2014-07-06.html">Mundial de Brasil 2014</a>
+- <a href="https://www.lanacion.com.ar/2125275-rusia-2018-cuantos-sobres-de-figuritas-hacen-falta-para-llenar-el-album-del-mundial">Mundial de Rusia 2018</a>
+- Incluso hay un paper que <a href="https://www.infobae.com/2014/05/29/1568512-dos-cientificos-calculan-cuantos-paquetes-hay-que-comprar-completar-el-album-del-mundial/">salió referido en el diario</a></p>
+<h3 id="datos">Datos:</h3>
+<ol>
+<li>Álbum con 670 figuritas.</li>
+<li>Cada figurita se imprime en cantidades iguales y se distribuye aleatoriamente.</li>
+<li>Cada paquete trae cinco figuritas.</li>
+</ol>
+<p>Vamos a utilizar este disparador para presentar conceptos clave.</p>
+<h3 id="herramientas-utiles-de-python">Herramientas útiles de Python</h3>
+<p>Para que estén disponibles más funciones de Python, tenés que usar el comando <code>import</code>.
+En particular, en esta actividad vamos a usar dos módulos:
+- El módulo <code>random</code> lo vamos a importar con el comando <code>import random</code> y lo vamos a usar para generar figuritas (pseudo) aleatoriamente.
+- El módulo <code>numpy</code> lo vamos a importar con el comando <code>import numpy as np</code> y lo vamos a usar para operar numéricamente.</p>
+<h3 id="el-modelo-del-album-de-figuritas">El modelo del álbum de figuritas</h3>
+<p>Vamos a representar un álbum de n figuritas utilizando un vector de NumPy con posiciones numeradas de 0 a n-1.
+Cada posición representa el estado de una figurita con dos valores: 0 para indicar que aún no la conseguimos y 1 para indicar que sí (o, si preferís, podés usar un número positivo para representar cuántas de esas figus tenés, contando repes).</p>
+<p>Por ejemplo, si tuviéramos un álbum de seis figuritas vacío lo vamos a representar como <code>[0  0  0  0  0  0]</code>. Cuando consigamos la figurita 3 tendremos que indicarlo poniendo un 1 en el tercer lugar de la lista, es decir <code>album[2]=1</code> y el álbum nos va a quedar  <code>[0  0  1  0  0  0]</code>, y si queremos representar que nos tocó dos veces la figurita 3, asignamos <code>album[2] += 1</code> y el álbum queda <code>[0  0  2  0  0  0]</code>.</p>
+<h3 id="primera-simplificacion">Primera simplificación</h3>
+<p>Suponé por ahora que las figuritas se compran <strong>individualmente</strong> (de a una, no en un paquete con cinco). En este caso, <strong>la dinámica</strong> del llenado es la siguiente:</p>
+<ul>
+<li>Iniciamos con un álbum vacío y sin haber comprado ninguna figurita.</li>
+<li>Compramos figuritas (de a una) hasta llenar el álbum; es decir, se repite la acción (<em>el paso</em>) de comprar y pegar figuritas <em>mientras</em> (while) el álbum está incompleto.</li>
+<li>Al terminar nos interesa saber cuántas figuritas tuvimos que comprar para llenar el álbum.</li>
+</ul>
+<h2 id="ejercicios-con-figus-sueltas">Ejercicios con figus sueltas</h2>
+<p>Vamos ahora a implementar computacionalmente este modelo. Queremos definir las funciones: </p>
+<h3 id="ejercicio-510-crear">Ejercicio 5.10: Crear</h3>
+<p>Implementá la función <code>crear_album(figus_total)</code> que devuelve un álbum (vector) <em>vacío</em> con <code>figus_total</code> espacios para pegar figuritas.</p>
+<h3 id="ejercicio-511-incompleto">Ejercicio 5.11: Incompleto</h3>
+<p>¿Cuál sería el comando de Python que nos dice si hay al menos un cero en el vector que representa el álbum? ¿Qué significa que haya al menos un cero en nuestro vector?</p>
+<p>Implementá la función <code>album_incompleto(A)</code> que recibe un vector y devuelve <code>True</code> si el álbum <code>A</code> no está completo y <code>False</code> si está completo. </p>
+<p>Esta función y la anterior son realmente sencillas --cada una puede escribirse en una sola línea. En otro contexto quizas podrías usar directamente <em>esa línea</em> y evitarte definir la función. Sin embargo, en esta etapa nos parece interesante que organices tu código definiendo estas funciones, por más que tengan línea de código cada una.</p>
+<h3 id="ejercicio-512-comprar">Ejercicio 5.12: Comprar</h3>
+<p>Alguna de las funciones que introdujimos en la <a href="../01_Random/#valores-discretos">Sección 5.1</a> sirve para devolver un número entero aleatorio dentro de un rango (¿cuál era?).
+Implementá una función <code>comprar_figu(figus_total)</code> que reciba el número total de figuritas que tiene el álbum (dado por el parámetro <code>figus_total</code>) y devuelva un número entero aleatorio que representa la figurita que nos tocó.</p>
+<h3 id="ejercicio-513-cantidad-de-compras">Ejercicio 5.13: Cantidad de compras</h3>
+<p>Implementá la función <code>cuantas_figus(figus_total)</code> que, dado el tamaño del álbum (<code>figus_total</code>), genere un álbum nuevo, simule su llenado y devuelva la cantidad de figuritas que se debieron comprar para completarlo.</p>
+<h3 id="ejercicio-514">Ejercicio 5.14:</h3>
+<p>Ejecutá <code>n_repeticiones = 1000</code> veces la función anterior utilizando <code>figus_total = 6</code> y guardá en una lista los resultados obtenidos en cada repetición. Con los resultados obtenidos estimá cuántas figuritas hay que comprar, en promedio, para completar el álbum de seis figuritas.</p>
+<p><em>Ayuda: El comando <code>np.mean(l)</code> devuelve el promedio de la lista <code>l</code>.</em></p>
+<p>¿Podés crear esta lista usando una comprensión de listas?</p>
+<h3 id="ejercicio-515">Ejercicio 5.15:</h3>
+<p>Calculá <code>n_repeticiones=100</code> veces la función <code>cuantas_figus(figus_total=670)</code> y guardá los resultados obtenidos en cada repetición en una lista.
+Con los resultados obtenidos estimá cuántas figuritas hay que comprar, en promedio, para completar el álbum (de 670 figuritas).</p>
+<p>Guardá todo lo que hiciste hasta aquí sobre figuritas en un archivo <code>figuritas.py</code>. Lo que sigue profundiza un poco más en el asunto.</p>
+<h3 id="ahora-con-paquetes">Ahora con paquetes</h3>
+<p>Estos ejercicios te recomendamos que los pienses y discutas con un compañere o alguna de tus otras personalidades (si es que tenés):</p>
+<ol>
+<li>¿Cómo impacta en lo realizado tener paquetes con figuritas en lugar de figus sueltas?</li>
+<li>¿Cómo puede representarse un paquete?</li>
+</ol>
+<h2 id="ejercicios-con-paquetes">Ejercicios con paquetes</h2>
+<h3 id="ejercicio-516">Ejercicio 5.16:</h3>
+<p>Simulá la generación de un paquete con cinco figuritas, sabiendo que el álbum es de 670. Tené en cuenta que, como en la vida real, puede haber figuritas repetidas en un paquete.</p>
+<h3 id="ejercicio-517">Ejercicio 5.17:</h3>
+<p>Implementá una función <code>comprar_paquete(figus_total, figus_paquete)</code> que, dado el tamaño del álbum (<code>figus_total</code>) y la cantidad de figuritas por paquete (<code>figus_paquete</code>), genere un paquete (lista) de figuritas al azar.</p>
+<h3 id="ejercicio-518">Ejercicio 5.18:</h3>
+<p>Implementá una función <code>cuantos_paquetes(figus_total, figus_paquete)</code> que dado el tamaño del álbum y la cantidad de figus por paquete, genere un álbum nuevo, simule su llenado y devuelva cuántos paquetes se debieron comprar para completarlo.</p>
+<h3 id="ejercicio-519">Ejercicio 5.19:</h3>
+<p>Calculá <code>n_repeticiones = 100</code> veces la función <code>cuantos_paquetes</code>, utilizando <code>figus_total = 670</code>, <code>figus_paquete = 5</code>. Guarda los resultados obtenidos en una lista y calculá su promedio. Si te da la compu, hacelo con 1000 repeticiones.</p>
+<h3 id="graficar-el-llenado-del-album">Graficar el llenado del álbum</h3>
+<p>El siguiente código usa las funciones que hiciste antes para graficar la curva de llenado de un álbum a medida que comprás paquetes de figuritas. Es un primer ejemplo de gráfico de líneas. En las próximas clases estudiaremos los detalles sobre gráficos de una manera sistemática. Por ahora solo un botón de muestra.</p>
+<pre><code class="language-python">def calcular_historia_figus_pegadas(figus_total, figus_paquete):
+    album = crear_album(figus_total)
+    historia_figus_pegadas = [0]
+    while album_incompleto(album):
+        paquete = comprar_paquete(figus_total, figus_paquete)
+        while paquete:
+            album[paquete.pop()] = 1
+        figus_pegadas = (album&gt;0).sum()
+        historia_figus_pegadas.append(figus_pegadas)        
+    return historia_figus_pegadas
+
+figus_total = 670
+figus_paquete = 5
+
+plt.plot(calcular_historia_figus_pegadas(figus_total, figus_paquete))
+plt.xlabel(&quot;Cantidad de paquetes comprados.&quot;)
+plt.ylabel(&quot;Cantidad de figuritas pegadas.&quot;)
+plt.title(&quot;La curva de llenado se desacelera al final&quot;)
+plt.show()
+
+</code></pre>
+<h2 id="ejercicios-un-toque-mas-estadisticos">Ejercicios un toque más estadísticos:</h2>
+<p>Los siguientes ejercicios suponen algunos conceptos un poco más avanzados de estadística. Son optativos pero interesantes.</p>
+<h3 id="ejercicio-520">Ejercicio 5.20:</h3>
+<p>Utilizando lo implementado en el ítem anterior, <strong>estimá</strong> la probabilidad de completar el álbum con 850 paquetes o menos.</p>
+<p><em>Sugerencia:</em> No leas esto antes de hacer el ejercicio. Hacelo primero y luego miralo. En este ejercicio resulta más compacto usar <code>n_paquetes_hasta_llenar=np.array(lista)</code> para convertir a vector la lista conteniendo cuántos paquetes compraste en cada experimento hasta llenar el álbum. Trabajar con vectores tiene ventajas. Por ejemplo probá la siguiente instrucción:</p>
+<pre><code class="language-python">(n_paquetes_hasta_llenar &lt;= 850).sum()
+</code></pre>
+<h3 id="ejercicio-521-plotear-el-histograma">Ejercicio 5.21: Plotear el histograma</h3>
+<p>Usá un código similar al del <a href="../02_NumPy_Arrays/#ejercicio-59-empezando-a-plotear">Ejercicio 5.9</a> para hacer un histograma de la cantidad de paquetes que se compraron en cada experimento, ajustando la cantidad de <em>bins</em> para que el gráfico se vea lo mejor posible.</p>
+<h3 id="ejercicio-522">Ejercicio 5.22:</h3>
+<p>Utilizando lo implementado, <strong>estimá</strong> cuántos paquetes habría que comprar para tener una chance del 90% de completar el álbum.</p>
+<h3 id="ejercicio-523">Ejercicio 5.23:</h3>
+<p>Repetí suponiendo que no hay figuritas repetidas en un paquete. ¿Cuánto cambian las probabilidades?</p>
+<h3 id="ejercicio-524-cooperar-vs-competir">Ejercicio 5.24: Cooperar vs competir</h3>
+<p>Por último, suponé que cinco amigues se juntan y deciden compartir la compra de figuritas y el llenado de sus cinco álbumes solidariamente. Calculá cuántos paquetes deberían comprar si deben completar todos. Hacé 100 repeticiones y compará el resultado con la compra individual que calculaste antes.</p>
+<p>Acordate de guardar todo lo que hiciste sobre figuritas en un archivo <code>figuritas.py</code>.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_NumPy_Arrays/">Anterior (2 NumPy)</a> | <a href="../04_Arboles3_plt/">Próximo (4 Gráficos del Arbolado porteño)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

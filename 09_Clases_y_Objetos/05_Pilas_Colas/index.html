@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/09_Clases_y_Objetos/05_Pilas_Colas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>05 Pilas Colas - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#95-objetos-pilas-y-colas" class="nav-link">9.5 Objetos, pilas y colas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_M%C3%A9todos_Especiales/">Anterior (4 Métodos especiales)</a> | <a href="../06_Teledeteccion/">Próximo (6 Teledetección)</a></p>
+<h1 id="95-objetos-pilas-y-colas">9.5 Objetos, pilas y colas</h1>
+<p>Esta sección tiene un <a href="https://youtu.be/-SYcwU1XOn4">video</a> donde trabajamos con colas. En este video trabajamos con los archivos que figuran en <a href="../clase9_colas.zip">esta carpeta comprimida</a>.</p>
+<p>En esta sección tendrás que resolver algunos ejercicios definiendo clases y objetos.</p>
+<h3 id="un-ejercicio-geometrico">Un ejercicio geométrico</h3>
+<p>Creá una clase llamada <code>Rectangulo</code> que va a estar definido por dos puntos. Para esos dos puntos, usá la clase Punto de la Sección anterior. El rectángulo es paralelo a los ejes, los puntos representan dos esquinas opuestas cualesquiera.
+La clase debe tener un método constructor para crear el rectángulo a partir de dos puntos y los siguientes métodos:
+* <code>base()</code> que dé la medida de la base del rectángulo.
+* <code>altura()</code> que dé la medida de la altura del rectángulo.
+* <code>area()</code> que dé la medida del área del rectángulo.
+* Creá métodos especiales <code>__str__</code> y <code>__repr__</code>.
+* <code>desplazar(desplazamiento)</code> que dado un desplazamiento (de tipo Punto) desplace el rectángulo en ambas coordenadas usando el método <code>add</code> de la clase Punto.
+* <code>rotar()</code> que rote el rectángulo sobre su esquina inferior derecha 90 grados a la derecha.</p>
+<p>Probá tu código:</p>
+<pre><code class="language-python">&gt;&gt;&gt; ul = Punto(0,2)
+&gt;&gt;&gt; lr = Punto(1,0)
+&gt;&gt;&gt; ll = Punto(0,0)
+&gt;&gt;&gt; ur = Punto(1,2)
+&gt;&gt;&gt; rect1 = Rectangulo(ul,lr)
+&gt;&gt;&gt; rect2 = Rectangulo(ll,ur)
+&gt;&gt;&gt; rect1.base()
+1
+&gt;&gt;&gt; rect1.base()
+1
+&gt;&gt;&gt; rect2.altura()
+2
+&gt;&gt;&gt; rect2.altura()
+2
+&gt;&gt;&gt; rect1.rotar()
+&gt;&gt;&gt; rect2.rotar()
+&gt;&gt;&gt; rect1.base()
+2
+&gt;&gt;&gt; rect2.base()
+2
+&gt;&gt;&gt; rect1.altura()
+1
+&gt;&gt;&gt; rect2.altura()
+1
+</code></pre>
+<h3 id="ejercicio-911-canguros-buenos-y-canguros-malos">Ejercicio 9.11: Canguros buenos y canguros malos</h3>
+<p>Este ejercicio está relacionado con un error muy común en Python. Escribí una definición de una clase <code>Canguro</code> que tenga:</p>
+<ul>
+<li>Un método <code>__init__</code> que recibe un nombre para el canguro y una lista (parámetro opcional) e inicializa un atributo llamado <code>contenido_marsupio</code> con la lista que le pases como parámetro o como lista vacía si no le pasás nada.</li>
+<li>Un método llamado <code>meter_en_marsupio</code> que, dado un objeto cualquiera, lo agregue a la lista <code>contenido_marsupio</code>.</li>
+<li>Un método <code>__str__</code> que devuelve una representación como cadena del objeto <code>Canguro</code> indicando su nombre y los contenidos de su marsupio.</li>
+</ul>
+<p>Probá tu código creando dos objetos, <code>madre_canguro</code> y <code>cangurito</code> y guardá en el marsupio de la madre algunos objetos y al propio cangurito. </p>
+<p>Luego, mirá el ejemplo <code>canguro_malo.py</code> copiado a continuación. Este ejemplo intenta resolver el problema anterior, pero tiene un bug. Analizalo y corregilo. Entregá como respuesta un archivo <code>canguros_buenos.py</code> conteniendo, perimero la clase definida por vos y luego una corrección de la clase definida en el ejemplo, junto con un comentario indicando dónde estaba el error y en qué constía.</p>
+<pre><code class="language-python"># canguro_malo.py
+&quot;&quot;&quot;Este código continene un 
+bug importante y dificil de ver
+&quot;&quot;&quot;
+
+class Canguro:
+    &quot;&quot;&quot;Un Canguro es un marsupial.&quot;&quot;&quot;
+
+    def __init__(self, nombre, contenido=[]):
+        &quot;&quot;&quot;Inicializar los contenidos del marsupio.
+
+        nombre: string
+        contenido: contenido inicial del marsupio, lista.
+        &quot;&quot;&quot;
+        self.nombre = nombre
+        self.contenido_marsupio = contenido
+
+    def __str__(self):
+        &quot;&quot;&quot;devuelve una representación como cadena de este Canguro.
+        &quot;&quot;&quot;
+        t = [ self.nombre + ' tiene en su marsupio:' ]
+        for obj in self.contenido_marsupio:
+            s = '    ' + object.__str__(obj)
+            t.append(s)
+        return '\n'.join(t)
+
+    def meter_en_marsupio(self, item):
+        &quot;&quot;&quot;Agrega un nuevo item al marsupio.
+
+        item: objecto a ser agregado
+        &quot;&quot;&quot;
+        self.contenido_marsupio.append(item)
+
+#%%
+madre_canguro = Canguro('Madre')
+cangurito = Canguro('gurito')
+madre_canguro.meter_en_marsupio('billetera')
+madre_canguro.meter_en_marsupio('llaves del auto')
+madre_canguro.meter_en_marsupio(cangurito)
+
+print(madre_canguro)
+
+# Al ejecutar este código todo parece funcionar correctamente.
+# Para ver el problema, imprimí el contenido de cangurito.
+</code></pre>
+<p>Ojo: al corregir el bug no modifiques la firma del constructor <code>__init__</code> del objeto: asegurate que siga aceptando los mismos parámetros (obligatorios y opcionales) que antes.</p>
+<h3 id="colas">Colas</h3>
+<p>Una <strong>cola</strong> es una estructura de datos. Se caracteriza por contener una secuencia de elementos y dos operaciones: encolar y desencolar. La primera, encolar, agrega un elemento al final de la secuencia que contiene la cola. Desencolar, por su parte, devuelve el primer elemento de la secuencia y lo elimina de la misma. </p>
+<p>Las colas también se llaman estructuras FIFO (del inglés First In First Out), debido a que el primer elemento en entrar a la cola será también el primero en salir. El nombre cola se le da por su analogía con las colas que hacemos (o hacíamos cuando podíamos salir de casa) para entrar al cine, por ejemplo.</p>
+<p align="center">
+<img src="./colas.png" width="400">
+</p>
+
+<p>Esta es una posible implementación de la clase <code>Cola</code>:</p>
+<pre><code class="language-python">class Cola:
+    '''Representa a una cola, con operaciones de encolar y desencolar.
+    El primero en ser encolado es tambien el primero en ser desencolado.
+    '''
+
+    def __init__(self):
+        '''Crea una cola vacia.'''
+        self.items = []
+
+    def encolar(self, x):
+        '''Encola el elemento x.'''
+        self.items.append(x)
+
+    def desencolar(self):
+        '''Elimina el primer elemento de la cola 
+        y devuelve su valor. 
+        Si la cola esta vacia, levanta ValueError.'''
+        if self.esta_vacia():
+            raise ValueError('La cola esta vacia')
+        return self.items.pop(0)
+
+    def esta_vacia(self):
+        '''Devuelve 
+        True si la cola esta vacia, 
+        False si no.'''
+        return len(self.items) == 0
+</code></pre>
+<h3 id="ejercicio-912-torre-de-control">Ejercicio 9.12: Torre de Control</h3>
+<p>Usando un par de objetos de la clase Cola, escribí una nueva clase llamada <code>TorreDeControl</code> que modele el trabajo de una torre de control de un aeropuerto con una pista de aterrizaje. Los aviones que están esperando para aterrizar tienen prioridad sobre los que están esperando para despegar. La clase debe funcionar conforme al siguiente ejemplo:</p>
+<pre><code class="language-python">&gt;&gt;&gt; torre = TorreDeControl()
+&gt;&gt;&gt; torre.nuevo_arribo('AR156')
+&gt;&gt;&gt; torre.nueva_partida('KLM1267')
+&gt;&gt;&gt; torre.nuevo_arribo('AR32')
+&gt;&gt;&gt; torre.ver_estado()
+Vuelos esperando para aterrizar: AR156, AR32
+Vuelos esperando para despegar: KLM1267
+&gt;&gt;&gt; torre.asignar_pista()
+El vuelo AR156 aterrizó con éxito.
+&gt;&gt;&gt; torre.asignar_pista()
+El vuelo AR32 aterrizó con éxito.
+&gt;&gt;&gt; torre.asignar_pista()
+El vuelo KLM1267 despegó con éxito.
+&gt;&gt;&gt; torre.asignar_pista()
+No hay vuelos en espera.
+</code></pre>
+<p>Guardá tu solución (conteniendo también la definición de la clase <code>Cola</code>) en <code>torre_control.py</code> para entregar al final de la clase.</p>
+<h3 id="pilas">Pilas</h3>
+<p>Una <strong>pila</strong> (<em>stack</em> en inglés) es una estructura de datos. Se trata de una lista ordenada que permite almacenar y recuperar datos, con un modo de acceso de tipo LIFO (del inglés Last In, First Out, «último en entrar, primero en salir»). Funcionan de manera opuesta que las colas que mencionamos antes. </p>
+<p>Las pilas y colas son estructuras de datos que se aplican en multitud de contextos debido a su simplicidad y capacidad de modelar diferentes procesos.</p>
+<p>La operaciones (métodos) elementales de las pilas son <em>apilar</em> (coloca un objeto en la pila) y <em>desapilar</em> (retira el último elemento apilado). En inglés se llaman <em>push</em> y <em>pop</em> y son análogos al <em>encolar</em> y el <em>desencolar</em> de la colas. </p>
+<p>En cada momento solamente se tiene acceso a la parte superior de la pila, es decir, al último objeto apilado. La operación <em>desapilar</em> justamente permite la obtención de este elemento, que es retirado de la pila.</p>
+<p align="center">
+<img src="./pilas.png" width="400">
+</p>
+
+<p>La <strong>pila de llamadas</strong> (en inglés <em>call stack</em>) de un lenguaje (por ejemplo Python), es una pila manejada por el intérprete que almacena la información sobre las subrutinas activas en cada instante. También se la conoce como pila de ejecución o pila de control y se usa para llevar registro de las funciones que se fueron llamando y el de las variables definidas en cada contexto. </p>
+<p>Por ejemplo, si definimos las siguientes funciones:</p>
+<pre><code class="language-python">def f():
+    x = 50
+    a = 20
+    print(&quot;En f, x vale&quot;, x)
+
+def g():
+    x = 10
+    b = 45
+    print(&quot;En g, antes de llamar a f, x vale&quot;, x)
+    f()
+    print(&quot;En g, después de llamar a f, x vale&quot;, x)
+
+</code></pre>
+<p>la ejecución de <code>g()</code> resulta en:</p>
+<pre><code class="language-python">&gt;&gt;&gt; g()
+En g, antes de llamar a f, x vale 10
+En f, x vale 50
+En g, después de llamar a f, x vale 10. 
+</code></pre>
+<p>Para poder volver a recuperar el valor 10 para <code>x</code> en <code>g()</code> luego de llamar a <code>f()</code> se manejó adecuadamente la pila de llamadas. Podemos pensar que en la ejecución de <code>g()</code>, justo antes de llamar a <code>f()</code> había un <em>estado</em> que podría ser resumido en <code>estado = {función: 'g', próxima_línea_a_ejecutar: 4, variables: {x: 10, b: 45}}</code>. Luego se ejecuta la cuarta línea de código. El intérprete incrementa <code>próxima_línea_a_ejecutar</code> y, antes de llamar a <code>f()</code>,  <strong>apila</strong> el <code>estado</code> en la pila de llamadas. Al llamar a <code>f()</code>, el nuevo estado pasa a ser <code>estado = {función: 'f', próxima_línea_a_ejecutar: 1, variables = {}}</code>. El intéreprete ejecuta las tres líneas de código de <code>f</code>, incrementando la variable <code>próxima_línea_a_ejecutar</code> en cada paso, y agregando <code>x:50</code> y luego <code>a:20</code> el estado de las variables. Por lo tanto, termina la ejecución de <code>f</code> en el <code>estado = {función: 'f', próxima_línea_a_ejecutar: 4, variables = {x: 50, a: 20}}</code>. Como ya no hay más código que ejecutar de <code>f()</code> el intérprete <strong>desapila</strong>  un estado y continúa con la ejecución usando <code>estado = {función: 'g', próxima_línea_a_ejecutar: 5, variables: {x: 10, b: 45}}</code>, y por lo tanto imprime:</p>
+<pre><code>En g, después de llamar a f, x vale 10. 
+</code></pre>
+<p>Estos conceptos son importantes para la clase próxima donde estudiaremos funciones que se llaman a sí mismas <em>recursivamente</em>. Si no fuera por la pila de llamadas, los valores de las variables de las diferentes instancias de una función recursiva correrían el riesgo de mezclarse y confundirse.</p>
+<h3 id="ejercicio-913-implementar-el-tad-pila">Ejercicio 9.13: implementar el TAD pila</h3>
+<p>Implementá en una clase <code>Pila</code> el TAD descripto anteriormente con los métodos <code>apilar()</code>, <code>desapilar()</code> y <code>esta_vacia()</code>.</p>
+<p>Usala para reproducir el siguiente código:</p>
+<pre><code class="language-python">def mostrar_x_del_estado(estado):
+    print(f&quot;Ejecutando {estado['función']}(), x vale {estado['variables']['x']}&quot;)
+
+
+pila_de_llamadas = Pila()
+#la ejecución está en la línea 3 de g(). El estado tiene x=10.
+estado = {'función': 'g', 'próxima_línea_a_ejecutar': 3, 'variables': {'x': 10, 'b': 45}}
+mostrar_x_del_estado(estado)
+#sigo ejecutando, toca llamar a f(): incremento y apilo el estado.
+estado['próxima_línea_a_ejecutar'] = 5
+pila_de_llamadas.apilar(estado)
+#llamo a f y ejecuto primeras líneas
+estado = {'función': 'f', 'próxima_línea_a_ejecutar': 3, 'variables': {'x': 50, 'a': 20}}
+mostrar_x_del_estado(estado)
+#termina ejecución de f: se desapila el estado:
+estado = pila_de_llamadas.desapilar()
+mostrar_x_del_estado(estado)
+</code></pre>
+<p>Su ejecución debería dar:</p>
+<pre><code>Ejecutando g(), x vale 10
+Ejecutando f(), x vale 50
+Ejecutando g(), x vale 10
+</code></pre>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../04_M%C3%A9todos_Especiales/">Anterior (4 Métodos especiales)</a> | <a href="../06_Teledeteccion/">Próximo (6 Teledetección)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Programación en Python</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href=".">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Anterior
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="01_Introduccion/00_Resumen/" class="nav-link">
+                                    Siguiente <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#programacion-en-python" class="nav-link">Programación en Python</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#de-que-es-el-curso" class="nav-link">¿De qué es el curso?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#audiencia-para-quien-esta-pensado" class="nav-link">Audiencia. ¿Para quién está pensado?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contenidos" class="nav-link">Contenidos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#requerimientos" class="nav-link">Requerimientos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dedicacion-y-duracion" class="nav-link">Dedicación y duración</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#docentes" class="nav-link">Docentes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#preinscripcion" class="nav-link">Preinscripción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<!-- # Bienvenidos
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+Pendiente: https://docs.readthedocs.io/en/stable/guides/google-analytics.html
+https://github.com/kubilus1/mkdocs-paginate-plugin
+https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
+https://pythonrepo.com/repo/lukasgeiter-mkdocs-awesome-pages-plugin-python-documentation
+
+Otros templates: https://www.mkdocs.org/user-guide/choosing-your-theme/
+
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+ -->
+<h1 id="programacion-en-python">Programación en Python</h1>
+<p>En el marco del proyecto de <a href="http://noticias.unsam.edu.ar/2019/09/16/la-unsam-piensa-la-inteligencia-artificial-interdisciplinaria/">Inteligencia Artificial Interdisciplinaria</a>,
+la <a href="http://www.unsam.edu.ar/escuelas/ciencia/">Escuela de Ciencia y Tecnología</a> de la <a href="https://www.unsam.edu.ar/">UNSAM</a> vuelve a dictar
+en 2021 el curso de programación en Python.</p>
+<p><img alt="image info" src="Python_cloud.jpg" /></p>
+<h2 id="de-que-es-el-curso">¿De qué es el curso?</h2>
+<p>Este es un curso cuatrimestral de algoritmos y programación en Python.
+Se realiza en forma virtual y tendrá una combinación de clases sincrónicas
+y asincrónicas, con ejercicios para entregar semanalmente.</p>
+<p>Es un curso de programación en Python que prepara a les estudiantes
+para poder <strong>programar algoritmos</strong> y comprender los métodos
+desarrollados por otres. Está orientado a preparar a le estudiante para
+profundizar en temas de <strong>análisis y visualización de datos, aprendizaje automático, modelado matemático y desarrollo de scripts</strong>.</p>
+<p>El curso comienza el 4 de agosto y se dicta semanalmente. Los días miércoles de 14hs de 16hs hay clases de consultas.
+El material de las clases teóricas, tanto escrito como videos, estará disponible en este repositorio de manera que el curso (salvo los parciales) se puede hacer casi completamente de manera asincrónica.</p>
+<p>Es un curso gratuito y anunciaremos oportunamente la inscripción.</p>
+<h2 id="audiencia-para-quien-esta-pensado">Audiencia. ¿Para quién está pensado?</h2>
+<p>El curso está orientado a estudiantes de grado y posgrado e investigadores con algunos
+conocimientos previos de programación, aunque no asumimos ningún conocimiento del lenguaje Python.
+Es un curso intenso y desafiante, que invita a pensar y a desarrollar algoritmos.</p>
+<h2 id="contenidos">Contenidos</h2>
+<p>El objetivo de este curso es enseñar los fundamentos del lenguaje
+Python y algunos conceptos del diseño de algoritmos. El curso está orientado al manejo de datos, a la escritura de scripts y a una organización adecuada de los programas. Estudiaremos un poco de teoría de algoritmos, incluyendo conceptos básicos de la teoría de la complejidad y algunas estructuras de datos no triviales. Introduciremos la programación orientada a objetos. Al final de este curso les estudiantes deberían poder escribir sus propios programas en Python así como entender y modificar programas escritos por otres.</p>
+<h2 id="requerimientos">Requerimientos</h2>
+<p>Para hacer este curso solo hace falta tener instalado el Python 3.6
+(o uno más nuevo), comprometerse a leer las clases y a hacer los
+ejercicios de las guías semanales, lo que demandará alrededor de 15 horas de
+dedicación semanal (en algunos casos menos, en algunos casos más, dependiendo del estudiante).
+Pedimos tener alguna experiencia previa programando,
+aunque sea poca. Este no es un curso de introducción a la informática.</p>
+<h2 id="dedicacion-y-duracion">Dedicación y duración</h2>
+<p>Este es un curso cuatrimestral de grado y posgrado. Las clases
+teóricas estarán escritas. Habrá guías de ejercicios de entrega semanal
+obligatoria y encuentros on-line con exposiciones breves por parte de los
+docentes y espacio para consultas. Las clases sincrónicas virtuales serán
+de un par de horas semanales, los miércoles a las 14hs. Habrá
+también un grupo de <a href="https://slack.com/intl/es-ar/">Slack</a> (mensajería on-line) para consultas y debates entre
+estudiantes en tiempo real. El curso demanda unas quince
+horas semanales de dedicación, durante cuatro meses.</p>
+<h2 id="docentes">Docentes</h2>
+<p>El curso lo dictan dos profesores de la ECyT-UNSAM que son también
+investigadores del CONICET: <a href="http://labning.com.ar/#nosotros">Oscar Filevich</a> es Lic. en Biología,
+Dr. en Química y trabaja en neurofisiología; <a href="http://investigadores.unsam.edu.ar/es/investigador/407/Grimson-Rafael">Rafael Grimson</a> es Lic. en Matemática,
+Dr. en Computación y trabaja en temas ambientales, una JTP (Manuela Cerdiero) y dos ayudantes (Iván Pedrón y Daniela Alban). Además, contamos con <a href="https://futuros-estudiantes.dc.uba.ar/un-profesor-del-departamento-de-computacion-distinguido-por-facebook/">Matias López-Rosenfeld</a> como profesor invitado.</p>
+<h2 id="preinscripcion">Preinscripción</h2>
+<p>La preinscripción al curso aún no abrió. Si querés que te informemos cuando la abramos completá <a href="https://forms.gle/qfdKoUyyKYqEL6Zp6">este formulario</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.2.1
+Build Date UTC : 2021-06-28 15:10:23.636601+00:00
+-->

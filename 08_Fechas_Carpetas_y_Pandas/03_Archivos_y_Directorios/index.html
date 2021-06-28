@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>03 Archivos y Directorios - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#83-manejo-de-archivos-y-carpetas" class="nav-link">8.3 Manejo de archivos y carpetas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#manejo-de-archivos-y-directorios" class="nav-link">Manejo de archivos y directorios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#listar-directorios-y-archivos" class="nav-link">Listar directorios y archivos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#crear-un-nuevo-directorio" class="nav-link">Crear un nuevo directorio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#renombrar-un-directorio-o-un-archivo" class="nav-link">Renombrar un directorio o un archivo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#eliminar-un-directorio-o-un-archivo" class="nav-link">Eliminar un directorio o un archivo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#recorriendo-directorios-con-oswalk" class="nav-link">Recorriendo directorios con os.walk()</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cambiar-atributos-de-un-archivo" class="nav-link">Cambiar atributos de un archivo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Fechas/">Anterior (2 Manejo de fechas y horas)</a> | <a href="../04_Ordenando_archivos/">Próximo (4 Ordenar archivos en Python)</a></p>
+<h1 id="83-manejo-de-archivos-y-carpetas">8.3 Manejo de archivos y carpetas</h1>
+<p>Esta sección tiene un breve <a href="https://youtu.be/SeaML1O8PaI">video introductorio</a> sobre el manejo de archivos y directorios desde Python.</p>
+<h2 id="manejo-de-archivos-y-directorios">Manejo de archivos y directorios</h2>
+<p>Una carpeta o directorio es una colección de archivos y directorios. Python tiene el módulo <code>os</code> que ofrece muchas herramientas útiles para trabajar con directorios y archivos.</p>
+<p>En esta sección vas a aprender cómo crear un directorio, renombrarlo, listar todos sus archivos y subdirectorios, etc.</p>
+<h3 id="obtener-el-directorio-actual">Obtener el directorio actual</h3>
+<p>Para obtener el directorio de trabajo actual, usamos el función <code>getcwd()</code> (<em>get current working directory</em>) del módulo <code>os</code>.</p>
+<p>Esta función te devuelve el directorio actual en forma de cadena.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.getcwd()
+'/home/usuario/ejercicios_python'
+
+</code></pre>
+<p>Es importante ver que la salida dependerá del sistema operativo que estés usando. Por ejemplo, en Windows podrías obtener algo así: <code>C:\\usuario\\ejercicios_python</code>.</p>
+<h3 id="cambiar-el-directorio-de-trabajo">Cambiar el directorio de trabajo</h3>
+<p>Podés cambiar de directorio usando la función <code>chdir()</code> (<em>change directory</em>). Los directorios pueden ser relativos o absolutos (en sistemas operativos basados en Unix '.' es el directorio actual, '..' es el anterior, '/' es el directorio raíz).</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.chdir('../Data')              # entro en ../Data
+&gt;&gt;&gt; print(os.getcwd())
+/home/usuario/ejercicios_python/Data
+&gt;&gt;&gt; os.chdir('..')                  # subo un nivel
+&gt;&gt;&gt; os.chdir('..')                  # subo otro nivel
+&gt;&gt;&gt; print(os.getcwd())
+/home/usuario/
+&gt;&gt;&gt; os.chdir('/home')
+&gt;&gt;&gt; print(os.getcwd())
+/home
+</code></pre>
+<p>Para cambiar de directorio, le pasás el nuevo directorio como cadena a esta función.</p>
+<p>En diferentes sistemas operativos las barras de directorio se escriben de diferentes maneras. Es recomendable usar el comando <code>os.path.join</code> como en el siguiente ejemplo de manera que tu código funcione independientemente del sistema operativo en el que se lo corra.</p>
+<pre><code class="language-python">&gt;&gt;&gt; directorio = os.path.join('/home', 'usuario', 'ejercicios_python')
+&gt;&gt;&gt; os.chdir(directorio)
+</code></pre>
+<p>En caso de usarlo en Windows, será similar a:</p>
+<pre><code class="language-python">&gt;&gt;&gt; directorio = os.path.join('c:\\', 'usuario', 'ejercicios_python')
+&gt;&gt;&gt; os.chdir(directorio)
+</code></pre>
+<p>Usar directorios relativos al actual (que comienzan con './') y no absolutos (que comienzan con '/') facilita la portabilidad del código de una compu a otra.</p>
+<h2 id="listar-directorios-y-archivos">Listar directorios y archivos</h2>
+<p>La función <code>listdir()</code> toma un directorio (<em>path</em> o camino) y devuelve una lista con todos los archivos y subdirectorios de un directorio. Si no se le pasa ningún parámetro, devuelve los del directorio de trabajo actual.</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.getcwd()
+'/home/usuario/ejercicios_python'
+&gt;&gt;&gt; os.listdir('../Data')
+
+['camion2.csv',
+ 'missing.csv',
+ 'precios.csv',
+ 'camion.csv',
+ 'camion.dat',
+ 'temperaturas.npy',
+ 'camion_blancos.csv',
+ 'camion.csv.gz',
+ 'dowstocks.csv',
+ 'fecha_camion.csv',
+ 'arbolado-en-espacios-verdes.csv']
+</code></pre>
+<h2 id="crear-un-nuevo-directorio">Crear un nuevo directorio</h2>
+<p>Podés crear un directorio con la función <code>mkdir()</code>.</p>
+<p>Esta función toma como argumento el path del nuevo directorio. Si no se especifica el path absoluto, el directorio nuevo se crea en el directorio de trabajo actual.</p>
+<pre><code class="language-python">
+&gt;&gt;&gt; os.mkdir('test')          # creo el directorio test
+&gt;&gt;&gt; os.mkdir(os.path.join('test', 'carpeta'))  # creo el subdirectorio carpeta dentro de test
+&gt;&gt;&gt; os.listdir('test')
+['carpeta']
+</code></pre>
+<h2 id="renombrar-un-directorio-o-un-archivo">Renombrar un directorio o un archivo</h2>
+<p>Para renombrar un directorio o archivo, la función <code>rename()</code> toma dos argumentos, el viejo nombre y el nuevo nombre.</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.chdir('test')                     # entro en el directorio test
+&gt;&gt;&gt; os.listdir()
+['carpeta']
+&gt;&gt;&gt; os.rename('carpeta','carpeta_nueva') # cambio el nombre de carpeta
+&gt;&gt;&gt; os.listdir()
+['carpeta_nueva']
+</code></pre>
+<p>Esto mismo se puede hacer trabajando desde el directorio <code>Ejercicios</code>, sin entrar en 'test', marcando el camino hacia la carpeta que queremos renombrar.</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.chdir('..')                          # subo un nivel
+&gt;&gt;&gt; os.listdir('test')                      # miro qué hay en test
+['carpeta_nueva']
+&gt;&gt;&gt; os.rename(os.path.join('test', 'carpeta_nueva'), os.path.join('test','carpeta_vieja'))
+&gt;&gt;&gt; os.listdir('test')
+['carpeta_vieja']
+</code></pre>
+<p>La función <code>rename()</code> también es útil para mover un archivo o directorio, cambiando el camino (<em>path</em>) de acceso al archivo. Probá hacer esto:</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.rename(os.path.join('test','carpeta_vieja'), 'carpeta_vieja') # cambio el path
+&gt;&gt;&gt; os.listdir('test')                                  # test quedó vacío
+[]
+</code></pre>
+<p>La carpeta 'carpeta' ahora se encuentra en 'Ejercicios', y no dentro de 'Ejercicios/test'.</p>
+<p><strong>Ojo</strong>: <code>rename()</code> funciona cuando el archivo (o directorio) no se cambia de disco (o más específicamente de una partición). Si querés mover un archivo del disco a un pendrive, por ejemplo, lo correcto es copiar el archivo al pendrive y luego borrarlo del disco. <code>rename()</code> no hace esto: no copia y borra, simplemente cambia el nombre. Para renombrar en caso que se pueda o copiar y borrar si lo primero no es posible, podés usar la función <code>move()</code> del módulo <code>shutil</code>. Este módulo es de más alto nivel y usa las primitivas de bajo nivel del módulo <code>os</code>. Al usar <code>os</code> tenemos un control más estricto de las operaciones. Las funciones de <code>shutil</code> pueden resultar más cómodas, pero en el camino pueden invocar a diversas funciones de bajo nivel del módulo <code>os</code>.</p>
+<h2 id="eliminar-un-directorio-o-un-archivo">Eliminar un directorio o un archivo</h2>
+<blockquote>
+<p>:warning: <strong>A continuación usaremos comandos que borran archivos sin pasar por ninguna papelera de reciclaje. Estas acciones no pueden deshacerse</strong>: Usar con precaución, <em>un gran poder conlleva una gran responsabilidad</em>.</p>
+</blockquote>
+<p>Podés eliminar un archivo usando la función <code>remove()</code>. También podés eliminar un directorio vacío usando <code>rmdir()</code>.</p>
+<p>En el siguiente código trabajaremos en una carpeta que tiene esta estructura:</p>
+<pre><code>otra_carpeta
+├── archivo.txt
+└── subcarpeta
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; os.chdir('otra_carpeta')    # entro otra carpeta que tiene
+                                # una subcarpeta y un archivo de texto
+&gt;&gt;&gt; os.listdir()
+['subcarpeta', 'archivo.txt']
+
+&gt;&gt;&gt; os.remove('archivo.txt')    # elimino el archivo
+&gt;&gt;&gt; os.listdir()
+['subcarpeta']
+
+&gt;&gt;&gt; os.rmdir('subcarpeta')      # elimino la subcarpeta
+&gt;&gt;&gt; os.listdir()
+[]
+</code></pre>
+<p><strong>Ojo</strong>: <code>rmdir()</code> solamente puede borrar directorios si están vacíos.
+Para eliminar un directorio no vacío, podés usar <code>rmtree()</code> del módulo <code>shutil</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.mkdir(os.path.join('test','carpeta'))                # creo nuevamente una carpeta
+                                                            # dentro de test
+&gt;&gt;&gt; os.mkdir(os.path.join('test','carpeta', 'subcarpeta'))  # creo una subcarpeta en carpeta
+&gt;&gt;&gt; os.chdir('test')                                        # entro en test
+&gt;&gt;&gt; os.rmdir('carpeta')                                     # quiero eliminar carpeta
+Traceback (most recent call last):
+
+  File &quot;&lt;ipython-input-277-c4255042d84c&gt;&quot;, line 1, in &lt;module&gt;
+    os.rmdir('carpeta')
+
+OSError: [Errno 39] Directory not empty: 'carpeta'
+
+&gt;&gt;&gt; import shutil
+
+&gt;&gt;&gt; shutil.rmtree('carpeta')
+&gt;&gt;&gt; os.listdir()
+[]
+</code></pre>
+<h2 id="recorriendo-directorios-con-oswalk">Recorriendo directorios con <code>os.walk()</code></h2>
+<p>La función <code>walk()</code> del módulo <code>os</code> genera una lista con los nombres de todos los archivos del árbol de subdirectorios de un directorio dado. Es decir, lista los archivos de un directorio dado y luego entra en cada subdirectorio y hace lo mismo, recursivamente (<em>top-down</em>).</p>
+<p>La función <code>walk()</code> recibe como único parámetro obligatorio el directorio donde comenzar a mirar (la raíz del árbol).</p>
+<h3 id="ejemplo">Ejemplo</h3>
+<p>En este ejemplo se ve cómo se usa <code>os.walk()</code>.</p>
+<pre><code class="language-python">import os
+for root, dirs, files in os.walk(&quot;.&quot;):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+</code></pre>
+<h2 id="cambiar-atributos-de-un-archivo">Cambiar atributos de un archivo</h2>
+<p>Dependiendo del sistema operativo, un archivo puede tener asociadas diferentes fechas (de creación original, de modificación del contenido, de cambio en sus metadatos, de acceso para lectura).</p>
+<p>Vamos a cambiar la fecha de modificación de un archivo. Para ello necesitás importar <code>os</code> y <code>datetime</code>. Después, convertís la fecha elegida a <code>timestamp</code> y se la asocías al archivo con <code>utime</code>, como se muestra acá abajo:</p>
+<pre><code class="language-python">import os
+import datetime
+import time
+
+camino = './rebotes.py'
+
+stats_archivo = os.stat(camino)
+print(time.ctime(stats_archivo.st_atime))
+
+fecha_acceso = datetime.datetime(year = 2017, month = 9, day = 21, hour = 19, minute =51, second = 0)
+fecha_modifi = datetime.datetime(year = 2012, month = 9, day = 24, hour = 12, minute =9, second = 24)
+
+ts_acceso = fecha_acceso.timestamp()
+ts_modifi = fecha_modifi.timestamp()
+os.utime(camino, (ts_acceso, ts_modifi))
+
+stats_archivo = os.stat(camino)
+print(time.ctime(stats_archivo.st_atime))
+</code></pre>
+<p>Si mirás la información del archivo <code>./rebotes.py</code> desde tu gestor de archivos deberías ver las modificaciones.</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Fechas/">Anterior (2 Manejo de fechas y horas)</a> | <a href="../04_Ordenando_archivos/">Próximo (4 Ordenar archivos en Python)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

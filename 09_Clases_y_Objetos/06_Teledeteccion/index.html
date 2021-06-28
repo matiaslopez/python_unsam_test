@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/09_Clases_y_Objetos/06_Teledeteccion/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>06 Teledeteccion - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#96-teledeteccion" class="nav-link">9.6 Teledetección</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ejercicios" class="nav-link">Ejercicios:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_Pilas_Colas/">Anterior (5 Objetos, pilas y colas)</a> | <a href="../07_Cierre/">Próximo (7 Cierre de la clase)</a></p>
+<h1 id="96-teledeteccion">9.6 Teledetección</h1>
+<p>En este <a href="https://youtu.be/oQ0ce5qhJp0">video</a> introducimos el tema de esta sección.</p>
+<p>En este ejercicio vamos a trabajar con una imagen satelital obtenida por sensores a bordo del satélite Landsat8. Es un ejercicio optativo para entregar. Si querés, hacelo y guardalo en el archivo <code>NDVI.py</code>.</p>
+<h3 id="ejercicio-914-optativo-de-teledeteccion">Ejercicio 9.14: Optativo de teledetección</h3>
+<p><strong>Autora: <a href="https://github.com/marielaraj/">Mariela Rajngewerc</a></strong></p>
+<p>La imagen original fue bajada de la página del <a href="https://earthexplorer.usgs.gov/">earthexplorer</a>. En esa página se pueden bajar imágenes con distinto nivel de pre-procesamiento. Para este ejercicio bajamos una imagen de nivel de procesamiento 2, esto quiere decir que los valores de los pixeles representan la reflectancia en superficie en distintas longitudes de onda. <a href="https://www.usgs.gov/media/files/landsat-8-collection-1-land-surface-reflectance-code-product-guide">Acá</a> pueden encontrar el manual de estas imagenes donde les detallan la descripción tanto de los nombres de lor archivos como de los preprocesamiento que tienen realizados.</p>
+<p>Para este ejercicio hemos realizado un clip de cada una de las bandas originales de la imagen y ya multiplicamos a cada una de las bandas por el factor de escala indicado en el manual (0,0001).</p>
+<p>Las longitudes de onda y la resoluciones de cada banda de la imágen se describen a continuación:</p>
+<table>
+<thead>
+<tr>
+<th>Banda</th>
+<th>Longitud de onda (nanómetros)</th>
+<th>Resolución espacial (metros)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banda 1 - Aerosoles</td>
+<td>430 - 450</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 2 - Azul</td>
+<td>450 - 510</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 3 - Verde</td>
+<td>530 - 590</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 4 - Rojo</td>
+<td>640 - 670</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 5 - Infrarrojo cercano</td>
+<td>850 - 880</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 6 - Infrarrojo medio 1</td>
+<td>1570 - 1650</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Banda 7 - Infrarrojo medio 2</td>
+<td>2110 - 2290</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>Si desean abrir los datos de la imagen original en Python deberán bajar algunas librerías específicas para la manipulación de datos satelitales, por ejemplo: <strong>gdal</strong>. <a href="https://www.github.com/marielaraj/pycon_tallerimgssat">Acá</a> hay un tutorial de los primeros pasos.</p>
+<p>En la carpeta <a href="https://drive.google.com/file/d/1uoigo5s2xgWfbBQdUcJfOdhfYMNjZ8Ku/view?usp=sharing">clip</a> encontrarán los datos que vamos a usar en los ejercicios. Cada banda del clip se encuentra en formato .npy</p>
+<h2 id="ejercicios">Ejercicios:</h2>
+<h3 id="ejercicio-915-ver-una-banda">Ejercicio 9.15: Ver una banda</h3>
+<p>a) Usá <a href="https://numpy.org/doc/stable/reference/generated/numpy.load.html">numpy</a> para levantar cada una de las bandas y <code>plt.imshow(banda)</code> para verla.
+¿Se ve correctamente? Podés ajustar el rango de visualización de colores usando los parámetros <code>vmin</code> y <code>vmax</code>.</p>
+<p><em>Sugerencia</em>: Con <code>plt.hist(banda.flatten(),bins = 100)</code> vas a ver un histograma de los valores en la matriz <code>banda</code>. Podés usarlo para guiarte en la búsqueda del rango que tiene sentido usar como vmin y vmax.</p>
+<p>b) Probá usando percentiles para fijar el rango. Algo como</p>
+<pre><code class="language-python">vmin = np.percentile(data.flatten(), q)
+vmax = np.percentile(data.flatten(), 100-q)
+</code></pre>
+<p>c) Escribí una función <code>crear_img_png(carpeta, banda)</code> que, dada una carpeta y un número de banda, muestre la imagen de dicha banda y la guarde en formato .png. Asegurate de incorporar un <code>colorbar</code> al lado de la imágen.</p>
+<p>Tené en cuenta lo que hiciste en los puntos anteriores para que se vea adecuadamente.</p>
+<h3 id="ejercicio-916-histogramas">Ejercicio 9.16: Histogramas</h3>
+<p>Escribí ahora otra función, llamada <code>crear_hist_png(carpeta, banda, bins)</code> que, dada una carpeta, un número de banda y una cantidad de bins, muestre el histograma (con la cantidad de bins seleccionados) de los valores de dicha banda y la guarde en formato .png.</p>
+<h3 id="ejercicio-917-mascaras-binarias">Ejercicio 9.17: Máscaras binarias</h3>
+<p>a) Usá las funciones <code>crear_img_png</code> y <code>crear_hist_png</code> que hiciste en los puntos anteriores para generar las imágenes e histogramas de cada banda.</p>
+<p>b) ¿Qué banda o bandas parecieran tener histogramas bimodales, mostrando diferentes tipos de pixels? Elegí una de esas bandas y, observando el histograma, seleccioná un umbral que te permita distinguir los dos tipos de píxels. Por ejemplo, podés crear una matriz del mismo tamaño de la banda donde a cada píxel le corresponda un 1 o un 0, 1 si está por arriba del umbral y 0 si no.</p>
+<p>Graficá la imágen binaria así obtenida. ¿A qué corresponden los dos tipos de píxeles que pudiste distinguir tan fácilmente?</p>
+<h3 id="ejercicio-918-clasificacion-manual">Ejercicio 9.18: Clasificación manual</h3>
+<p>En este ejercicio vamos a trabajar con un índice: el Índice de Vegetación de Diferencia Normalizada, también conocido como <a href="https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada">NDVI</a> por sus siglas en inglés. Este índice, basado en la intensidad de la radiación de dos bandas  del espectro electromagnético que interactúan particularmente con la vegetación, aporta información sobre la cantidad, estado y desarrollo de la misma.</p>
+<p>Para calcular el NDVI se utilizan las bandas espectrales Roja e Infrarroja y el cálculo se hace mediante la siguiente fórmula:</p>
+<p><code>(INFRARROJO_CERCANO - ROJO) / (INFRARROJO_CERCANO + ROJO)</code></p>
+<p>a) Calcular el NDVI en una nueva matriz.</p>
+<p>b) Categorizá los valores obtenidos en cada píxel de acuerdo a clases que nos sean más útiles y fáciles de interpretar. La tabla a continuación muestra una propuesta de categorías que podés considerar:</p>
+<table>
+<thead>
+<tr>
+<th>Valor de NDVI</th>
+<th>Nombre de la clase</th>
+<th>Identificador de Clase</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0</td>
+<td>No vegetada</td>
+<td>0</td>
+<td>black</td>
+</tr>
+<tr>
+<td>entre 0 y 0.1</td>
+<td>Área desnuda</td>
+<td>1</td>
+<td>y</td>
+</tr>
+<tr>
+<td>entre 0.1 y 0.25</td>
+<td>Vegetación baja</td>
+<td>2</td>
+<td>yellowgreen</td>
+</tr>
+<tr>
+<td>entre 0.25 y 0.4</td>
+<td>Vegetación moderada</td>
+<td>3</td>
+<td>g</td>
+</tr>
+<tr>
+<td>&gt;0.4</td>
+<td>Vegetación densa</td>
+<td>4</td>
+<td>darkgreen</td>
+</tr>
+</tbody>
+</table>
+<p>Creá un <code>np.array</code> que le asigne a cada píxel el número dado por el <em>identificador de categoría</em> correspondiente según la tabla. Llamá <em>clases_ndvi</em> a la matriz así obtenida.</p>
+<p>c) Generá un gráfico con <code>matplotlib</code> mostrando las clases obtenidas.</p>
+<p>d) Crear un colorMap para lograr asignarle a cada clase el color sugerido en la tabla. Para esto podés usar la función ListedColormap incluída en <code>matplotlib.colors</code> y crear un colorMap (cmap).</p>
+<p>e) Ponele una leyenda que indique el nombre de cada clase con el color asignado, para eso te sugerimos usar la función <code>Patch</code> que se encuentra en <code>matplotlib.patches</code>. Para que puedas orientarte, te mostramos a continuación un ejemplo de resultado esperado:</p>
+<p><img alt="" src="../img.png" /></p>
+<p>Si llegaste hasta acá, no te olvides de guardar tu trabajo en el archivo <code>NDVI.py</code> y entregarlo. A continuación, un ejercicio que usa herramientas un poco más avanzadas de aprendizaje automático.</p>
+<h3 id="ejercicio-919-clasificacion-automatica">Ejercicio 9.19: Clasificación automática</h3>
+<p>En el ejercicio anterior definimos a mano los umbrales que distinguen las clases. Es posible hacer esto de forma automática. Para eso se usan técnicas de clustering. El siguiente código muestra un ejemplo con un clasificador muy sencillo: <code>kmeans</code>. Este clasificador está ya implementado en la biblioteca <a href="https://scikit-learn.org/stable/">sklearn</a> que es una biblioteca dedicada al aprendizaje automático en python (probablemente la más usada para esto).</p>
+<pre><code class="language-python"># filtro datos ruidosos o que puedan traer problemas.
+# el NDVI debe estar entre -1 y 1.
+ndvi[ndvi &gt; 1] = 1
+ndvi[ndvi &lt; -1] = -1
+
+#importo el clasificador y defino una instancia para clasificar con dos etiquetas
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters = 2)
+
+#le saco la estructura bidimensional a la matriz NDVI y la llamo datos
+datos = ndvi.reshape(-1,1) #datos es un vector con un dato de NDVI por pixel.
+
+#entreno o ajusto el el clasificador con los datos (demora!)
+kmeans.fit(datos) #ajusta el modelo
+#usa el modelo ajustado para poner etiquetas
+etiquetas = kmeans.predict(ndvi.reshape(-1,1))
+
+#visualizo los resultados recuperando la estructura bidimensional de la matriz
+plt.imshow(etiquetas.reshape(ndvi.shape))
+</code></pre>
+<p>Probá ajustando el número de clusters (<code>n_clusters = 5</code>, por ejemplo) y corriendo nuevamente el modelo. Ponele colores diferentes a las diferentes clases obtenidas.</p>
+<p>Si tarda mucho podés trabajar con un pedazo de la imágen. Por ejemplo si hacés <code>ndvi_clip = ndvi[1000:2000,2000:3000]</code> te quedás con un cuadradito que es un octavo de la imagen original y podés usarlo para probar cosas rápido. Si te convencen los resultados podés correr tu algoritmo sobre la imágen completa.</p>
+<h3 id="sugerencia-codigo-para-colorbars">Sugerencia: Código para colorbars</h3>
+<p>Revisar este código para el cmap:</p>
+<pre><code class="language-python">from matplotlib import colors
+# Creo colores
+cmap = colors.ListedColormap(['black', 'y',
+                              'yellowgreen', 'green', 'darkgreen'])
+# Defino los limites de cada color
+limites = [0, 1, 2, 3, 4]
+norm = colors.BoundaryNorm(limites, cmap.N)
+# Genero el grafico con colores
+plt.imshow(clases_ndvi, cmap=cmap, norm=norm)
+</code></pre>
+<p>Y éste para las leyendas:</p>
+<pre><code class="language-python">import matplotlib.patches as mpatches
+# Genero leyenda y grafico con leyenda
+texts = ['Sin vegetacion', 'Area desnuda', 'Vegetacion baja',
+         'Vegetacion moderada', 'Vegetacion densa']
+patches = [mpatches.Patch(color=cmap(i), label=&quot;{:s}&quot;.format(texts[i]) ) for i in range(len(texts))]
+plt.legend(handles=patches, bbox_to_anchor=(0.2,1.3), loc='center', ncol=1 )
+plt.imshow(clases_ndvi, cmap=cmap, norm=norm)
+plt.show()
+</code></pre>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../05_Pilas_Colas/">Anterior (5 Objetos, pilas y colas)</a> | <a href="../07_Cierre/">Próximo (7 Cierre de la clase)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
