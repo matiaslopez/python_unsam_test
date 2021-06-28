@@ -12,10 +12,84 @@ python:
    install:
    - requirements: docs/requirements.txt
 
+# plugins:
+#     - with-pdf:
+        # author: Les Mosquiteres
+        #copyright: ANY TEXT
+        #
+        #cover: false
+        #back_cover: true
+        #cover_title: TITLE TEXT
+        # cover_subtitle: Les Mosquiteres
+        #custom_template_path: TEMPLATES PATH
+        #
+        #toc_title: TOC TITLE TEXT
+        #heading_shift: false
+        #toc_level: 3
+        #ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        #exclude_pages:
+        #    - 'bugs/'
+        #    - 'appendix/contribute/'
+        #convert_iframe:
+        #    - src: IFRAME SRC
+        #      img: POSTER IMAGE URL
+        #      text: ALTERNATE TEXT
+        #    - src: ...
+        #two_columns_level: 3
+        #
+        #render_js: true
+        #headless_chrome_path: headless-chromium
+        #
+        #output_path: any-place/document.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        #debug_html: true
+        #show_anchors: true
+        #verbose: true
 
-formats:
-  - epub
-  - pdf
+
+nav:
+  - Inicio: index.md
+  - Unidades:
+    - "01 - Introducción": 01_Introduccion/00_Resumen.md
+    - "02 - Estructuras y funciones": 02_Estructuras_y_Funciones/00_Resumen.md
+    - "03 - Trabajando con datos": 03_Datos/00_Resumen.md
+    - "04 - Algoritmos sobre listas y comprensión de listas": 04_Listas_y_Listas/00_Resumen.md
+    - "05 - Aleatoridad": 05_Random_Plt_Dbg/00_Resumen.md
+    - "06 - Complejidad y Organización de programas": 06_Organizacion_y_Complejidad/00_Resumen.md
+    - "07 - Diseño, especificación, documentación y estilo": 07_Plt_Especificacion_y_Documentacion/00_Resumen.md
+    - "08 - Fechas, Carpetas y Pandas": 08_Fechas_Carpetas_y_Pandas/00_Resumen.md
+    - "09 - Clases y objetos": 09_Clases_y_Objetos/00_Resumen.md
+    - "10 - Generadores e iteradores": 10_Generadores_e_Iteradores/00_Resumen.md
+    - "11 - Recursión y regresión": 11_Recursion/00_Resumen.md
+    - "12 - Ordenamiento": 12_Ordenamiento/00_Resumen.md
+
+# formats:
+#   - epub
+#   - pdf
+
+# theme:
+#   name: gitbook
+
+
+theme:
+  name: mkdocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+  analytics:
+    gtag: G-ABC123
+  shortcuts:
+    help: 191    # ?
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s
+  nav_style: light # dark # light
+  locale: es
 
 # theme:
 #     name: readthedocs

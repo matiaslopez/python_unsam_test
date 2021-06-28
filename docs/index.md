@@ -1,8 +1,9 @@
-# Welcome to MkDocs
+<!-- # Bienvenidos
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 Pendiente: https://docs.readthedocs.io/en/stable/guides/google-analytics.html
+https://github.com/kubilus1/mkdocs-paginate-plugin
 
 Otros templates: https://www.mkdocs.org/user-guide/choosing-your-theme/
 
@@ -21,7 +22,7 @@ Otros templates: https://www.mkdocs.org/user-guide/choosing-your-theme/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-
+ -->
 # Programación en Python
 
 En el marco del proyecto de [Inteligencia Artificial Interdisciplinaria](http://noticias.unsam.edu.ar/2019/09/16/la-unsam-piensa-la-inteligencia-artificial-interdisciplinaria/),

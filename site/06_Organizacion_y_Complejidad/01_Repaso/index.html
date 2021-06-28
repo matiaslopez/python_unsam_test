@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://matiaslopez.github.io/python_unsam_test/06_Organizacion_y_Complejidad/01_Repaso/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>01 Repaso - Programación en Python</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Programación en Python</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
+</li>
+                                    
+<li>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
+</li>
+                                    
+<li>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
+</li>
+                                    
+<li>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
+</li>
+                                    
+<li>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
+</li>
+                                    
+<li>
+    <a href="../00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
+</li>
+                                    
+<li>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
+</li>
+                                    
+<li>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
+</li>
+                                    
+<li>
+    <a href="../../10_Generadores_e_Iteradores/00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
+</li>
+                                    
+<li>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
+</li>
+                                    
+<li>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Buscar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#61-repaso-de-temas-pasados" class="nav-link">6.1 Repaso de temas pasados</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#analisis-de-alternativas-para-propagar" class="nav-link">Análisis de alternativas para propagar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Scripts/">Próximo (2 Scripting)</a></p>
+<h1 id="61-repaso-de-temas-pasados">6.1 Repaso de temas pasados</h1>
+<p>A continuación dejamos unos links a unos videos sobre un par de ejercicios de la clase 5:</p>
+<ol>
+<li>Ejercicio <a href="../../05_Random_Plt_Dbg/01_Random/#ejercicio-52-generala-no-necesariamente-servida">Ejercicio 5.2</a> sobre la probabilidad de obtener una generala no servida resuelto por <a href="https://youtu.be/D_mipwwZjhM">Matias</a> y por <a href="https://youtu.be/c2SO3-iSd04">Rafael</a>.</li>
+<li>Ejercicio <a href="../../05_Random_Plt_Dbg/03_Figuritas/#ejercicio-515">Ejercicio 5.15</a> del <a href="https://youtu.be/lSVNxPoRLJA">álbum de Figuritas</a></li>
+</ol>
+<h2 id="analisis-de-alternativas-para-propagar">Análisis de alternativas para <em>propagar</em></h2>
+<p>Los siguientes tres ejercicios proponen diferentes soluciones al <a href="../../04_Listas_y_Listas/02_IteradoresLista/#ejercicio-46-propagación">Ejercicio 4.6</a> de propagación del fuego. Vamos a analizar sus diferencias y comenzar a pensar en su eficiencia. Algunas soluciones tienen errores que deberás corregir oportunamente. ¡Usá el debugger de Python!</p>
+<p><em>Observación: Cuando te pidamos que cuentes cuántas operaciones hace una función, no nos va a importar el detalle de las constantes. Por ejemplo: si una función para una entrada de largo n hace n+2 operaciones y otra hace 3<em>n+5 nos va a importar que ambas hacen una cantidad </em><em>lineal</em><em> de operaciones en el tamaño de la entrada, pero no las constantes 2, 3 y 5 que figuran en cada caso. Diremos que la cantidad de operaciones es </em>O(n)<em> (se lee 'o de n'). En cambio, sí vamos a hacer una diferencia si una función hace n y otra hace n^2 operaciones (una va a tener complejidad </em>O(n)<em> y la otra O(n^2)</em>). Volveremos sobre estos temas más adelante.</em></p>
+<h3 id="ejercicio-61-propagar-por-vecinos">Ejercicio 6.1: Propagar por vecinos</h3>
+<p>El siguiente código propaga el fuego de cáda fósforo encendido a sus vecinos inmediatos (si son fósforos nuevos) a lo largo de toda la lista. Y repite esta operación mientras sea necesario. ¿Te animás a estimar cuántas operaciones puede tener que hacer, en el peor caso?</p>
+<pre><code class="language-python">def propagar_al_vecino(l):
+    modif = False
+    n = len(l)
+    for i,e in enumerate(l):
+        if e==1 and i&lt;n-1 and l[i+1]==0:
+            l[i+1] = 1
+            modif = True
+        if e==1 and i&gt;0 and l[i-1]==0:
+            l[i-1] = 1
+            modif = True
+    return modif
+
+def propagar(l):
+    m = l.copy()
+    veces=0
+    while propagar_al_vecino(l):
+        veces += 1
+
+    print(f&quot;Repetí {veces} veces la función propagar_al_vecino.&quot;)
+    print(f&quot;Con input {m}&quot;)    
+    print(f&quot;Y obtuve  {l}&quot;)
+    return m
+#%%
+propagar([0,0,0,0,1])
+propagar([0,0,1,0,0])
+propagar([1,0,0,0,0])
+</code></pre>
+<p><strong>Preguntas:</strong>
+1. ¿Por qué los tests <code>l[i+1]==0</code> y <code>l[i-1]==0</code> de la función <code>propagar_al_vecino</code> no causan un <code>IndexError</code> en los bordes de la lista?
+2. ¿Por qué <code>propagar([0,0,0,0,1])</code> y <code>propagar([1,0,0,0,0])</code>, siendo entradas perfectamente simétricas, no generan la misma cantidad de repeticiones de llamadas a la función <code>propagar_al_vecino</code>?
+3. Sobre la complejidad. Si te sale, calculá:
+    * ¿Cuántas veces como máximo se puede repetir el ciclo while en una lista de largo n?
+    * ¿Cuántas operaciones hace "propagar_al_vecino" en una lista de largo n?
+    * Entonces, ¿cuántas operaciones hace como máximo esta versión de <code>propagar</code> en una lista de largo n? ¿Es un algoritmo de complejidad lineal o cuadrática?</p>
+<h3 id="ejercicio-62-propagar-por-como-el-auto-fantastico">Ejercicio 6.2: Propagar por como el auto fantástico</h3>
+<p>El siguiente código propaga el fuego inspirado en las luces del <a href="https://youtu.be/oNeQi8-PXAU?t=11">auto fantástico</a>.</p>
+<pre><code class="language-python">def propagar_a_derecha(l):
+    n = len(l)
+    for i,e in enumerate(l):
+        if e==1 and i&lt;n-1:
+            if l[i+1]==0:
+                l[i+1] = 1
+    return l
+#%
+def propagar_a_izquierda(l):
+    return propagar_a_derecha(l[::-1])[::-1]
+#%
+def propagar(l):
+    ld=propagar_a_derecha(l)
+    lp=propagar_a_izquierda(ld)
+    return lp
+#%%
+l = [0,0,0,-1,1,0,0,0,-1,0,1,0,0]
+print(&quot;Estado original:  &quot;,l)
+print(&quot;Porpagando...&quot;)
+lp=propagar(l)
+print(&quot;Estado original:  &quot;,l)
+print(&quot;Estado propagado: &quot;,lp)
+</code></pre>
+<p><strong>Preguntas:</strong>
+1. ¿Por qué se modificó la lista original? 
+2. ¿Por qué no quedó igual al <code>estado propagado</code>? 
+3. Corregí el código para que no cambie la lista de entrada.
+4. ¿Cuántas operaciones hace como máximo <code>propagar_a_derecha</code> en una lista de largo n?
+5. Sabiendo que invertir una lista (<code>[::-1]</code>) requiere una cantidad lineal de operaciones en la longitud de la lista ¿Cuántas operaciones hace como máximo <code>propagar</code> en una lista de largo n?</p>
+<h3 id="ejercicio-63-propagar-con-cadenas">Ejercicio 6.3: Propagar con cadenas</h3>
+<p>Esta versión usa métodos de <em>cadenas</em> para resolver el problema separando los fósforos en <em>grupos sin fósforos quemados</em> y analizando cada grupo. Sin embargo algo falla...</p>
+<pre><code class="language-python">def trad2s(l):
+    '''traduce una lista con 1,0 y -1 
+    a una cadena con 'f', 'o' y 'x' '''
+    d={1:'f', 0 :'o', -1:'x'}
+    s=''.join([d[c] for c in l])
+    return s
+
+def trad2l(ps):
+    '''traduce cadena con 'f', 'o' y 'x'
+    a una lista con 1,0 y -1'''
+    inv_d={'f':1, 'o':0, 'x':-1}
+    l = [inv_d[c] for c in ps]
+    return l
+
+def propagar(l, debug = True):
+    s = trad2s(l)
+    if debug:
+        print(s)#, end = ' -&gt; ')
+    W=s.split('x')
+    PW=[w if ('f' not in w) else 'f'*len(w) for w in W]
+    ps=''.join(PW)
+    if debug:
+        print(ps)
+    return trad2l(ps)
+
+#%%
+l = [0,0,0,-1,1,0,0,0,-1,0,1,0,0]
+lp = propagar(l)
+print(&quot;Estado original:  &quot;,l)
+print(&quot;Estado propagado: &quot;,lp)
+</code></pre>
+<p><strong>Preguntas:</strong>
+1. ¿Porqué se acorta la lista? 
+2. ¿Podés corregir el error agregando un solo caracter al código?
+3. ¿Te parece que este algoritmo es cuadrático como el <a href="../06_Organización_y_Complejidad/01_Repaso.md#ejercicio-61-propagar-por-vecinos">Ejercicio 6.1</a>
+o lineal como el <a href="../06_Organización_y_Complejidad/01_Repaso.md#ejercicio-62-propagar-por-como-el-auto-fantástico">Ejercicio 6.2</a>?</p>
+<p><a href="../Contenidos.md">Contenidos</a> | <a href="../02_Scripts/">Próximo (2 Scripting)</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Abrir esta ayuda</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Página siguiente</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Página anterior</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Buscar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

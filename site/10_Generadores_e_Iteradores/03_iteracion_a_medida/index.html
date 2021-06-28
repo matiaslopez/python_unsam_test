@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +17,20 @@
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ABC123');
+        </script> 
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="../..">Programación en Python</a>
                 <!-- Expander button -->
@@ -34,421 +43,58 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="../.." class="nav-link">Welcome to MkDocs</a>
+                                <a href="../.." class="nav-link">Inicio</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">01 Introduccion <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unidades <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">00 Resumen</a>
+    <a href="../../01_Introduccion/00_Resumen/" class="dropdown-item">01 - Introducción</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/01_Python/" class="dropdown-item">01 Python</a>
+    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">02 - Estructuras y funciones</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/02_Hello_world/" class="dropdown-item">02 Hello world</a>
+    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">03 - Trabajando con datos</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/03_Numeros/" class="dropdown-item">03 Numeros</a>
+    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">04 - Algoritmos sobre listas y comprensión de listas</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/04_Strings/" class="dropdown-item">04 Strings</a>
+    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">05 - Aleatoridad</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/05_Listas/" class="dropdown-item">05 Listas</a>
+    <a href="../../06_Organizacion_y_Complejidad/00_Resumen/" class="dropdown-item">06 - Complejidad y Organización de programas</a>
 </li>
                                     
 <li>
-    <a href="../../01_Introduccion/06_CierreClase/" class="dropdown-item">06 CierreClase</a>
+    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">07 - Diseño, especificación, documentación y estilo</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">02 Estructuras y Funciones <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../02_Estructuras_y_Funciones/00_Resumen/" class="dropdown-item">00 Resumen</a>
+    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">08 - Fechas, Carpetas y Pandas</a>
 </li>
                                     
 <li>
-    <a href="../../02_Estructuras_y_Funciones/01_Archivos/" class="dropdown-item">01 Archivos</a>
+    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">09 - Clases y objetos</a>
 </li>
                                     
 <li>
-    <a href="../../02_Estructuras_y_Funciones/02_Funciones/" class="dropdown-item">02 Funciones</a>
+    <a href="../00_Resumen/" class="dropdown-item">10 - Generadores e iteradores</a>
 </li>
                                     
 <li>
-    <a href="../../02_Estructuras_y_Funciones/03_TiposDatos/" class="dropdown-item">03 TiposDatos</a>
+    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">11 - Recursión y regresión</a>
 </li>
                                     
 <li>
-    <a href="../../02_Estructuras_y_Funciones/04_Contenedores/" class="dropdown-item">04 Contenedores</a>
-</li>
-                                    
-<li>
-    <a href="../../02_Estructuras_y_Funciones/05_CierreClase/" class="dropdown-item">05 CierreClase</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">03 Datos <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../03_Datos/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/01_Bugs/" class="dropdown-item">01 Bugs</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/02_Secuencias/" class="dropdown-item">02 Secuencias</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/03_Contadores/" class="dropdown-item">03 Contadores</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/04_IDE/" class="dropdown-item">04 IDE</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/05_Formato/" class="dropdown-item">05 Formato</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/06_Arboles1/" class="dropdown-item">06 Arboles1</a>
-</li>
-                                    
-<li>
-    <a href="../../03_Datos/07_CierreClase/" class="dropdown-item">07 CierreClase</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">04 Listas y Listas <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/01_Debugger/" class="dropdown-item">01 Debugger</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/02_IteradoresLista/" class="dropdown-item">02 IteradoresLista</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/03_Comprension_Listas/" class="dropdown-item">03 Comprension Listas</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/04_Objetos/" class="dropdown-item">04 Objetos</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/05_Arboles2_LC/" class="dropdown-item">05 Arboles2 LC</a>
-</li>
-                                    
-<li>
-    <a href="../../04_Listas_y_Listas/06_Cierre/" class="dropdown-item">06 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">05 Random Plt Dbg <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/01_Random/" class="dropdown-item">01 Random</a>
-</li>
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/02_NumPy_Arrays/" class="dropdown-item">02 NumPy Arrays</a>
-</li>
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/03_Figuritas/" class="dropdown-item">03 Figuritas</a>
-</li>
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/04_Arboles3_plt/" class="dropdown-item">04 Arboles3 plt</a>
-</li>
-                                    
-<li>
-    <a href="../../05_Random_Plt_Dbg/05_Cierre/" class="dropdown-item">05 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">06 Organización y Complejidad <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/01_Repaso/" class="dropdown-item">01 Repaso</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/02_Scripts/" class="dropdown-item">02 Scripts</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/03_Funciones/" class="dropdown-item">03 Funciones</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/04_Modulos/" class="dropdown-item">04 Modulos</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/05_BusqBinaria/" class="dropdown-item">05 BusqBinaria</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/06_Complejidad/" class="dropdown-item">06 Complejidad</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/07_gr%C3%A1ficos_de_complejidad/" class="dropdown-item">07 gráficos de complejidad</a>
-</li>
-                                    
-<li>
-    <a href="../../06_Organizaci%C3%B3n_y_Complejidad/08_Cierre/" class="dropdown-item">08 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">07 Plt Especificacion y Documentacion <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/01_Repaso/" class="dropdown-item">01 Repaso</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/02_Excepciones/" class="dropdown-item">02 Excepciones</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/03_Modulo_principal/" class="dropdown-item">03 Modulo principal</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/04_Flexibilidad/" class="dropdown-item">04 Flexibilidad</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/05_Especificacion_y_Documentacion/" class="dropdown-item">05 Especificacion y Documentacion</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/06_Estilo/" class="dropdown-item">06 Estilo</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/07_Matplotlib/" class="dropdown-item">07 Matplotlib</a>
-</li>
-                                    
-<li>
-    <a href="../../07_Plt_Especificacion_y_Documentacion/08_Cierre/" class="dropdown-item">08 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">08 Fechas Carpetas y Pandas <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/01_Intro/" class="dropdown-item">01 Intro</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/02_Fechas/" class="dropdown-item">02 Fechas</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/03_Archivos_y_Directorios/" class="dropdown-item">03 Archivos y Directorios</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/04_Ordenando_archivos/" class="dropdown-item">04 Ordenando archivos</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/05_Pandas/" class="dropdown-item">05 Pandas</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/06_Series_Temporales/" class="dropdown-item">06 Series Temporales</a>
-</li>
-                                    
-<li>
-    <a href="../../08_Fechas_Carpetas_y_Pandas/07_Cierre/" class="dropdown-item">07 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">09 Clases y Objetos <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/01_Intro/" class="dropdown-item">01 Intro</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/02_Clases/" class="dropdown-item">02 Clases</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/03_Herencia/" class="dropdown-item">03 Herencia</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/04_M%C3%A9todos_Especiales/" class="dropdown-item">04 Métodos Especiales</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/05_Pilas_Colas/" class="dropdown-item">05 Pilas Colas</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/06_Teledeteccion/" class="dropdown-item">06 Teledeteccion</a>
-</li>
-                                    
-<li>
-    <a href="../../09_Clases_y_Objetos/07_Cierre/" class="dropdown-item">07 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">10 Generadores e Iteradores <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../01_Intro/" class="dropdown-item">01 Intro</a>
-</li>
-                                    
-<li>
-    <a href="../02_protocolo_Iteracion/" class="dropdown-item">02 protocolo Iteracion</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">03 iteracion a medida</a>
-</li>
-                                    
-<li>
-    <a href="../04_Producers_consumers/" class="dropdown-item">04 Producers consumers</a>
-</li>
-                                    
-<li>
-    <a href="../05_Mas_generadores/" class="dropdown-item">05 Mas generadores</a>
-</li>
-                                    
-<li>
-    <a href="../06_PredadorPresa/" class="dropdown-item">06 PredadorPresa</a>
-</li>
-                                    
-<li>
-    <a href="../07_Cierre/" class="dropdown-item">07 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">11 Recursion <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../11_Recursion/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/01_Introduccion/" class="dropdown-item">01 Introduccion</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/02_Recursion/" class="dropdown-item">02 Recursion</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/03_Diseno_Recursivo/" class="dropdown-item">03 Diseno Recursivo</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/05_EjerciciosRec/" class="dropdown-item">05 EjerciciosRec</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/05_Regresion_Lineal/" class="dropdown-item">05 Regresion Lineal</a>
-</li>
-                                    
-<li>
-    <a href="../../11_Recursion/06_Cierre/" class="dropdown-item">06 Cierre</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">12 Ordenamiento <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">00 Resumen</a>
-</li>
-                                    
-<li>
-    <a href="../../12_Ordenamiento/01_Introduccion/" class="dropdown-item">01 Introduccion</a>
-</li>
-                                    
-<li>
-    <a href="../../12_Ordenamiento/02_Ordenamiento_sencillo/" class="dropdown-item">02 Ordenamiento sencillo</a>
-</li>
-                                    
-<li>
-    <a href="../../12_Ordenamiento/03_Divide_and_Conquer/" class="dropdown-item">03 Divide and Conquer</a>
-</li>
-                                    
-<li>
-    <a href="../../12_Ordenamiento/04_introduccion_al_AA/" class="dropdown-item">04 introduccion al AA</a>
-</li>
-                                    
-<li>
-    <a href="../../12_Ordenamiento/05_Cierre/" class="dropdown-item">05 Cierre</a>
+    <a href="../../12_Ordenamiento/00_Resumen/" class="dropdown-item">12 - Ordenamiento</a>
 </li>
                                 </ul>
                             </li>
@@ -457,19 +103,9 @@
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
                             <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
+                                <i class="fa fa-search"></i> Buscar
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../02_protocolo_Iteracion/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../04_Producers_consumers/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -479,7 +115,7 @@
             <div class="row">
                     <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Tabla de contenidos">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
@@ -694,7 +330,7 @@ while True:
 
         <footer class="col-md-12">
             <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Documentación construida con <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
             var base_url = "../..",
@@ -707,17 +343,17 @@ while True:
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="searchModalLabel">Buscar</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>Desde aquí puede buscar estos documentos. Ingrese sus términos de búsqueda a continuación.</p>
                 <form>
                     <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Buscando..." id="mkdocs-search-query" title="Escriba el término de búsqueda aquí">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No se encontraron resultados"></div>
             </div>
             <div class="modal-footer">
             </div>
@@ -727,33 +363,33 @@ while True:
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="keyboardModalLabel">Atajos de teclado</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
             </div>
             <div class="modal-body">
               <table class="table">
                 <thead>
                   <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
+                    <th style="width: 20%;">Teclas</th>
+                    <th>Acción</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
+                    <td>Abrir esta ayuda</td>
                   </tr>
                   <tr>
                     <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
+                    <td>Página siguiente</td>
                   </tr>
                   <tr>
                     <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
+                    <td>Página anterior</td>
                   </tr>
                   <tr>
                     <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
+                    <td>Buscar</td>
                   </tr>
                 </tbody>
               </table>
