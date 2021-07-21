@@ -4,6 +4,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 Pendiente: https://docs.readthedocs.io/en/stable/guides/google-analytics.html
 https://github.com/kubilus1/mkdocs-paginate-plugin
+https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
+https://pythonrepo.com/repo/lukasgeiter-mkdocs-awesome-pages-plugin-python-documentation
 
 Otros templates: https://www.mkdocs.org/user-guide/choosing-your-theme/
 
