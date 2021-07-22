@@ -1,5 +1,7 @@
-site_name: Programación
-site_url: https://matiaslopez.github.io/python_unsam_test/
+site_name: Programación en Python
+# site_url: https://matiaslopez.github.io/python_unsam_test/
+site_url: https://programacionpython.ecyt.unsam.edu.ar/material/
+site_description: Curso de programación en Python de UNSAM
 site_author: UNSAM
 
 version: 2
@@ -173,7 +175,7 @@ theme:
   hljs_languages:
     - yaml
   analytics:
-    gtag: G-ABC123
+    gtag: G-1MPV3EL62Y
   shortcuts:
     help: 191    # ?
     next: 78     # n
